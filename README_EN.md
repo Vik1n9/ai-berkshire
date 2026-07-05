@@ -138,19 +138,13 @@ AI Berkshire ensures: **Same input → structurally consistent, equally deep out
 
 Ask AI directly, and you have one context window. Four parallel Agents means 4× the search volume, 4× the information sources, and 4 independent perspectives.
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                   Team Lead (You)                        │
-│            Coordinate · Synthesize · Decide              │
-├──────────┬──────────┬──────────────┬───────────────┤
-│ Agent 1        │ Agent 2        │ Agent 3              │ Agent 4               │
-│ Business Model │ Financials     │ Industry &           │ Risk &                │
-│ Duan Yongping  │ Buffett        │ Competition          │ Management            │
-│                │                │ Munger               │ Li Lu                 │
-└──────────┴──────────┴──────────────┴───────────────┘
-         ↓ Parallel research, real-time progress ↓
-                  Final Synthesized Report
-```
+**Team Lead (you)**: orchestrates and synthesizes, running 4 agents in parallel —
+
+| Agent 1 · Duan Yongping | Agent 2 · Buffett | Agent 3 · Munger | Agent 4 · Li Lu |
+|:---:|:---:|:---:|:---:|
+| Business model | Financials & valuation | Industry & competition | Risk & management |
+
+↓ Parallel research with live progress, synthesized by the Team Lead into the **final report**
 
 ### In One Sentence
 
@@ -656,24 +650,11 @@ Usage:
 
 ### Four-Master Methodology Synthesis
 
-```
-              ┌──────────────────┐
-              │   Duan Yongping   │
-              │  "The Right Biz"  │
-              │  Business Essence │
-              └────────┬─────────┘
-                       │
-    ┌──────────────────┼──────────────────┐
-    │                  │                  │
-    ▼                  ▼                  ▼
-┌────────┐     ┌──────────┐      ┌────────┐
-│ Buffett │     │  Munger   │      │ Li Lu  │
-│  Moat   │     │ Inversion │      │ Civ.   │
-│ Margin  │     │ Risk List │      │ Trends │
-│  of     │     │  Bias     │      │Paradigm│
-│ Safety  │     │  Audit    │      │ Shift  │
-└────────┘     └──────────┘      └────────┘
-```
+**Duan Yongping · "The Right Business"** — business essence, the shared starting point for the other three lenses:
+
+| Buffett | Munger | Li Lu |
+|:---:|:---:|:---:|
+| Moat<br>Margin of safety<br>Management | Inversion<br>Risk list<br>Bias audit | Civilization trends<br>Paradigm shifts<br>Industry value |
 
 The four masters aren't just dividing labor — they're designed to **challenge each other**:
 - Duan Yongping says "great business" → Munger asks "how could it die?"
