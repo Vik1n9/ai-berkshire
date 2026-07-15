@@ -66,8 +66,19 @@ def _get(dataset, data_id=None, start_date=None, end_date=None):
         params["token"] = token
     url = f"{_API}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=_TIMEOUT) as resp:
-        payload = json.loads(resp.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req, timeout=_TIMEOUT) as resp:
+            payload = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        if e.code in (400, 401, 402, 403) and token:
+            raise ConnectionError(
+                f"FinMind 拒绝请求（HTTP {e.code}），大概率是 token 无效或过期。"
+                "请检查环境变量 FINMIND_TOKEN 或 local/finmind_token.txt 的内容；"
+                "删除 token 可退回匿名访问（有小时级限额）"
+            ) from e
+        raise ConnectionError(f"FinMind 请求失败: HTTP {e.code} ({dataset})") from e
+    except urllib.error.URLError as e:
+        raise ConnectionError(f"FinMind 网络请求失败: {e.reason}") from e
     if payload.get("status") != 200:
         raise ConnectionError(f"FinMind 请求失败: {payload.get('msg')} ({dataset})")
     return payload.get("data", [])
@@ -383,6 +394,11 @@ def main():
                 "revenue": cmd_revenue,
                 "dividend": cmd_dividend,
             }[args.command](args.stock_id)
+    except BrokenPipeError:
+        # 输出被管道截断（如 | head），静默退出。
+        # 注意 BrokenPipeError 是 ConnectionError 的子类，必须放在前面
+        sys.stderr.close()
+        sys.exit(0)
     except ConnectionError as e:
         print(f"❌ {e}")
         sys.exit(2)
