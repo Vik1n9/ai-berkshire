@@ -5,7 +5,10 @@
 设计原则：独立模块，不影响现有工具；与 ashare_data.py 同风格。
 
 数据源：FinMind (api.finmindtrade.com)，覆盖上市(twse)/上柜(tpex)全部股票。
-未注册可直接使用（有小时级请求限额）；设置环境变量 FINMIND_TOKEN 可提升额度。
+未注册可直接使用（有小时级请求限额）。注册后的 API token 可提升额度，
+按以下优先级读取（token 只存本机，严禁提交到 git）：
+    1. 环境变量 FINMIND_TOKEN
+    2. 本地文件 local/finmind_token.txt（local/ 目录已被 .gitignore 永久排除）
 
 用法（由 Skills 自动调用）：
     python3 tools/twstock_data.py quote 2330        # 最新行情 + 估值 + 市值验算
@@ -31,6 +34,22 @@ from datetime import date, timedelta
 
 _API = "https://api.finmindtrade.com/api/v4/data"
 _TIMEOUT = 30
+_TOKEN_FILE = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "local", "finmind_token.txt",
+)
+
+
+def _token():
+    """读取 FinMind token：环境变量优先，其次本地文件；都没有则匿名访问。"""
+    t = os.environ.get("FINMIND_TOKEN", "").strip()
+    if t:
+        return t
+    try:
+        with open(_TOKEN_FILE, encoding="utf-8") as f:
+            return f.read().strip() or None
+    except OSError:
+        return None
 
 
 def _get(dataset, data_id=None, start_date=None, end_date=None):
@@ -42,7 +61,7 @@ def _get(dataset, data_id=None, start_date=None, end_date=None):
         params["start_date"] = start_date
     if end_date:
         params["end_date"] = end_date
-    token = os.environ.get("FINMIND_TOKEN")
+    token = _token()
     if token:
         params["token"] = token
     url = f"{_API}?{urllib.parse.urlencode(params)}"
