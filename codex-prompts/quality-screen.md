@@ -1,5 +1,5 @@
 ---
-description: "AI Berkshire slash entry for 去劣筛选：7条指标快速排除非一流公司."
+description: "AI Berkshire slash entry for 去劣篩選：7條指標快速排除非一流公司."
 argument-hint: $ARGUMENTS
 ---
 

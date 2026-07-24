@@ -1,5 +1,5 @@
 ---
-description: "AI Berkshire slash entry for 投资论文追踪：买入后的纪律系统."
+description: "AI Berkshire slash entry for 投資論文追蹤：買入後的紀律系統."
 argument-hint: $ARGUMENTS
 ---
 

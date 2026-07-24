@@ -1,29 +1,29 @@
-# Marvell Technology (NASDAQ: MRVL) — 综合数据收集
+# Marvell Technology (NASDAQ: MRVL) — 綜合資料收集
 
-> 数据收集日期：2026年6月23日
-> 财年说明：Marvell 财年截止于每年2月第一个周六。FY2026 截至2026年1月31日，FY2025 截至2025年2月1日。
+> 資料收集日期：2026年6月23日
+> 財年說明：Marvell 財年截止於每年2月第一個週六。FY2026 截至2026年1月31日，FY2025 截至2025年2月1日。
 
 ---
 
-## 一、财务数据
+## 一、財務資料
 
 ### 1.1 FY2026 全年分部收入（截至2026年1月31日）
 
-**注意：** 自Q4 FY2026起，Marvell将Enterprise Networking、Carrier Infrastructure、Consumer、Auto/Industrial合并为"Communications and Other"。
+**注意：** 自Q4 FY2026起，Marvell將Enterprise Networking、Carrier Infrastructure、Consumer、Auto/Industrial合併為"Communications and Other"。
 
-| 分部 | FY2026 收入 | 同比增长 | 占比 |
+| 分部 | FY2026 收入 | 同比增長 | 佔比 |
 |------|-----------|---------|------|
 | **Data Center** | ~$5,990M | +46% | ~73% |
-| **Communications & Other**（合并） | ~$2,205M | +33% | ~27% |
-| **合计** | **$8,194.6M** | **+42%** | 100% |
+| **Communications & Other**（合併） | ~$2,205M | +33% | ~27% |
+| **合計** | **$8,194.6M** | **+42%** | 100% |
 
-**分部利润：** Marvell不单独披露分部营业利润。合并口径：GAAP营业利润$1,322.9M（16.1%利润率）；Non-GAAP营业利润$2,891.0M（35.3%利润率）。
+**分部利潤：** Marvell不單獨披露分部營業利潤。合併口徑：GAAP營業利潤$1,322.9M（16.1%利潤率）；Non-GAAP營業利潤$2,891.0M（35.3%利潤率）。
 
-> 来源：[Marvell Q4/FY2026 Earnings](https://investor.marvell.com/news-events/press-releases/detail/1011/)
+> 來源：[Marvell Q4/FY2026 Earnings](https://investor.marvell.com/news-events/press-releases/detail/1011/)
 
 ---
 
-### 1.2 最近4个季度分部收入明细（FY2026）
+### 1.2 最近4個季度分部收入明細（FY2026）
 
 | 分部 | Q1 FY26 | Q2 FY26 | Q3 FY26 | Q4 FY26 |
 |------|---------|---------|---------|---------|
@@ -32,334 +32,334 @@
 | Carrier Infrastructure | $138.4M | $130.1M | $167.8M | — |
 | Consumer | $63.1M | $115.9M | $116.6M | — |
 | Auto/Industrial | $75.7M | $76.0M | $35.0M | — |
-| **Comm. & Other**（Q4合并） | — | — | — | **$567.4M** |
-| **合计** | **$1,895.3M** | **$2,006.1M** | **$2,074.5M** | **$2,218.7M** |
+| **Comm. & Other**（Q4合併） | — | — | — | **$567.4M** |
+| **合計** | **$1,895.3M** | **$2,006.1M** | **$2,074.5M** | **$2,218.7M** |
 
-> 来源：Marvell Q1-Q4 FY2026 Earnings Press Releases
+> 來源：Marvell Q1-Q4 FY2026 Earnings Press Releases
 
 ---
 
-### 1.3 五年财务数据（FY2022–FY2026）
+### 1.3 五年財務資料（FY2022–FY2026）
 
-#### 收入与盈利
+#### 收入與盈利
 
-| 指标 | FY2022 | FY2023 | FY2024 | FY2025 | FY2026 |
+| 指標 | FY2022 | FY2023 | FY2024 | FY2025 | FY2026 |
 |------|--------|--------|--------|--------|--------|
-| **营收 ($M)** | 4,462 | 5,920 | 5,508 | 5,767 | 8,195 |
-| **GAAP净利润 ($M)** | (421) | (164) | (933) | (885) | 2,670 |
-| **Non-GAAP净利润 ($M)** | 1,279 | 1,822 | 1,310 | 1,377 | 2,466 |
+| **營收 ($M)** | 4,462 | 5,920 | 5,508 | 5,767 | 8,195 |
+| **GAAP淨利潤 ($M)** | (421) | (164) | (933) | (885) | 2,670 |
+| **Non-GAAP淨利潤 ($M)** | 1,279 | 1,822 | 1,310 | 1,377 | 2,466 |
 | **GAAP毛利率** | 46.3% | 50.5% | 41.6% | 41.3% | 51.0% |
 | **Non-GAAP毛利率** | 64.9% | 64.5% | 61.2% | 61.0% | 59.5% |
-| **GAAP营业利润率** | (7.8%) | 4.0% | (10.3%) | (12.5%) | 16.1% |
-| **Non-GAAP营业利润率** | ~34% | ~36.0% | 29.0% | 28.9% | 35.3% |
-| **研发支出 ($M)** | 1,424 | 1,784 | 1,896 | 1,950 | 2,075 |
+| **GAAP營業利潤率** | (7.8%) | 4.0% | (10.3%) | (12.5%) | 16.1% |
+| **Non-GAAP營業利潤率** | ~34% | ~36.0% | 29.0% | 28.9% | 35.3% |
+| **研發支出 ($M)** | 1,424 | 1,784 | 1,896 | 1,950 | 2,075 |
 
-#### 现金流与资产负债
+#### 現金流與資產負債
 
-| 指标 | FY2022 | FY2023 | FY2024 | FY2025 | FY2026 |
+| 指標 | FY2022 | FY2023 | FY2024 | FY2025 | FY2026 |
 |------|--------|--------|--------|--------|--------|
-| **经营现金流 ($M)** | 819 | 1,289 | 1,371 | 1,681 | 1,751 |
-| **资本支出 ($M)** | 169 | 206 | 336 | 285 | 354 |
-| **自由现金流 ($M)** | 650 | 1,083 | 1,034 | 1,397 | 1,396 |
-| **现金及等价物 ($M)** | 614 | 911 | 951 | 948 | 2,639 |
-| **总债务 ($M)** | 4,548 | 4,492 | 4,166 | 4,064 | 4,471 |
-| **总资产 ($M)** | 22,109 | 22,522 | 21,229 | 20,205 | 22,285 |
+| **經營現金流 ($M)** | 819 | 1,289 | 1,371 | 1,681 | 1,751 |
+| **資本支出 ($M)** | 169 | 206 | 336 | 285 | 354 |
+| **自由現金流 ($M)** | 650 | 1,083 | 1,034 | 1,397 | 1,396 |
+| **現金及等價物 ($M)** | 614 | 911 | 951 | 948 | 2,639 |
+| **總債務 ($M)** | 4,548 | 4,492 | 4,166 | 4,064 | 4,471 |
+| **總資產 ($M)** | 22,109 | 22,522 | 21,229 | 20,205 | 22,285 |
 
-> 来源：Marvell FY2022-FY2026 Earnings Press Releases, [StockAnalysis](https://stockanalysis.com/stocks/mrvl/financials/)
+> 來源：Marvell FY2022-FY2026 Earnings Press Releases, [StockAnalysis](https://stockanalysis.com/stocks/mrvl/financials/)
 
 ---
 
 ### 1.4 最新季度：Q1 FY2027（截至2026年5月2日）
 
-| 指标 | Q1 FY2027 | 同比变化 |
+| 指標 | Q1 FY2027 | 同比變化 |
 |------|-----------|---------|
-| **营收** | $2,417.8M | +28% |
+| **營收** | $2,417.8M | +28% |
 | Data Center | $1,832.7M | +27% |
 | Comm. & Other | $585.1M | +29% |
 | **GAAP毛利率** | 52.1% | +180 bps |
 | **Non-GAAP毛利率** | 58.9% | -90 bps |
-| **GAAP营业利润率** | 14.0% | — |
-| **Non-GAAP营业利润率** | 35.0% | — |
-| **GAAP净利润** | $34.5M | — |
-| **Non-GAAP净利润** | $718.0M | — |
-| **GAAP摊薄EPS** | $0.04 | — |
-| **Non-GAAP摊薄EPS** | $0.80 | +29% |
-| **经营现金流** | $638.8M（创纪录） | — |
-| **自由现金流** | $483.1M | — |
+| **GAAP營業利潤率** | 14.0% | — |
+| **Non-GAAP營業利潤率** | 35.0% | — |
+| **GAAP淨利潤** | $34.5M | — |
+| **Non-GAAP淨利潤** | $718.0M | — |
+| **GAAP稀釋EPS** | $0.04 | — |
+| **Non-GAAP稀釋EPS** | $0.80 | +29% |
+| **經營現金流** | $638.8M（創紀錄） | — |
+| **自由現金流** | $483.1M | — |
 
-**资产负债（2026年5月2日）：** 现金 $3,843.6M | 总债务 $4,961.3M | 总资产 $26,944.5M
+**資產負債（2026年5月2日）：** 現金 $3,843.6M | 總債務 $4,961.3M | 總資產 $26,944.5M
 
-**Q2 FY2027 指引：** 营收 $2,700M ±5% | Non-GAAP EPS $0.93 ±$0.05
+**Q2 FY2027 指引：** 營收 $2,700M ±5% | Non-GAAP EPS $0.93 ±$0.05
 
-**FY2027 全年展望：** 同比营收增长约30%，接近~$11B
+**FY2027 全年展望：** 同比營收增長約30%，接近~$11B
 
-> 来源：[Marvell Q1 FY2027 Earnings](https://investor.marvell.com/news-events/press-releases/detail/1023/)
+> 來源：[Marvell Q1 FY2027 Earnings](https://investor.marvell.com/news-events/press-releases/detail/1023/)
 
 ---
 
-### 1.5 流通股数
+### 1.5 流通股數
 
-| 来源 | 股数 | 日期/类型 |
+| 來源 | 股數 | 日期/型別 |
 |------|------|----------|
-| Q1 FY2027财报（加权平均摊薄） | 893.3M | 2026年5月2日 |
-| Q4 FY2026 10-K（加权平均摊薄） | 856.2M | 2026年1月31日 |
-| StockAnalysis.com | 874.8M | 当前基本股数 |
-| Q2 FY2027指引（加权平均摊薄） | 915M | 预计 |
+| Q1 FY2027財報（加權平均稀釋） | 893.3M | 2026年5月2日 |
+| Q4 FY2026 10-K（加權平均稀釋） | 856.2M | 2026年1月31日 |
+| StockAnalysis.com | 874.8M | 當前基本股數 |
+| Q2 FY2027指引（加權平均稀釋） | 915M | 預計 |
 
-**注：** 股数从FY2026的~874M增至Q1 FY2027的~893M（摊薄），主要由于Celestial AI收购发行约27.2M股。
+**注：** 股數從FY2026的~874M增至Q1 FY2027的~893M（稀釋），主要由於Celestial AI收購發行約27.2M股。
 
 ---
 
-### 1.6 当前股价与市值
+### 1.6 當前股價與市值
 
-| 指标 | 数值 | 来源 |
+| 指標 | 數值 | 來源 |
 |------|------|------|
-| **股价** | ~$281.69 | Yahoo Finance（2026年6月23日） |
+| **股價** | ~$281.69 | Yahoo Finance（2026年6月23日） |
 | **市值** | ~$246.6B–$270B | StockAnalysis / Yahoo Finance |
-| **企业价值** | ~$270.75B | StockAnalysis |
+| **企業價值** | ~$270.75B | StockAnalysis |
 | **52周最低** | $61.44 | Yahoo Finance |
 | **52周最高** | $329.88 | Yahoo Finance |
-| **YTD涨幅** | ~232% | Yahoo Finance |
-| **1年回报** | ~299% | Yahoo Finance |
+| **YTD漲幅** | ~232% | Yahoo Finance |
+| **1年回報** | ~299% | Yahoo Finance |
 | **Beta (5Y)** | 2.28 | Yahoo Finance |
 
-**注：** MRVL于2026年6月22日被纳入标普500。纳入当天股价下跌约3.9%（利好出尽效应）。
+**注：** MRVL於2026年6月22日被納入標普500。納入當天股價下跌約3.9%（利好出盡效應）。
 
 ---
 
-## 二、竞争格局与护城河
+## 二、競爭格局與護城河
 
-### 2.1 定制芯片/ASIC市场：Marvell vs Broadcom
+### 2.1 定製晶片/ASIC市場：Marvell vs Broadcom
 
-#### 市场格局：双寡头垄断
+#### 市場格局：雙寡頭壟斷
 
-| 指标 | Broadcom | Marvell |
+| 指標 | Broadcom | Marvell |
 |------|----------|---------|
-| AI ASIC设计服务市场份额 | ~70% | ~20-25% |
-| 双寡头合计份额 | >95%超大规模客户定制AI芯片 | |
-| FY2025总营收 | $63.9B | ~$7B |
-| AI ASIC收入目标 | 2027年$100B | 2026年$11B |
-| AI积压订单 | $73B | ~$75B终身管线（50+芯片机会） |
-| 长期供应承诺 | 有（Google到2031） | 无可比承诺 |
-| 定制ASIC年化营收 | 未单独披露 | $1.5B年化，18个设计赢单 |
+| AI ASIC設計服務市場份額 | ~70% | ~20-25% |
+| 雙寡頭合計份額 | >95%超大規模客戶定製AI晶片 | |
+| FY2025總營收 | $63.9B | ~$7B |
+| AI ASIC收入目標 | 2027年$100B | 2026年$11B |
+| AI積壓訂單 | $73B | ~$75B終身管線（50+晶片機會） |
+| 長期供應承諾 | 有（Google到2031） | 無可比承諾 |
+| 定製ASIC年化營收 | 未單獨披露 | $1.5B年化，18個設計贏單 |
 
-#### 超大规模客户关系地图
+#### 超大規模客戶關係地圖
 
-| 超大规模客户 | Broadcom关系 | Marvell关系 |
+| 超大規模客戶 | Broadcom關係 | Marvell關係 |
 |-------------|-------------|-------------|
-| **Google** | 主要TPU合作伙伴（v7/v8 Trillium）；独家至2031 | Axion ARM CPU联合设计；正洽谈2颗推理芯片（内存处理单元+推理TPU） |
-| **Amazon (AWS)** | 有限 | **主要合作伙伴**：Trainium芯片家族（Trainium2量产，Trainium3 2026年Q2放量）；5年广泛供应协议 |
-| **Microsoft** | Maia 100（已量产） | **Maia AI加速器**联合设计；Maia 200推理芯片2026年初详细公开 |
-| **Meta** | MTIA芯片合作 | 数据处理单元（DPU）；PAM DSP供应商 |
-| **OpenAI** | Titan芯片（开发阶段）；独家网络协议 | 有限/间接 |
-| **Apple** | 2026年新客户 | 未披露 |
-| **NVIDIA** | 竞争对手 | **$2B战略投资**（2026年3月）；NVLink Fusion集成 |
+| **Google** | 主要TPU合作伙伴（v7/v8 Trillium）；獨家至2031 | Axion ARM CPU聯合設計；正洽談2顆推理晶片（記憶體處理單元+推理TPU） |
+| **Amazon (AWS)** | 有限 | **主要合作伙伴**：Trainium晶片家族（Trainium2量產，Trainium3 2026年Q2放量）；5年廣泛供應協議 |
+| **Microsoft** | Maia 100（已量產） | **Maia AI加速器**聯合設計；Maia 200推理晶片2026年初詳細公開 |
+| **Meta** | MTIA晶片合作 | 資料處理單元（DPU）；PAM DSP供應商 |
+| **OpenAI** | Titan晶片（開發階段）；獨家網路協議 | 有限/間接 |
+| **Apple** | 2026年新客戶 | 未披露 |
+| **NVIDIA** | 競爭對手 | **$2B戰略投資**（2026年3月）；NVLink Fusion整合 |
 
-**战略动态："Broadcom赋能领先者（Google），Marvell赋能追赶者（Amazon、Microsoft）。"** Marvell作为结构性的第二名，在双源策略中具有独特价值。
+**戰略動態："Broadcom賦能領先者（Google），Marvell賦能追趕者（Amazon、Microsoft）。"** Marvell作為結構性的第二名，在雙源策略中具有獨特價值。
 
-> 来源：[Hashrate Index](https://hashrateindex.com/blog/design-partners-ai-asic-market-part-2/), [Intellectia.AI](https://intellectia.ai/news/stock/marvell-and-broadcom-lead-ai-chip-market-growth), [Tom's Hardware](https://www.tomshardware.com/tech-industry/nvidia-invests-2-billion-in-marvell), [CNBC](https://www.cnbc.com/2026/04/20/marvell-stock-google-custom-ai-chips.html)
+> 來源：[Hashrate Index](https://hashrateindex.com/blog/design-partners-ai-asic-market-part-2/), [Intellectia.AI](https://intellectia.ai/news/stock/marvell-and-broadcom-lead-ai-chip-market-growth), [Tom's Hardware](https://www.tomshardware.com/tech-industry/nvidia-invests-2-billion-in-marvell), [CNBC](https://www.cnbc.com/2026/04/20/marvell-stock-google-custom-ai-chips.html)
 
 ---
 
-### 2.2 数据中心互连：PAM4光DSP
+### 2.2 資料中心互連：PAM4光DSP
 
-| 指标 | Marvell | Broadcom | 其他 |
+| 指標 | Marvell | Broadcom | 其他 |
 |------|---------|----------|------|
-| PAM4光DSP总市场份额 | **~70%** | ~15-20% | MaxLinear, Credo ~10-15% |
-| 800G PAM4 DSP份额 | **>60%** | 增长中 | 小 |
-| 1.6T产品状态 | **Ara DSP：业界首款3nm 1.6T — 已出货** | BCM83640 (Taurus)：3nm 1.6T — 送样（2026年3月） | 落后 |
+| PAM4光DSP總市場份額 | **~70%** | ~15-20% | MaxLinear, Credo ~10-15% |
+| 800G PAM4 DSP份額 | **>60%** | 增長中 | 小 |
+| 1.6T產品狀態 | **Ara DSP：業界首款3nm 1.6T — 已出貨** | BCM83640 (Taurus)：3nm 1.6T — 送樣（2026年3月） | 落後 |
 
-**关键优势：**
-- 6代PAM4 SerDes领先地位；约10年前开创PAM4技术
-- Ara DSP模块功耗降低>20%
-- 更换光DSP供应商需要**完整模块重新设计** → 持久的转换成本
-- 1.6T收入预计FY2027快速增长
+**關鍵優勢：**
+- 6代PAM4 SerDes領先地位；約10年前開創PAM4技術
+- Ara DSP模組功耗降低>20%
+- 更換光DSP供應商需要**完整模組重新設計** → 持久的轉換成本
+- 1.6T收入預計FY2027快速增長
 
-> 来源：[Ben Pouladian Research](https://bepresearch.substack.com/p/the-quiet-architect), [Futurum](https://futurumgroup.com/insights/broadcoms-dsp-launch-intensifies-the-ai-optics-race-with-marvell/)
+> 來源：[Ben Pouladian Research](https://bepresearch.substack.com/p/the-quiet-architect), [Futurum](https://futurumgroup.com/insights/broadcoms-dsp-launch-intensifies-the-ai-optics-race-with-marvell/)
 
 ---
 
-### 2.3 网络/交换芯片
+### 2.3 網路/交換晶片
 
-| 公司 | 以太网交换芯片市场份额（2024） | 关键产品 |
+| 公司 | 乙太網交換晶片市場份額（2024） | 關鍵產品 |
 |------|---------------------------|---------|
-| **Broadcom** | ~55-80%（绝对主导） | Tomahawk 6 (100 Tbps) |
-| **Marvell** | ~10-13%（商用芯片第二） | Teralynx系列（最高102.4 Tbps）, Prestera |
-| **Cisco** | ~9.6%（主要自用） | 自用芯片 |
+| **Broadcom** | ~55-80%（絕對主導） | Tomahawk 6 (100 Tbps) |
+| **Marvell** | ~10-13%（商用晶片第二） | Teralynx系列（最高102.4 Tbps）, Prestera |
+| **Cisco** | ~9.6%（主要自用） | 自用晶片 |
 | **NVIDIA** | ~5-8% | Spectrum系列 |
 
-**Marvell交换产品：**
-- **Teralynx T100**：102.4 Tbps，专为AI设计，功耗降低25%
-- **Teralynx 10**：51.2 Tbps，800G以太网
-- **Prestera**：企业/中小企业/工业，28 Gbps–12.6 Tbps
+**Marvell交換產品：**
+- **Teralynx T100**：102.4 Tbps，專為AI設計，功耗降低25%
+- **Teralynx 10**：51.2 Tbps，800G乙太網
+- **Prestera**：企業/中小企業/工業，28 Gbps–12.6 Tbps
 
-> 来源：[The Register](https://www.theregister.com/networks/2026/06/02/marvell-enters-the-ai-network-fray-with-1024-tbps-switch-silicon/), [Market Report Analytics](https://www.marketreportanalytics.com/reports/data-center-ethernet-switch-chips-378799)
+> 來源：[The Register](https://www.theregister.com/networks/2026/06/02/marvell-enters-the-ai-network-fray-with-1024-tbps-switch-silicon/), [Market Report Analytics](https://www.marketreportanalytics.com/reports/data-center-ethernet-switch-chips-378799)
 
 ---
 
-### 2.4 存储控制器
+### 2.4 儲存控制器
 
-| 细分 | Marvell地位 | 主要竞争对手 |
+| 細分 | Marvell地位 | 主要競爭對手 |
 |------|-----------|-------------|
-| 企业SSD控制器 | 主要玩家；PCIe 5.0高ASP | Samsung, SK Hynix, Phison, Silicon Motion |
-| HDD控制器 | 历史领先 | Western Digital, Seagate（内部） |
-| RAID/存储控制器 | 企业级显著存在 | Broadcom (MegaRAID), Microchip |
+| 企業SSD控制器 | 主要玩家；PCIe 5.0高ASP | Samsung, SK Hynix, Phison, Silicon Motion |
+| HDD控制器 | 歷史領先 | Western Digital, Seagate（內部） |
+| RAID/儲存控制器 | 企業級顯著存在 | Broadcom (MegaRAID), Microchip |
 
-存储目前占收入比例较小，Marvell正向AI/数据中心转型，但仍是稳固的利基市场。
+儲存目前佔收入比例較小，Marvell正向AI/資料中心轉型，但仍是穩固的利基市場。
 
 ---
 
-### 2.5 定制ASIC的客户锁定效应
+### 2.5 定製ASIC的客戶鎖定效應
 
-#### 设计周期时间线
+#### 設計週期時間線
 
-| 阶段 | 时长 |
+| 階段 | 時長 |
 |------|------|
-| 设计+流片 | 12-24个月 |
-| 验证+认证 | 6-12个月 |
-| **设计到量产总计** | **最少2-4年** |
-| 量产生命周期 | 3-5年以上 |
-| **客户总参与周期** | **5-8年以上** |
+| 設計+流片 | 12-24個月 |
+| 驗證+認證 | 6-12個月 |
+| **設計到量產總計** | **最少2-4年** |
+| 量產生命週期 | 3-5年以上 |
+| **客戶總參與週期** | **5-8年以上** |
 
-#### 转换成本因素
+#### 轉換成本因素
 
-| 因素 | 锁定强度 | 说明 |
+| 因素 | 鎖定強度 | 說明 |
 |------|---------|------|
-| 设计投入 | 非常高 | 每颗定制ASIC累计工程投入$500M+ |
-| 软件生态 | 高 | 专有编译器/SDK（Neuron、XLA等） |
-| 验证时间 | 高 | 12-24个月真实负载调试 |
-| 多年供应协议 | 中高 | Marvell-AWS 5年；Broadcom-Google至2031 |
-| 双源策略 | 减弱锁定 | 超大规模客户维持2+合作伙伴避免依赖 |
-| 自研风险 | 新兴 | Marvell 10-K确认客户内部化风险 |
+| 設計投入 | 非常高 | 每顆定製ASIC累計工程投入$500M+ |
+| 軟體生態 | 高 | 專有編譯器/SDK（Neuron、XLA等） |
+| 驗證時間 | 高 | 12-24個月真實負載除錯 |
+| 多年供應協議 | 中高 | Marvell-AWS 5年；Broadcom-Google至2031 |
+| 雙源策略 | 減弱鎖定 | 超大規模客戶維持2+合作伙伴避免依賴 |
+| 自研風險 | 新興 | Marvell 10-K確認客戶內部化風險 |
 
-**关键洞察：** 量产阶段锁定效应强，但代际之间较弱 — Marvell在Trainium3设计竞标中输给Alchip，说明超大规模客户可以在代际边界切换。
+**關鍵洞察：** 量產階段鎖定效應強，但代際之間較弱 — Marvell在Trainium3設計競標中輸給Alchip，說明超大規模客戶可以在代際邊界切換。
 
-#### 护城河总结
+#### 護城河總結
 
-| 业务线 | 护城河强度 | 基础 |
+| 業務線 | 護城河強度 | 基礎 |
 |--------|----------|------|
-| 定制ASIC | 中强 | 双寡头第二；18个设计赢单；双源价值；但无Broadcom式长期锁定 |
-| **光DSP (PAM4)** | **强** | ~70%份额；6代领先；首个1.6T；切换需完整重新设计 |
-| 以太网交换 | 中 | 商用芯片第二；百万级端口；但Broadcom主导55-80% |
-| 存储控制器 | 中 | 地位稳固但战略重心下降 |
+| 定製ASIC | 中強 | 雙寡頭第二；18個設計贏單；雙源價值；但無Broadcom式長期鎖定 |
+| **光DSP (PAM4)** | **強** | ~70%份額；6代領先；首個1.6T；切換需完整重新設計 |
+| 乙太網交換 | 中 | 商用晶片第二；百萬級埠；但Broadcom主導55-80% |
+| 儲存控制器 | 中 | 地位穩固但戰略重心下降 |
 
 ---
 
-## 三、管理层
+## 三、管理層
 
-### 3.1 CEO Matt Murphy的执行记录（2016年至今）
+### 3.1 CEO Matt Murphy的執行記錄（2016年至今）
 
 #### 背景
-- **此前：** Maxim Integrated工作22年，历任销售和事业部领导
-- **任命：** 2016年7月11日，任总裁、CEO及董事
-- **现任：** 董事长、总裁兼CEO
+- **此前：** Maxim Integrated工作22年，歷任銷售和事業部領導
+- **任命：** 2016年7月11日，任總裁、CEO及董事
+- **現任：** 董事長、總裁兼CEO
 
-#### 接手时的状况（2016年）
-- 公司深陷治理危机：SEC会计调查，创始人Dr. Sehat Sutardja及其妻子被激进投资者Starboard Value逐出
-- 业务过度多元化：存储、网络、手机、消费、Wi-Fi — 多数低毛利
-- 营收约$2.7B，股价约$10-12/股（拆股调整后）
-- 利润率承压，无清晰战略聚焦
+#### 接手時的狀況（2016年）
+- 公司深陷治理危機：SEC會計調查，創始人Dr. Sehat Sutardja及其妻子被激進投資者Starboard Value逐出
+- 業務過度多元化：儲存、網路、手機、消費、Wi-Fi — 多數低毛利
+- 營收約$2.7B，股價約$10-12/股（拆股調整後）
+- 利潤率承壓，無清晰戰略聚焦
 
-#### 关键战略决策
+#### 關鍵戰略決策
 
-| 年份 | 决策 | 详情 |
+| 年份 | 決策 | 詳情 |
 |------|------|------|
-| 2017 | 出售LTE薄调制解调器业务 | 以$45M卖给ASR Microelectronics — 退出手机 |
-| 2018 | **收购Cavium** | ~$6B — 获得ARM处理器、安全、网络能力（数据中心/5G） |
-| 2019 | **收购Avera Semiconductor** | ~$650M（来自GlobalFoundries）— 获得定制ASIC设计能力 |
-| 2019 | **剥离Wi-Fi/蓝牙给NXP** | $1.76B现金 — 退出消费连接（约$300M收入） |
-| 2021 | **收购Inphi** | ~$10B（现金+股票）— 高速光DSP/电光技术 |
-| 2021 | **收购Innovium** | ~$1.1B全股票 — 云优化以太网交换芯片 |
-| 2025-26 | **收购Celestial AI** | ~$3.25B（$1B现金+27.2M股）— 光子互连扩展 |
+| 2017 | 出售LTE薄調變解調器業務 | 以$45M賣給ASR Microelectronics — 退出手機 |
+| 2018 | **收購Cavium** | ~$6B — 獲得ARM處理器、安全、網路能力（資料中心/5G） |
+| 2019 | **收購Avera Semiconductor** | ~$650M（來自GlobalFoundries）— 獲得定製ASIC設計能力 |
+| 2019 | **剝離Wi-Fi/藍芽給NXP** | $1.76B現金 — 退出消費連線（約$300M收入） |
+| 2021 | **收購Inphi** | ~$10B（現金+股票）— 高速光DSP/電光技術 |
+| 2021 | **收購Innovium** | ~$1.1B全股票 — 雲最佳化乙太網交換晶片 |
+| 2025-26 | **收購Celestial AI** | ~$3.25B（$1B現金+27.2M股）— 光子互連擴充套件 |
 
-#### Murphy任期业绩
+#### Murphy任期業績
 
-| 指标 | 2016年（接手前） | FY2026 | 变化 |
+| 指標 | 2016年（接手前） | FY2026 | 變化 |
 |------|----------------|--------|------|
-| 年营收 | ~$2.7B | $8.195B | ~3倍 |
-| 股价 | ~$10-12 | ~$280（2026年6月） | ~25倍 |
-| 企业价值 | ~$7B | ~$250B+ | ~35倍 |
-| 数据中心占营收比 | <20% | >73% | 完成转型 |
+| 年營收 | ~$2.7B | $8.195B | ~3倍 |
+| 股價 | ~$10-12 | ~$280（2026年6月） | ~25倍 |
+| 企業價值 | ~$7B | ~$250B+ | ~35倍 |
+| 資料中心佔營收比 | <20% | >73% | 完成轉型 |
 
-**$1,000投入MRVL 10年前 → 2026年中约$33,000**
+**$1,000投入MRVL 10年前 → 2026年中約$33,000**
 
-> 来源：[BBNT Times](https://www.bbntimes.com/technology/matthew-murphy-semiconductor-visionary), [24/7 Wall Street](https://247wallst.com/investing/2026/06/22/had-you-invested-1000-in-marvell-or-micron-a-decade-ago/)
+> 來源：[BBNT Times](https://www.bbntimes.com/technology/matthew-murphy-semiconductor-visionary), [24/7 Wall Street](https://247wallst.com/investing/2026/06/22/had-you-invested-1000-in-marvell-or-micron-a-decade-ago/)
 
 ---
 
-### 3.2 核心管理团队
+### 3.2 核心管理團隊
 
-| 姓名 | 职位 | 任职时间 | 背景 |
+| 姓名 | 職位 | 任職時間 | 背景 |
 |------|------|---------|------|
-| **Matt Murphy** | 董事长、总裁兼CEO | 2016年7月 | Maxim Integrated 22年 |
+| **Matt Murphy** | 董事長、總裁兼CEO | 2016年7月 | Maxim Integrated 22年 |
 | **Dan Durn** | CFO | 2026年6月15日 | Adobe CFO (2021-2026), Applied Materials CFO, NXP CFO |
-| **Chris Koopmans** | 总裁兼COO | 2025年7月15日（总裁） | COO自2025年2月起 |
-| **Sandeep Bharathi** | 数据中心事业部总裁 | 2025年7月15日 | 首席开发官2022-2025 |
-| **Ramin Farjad** | CTO & VP | — | 网络/汽车PHY |
+| **Chris Koopmans** | 總裁兼COO | 2025年7月15日（總裁） | COO自2025年2月起 |
+| **Sandeep Bharathi** | 資料中心事業部總裁 | 2025年7月15日 | 首席開發官2022-2025 |
+| **Ramin Farjad** | CTO & VP | — | 網路/汽車PHY |
 
-**近期变动：**
-- 2025年7月：Koopmans晋升总裁兼COO；Bharathi晋升数据中心事业部总裁 — 显示接班规划和数据中心聚焦
-- 2026年6月：Dan Durn加入任新CFO（来自Adobe），接替服务约10年的Willem Meintjes
-- 团队稳定性强 — 无被迫离职，过渡有序
+**近期變動：**
+- 2025年7月：Koopmans晉升總裁兼COO；Bharathi晉升資料中心事業部總裁 — 顯示接班規劃和資料中心聚焦
+- 2026年6月：Dan Durn加入任新CFO（來自Adobe），接替服務約10年的Willem Meintjes
+- 團隊穩定性強 — 無被迫離職，過渡有序
 
-> 来源：[Marvell Leadership](https://www.marvell.com/company/leadership/), [Marvell CFO Transition](https://investor.marvell.com/news-events/press-releases/detail/1025/), [Benzinga](https://www.benzinga.com/markets/tech/25/07/46492462/marvell-reshuffles-leadership)
+> 來源：[Marvell Leadership](https://www.marvell.com/company/leadership/), [Marvell CFO Transition](https://investor.marvell.com/news-events/press-releases/detail/1025/), [Benzinga](https://www.benzinga.com/markets/tech/25/07/46492462/marvell-reshuffles-leadership)
 
 ---
 
-### 3.3 资本配置
+### 3.3 資本配置
 
-#### 并购历史总览
+#### 併購歷史總覽
 
-| 年份 | 标的 | 金额 | 类型 | 战略逻辑 |
+| 年份 | 標的 | 金額 | 型別 | 戰略邏輯 |
 |------|------|------|------|---------|
-| 2017 | LTE调制解调器（出售） | 收到$45M | 剥离 | 退出手机 |
-| 2018 | **Cavium** | ~$6B | 现金+股票 | 数据中心/5G能力 |
-| 2019 | **Avera Semi** | ~$650M | 现金 | 定制ASIC设计能力 |
-| 2019 | Wi-Fi/BT出售给NXP | 收到$1.76B | 剥离 | 退出消费 |
-| 2021 | **Inphi** | ~$10B | 现金+股票 | 光DSP/数据中心互连 |
-| 2021 | **Innovium** | ~$1.1B | 全股票 | 云以太网交换 |
-| 2026 | **Celestial AI** | ~$3.25B | 现金+股票 | 光子互连 |
+| 2017 | LTE調變解調器（出售） | 收到$45M | 剝離 | 退出手機 |
+| 2018 | **Cavium** | ~$6B | 現金+股票 | 資料中心/5G能力 |
+| 2019 | **Avera Semi** | ~$650M | 現金 | 定製ASIC設計能力 |
+| 2019 | Wi-Fi/BT出售給NXP | 收到$1.76B | 剝離 | 退出消費 |
+| 2021 | **Inphi** | ~$10B | 現金+股票 | 光DSP/資料中心互連 |
+| 2021 | **Innovium** | ~$1.1B | 全股票 | 雲乙太網交換 |
+| 2026 | **Celestial AI** | ~$3.25B | 現金+股票 | 光子互連 |
 
-**Murphy任期并购总支出：$21B+；剥离收入约$1.8B**
+**Murphy任期併購總支出：$21B+；剝離收入約$1.8B**
 
-#### 回购与分红
+#### 回購與分紅
 
-| 项目 | 详情 |
+| 專案 | 詳情 |
 |------|------|
-| 回购授权 | 2025年12月宣布$5B回购计划 |
-| 历史回购 | 适度 — 公司优先并购驱动增长 |
-| 季度分红 | $0.06/股（年化$0.24/股） |
-| 股息收益率 | 约0.08%（象征性） |
-| 派息率 | ~8.2% — 极低，优先再投资 |
+| 回購授權 | 2025年12月宣佈$5B回購計劃 |
+| 歷史回購 | 適度 — 公司優先併購驅動增長 |
+| 季度分紅 | $0.06/股（年化$0.24/股） |
+| 股息收益率 | 約0.08%（象徵性） |
+| 派息率 | ~8.2% — 極低，優先再投資 |
 
-#### 股权激励（SBC）占营收比
+#### 股權激勵（SBC）佔營收比
 
-| 财年 | SBC ($M) | 营收 ($M) | **SBC占营收比** |
+| 財年 | SBC ($M) | 營收 ($M) | **SBC佔營收比** |
 |------|----------|----------|----------------|
 | FY2024 | ~$610 | ~$5,506 | **~11.1%** |
 | FY2025 | ~$610 | $5,767 | **~10.6%** |
 | FY2026 | ~$591 | $8,195 | **~7.2%** |
 
-**趋势：** SBC占营收比随收入规模扩大持续下降（从约11%降至约7%），但仍高于Broadcom（约4-5%）。
+**趨勢：** SBC佔營收比隨收入規模擴大持續下降（從約11%降至約7%），但仍高於Broadcom（約4-5%）。
 
 #### CEO薪酬
 
-| 财年 | 基本薪资 | 奖金 | 股票奖励 | **总计** |
+| 財年 | 基本薪資 | 獎金 | 股票獎勵 | **總計** |
 |------|---------|------|---------|---------|
 | FY2025 | $1,178,942 | $3,109,440 | $27,863,106 | **$32,160,142** |
 | FY2024 | ~$1,100,000 | ~$3,365,098 | $41,792,162 | **$45,163,040** |
 
-薪酬结构以股权为主（约85-90%为股票），与股东利益高度绑定。Murphy直接持股约0.09%，按当前股价价值约$245M。
+薪酬結構以股權為主（約85-90%為股票），與股東利益高度繫結。Murphy直接持股約0.09%，按當前股價價值約$245M。
 
-> 来源：[Salary.com](https://www1.salary.com/Matthew-J-Murphy-Salary-Bonus-Stock-Options-for-MARVELL-TECHNOLOGY-INC.html), [AlphaQuery](https://www.alphaquery.com/stock/MRVL/fundamentals/annual/stock-based-compensation)
+> 來源：[Salary.com](https://www1.salary.com/Matthew-J-Murphy-Salary-Bonus-Stock-Options-for-MARVELL-TECHNOLOGY-INC.html), [AlphaQuery](https://www.alphaquery.com/stock/MRVL/fundamentals/annual/stock-based-compensation)
 
 ---
 
 ## 四、估值
 
-### 4.1 当前估值倍数
+### 4.1 當前估值倍數
 
-| 指标 | 数值 | 来源 |
+| 指標 | 數值 | 來源 |
 |------|------|------|
 | **PE (TTM)** | 96.47–105.45 | Yahoo Finance / StockAnalysis |
 | **Forward PE** | 62.06–76.58 | StockAnalysis / GuruFocus |
@@ -371,162 +371,162 @@
 | **PEG Ratio** | 1.74–1.92 | Yahoo Finance / StockAnalysis |
 | **EPS (TTM)** | $2.92 (GAAP) | Yahoo Finance |
 
-**Forward PE说明：** 62-77倍范围取决于使用FY2027共识（Non-GAAP EPS $4.05）还是日历年前瞻估计。按$281.69 / $4.05 = ~69.6倍。
+**Forward PE說明：** 62-77倍範圍取決於使用FY2027共識（Non-GAAP EPS $4.05）還是日曆年前瞻估計。按$281.69 / $4.05 = ~69.6倍。
 
 ---
 
-### 4.2 分析师估计与评级
+### 4.2 分析師估計與評級
 
-| 指标 | 数值 | 来源 |
+| 指標 | 數值 | 來源 |
 |------|------|------|
-| **覆盖分析师数** | 44 | StockAnalysis |
-| **共识评级** | **强烈买入** | StockAnalysis |
-| 强烈买入/买入 | 31 + 7 = 38 | StockAnalysis |
+| **覆蓋分析師數** | 44 | StockAnalysis |
+| **共識評級** | **強烈買入** | StockAnalysis |
+| 強烈買入/買入 | 31 + 7 = 38 | StockAnalysis |
 | 持有 | 5 | StockAnalysis |
-| 卖出/强烈卖出 | 1 / 0 | StockAnalysis |
-| **平均目标价** | $241.79 | StockAnalysis |
-| **中位目标价** | $240.00 | StockAnalysis |
-| **最高目标价** | $385.00（KeyBanc, 6月18日） | Benzinga |
-| **最低目标价** | $110.00（Goldman Sachs, 2025年12月） | Benzinga |
+| 賣出/強烈賣出 | 1 / 0 | StockAnalysis |
+| **平均目標價** | $241.79 | StockAnalysis |
+| **中位目標價** | $240.00 | StockAnalysis |
+| **最高目標價** | $385.00（KeyBanc, 6月18日） | Benzinga |
+| **最低目標價** | $110.00（Goldman Sachs, 2025年12月） | Benzinga |
 
-#### 共识预测
+#### 共識預測
 
-| 财年 | 营收共识 | Non-GAAP EPS共识 |
+| 財年 | 營收共識 | Non-GAAP EPS共識 |
 |------|---------|-----------------|
 | **FY2027**（截至2027年2月） | $11.52B | $4.05 |
-| **FY2028**（截至2028年2月） | ~$16.5B（管理层指引） | ~$5.44–$6.11 |
+| **FY2028**（截至2028年2月） | ~$16.5B（管理層指引） | ~$5.44–$6.11 |
 
-**注意：** 平均目标价$241.79**低于**当前股价$281.69，表明股价已跑在共识前面。但多位分析师在纳入标普500后近期上调了目标价。
+**注意：** 平均目標價$241.79**低於**當前股價$281.69，表明股價已跑在共識前面。但多位分析師在納入標普500後近期上調了目標價。
 
 ---
 
 ### 4.3 可比公司估值
 
-| 指标 | **MRVL** | **AVGO** | **AMD** | **NVDA** | **LSCC** | **MPWR** |
+| 指標 | **MRVL** | **AVGO** | **AMD** | **NVDA** | **LSCC** | **MPWR** |
 |------|----------|----------|---------|----------|----------|----------|
 | **市值** | $247B | $1,810B | $849B | $4,880B | $19.9B | $70.5B |
-| **企业价值** | $271B | $1,910B | $891B | $5,010B | $21.2B | $74.2B |
+| **企業價值** | $271B | $1,910B | $891B | $5,010B | $21.2B | $74.2B |
 | **PE (TTM)** | 97 | 65 | 184 | 32 | 1,029 | 103 |
 | **PE (Forward)** | 62 | 25 | 63 | 21 | 75 | 56 |
 | **P/Sales** | 30.9 | 24.7 | 24.0 | 19.9 | 37.1 | 25.6 |
 | **EV/Revenue** | 31.1 | 25.3 | 23.8 | 19.8 | 36.9 | 25.1 |
 | **EV/EBITDA** | 100 (TTM) | 45 | 120 | 30 | 302 | 87 |
-| **近季营收增速 (YoY)** | +28% | +48% | +38% | +85% | 复苏中 | +55% |
-| **TTM营收** | $8.2B | $75.5B | $37.5B | $253.5B | $0.57B | $2.96B |
+| **近季營收增速 (YoY)** | +28% | +48% | +38% | +85% | 復甦中 | +55% |
+| **TTM營收** | $8.2B | $75.5B | $37.5B | $253.5B | $0.57B | $2.96B |
 
-> 来源：[StockAnalysis](https://stockanalysis.com/stocks/mrvl/statistics/) 及各公司页面，数据截至2026年6月23日
+> 來源：[StockAnalysis](https://stockanalysis.com/stocks/mrvl/statistics/) 及各公司頁面，資料截至2026年6月23日
 
-**估值观察：**
-- **Forward PE约62倍**在大型半导体公司中第二高（仅次于AMD 63倍），远高于NVDA（21倍）和AVGO（25倍）
-- **EV/Revenue 31倍**在大型同行中最高，反映市场对FY2027 40%+营收增长的预期
-- **PEG约1.8倍**，若公司实现FY2027-FY2028 40%+增长轨迹则合理
-- 当前股价已超过共识分析师目标价，市场在定价上调预期
+**估值觀察：**
+- **Forward PE約62倍**在大型半導體公司中第二高（僅次於AMD 63倍），遠高於NVDA（21倍）和AVGO（25倍）
+- **EV/Revenue 31倍**在大型同行中最高，反映市場對FY2027 40%+營收增長的預期
+- **PEG約1.8倍**，若公司實現FY2027-FY2028 40%+增長軌跡則合理
+- 當前股價已超過共識分析師目標價，市場在定價上調預期
 
 ---
 
-## 五、行业背景与风险
+## 五、行業背景與風險
 
-### 5.1 定制ASIC / AI芯片TAM与增长预测
+### 5.1 定製ASIC / AI晶片TAM與增長預測
 
-| 指标 | 数据 | 来源 |
+| 指標 | 資料 | 來源 |
 |------|------|------|
-| 2024年定制ASIC市场规模 | ~$13B | Bloomberg Intelligence |
-| 2030年预测 | $150B+ | Bloomberg Intelligence |
-| 2026年定制ASIC出货增长 | 45% | TrendForce |
-| 2026年GPU出货增长 | 16% | TrendForce |
-| 标志性时刻 | **2026年ASIC增速首次超过GPU** | TrendForce |
-| 超大规模AI支出中定制芯片占比 | 持续提升，从<10%向25-30%+ | 多源 |
+| 2024年定製ASIC市場規模 | ~$13B | Bloomberg Intelligence |
+| 2030年預測 | $150B+ | Bloomberg Intelligence |
+| 2026年定製ASIC出貨增長 | 45% | TrendForce |
+| 2026年GPU出貨增長 | 16% | TrendForce |
+| 標誌性時刻 | **2026年ASIC增速首次超過GPU** | TrendForce |
+| 超大規模AI支出中定製晶片佔比 | 持續提升，從<10%向25-30%+ | 多源 |
 
 ---
 
-### 5.2 数据中心资本支出趋势
+### 5.2 資料中心資本支出趨勢
 
-| 超大规模客户 | 2026年Capex计划 | 同比增长 |
+| 超大規模客戶 | 2026年Capex計劃 | 同比增長 |
 |-------------|----------------|---------|
-| **四大合计** | $630B+ | +62% YoY |
-| AI基础设施占比 | ~75% | — |
+| **四大合計** | $630B+ | +62% YoY |
+| AI基礎設施佔比 | ~75% | — |
 
 ---
 
-### 5.3 看多理由（8点）
+### 5.3 看多理由（8點）
 
-| # | 看多论点 | 说明 |
+| # | 看多論點 | 說明 |
 |---|---------|------|
-| 1 | **定制ASIC爆发** | ASIC市场从$13B增至$150B+（2030），Marvell双寡头第二，18个设计赢单，$75B终身管线 |
-| 2 | **电光互连领先** | PAM4 DSP约70%份额，Ara 1.6T首发，Celestial AI光子互连扩展 |
-| 3 | **AI网络世俗增长** | 数据中心互连、交换需求随AI训练/推理规模指数级增长 |
-| 4 | **管理层执行力** | Murphy 10年从$2.7B到$8.2B营收，股价25倍，战略并购精准 |
-| 5 | **营收加速** | FY2027指引约30%增长至~$11B，FY2028管理层指引$16.5B |
-| 6 | **估值压缩潜力** | 若增长兑现，Forward PE从~62倍降至~25倍（按FY2028预期） |
-| 7 | **非数据中心复苏** | 企业网络、运营商基础设施触底回升 |
-| 8 | **多元化平台** | 横跨ASIC、光DSP、交换、存储，降低单一产品风险 |
+| 1 | **定製ASIC爆發** | ASIC市場從$13B增至$150B+（2030），Marvell雙寡頭第二，18個設計贏單，$75B終身管線 |
+| 2 | **電光互連領先** | PAM4 DSP約70%份額，Ara 1.6T首發，Celestial AI光子互連擴充套件 |
+| 3 | **AI網路世俗增長** | 資料中心互連、交換需求隨AI訓練/推理規模指數級增長 |
+| 4 | **管理層執行力** | Murphy 10年從$2.7B到$8.2B營收，股價25倍，戰略併購精準 |
+| 5 | **營收加速** | FY2027指引約30%增長至~$11B，FY2028管理層指引$16.5B |
+| 6 | **估值壓縮潛力** | 若增長兌現，Forward PE從~62倍降至~25倍（按FY2028預期） |
+| 7 | **非資料中心復甦** | 企業網路、運營商基礎設施觸底回升 |
+| 8 | **多元化平台** | 橫跨ASIC、光DSP、交換、儲存，降低單一產品風險 |
 
 ---
 
-### 5.4 看空理由（8点）
+### 5.4 看空理由（8點）
 
-| # | 看空论点 | 说明 |
+| # | 看空論點 | 說明 |
 |---|---------|------|
-| 1 | **SerDes技术风险** | 定制ASIC项目执行存在技术失败风险 |
-| 2 | **客户流失风险** | Trainium3竞标输给Alchip，证明代际间可切换 |
-| 3 | **极端客户集中** | 前10大客户占营收82% |
-| 4 | **Broadcom主导** | Broadcom占ASIC市场约70%，拥有Google等长期锁定合同 |
-| 5 | **非数据中心波动** | Consumer、Auto/Industrial收入不稳定且趋势下降 |
-| 6 | **无长期供应协议** | 除AWS 5年协议外，缺乏Broadcom-Google式长期锁定 |
-| 7 | **高期望风险** | 股价已超过共识目标价，任何增长减速都可能导致倍数快速压缩 |
-| 8 | **SBC稀释** | SBC仍占营收7%以上，股数持续增长（从856M到915M） |
+| 1 | **SerDes技術風險** | 定製ASIC專案執行存在技術失敗風險 |
+| 2 | **客戶流失風險** | Trainium3競標輸給Alchip，證明代際間可切換 |
+| 3 | **極端客戶集中** | 前10大客戶佔營收82% |
+| 4 | **Broadcom主導** | Broadcom佔ASIC市場約70%，擁有Google等長期鎖定合同 |
+| 5 | **非資料中心波動** | Consumer、Auto/Industrial收入不穩定且趨勢下降 |
+| 6 | **無長期供應協議** | 除AWS 5年協議外，缺乏Broadcom-Google式長期鎖定 |
+| 7 | **高期望風險** | 股價已超過共識目標價，任何增長減速都可能導致倍數快速壓縮 |
+| 8 | **SBC稀釋** | SBC仍佔營收7%以上，股數持續增長（從856M到915M） |
 
 ---
 
-### 5.5 关键具体风险
+### 5.5 關鍵具體風險
 
-| 风险类别 | 详情 |
+| 風險類別 | 詳情 |
 |---------|------|
-| **客户集中** | 前10大客户占营收82%；单一大客户（推测AWS）可能超20% |
-| **中国/关税** | 中国收入约10%，但关税不确定性高（2026年新一轮关税风险） |
-| **超大规模自研** | 客户可能逐步建立内部芯片设计能力，减少对外部ASIC供应商依赖 |
-| **周期性** | 半导体行业固有周期性，AI支出可能在某个时点减速 |
-| **SBC稀释** | FY2026 SBC $591M（约7%营收），Q2 FY2027预计摊薄股数915M |
-| **债务** | 总债务约$5.0B（可控，FCF $1.4B+），但收购带来的杠杆值得关注 |
-| **高估值脆弱性** | Beta 2.28，52周范围$61-$330，波动性极高 |
+| **客戶集中** | 前10大客戶佔營收82%；單一大客戶（推測AWS）可能超20% |
+| **中國/關稅** | 中國收入約10%，但關稅不確定性高（2026年新一輪關稅風險） |
+| **超大規模自研** | 客戶可能逐步建立內部晶片設計能力，減少對外部ASIC供應商依賴 |
+| **週期性** | 半導體行業固有週期性，AI支出可能在某個時點減速 |
+| **SBC稀釋** | FY2026 SBC $591M（約7%營收），Q2 FY2027預計稀釋股數915M |
+| **債務** | 總債務約$5.0B（可控，FCF $1.4B+），但收購帶來的槓桿值得關注 |
+| **高估值脆弱性** | Beta 2.28，52周範圍$61-$330，波動性極高 |
 
 ---
 
-## 数据来源汇总
+## 資料來源彙總
 
-### 财务数据
+### 財務資料
 - [Marvell Investor Relations](https://investor.marvell.com/) — Q1-Q4 FY2026, Q1 FY2027 Earnings
 - [StockAnalysis.com](https://stockanalysis.com/stocks/mrvl/) — Statistics, Financials, Forecast
 - [Yahoo Finance](https://finance.yahoo.com/quote/MRVL/) — Price, Market Cap, Multiples
 
-### 竞争与护城河
-- [Hashrate Index](https://hashrateindex.com/blog/design-partners-ai-asic-market-part-2/) — ASIC市场格局
-- [Intellectia.AI](https://intellectia.ai/news/stock/marvell-and-broadcom-lead-ai-chip-market-growth) — Marvell与Broadcom竞争
-- [Tom's Hardware](https://www.tomshardware.com/tech-industry/nvidia-invests-2-billion-in-marvell) — NVIDIA投资Marvell
+### 競爭與護城河
+- [Hashrate Index](https://hashrateindex.com/blog/design-partners-ai-asic-market-part-2/) — ASIC市場格局
+- [Intellectia.AI](https://intellectia.ai/news/stock/marvell-and-broadcom-lead-ai-chip-market-growth) — Marvell與Broadcom競爭
+- [Tom's Hardware](https://www.tomshardware.com/tech-industry/nvidia-invests-2-billion-in-marvell) — NVIDIA投資Marvell
 - [CNBC](https://www.cnbc.com/2026/04/20/marvell-stock-google-custom-ai-chips.html) — Google合作
-- [Ben Pouladian Research](https://bepresearch.substack.com/p/the-quiet-architect) — 光互连格局
+- [Ben Pouladian Research](https://bepresearch.substack.com/p/the-quiet-architect) — 光互連格局
 - [Futurum](https://futurumgroup.com/insights/broadcoms-dsp-launch-intensifies-the-ai-optics-race-with-marvell/) — Broadcom vs Marvell DSP
-- [Market Report Analytics](https://www.marketreportanalytics.com/) — PAM4 DSP, 以太网交换芯片
-- [Marvell Product Pages](https://www.marvell.com/products/) — 产品详情
+- [Market Report Analytics](https://www.marketreportanalytics.com/) — PAM4 DSP, 乙太網交換晶片
+- [Marvell Product Pages](https://www.marvell.com/products/) — 產品詳情
 - [The Register](https://www.theregister.com/networks/2026/06/02/marvell-enters-the-ai-network-fray-with-1024-tbps-switch-silicon/) — Teralynx T100
-- [TradingKey](https://www.tradingkey.com/analysis/stocks/us-stocks/261938748-marvell-custom-asic-pipeline-mrvl-stock-forecast-tradingkey) — 定制ASIC管线
+- [TradingKey](https://www.tradingkey.com/analysis/stocks/us-stocks/261938748-marvell-custom-asic-pipeline-mrvl-stock-forecast-tradingkey) — 定製ASIC管線
 
-### 管理层
-- [BBNT Times](https://www.bbntimes.com/technology/matthew-murphy-semiconductor-visionary) — Murphy简介
-- [Marvell Leadership](https://www.marvell.com/company/leadership/) — 管理团队
+### 管理層
+- [BBNT Times](https://www.bbntimes.com/technology/matthew-murphy-semiconductor-visionary) — Murphy簡介
+- [Marvell Leadership](https://www.marvell.com/company/leadership/) — 管理團隊
 - [Marvell CFO Transition PR](https://investor.marvell.com/news-events/press-releases/detail/1025/) — CFO交接
-- [Benzinga](https://www.benzinga.com/markets/tech/25/07/46492462/marvell-reshuffles-leadership) — 领导层调整
+- [Benzinga](https://www.benzinga.com/markets/tech/25/07/46492462/marvell-reshuffles-leadership) — 領導層調整
 - [Salary.com](https://www1.salary.com/Matthew-J-Murphy-Salary-Bonus-Stock-Options-for-MARVELL-TECHNOLOGY-INC.html) — CEO薪酬
-- [Simply Wall St](https://simplywall.st/stocks/us/semiconductors/nasdaq-mrvl/marvell-technology/management) — 管理层分析
+- [Simply Wall St](https://simplywall.st/stocks/us/semiconductors/nasdaq-mrvl/marvell-technology/management) — 管理層分析
 
 ### 估值
-- [StockAnalysis](https://stockanalysis.com/stocks/mrvl/statistics/) — 估值倍数
-- [Yahoo Finance](https://finance.yahoo.com/quote/MRVL/) — 价格数据
+- [StockAnalysis](https://stockanalysis.com/stocks/mrvl/statistics/) — 估值倍數
+- [Yahoo Finance](https://finance.yahoo.com/quote/MRVL/) — 價格資料
 - [GuruFocus](https://www.gurufocus.com/term/forward-pe-ratio/MRVL) — Forward PE
 - [TIKR](https://www.tikr.com/blog/marvell-is-up-around-260-in-2026-as-it-joins-the-sp-500) — EV/EBITDA
-- [Benzinga](https://www.benzinga.com/quote/MRVL/analyst-ratings) — 分析师评级
+- [Benzinga](https://www.benzinga.com/quote/MRVL/analyst-ratings) — 分析師評級
 
-### 行业与风险
+### 行業與風險
 - Bloomberg Intelligence — ASIC TAM
-- TrendForce — ASIC vs GPU增长
-- Hyperscaler earnings calls — Capex趋势
+- TrendForce — ASIC vs GPU增長
+- Hyperscaler earnings calls — Capex趨勢

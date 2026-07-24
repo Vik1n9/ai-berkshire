@@ -1,5 +1,5 @@
 ---
-description: "AI Berkshire slash entry for 行业漏斗筛选：从全市场到 3 家的价值投资精选流程."
+description: "AI Berkshire slash entry for 行業漏斗篩選：從全市場到 3 家的價值投資精選流程."
 argument-hint: $ARGUMENTS
 ---
 

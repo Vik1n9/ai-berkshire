@@ -1,5 +1,5 @@
 ---
-description: "AI Berkshire slash entry for 投资论文漂移检测：分清事实变化与措辞变化."
+description: "AI Berkshire slash entry for 投資論文漂移檢測：分清事實變化與措辭變化."
 argument-hint: $ARGUMENTS
 ---
 
