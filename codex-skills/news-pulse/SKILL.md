@@ -226,7 +226,7 @@ This skill is generated from `skills/news-pulse.md` so Claude Code and Codex use
 
 ### 第八步：儲存報告
 
-寫入 `reports/{公司名}/{公司名}-news-{YYYYMMDD}.md`。如果 `reports/{公司名}/` 目錄不存在則建立（說明該公司還沒建過任何研究報告）。
+寫入 `investment-reports/{公司名}/{公司名}-news-{YYYYMMDD}.md`。如果 `investment-reports/{公司名}/` 目錄不存在則建立（說明該公司還沒建過任何研究報告）。
 
 ### 第九步：清理團隊
 

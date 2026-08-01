@@ -2,25 +2,32 @@
 
 ## 專案概述
 
-基於 Claude Code 的價值投資研究 Skill 合集。四大師框架：巴菲特、芒格、段永平、李錄。
+基於 Claude Code 的價值投資研究 Skill 合集。四大師框架：巴菲特、蒙格、段永平、李錄。
 GitHub: xbtlin/ai-berkshire
 
 ## 專案結構
 
 ```
 skills/          — 投研 Skill 定義（.md），複製到 ~/.claude/commands/ 使用
-tools/           — 輔助工具（financial_rigor.py 精確計算、twstock_data.py 台股FinMind取數）
-reports/         — 投資研究報告輸出
+tools/           — 輔助工具（financial_rigor.py 精確計算）
+reports/         — （已停用）舊版報告輸出目錄，僅保留歷史紀錄
 assets/          — 圖片等靜態資源
 ```
 
-## 報告目錄結構
+## 報告輸出目錄（已集中至 workspace）
 
-所有報告按**公司名**建資料夾，公司相關的所有報告放在對應資料夾內：
+所有 Skill 的報告輸出已改為絕對路徑，統一寫入：
 
 ```
-reports/
-├── AI產業研究/              — AI產業鏈全景研究（置頂）
+/Users/vikinglu/Workspace/investment-reports/
+```
+
+不再寫入本倉庫內的 `reports/`（該目錄僅保留舊資料，不再新增內容）。可依需要在
+`investment-reports/` 下新增公司或主題子目錄，結構沿用原本規範：
+
+```
+investment-reports/
+├── AI產業研究/              — AI 產業鏈全景研究（置頂）
 │   ├── AI五層蛋糕-產業全景研究-20260605.md
 │   └── AI五層蛋糕-公眾號-20260605.md
 ├── 騰訊/                    — 騰訊所有研究報告
@@ -30,7 +37,7 @@ reports/
 │   └── 騰訊-thesis.md
 ├── 拼多多/                  — 拼多多所有研究報告
 ├── 泡泡瑪特/                — 泡泡瑪特所有研究報告
-├── 核電-industry-20260409.md — 行業報告放根目錄
+├── 核電-industry-20260409.md — 產業報告放根目錄
 ├── AI算力-funnel-20260509.md  — 漏斗篩選報告放根目錄
 ├── AI-輪動判斷-20260509.md    — 主題級綜合判斷報告放根目錄
 ├── portfolio-latest.md       — 組合報告放根目錄
@@ -39,28 +46,28 @@ reports/
 
 ## 報告命名規範
 
-| Skill | 檔案命名格式 | 示例 |
+| Skill | 檔案命名格式 | 範例 |
 |------|---------|------|
-| /investment-team | `{公司名}/` 目錄內含4個視角+最終報告 | `reports/拼多多/最終報告.md` |
-| /investment-research | `{公司名}-research-{YYYYMMDD}.md` | `reports/騰訊/騰訊-research-20260408.md` |
-| /investment-checklist | `{公司名}-checklist-{YYYYMMDD}.md` | `reports/騰訊/騰訊-checklist-20260408.md` |
-| /industry-research | `{行業名}-industry-{YYYYMMDD}.md`（根目錄） | `reports/核電-industry-20260409.md` |
-| /industry-funnel | `{行業名}-funnel-{YYYYMMDD}.md`（根目錄） | `reports/AI算力-funnel-20260509.md` |
-| /private-company-research | `{公司名}-private-{YYYYMMDD}.md` | `reports/位元組跳動/位元組跳動-private-20260408.md` |
-| /earnings-review | `{公司名}-earnings-{期間}.md` | `reports/騰訊/騰訊-earnings-2025Q4.md` |
-| /earnings-team | `{公司名}/` 目錄內含4個大師視角+研究底稿+公眾號文章+讀者評審 | `reports/騰訊/騰訊-earnings-2025Q4.md`（公眾號定稿） |
-| /thesis-tracker | `{公司名}-thesis.md`（長期維護） | `reports/騰訊/騰訊-thesis.md` |
-| /portfolio-review | `portfolio-latest.md`（根目錄，持續更新） | `reports/portfolio-latest.md` |
-| /management-deep-dive | `{公司名}-management-{YYYYMMDD}.md` | `reports/騰訊/騰訊-management-20260409.md` |
+| /investment-team | `{公司名}/` 目錄內含 4 個視角＋最終報告 | `investment-reports/拼多多/最終報告.md` |
+| /investment-research | `{公司名}-research-{YYYYMMDD}.md` | `investment-reports/騰訊/騰訊-research-20260408.md` |
+| /investment-checklist | `{公司名}-checklist-{YYYYMMDD}.md` | `investment-reports/騰訊/騰訊-checklist-20260408.md` |
+| /industry-research | `{行業名}-industry-{YYYYMMDD}.md`（根目錄） | `investment-reports/核電-industry-20260409.md` |
+| /industry-funnel | `{行業名}-funnel-{YYYYMMDD}.md`（根目錄） | `investment-reports/AI算力-funnel-20260509.md` |
+| /private-company-research | `{公司名}-private-{YYYYMMDD}.md` | `investment-reports/字節跳動/字節跳動-private-20260408.md` |
+| /earnings-review | `{公司名}-earnings-{期間}.md` | `investment-reports/騰訊/騰訊-earnings-2025Q4.md` |
+| /earnings-team | `{公司名}/` 目錄內含 4 個大師視角＋研究底稿＋公眾號文章＋讀者評審 | `investment-reports/騰訊/騰訊-earnings-2025Q4.md`（公眾號定稿） |
+| /thesis-tracker | `{公司名}-thesis.md`（長期維護） | `investment-reports/騰訊/騰訊-thesis.md` |
+| /portfolio-review | `portfolio-latest.md`（根目錄，持續更新） | `investment-reports/portfolio-latest.md` |
+| /management-deep-dive | `{公司名}-management-{YYYYMMDD}.md` | `investment-reports/騰訊/騰訊-management-20260409.md` |
 
 ## /investment-team 檔案結構
 
 ```
-reports/{公司名}/
-├── README.md                         — 研究框架概覽+核心結論
+investment-reports/{公司名}/
+├── README.md                         — 研究框架概覽＋核心結論
 ├── 01-商業模式分析-段永平視角.md
 ├── 02-財務估值分析-巴菲特視角.md
-├── 03-行業競爭分析-芒格視角.md
+├── 03-產業競爭分析-蒙格視角.md
 ├── 04-風險管理層評估-李錄視角.md
 └── 最終報告.md                       — Team Lead 綜合報告
 ```
@@ -88,19 +95,19 @@ reports/{公司名}/
 
 ## GitHub 操作
 
-- 本地克隆路徑：`~/ai-berkshire/`
-- 遠端倉庫：`https://github.com/xbtlin/ai-berkshire.git`
+- 本地克隆路徑：`~/Workspace/ai-berkshire/`
+- 遠端倉庫：`https://github.com/Vik1n9/ai-berkshire.git`
 - 推送前先 `git pull --rebase origin main`（遠端經常有新提交）
-- commit message 用中文，描述清楚改了什麼
+- commit message 用繁體中文，描述清楚改了什麼
 - 不要推送中間過程檔案（如 data_collection.md），只推最終報告
 
 ## 常用命令
 
 ```bash
-# 推送報告到GitHub
-cd ~/ai-berkshire
-git add reports/xxx.md
-git commit -m "新增xxx報告"
+# 更新本倉庫（skills / tools 等程式碼變更）
+cd ~/Workspace/ai-berkshire
+git add skills/xxx.md
+git commit -m "更新xxx skill"
 git pull --rebase origin main
 git push origin main
 ```
@@ -108,7 +115,146 @@ git push origin main
 ## 注意事項
 
 - 市值必須手算校驗：股價 × 總股本，與報告市值對比
-- 貨幣單位要明確（港幣/人民幣/美元/新台幣），防止混淆
-- PE/ROE等指標用 tools/financial_rigor.py 精確計算
-- 台股資料用 tools/twstock_data.py（FinMind）獲取，並按 skills/financial-data.md 台股章節交叉驗證
-- 報告寫完後主動詢問是否推送到GitHub
+- 貨幣單位要明確（港幣／人民幣／美元），防止混淆
+- PE/ROE 等指標用 tools/financial_rigor.py 精確計算
+- 報告寫完後**不主動**詢問是否推送到 GitHub（報告已不在本倉庫內）
+
+<!-- rtk-instructions v2 -->
+# RTK (Rust Token Killer) - Token-Optimized Commands
+
+## Golden Rule
+
+**Always prefix commands with `rtk`**. If RTK has a dedicated filter, it uses it. If not, it passes through unchanged. This means RTK is always safe to use.
+
+**Important**: Even in command chains with `&&`, use `rtk`:
+```bash
+# ❌ Wrong
+git add . && git commit -m "msg" && git push
+
+# ✅ Correct
+rtk git add . && rtk git commit -m "msg" && rtk git push
+```
+
+## RTK Commands by Workflow
+
+### Build & Compile (80-90% savings)
+```bash
+rtk cargo build         # Cargo build output
+rtk cargo check         # Cargo check output
+rtk cargo clippy        # Clippy warnings grouped by file (80%)
+rtk tsc                 # TypeScript errors grouped by file/code (83%)
+rtk lint                # ESLint/Biome violations grouped (84%)
+rtk prettier --check    # Files needing format only (70%)
+rtk next build          # Next.js build with route metrics (87%)
+```
+
+### Test (60-99% savings)
+```bash
+rtk cargo test          # Cargo test failures only (90%)
+rtk go test             # Go test failures only (90%)
+rtk jest                # Jest failures only (99.5%)
+rtk vitest              # Vitest failures only (99.5%)
+rtk playwright test     # Playwright failures only (94%)
+rtk pytest              # Python test failures only (90%)
+rtk rake test           # Ruby test failures only (90%)
+rtk rspec               # RSpec test failures only (60%)
+rtk test <cmd>          # Generic test wrapper - failures only
+```
+
+### Git (59-80% savings)
+```bash
+rtk git status          # Compact status
+rtk git log             # Compact log (works with all git flags)
+rtk git diff            # Compact diff (80%)
+rtk git show            # Compact show (80%)
+rtk git add             # Ultra-compact confirmations (59%)
+rtk git commit          # Ultra-compact confirmations (59%)
+rtk git push            # Ultra-compact confirmations
+rtk git pull            # Ultra-compact confirmations
+rtk git branch          # Compact branch list
+rtk git fetch           # Compact fetch
+rtk git stash           # Compact stash
+rtk git worktree        # Compact worktree
+```
+
+Note: Git passthrough works for ALL subcommands, even those not explicitly listed.
+
+### GitHub (26-87% savings)
+```bash
+rtk gh pr view <num>    # Compact PR view (87%)
+rtk gh pr checks        # Compact PR checks (79%)
+rtk gh run list         # Compact workflow runs (82%)
+rtk gh issue list       # Compact issue list (80%)
+rtk gh api              # Compact API responses (26%)
+```
+
+### JavaScript/TypeScript Tooling (70-90% savings)
+```bash
+rtk pnpm list           # Compact dependency tree (70%)
+rtk pnpm outdated       # Compact outdated packages (80%)
+rtk pnpm install        # Compact install output (90%)
+rtk npm run <script>    # Compact npm script output
+rtk npx <cmd>           # Compact npx command output
+rtk prisma              # Prisma without ASCII art (88%)
+rtk uv run <cmd>        # Compact uv project command output
+```
+
+### Files & Search (60-75% savings)
+```bash
+rtk ls <path>           # Tree format, compact (65%)
+rtk read <file>         # Code reading with filtering (60%)
+rtk grep <pattern>      # Search grouped by file (75%). Format flags (-c, -l, -L, -o, -Z) run raw.
+rtk find <pattern>      # Find grouped by directory (70%)
+```
+
+### Analysis & Debug (70-90% savings)
+```bash
+rtk err <cmd>           # Filter errors only from any command
+rtk log <file>          # Deduplicated logs with counts
+rtk json <file>         # JSON structure without values
+rtk deps                # Dependency overview
+rtk env                 # Environment variables compact
+rtk summary <cmd>       # Smart summary of command output
+rtk diff                # Ultra-compact diffs
+```
+
+### Infrastructure (85% savings)
+```bash
+rtk docker ps           # Compact container list
+rtk docker images       # Compact image list
+rtk docker logs <c>     # Deduplicated logs
+rtk kubectl get         # Compact resource list
+rtk kubectl logs        # Deduplicated pod logs
+```
+
+### Network (65-70% savings)
+```bash
+rtk curl <url>          # Compact HTTP responses (70%)
+rtk wget <url>          # Compact download output (65%)
+```
+
+### Meta Commands
+```bash
+rtk gain                # View token savings statistics
+rtk gain --history      # View command history with savings
+rtk discover            # Analyze Claude Code sessions for missed RTK usage
+rtk proxy <cmd>         # Run command without filtering (for debugging)
+rtk init                # Add RTK instructions to CLAUDE.md
+rtk init --global       # Add RTK to ~/.claude/CLAUDE.md
+```
+
+## Token Savings Overview
+
+| Category | Commands | Typical Savings |
+|----------|----------|-----------------|
+| Tests | vitest, playwright, cargo test | 90-99% |
+| Build | next, tsc, lint, prettier | 70-87% |
+| Git | status, log, diff, add, commit | 59-80% |
+| GitHub | gh pr, gh run, gh issue | 26-87% |
+| Package Managers | pnpm, npm, npx | 70-90% |
+| Files | ls, read, grep, find | 60-75% |
+| Infrastructure | docker, kubectl | 85% |
+| Network | curl, wget | 65-70% |
+
+Overall average: **60-90% token reduction** on common development operations.
+<!-- /rtk-instructions -->
