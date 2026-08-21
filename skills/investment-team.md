@@ -13,7 +13,7 @@
 | **team-lead**（你自己） | 統籌協調、彙總研判、輸出最終報告 | 四大師綜合框架 |
 | **business-analyst** | 商業模式 & 護城河分析 | 段永平視角 |
 | **financial-analyst** | 財務報表 & 估值分析 | 巴菲特視角 |
-| **industry-researcher** | 行業格局 & 競爭態勢 | 芒格視角 |
+| **industry-researcher** | 行業格局 & 競爭態勢 | 蒙格視角 |
 | **risk-assessor** | 風險評估 & 管理層研判 | 李錄視角 |
 
 ### 第一步半：AI研究偏見評估

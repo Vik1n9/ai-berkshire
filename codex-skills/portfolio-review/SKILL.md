@@ -18,7 +18,7 @@ This skill is generated from `skills/portfolio-review.md` so Claude Code and Cod
 對 $ARGUMENTS 執行投資組合審視與最佳化。
 
 **支援輸入格式**：
-- 持倉清單，例如：`騰訊30%, 美團20%, 茅台20%, 英偉達15%, 現金15%`
+- 持倉清單，例如：`騰訊30%, 美團20%, 茅台20%, 輝達15%, 現金15%`
 - 或：`騰訊 500股 @480港元, 美團 1000股 @130港元, ...`
 - 或：`我的持倉`（如果已有儲存的組合檔案 `investment-reports/portfolio-latest.md`）
 
@@ -97,7 +97,7 @@ This skill is generated from `skills/portfolio-review.md` so Claude Code and Cod
 | 持倉A | 持倉B | 相關型別 | 風險 |
 |-------|-------|---------|------|
 | 騰訊 | 快手 | 同屬中國網際網路 | 監管風險共振 |
-| 英偉達 | 台積電 | AI供應鏈上下游 | AI Capex同向波動 |
+| 輝達 | 台積電 | AI供應鏈上下游 | AI Capex同向波動 |
 | 美團 | 拼多多 | 同屬中國消費 | 宏觀消費同向波動 |
 
 **檢查清單**：

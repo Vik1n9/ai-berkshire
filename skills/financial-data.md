@@ -56,17 +56,17 @@ python3 tools/twstock_data.py search 台積        # 搜尋股票程式碼（注
 4. FinMind 未註冊可直接用（有小時級限額）。註冊後的 API token **只存本機、嚴禁提交到 git**，工具按優先順序自動讀取：①環境變數 `FINMIND_TOKEN`；②本地檔案 `local/finmind_token.txt`（`local/` 已被 `.gitignore` 永久排除，把 token 單獨一行寫入該檔案即可）。token 不得出現在報告、skill、commit 中
 5. 交叉驗證：FinMind 數值與 Goodinfo（或 macrotrends 上的 ADR，如 TSM）對照，誤差規則同下；台積電等有 ADR 的公司注意 ADR 與台股原股的匯率/存託比率差異（1 TSM ADR = 5 股 2330）
 
-### 台股（台积电2330、联发科2454、京元电子2449等，4位数代码）
+### 台股（台積電2330、聯發科2454、京元電子2449等，4位數代碼）
 
-| 优先级 | 来源 | URL / 位置 | 获取方式 |
+| 優先順序 | 來源 | URL / 位置 | 獲取方式 |
 |--------|------|-----|---------|
-| 1（主） | **FinMind API** | 本地脚本，见下方「FinMind 取数」 | 结构化数据直取，行情/财报/筹码全覆盖 |
-| 2（副） | **Goodinfo 台灣股市資訊網** | goodinfo.tw → 搜股票代码 | 直接访问 |
-| 原始一手 | 公開資訊觀測站（MOPS） | mops.twse.com.tw | 财报原文；行情以 TWSE/TPEx 官网为准 |
+| 1（主） | **FinMind API** | 本地指令碼，見下方「FinMind 取數」 | 結構化資料直取，行情/財報/籌碼全覆蓋 |
+| 2（副） | **Goodinfo 台灣股市資訊網** | goodinfo.tw → 搜股票代碼 | 直接訪問 |
+| 原始一手 | 公開資訊觀測站（MOPS） | mops.twse.com.tw | 財報原文；行情以 TWSE/TPEx 官網為準 |
 
-#### FinMind 取数（台股主数据源，必用）
+#### FinMind 取數（台股主資料源，必用）
 
-分析台股时**禁止**以网页搜寻结果的数字作为主来源，一律先用 FinMind 取结构化数据：
+分析台股時**禁止**以網頁搜尋結果的數字作為主來源，一律先用 FinMind 取結構化資料：
 
 ```bash
 python3 ~/.codex/skills/finmind-tw-market/scripts/finmind_fetch.py \
@@ -74,41 +74,41 @@ python3 ~/.codex/skills/finmind-tw-market/scripts/finmind_fetch.py \
   --start-date 2026-01-01 --end-date 2026-06-30 --format csv --limit 20
 ```
 
-Token 优先读环境变量 `FINMIND_TOKEN`，未设置时脚本自动从技能内建 reference 提取；**严禁在任何输出中打印 token**。`--usage` 可查 API 用量。
+Token 優先讀環境變數 `FINMIND_TOKEN`，未設定時指令碼自動從技能內建 reference 提取；**嚴禁在任何輸出中列印 token**。`--usage` 可查 API 用量。
 
-常用 dataset 对照：
+常用 dataset 對照：
 
 | 需求 | dataset |
 |------|---------|
-| 日线行情 | `TaiwanStockPrice`（还原股价用 `TaiwanStockPriceAdj`） |
+| 日線行情 | `TaiwanStockPrice`（還原股價用 `TaiwanStockPriceAdj`） |
 | 估值 PER/PBR | `TaiwanStockPER` |
-| 三大法人买卖超 | `TaiwanStockInstitutionalInvestorsBuySell`（全市场 `TaiwanStockTotalInstitutionalInvestors`） |
-| 融资融券 | `TaiwanStockMarginPurchaseShortSale` |
-| 财报三表 | `TaiwanStockFinancialStatements` / `TaiwanStockBalanceSheet` / `TaiwanStockCashFlowsStatement` |
-| 月营收 | `TaiwanStockMonthRevenue` |
+| 三大法人買賣超 | `TaiwanStockInstitutionalInvestorsBuySell`（全市場 `TaiwanStockTotalInstitutionalInvestors`） |
+| 融資融券 | `TaiwanStockMarginPurchaseShortSale` |
+| 財報三表 | `TaiwanStockFinancialStatements` / `TaiwanStockBalanceSheet` / `TaiwanStockCashFlowsStatement` |
+| 月營收 | `TaiwanStockMonthRevenue` |
 | 股利 | `TaiwanStockDividend` / `TaiwanStockDividendResult` |
 | 市值 | `TaiwanStockMarketValue` |
-| 个股基本资料 | `TaiwanStockInfo` |
-| 个股新闻 | `TaiwanStockNews` |
+| 個股基本資料 | `TaiwanStockInfo` |
+| 個股新聞 | `TaiwanStockNews` |
 
-完整 dataset/字段/权限层级参考（大文件，用 `rg -n "关键词"` 检索，不要整读）：
+完整 dataset/欄位/權限層級參考（大檔案，用 `rg -n "關鍵詞"` 檢索，不要整讀）：
 `~/.codex/skills/finmind-tw-market/references/finmind_api_reference_full.md`
 
-**备援**（内含有效 token，均已验证）：主参考文件遗失时，依序改用：
+**備援**（內含有效 token，均已驗證）：主參考檔案遺失時，依序改用：
 
-1. 本机备份：`~/.codex/skills/finmind-tw-market/references/finmind_api_reference_backup.md`
+1. 本機備份：`~/.codex/skills/finmind-tw-market/references/finmind_api_reference_backup.md`
 2. iCloud 副本：`/Users/vikinglu/Library/Mobile Documents/com~apple~CloudDocs/Documents/llms-full.txt`
 
-脚本可用 `--reference "<路径>"` 指定；脚本也遗失时，直接以备援文件内 Bearer token 调用
-`GET https://api.finmindtrade.com/api/v4/data?dataset=...&data_id=...&start_date=...`（token 仍不得出现在任何输出中）。
+指令碼可用 `--reference "<路徑>"` 指定；指令碼也遺失時，直接以備援檔案內 Bearer token 呼叫
+`GET https://api.finmindtrade.com/api/v4/data?dataset=...&data_id=...&start_date=...`（token 仍不得出現在任何輸出中）。
 
-台股取数注意事项：
+台股取數注意事項：
 
-- 区分**原始股价**与**还原股价**（除权息），估值与报酬计算用还原价
-- 周末/假日无交易记录，日期比较以实际交易日为准（`TaiwanStockTradingDate`）
-- 部分 dataset 需 FinMind Backer/Sponsor 层级，或当日尚未到更新时间；取不到时明确说明原因，不得用估计值冒充
-- 台股财报为 IFRS（合并报表），单位多为新台币千元，与美股口径比较时注意换算
-- 交叉验证照常执行：FinMind 为来源1，Goodinfo/MOPS 为来源2，>1% 误差须标记
+- 區分**原始股價**與**還原股價**（除權息），估值與報酬計算用還原價
+- 週末/假日無交易紀錄，日期比較以實際交易日為準（`TaiwanStockTradingDate`）
+- 部分 dataset 需 FinMind Backer/Sponsor 層級，或當日尚未到更新時間；取不到時明確說明原因，不得用估計值冒充
+- 台股財報為 IFRS（合併報表），單位多為新台幣千元，與美股口徑比較時注意換算
+- 交叉驗證照常執行：FinMind 為來源1，Goodinfo/MOPS 為來源2，>1% 誤差須標記
 
 ---
 

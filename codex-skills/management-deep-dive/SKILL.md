@@ -17,7 +17,7 @@ This skill is generated from `skills/management-deep-dive.md` so Claude Code and
 
 對 $ARGUMENTS 進行管理層深度研究。
 
-**支援輸入格式**：`公司名` 或 `人名 公司名`，例如：`美團`、`王興 美團`、`黃仁勳 英偉達`
+**支援輸入格式**：`公司名` 或 `人名 公司名`，例如：`美團`、`王興 美團`、`黃仁勳 輝達`
 
 > "買股票就是買人。找到你信任的人，然後長期持有。" —— 段永平
 >

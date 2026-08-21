@@ -194,7 +194,7 @@ This skill is generated from `skills/industry-funnel.md` so Claude Code and Code
 | 規模效應 | | |
 | 技術/牌照壁壘 | | |
 
-### 4.3 芒格視角：風險與失敗模式
+### 4.3 蒙格視角：風險與失敗模式
 
 - 這家公司最可能怎麼失敗？（列出前 3 失敗路徑）
 - 最壞情景下值多少錢？（極簡估值）
