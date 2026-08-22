@@ -22,6 +22,8 @@ This skill is generated from `skills/news-pulse.md` so Claude Code and Codex use
 
 # 公司新聞脈搏：股價異動快速歸因團隊
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 進行最近新聞偵察與異動歸因。**這不是深度投研，是情報快速響應**——目標是 10 分鐘內回答："這家公司最近發生了什麼？股價異動的真因是什麼？要不要重審投資論文？"
 
 ## 適用場景

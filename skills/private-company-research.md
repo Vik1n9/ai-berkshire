@@ -1,5 +1,7 @@
 # 未上市公司研究：多Agent並行深度研究框架
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 進行團隊化深度研究分析。專為螞蟻集團、小紅書、SpaceX、Stripe 等未上市公司設計。
 
 **最終目標**：在資訊天然稀缺的條件下，儘可能還原這家公司的**真實價值**——不是市場給的估值，而是生意本身值多少錢。

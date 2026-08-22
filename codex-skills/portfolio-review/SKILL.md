@@ -15,6 +15,8 @@ This skill is generated from `skills/portfolio-review.md` so Claude Code and Cod
 
 # 組合管理：從"研究公司"到"管理組合"
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 執行投資組合審視與最佳化。
 
 **支援輸入格式**：

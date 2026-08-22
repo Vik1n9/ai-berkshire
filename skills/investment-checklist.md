@@ -1,5 +1,7 @@
 # 巴菲特價值投資買入前 Checklist
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 執行巴菲特價值投資買入前 Checklist 分析。
 
 **支援輸入格式**：單個或多個公司，用逗號/頓號/空格分隔。例如：`騰訊, 茅台, 輝達` 或 `NVDA AAPL MSFT`

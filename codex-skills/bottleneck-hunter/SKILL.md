@@ -15,6 +15,8 @@ This skill is generated from `skills/bottleneck-hunter.md` so Claude Code and Co
 
 # 供應鏈瓶頸獵手：AI驅動的全球產業鏈瓶頸套利
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 超級趨勢執行供應鏈瓶頸掃描與套利機會挖掘。
 
 ## 核心理念

@@ -15,6 +15,8 @@ This skill is generated from `skills/thesis-tracker.md` so Claude Code and Codex
 
 # 投資論文追蹤：買入後的紀律系統
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 執行投資論文追蹤檢查。
 
 **支援輸入格式**：

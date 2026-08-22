@@ -1,5 +1,7 @@
 # 深度公司系列：8 篇長文拆一家公司
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 為 $ARGUMENTS 撰寫一個 8 篇深度長文系列，釋出在公眾號/影片號等公開渠道。**核心 IP 不是"會寫"，而是"會改"——99% 的財經文章在違反本 skill 的事實核查標準**。
 
 參考樣本：`reports/騰訊/《看懂騰訊》/`
