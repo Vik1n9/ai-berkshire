@@ -284,7 +284,7 @@ AI無法和管理層面對面交流，但可以透過公開渠道的側面資訊
 
 ### 第九步：儲存報告
 
-將報告寫入 `investment-reports/{公司名}-management-{YYYYMMDD}.md`，例如 `investment-reports/美團-management-20260409.md`
+將報告寫入 `reports/{公司名}-management-{YYYYMMDD}.md`，例如 `reports/美團-management-20260409.md`
 
 ---
 

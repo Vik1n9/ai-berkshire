@@ -2,7 +2,7 @@
 
 為 $ARGUMENTS 撰寫一個 8 篇深度長文系列，釋出在公眾號/影片號等公開渠道。**核心 IP 不是"會寫"，而是"會改"——99% 的財經文章在違反本 skill 的事實核查標準**。
 
-參考樣本：`investment-reports/騰訊/《看懂騰訊》/`
+參考樣本：`reports/騰訊/《看懂騰訊》/`
 
 ---
 
@@ -106,7 +106,7 @@
 
 ### 階段 2：寫作（按 01→08 順序寫，不跳）
 
-- 每篇寫完先存 `investment-reports/{公司名}/《看懂{公司名}》/0X-XX.md`
+- 每篇寫完先存 `reports/{公司名}/《看懂{公司名}》/0X-XX.md`
 - 不立即推 GitHub——等使用者審閱
 - 使用者提修訂意見後修改
 - 修訂完才 git push
@@ -123,7 +123,7 @@
 
 ```bash
 # 推送前必須本地 grep 一次（按 ai-berkshire 隱私規則）
-grep -r "<本機使用者名稱>\|/Users/\|<個人身份資訊>" investment-reports/ | head
+grep -r "<本機使用者名稱>\|/Users/\|<個人身份資訊>" reports/ | head
 ```
 
 確認無誤後才 `git pull --rebase && git commit && git push`。

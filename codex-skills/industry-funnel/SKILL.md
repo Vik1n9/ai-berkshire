@@ -279,7 +279,7 @@ A = 資料充分可信；B = 部分缺失但不影響主結論；C = 缺失較�
 
 ## 輸出要求
 
-1. **報告位置**：`investment-reports/{行業名}-funnel-{YYYYMMDD}.md`（行業報告放 investment-reports/ 根目錄）
+1. **報告位置**：`reports/{行業名}-funnel-{YYYYMMDD}.md`（行業報告放 reports/ 根目錄）
 2. **語言**：中文
 3. **風格**：直接、犀利、不說廢話
 4. **資料**：所有資料標註來源；估計值標"估計"

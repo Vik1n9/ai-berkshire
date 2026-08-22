@@ -212,9 +212,9 @@
 
 | 型別 | 路徑 | 命名格式 |
 |------|------|---------|
-| 技術主題 | `investment-reports/AI產業研究/` | `公眾號-{主題關鍵詞}-{YYYYMMDD}.md` |
-| 投資主題 | `investment-reports/{公司名}/` | `{公司名}-公眾號-{YYYYMMDD}.md` |
-| 通用主題 | `investment-reports/` | `公眾號-{主題關鍵詞}-{YYYYMMDD}.md` |
+| 技術主題 | `reports/AI產業研究/` | `公眾號-{主題關鍵詞}-{YYYYMMDD}.md` |
+| 投資主題 | `reports/{公司名}/` | `{公司名}-公眾號-{YYYYMMDD}.md` |
+| 通用主題 | `reports/` | `公眾號-{主題關鍵詞}-{YYYYMMDD}.md` |
 
 ---
 

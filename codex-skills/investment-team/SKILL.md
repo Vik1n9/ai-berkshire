@@ -193,7 +193,7 @@ This skill is generated from `skills/investment-team.md` so Claude Code and Code
 
 ### 第八步：儲存報告
 
-將完整最終報告寫入 `~/{公司名}投資研究報告_{日期}.md`（日期格式 YYYYMMDD）。
+將完整最終報告寫入 `reports/{公司名}投資研究報告_{日期}.md`（日期格式 YYYYMMDD）。
 
 ### 第九步：資料抽檢（準出流程）
 
