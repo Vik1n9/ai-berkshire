@@ -4,7 +4,7 @@ description: 公司新聞脈搏：股價異動時快速歸因。用 4 個並行 
 ---
 > **輸出規範（全域，優先於下文其他語言/路徑說明）**
 > - 一律使用**繁體中文**輸出，採台灣慣用詞彙，非僅簡繁字元轉換（例如：软件→軟體、视频→影片、服务器→伺服器、信息→資訊、优化→最佳化、文件→檔案、数据→資料、硬盘→硬碟、打印→列印、内存→記憶體、质量→品質、在线→線上、屏幕→螢幕、软件包→套件）。
-> - 所有報告輸出目錄一律為 `/Users/vikinglu/Workspace/investment-reports/`（集中存放於 workspace，而非本倉庫的 `reports/`），可依需要在此目錄下新增公司/主題子目錄。
+> - 所有報告輸出目錄一律為本倉庫的 `reports/`，可依需要在此目錄下新增公司/主題子目錄。
 >
 > **台股資料源（強制）**：凡分析台股（4 位數代碼，如 2330、2454、2449）時，行情、財報、籌碼等資料一律優先透過 FinMind API 取得：`python3 ~/.codex/skills/finmind-tw-market/scripts/finmind_fetch.py --dataset TaiwanStockPrice --data-id 2330 --start-date ... --end-date ...`；常用 dataset 對照與交叉驗證規範見 `financial-data` 技能（`~/Workspace/ai-berkshire/skills/financial-data.md`）「台股」章節。不得以網頁搜尋結果的數字作為台股主要資料來源。
 
@@ -222,7 +222,7 @@ description: 公司新聞脈搏：股價異動時快速歸因。用 4 個並行 
 
 ### 第八步：儲存報告
 
-寫入 `investment-reports/{公司名}/{公司名}-news-{YYYYMMDD}.md`。如果 `investment-reports/{公司名}/` 目錄不存在則建立（說明該公司還沒建過任何研究報告）。
+寫入 `reports/{公司名}/{公司名}-news-{YYYYMMDD}.md`。如果 `reports/{公司名}/` 目錄不存在則建立（說明該公司還沒建過任何研究報告）。
 
 ### 第九步：清理團隊
 

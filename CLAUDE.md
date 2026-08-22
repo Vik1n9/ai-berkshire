@@ -10,23 +10,17 @@ GitHub: xbtlin/ai-berkshire
 ```
 skills/          — 投研 Skill 定義（.md），複製到 ~/.claude/commands/ 使用
 tools/           — 輔助工具（financial_rigor.py 精確計算）
-reports/         — （已停用）舊版報告輸出目錄，僅保留歷史紀錄
+reports/         — 研究報告輸出目錄
 assets/          — 圖片等靜態資源
 ```
 
-## 報告輸出目錄（已集中至 workspace）
+## 報告輸出目錄
 
-所有 Skill 的報告輸出已改為絕對路徑，統一寫入：
-
-```
-/Users/vikinglu/Workspace/investment-reports/
-```
-
-不再寫入本倉庫內的 `reports/`（該目錄僅保留舊資料，不再新增內容）。可依需要在
-`investment-reports/` 下新增公司或主題子目錄，結構沿用原本規範：
+所有 Skill 的報告統一寫入本倉庫內的 `reports/`。可依需要在
+`reports/` 下新增公司或主題子目錄，結構沿用原本規範：
 
 ```
-investment-reports/
+reports/
 ├── AI產業研究/              — AI 產業鏈全景研究（置頂）
 │   ├── AI五層蛋糕-產業全景研究-20260605.md
 │   └── AI五層蛋糕-公眾號-20260605.md
@@ -48,22 +42,22 @@ investment-reports/
 
 | Skill | 檔案命名格式 | 範例 |
 |------|---------|------|
-| /investment-team | `{公司名}/` 目錄內含 4 個視角＋最終報告 | `investment-reports/拼多多/最終報告.md` |
-| /investment-research | `{公司名}-research-{YYYYMMDD}.md` | `investment-reports/騰訊/騰訊-research-20260408.md` |
-| /investment-checklist | `{公司名}-checklist-{YYYYMMDD}.md` | `investment-reports/騰訊/騰訊-checklist-20260408.md` |
-| /industry-research | `{行業名}-industry-{YYYYMMDD}.md`（根目錄） | `investment-reports/核電-industry-20260409.md` |
-| /industry-funnel | `{行業名}-funnel-{YYYYMMDD}.md`（根目錄） | `investment-reports/AI算力-funnel-20260509.md` |
-| /private-company-research | `{公司名}-private-{YYYYMMDD}.md` | `investment-reports/字節跳動/字節跳動-private-20260408.md` |
-| /earnings-review | `{公司名}-earnings-{期間}.md` | `investment-reports/騰訊/騰訊-earnings-2025Q4.md` |
-| /earnings-team | `{公司名}/` 目錄內含 4 個大師視角＋研究底稿＋公眾號文章＋讀者評審 | `investment-reports/騰訊/騰訊-earnings-2025Q4.md`（公眾號定稿） |
-| /thesis-tracker | `{公司名}-thesis.md`（長期維護） | `investment-reports/騰訊/騰訊-thesis.md` |
-| /portfolio-review | `portfolio-latest.md`（根目錄，持續更新） | `investment-reports/portfolio-latest.md` |
-| /management-deep-dive | `{公司名}-management-{YYYYMMDD}.md` | `investment-reports/騰訊/騰訊-management-20260409.md` |
+| /investment-team | `{公司名}/` 目錄內含 4 個視角＋最終報告 | `reports/拼多多/最終報告.md` |
+| /investment-research | `{公司名}-research-{YYYYMMDD}.md` | `reports/騰訊/騰訊-research-20260408.md` |
+| /investment-checklist | `{公司名}-checklist-{YYYYMMDD}.md` | `reports/騰訊/騰訊-checklist-20260408.md` |
+| /industry-research | `{行業名}-industry-{YYYYMMDD}.md`（根目錄） | `reports/核電-industry-20260409.md` |
+| /industry-funnel | `{行業名}-funnel-{YYYYMMDD}.md`（根目錄） | `reports/AI算力-funnel-20260509.md` |
+| /private-company-research | `{公司名}-private-{YYYYMMDD}.md` | `reports/字節跳動/字節跳動-private-20260408.md` |
+| /earnings-review | `{公司名}-earnings-{期間}.md` | `reports/騰訊/騰訊-earnings-2025Q4.md` |
+| /earnings-team | `{公司名}/` 目錄內含 4 個大師視角＋研究底稿＋公眾號文章＋讀者評審 | `reports/騰訊/騰訊-earnings-2025Q4.md`（公眾號定稿） |
+| /thesis-tracker | `{公司名}-thesis.md`（長期維護） | `reports/騰訊/騰訊-thesis.md` |
+| /portfolio-review | `portfolio-latest.md`（根目錄，持續更新） | `reports/portfolio-latest.md` |
+| /management-deep-dive | `{公司名}-management-{YYYYMMDD}.md` | `reports/騰訊/騰訊-management-20260409.md` |
 
 ## /investment-team 檔案結構
 
 ```
-investment-reports/{公司名}/
+reports/{公司名}/
 ├── README.md                         — 研究框架概覽＋核心結論
 ├── 01-商業模式分析-段永平視角.md
 ├── 02-財務估值分析-巴菲特視角.md
@@ -117,7 +111,7 @@ git push origin main
 - 市值必須手算校驗：股價 × 總股本，與報告市值對比
 - 貨幣單位要明確（港幣／人民幣／美元），防止混淆
 - PE/ROE 等指標用 tools/financial_rigor.py 精確計算
-- 報告寫完後**不主動**詢問是否推送到 GitHub（報告已不在本倉庫內）
+- 報告寫在本倉庫 `reports/` 內；是否推送到 GitHub 由使用者指示，**不主動**推送
 
 <!-- rtk-instructions v2 -->
 # RTK (Rust Token Killer) - Token-Optimized Commands
