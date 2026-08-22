@@ -15,6 +15,8 @@ This skill is generated from `skills/industry-research.md` so Claude Code and Co
 
 # 行業投資研究：產業鏈全景掃描 + 四大師個股分析框架
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 行業進行系統化產業鏈投資研究。
 
 ## 研究目標

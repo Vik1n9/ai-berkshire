@@ -1,5 +1,7 @@
 # 財報精讀：一手資料深度解讀
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 進行財報精讀分析。
 
 **支援輸入格式**：`公司名 季度`，例如：`騰訊 2025Q4`、`PDD 2025年報`、`美團 最新`（預設讀取最近一期）

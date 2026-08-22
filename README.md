@@ -347,7 +347,7 @@ REM 可選：安裝 Codex slash prompts
 # 持倉管理
 /portfolio-review 騰訊30%, 美團20%, 茅台20%, 現金30%
 /thesis-tracker 拼多多
-/thesis-drift 拼多多 reports/拼多多-thesis-2025Q4.md reports/拼多多-thesis-2026Q1.md
+/thesis-drift 拼多多 reports/<公司>/<舊期間>.md reports/<公司>/<新期間>.md
 /news-pulse 騰訊
 
 # 思維工具
@@ -549,7 +549,7 @@ REM 可選：安裝 Codex slash prompts
 
 **關鍵發現**：AI 應用層最大贏家不是 AI Native 公司，而是有渠道+資料+工作流嵌入度的成熟巨頭——這呼應了 1995-2000 網際網路泡沫"賣鏟子"的歷史規律（亞馬遜和蘋果贏，Pets.com 輸）。
 
-完整報告：[AI 算力](reports/AI算力-funnel-20260509.md) · [AI 模型](reports/AI模型-funnel-20260509.md) · [AI 應用](reports/AI應用-funnel-20260509.md) · [AI 基建電力](reports/AI基建電力-funnel-20260509.md)
+完整報告：AI 算力 · AI 模型 · AI 應用 · AI 基建電力
 
 ---
 
@@ -638,14 +638,14 @@ REM 可選：安裝 Codex slash prompts
 
 ## 實戰研究報告
 
-> 以下是使用本框架生成的真實投資研究報告，展示 AI 投研的實際輸出效果。
+> 以下是使用本框架產出的研究案例摘要，展示 AI 投研的實際輸出效果。報告全文維護於 `reports/`。
 
-| 公司 | 使用 Skill | 核心結論 | 報告連結 |
-|------|-----------|---------|---------|
-| 拼多多 (PDD) | `/investment-team` | 綜合3.4/5，極度便宜但10年確定性不足，適合中等倉位 | [檢視報告](reports/拼多多/) |
-| 騰訊控股 (0700.HK) | `/investment-research` | 社交壟斷+資本配置卓越，14x前瞻PE合理偏低 | [檢視報告](reports/騰訊/) |
-| 7家公司對比 | `/investment-checklist` | 茅台、騰訊透過；輝達、美團、快手有條件透過；拼多多、泡泡瑪特灰色 | [檢視報告](reports/多公司對比-checklist-20260408.md) |
-| 大師持倉追蹤 | 自定義研究 | 巴菲特/李錄/段永平最新13F持倉+PDD成本分析 | [檢視報告](reports/大師持倉追蹤-research-20260408.md) |
+| 公司 | 使用 Skill | 核心結論 |
+|------|-----------|---------|
+| 拼多多 (PDD) | `/investment-team` | 綜合3.4/5，極度便宜但10年確定性不足，適合中等倉位 |
+| 騰訊控股 (0700.HK) | `/investment-research` | 社交壟斷+資本配置卓越，14x前瞻PE合理偏低 |
+| 7家公司對比 | `/investment-checklist` | 茅台、騰訊透過；輝達、美團、快手有條件透過；拼多多、泡泡瑪特灰色 |
+| 大師持倉追蹤 | 自定義研究 | 巴菲特/李錄/段永平最新13F持倉+PDD成本分析 |
 
 > *更多報告將持續新增。歡迎 PR 提交你用本框架生成的研究報告。*
 

@@ -58,7 +58,7 @@
 
 ## 已知問題和待改進
 
-- reports/ 目錄下有一些早期檔案命名不規範（中文下劃線混合），後續統一為英文短橫格式
-- 部分早期報告（如騰訊控股-投資研究報告.md）使用舊命名，未遷移
+- reports/ 已清空重建，歷史報告保留在 git 歷史中（`git checkout fc17867 -- reports/` 可取回）
+- 上傳報告後需執行 `python3 scripts/add_frontmatter.py` 補上 frontmatter
 - financial_rigor.py 工具的實際覆蓋面需要在Skill執行中驗證
 - README中的輸出示例是虛構的，後續應替換為真實報告的擷取

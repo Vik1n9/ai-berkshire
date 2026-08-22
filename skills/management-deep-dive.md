@@ -1,5 +1,7 @@
 # 管理層縱深研究：買股票就是買人
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 進行管理層深度研究。
 
 **支援輸入格式**：`公司名` 或 `人名 公司名`，例如：`美團`、`王興 美團`、`黃仁勳 輝達`

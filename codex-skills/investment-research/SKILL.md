@@ -15,6 +15,8 @@ This skill is generated from `skills/investment-research.md` so Claude Code and 
 
 # 投資研究：巴菲特-蒙格-段永平-李錄 四大師綜合分析框架
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 進行系統化投資研究分析。
 
 ## 研究框架
@@ -216,7 +218,7 @@ python3 tools/financial_rigor.py three-scenario \
 1. 所有分析必須有資料支撐，附資料來源
 2. 使用 Markdown 表格呈現關鍵資料
 3. 每個模組末尾必須有對應大師的"追問"
-4. 最終將完整報告寫入 `reports/[公司名]投資研究報告.md`
+4. 最終將完整報告寫入 `reports/{公司名}/{公司名}-research-{YYYYMMDD}.md`（與 CLAUDE.md 命名規範一致）
 5. 結論要明確，不迴避給出買入/觀望/迴避的建議
 6. 估值部分必須給出具體的價格區間
 7. **報告開頭**必須包含"資訊豐富度評級"（A/B/C）和"AI研究侷限性宣告"

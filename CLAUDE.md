@@ -3,7 +3,7 @@
 ## 專案概述
 
 基於 Claude Code 的價值投資研究 Skill 合集。四大師框架：巴菲特、蒙格、段永平、李錄。
-GitHub: xbtlin/ai-berkshire
+GitHub: Vik1n9/ai-berkshire
 
 ## 專案結構
 
@@ -37,6 +37,55 @@ reports/
 ├── portfolio-latest.md       — 組合報告放根目錄
 └── 多公司對比-checklist-20260408.md — 多公司報告放根目錄
 ```
+
+## 報告 frontmatter 規範（必要）
+
+每份報告**開頭第一行**起必須是 YAML frontmatter，供索引與前端讀取。
+GitHub 會把它渲染成表格，不影響 md 直接閱讀。
+
+```yaml
+---
+company: 輝達
+ticker: NVDA
+type: research
+date: 2026-08-22
+status: active
+conviction: 4
+priority: high
+review_by: 2027-02-22
+tags: [AI算力, 半導體]
+---
+```
+
+| 欄位 | 必填 | 說明 |
+|------|------|------|
+| `company` | ✅ | 公司或主題名稱，須與所在目錄名一致 |
+| `ticker` | | 股票代號。多市場請帶後綴：`2449.TW`、`0700.HK` |
+| `type` | ✅ | `research` / `team` / `earnings` / `thesis` / `valuation` / `management` / `industry` / `funnel` / `checklist` / `portfolio` / `private` / `news` / `series` |
+| `date` | ✅ | 報告日期 `YYYY-MM-DD` |
+| `status` | | `active` / `watching` / `archived`，預設 `active` |
+| `conviction` | | 信念強度 1-5。**人工判斷，不自動推導** |
+| `priority` | | `high` / `normal` / `low`。**人工判斷，不自動推導** |
+| `review_by` | | 下次複查日期。未填則依 `type` 自動推導 |
+| `tags` | | 自由標籤陣列 |
+
+**複查週期預設值**（`review_by` 未填時依此推導）：
+
+| type | 週期 | type | 週期 |
+|------|------|------|------|
+| `news` | 14 天 | `thesis` / `portfolio` | 90 天 |
+| `earnings` | 100 天 | `research` / `team` / `valuation` / `checklist` / `management` | 180 天 |
+| `industry` / `funnel` | 365 天 | `series`（公眾號系列） | 不適用，直接歸檔 |
+
+**既有報告補 frontmatter**：
+
+```bash
+python3 scripts/add_frontmatter.py --dry-run   # 先看會寫入什麼
+python3 scripts/add_frontmatter.py --apply     # 確認後寫入
+```
+
+推導不出 `company` 或 `date` 的檔案會列在結尾供人工補；`conviction` 與
+`priority` 一律留空，需自行填寫。
 
 ## 報告命名規範
 

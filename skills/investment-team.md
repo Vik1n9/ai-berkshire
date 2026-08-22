@@ -1,5 +1,7 @@
 # 投研團隊：四角色並行分析框架
 
+> **報告 frontmatter（必要）**：每份報告開頭第一行起必須是 YAML frontmatter，最少含 `company` / `type` / `date`，欄位定義與複查週期見本倉庫 `CLAUDE.md` 的「報告 frontmatter 規範」。
+
 對 $ARGUMENTS 進行團隊化投資研究分析。使用 Team 工具建立真正的多Agent並行研究團隊。
 
 ## 執行流程
