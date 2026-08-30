@@ -1,7 +1,7 @@
 {
   "meta": {
     "project": "AI Berkshire",
-    "generated_at": "2026-08-30T18:41:35Z",
+    "generated_at": "2026-08-30T19:28:13Z",
     "generator": "scripts/build_graph.py",
     "note": "價值投資研究知識圖譜：公司/主題實體 + 報告 + Skill + 工具。可用 scripts/query_graph.py 查詢。"
   },
@@ -197,6 +197,59 @@
       ]
     },
     {
+      "id": "entity:Micron",
+      "name": "Micron",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "REPORT/Micron/買前確認/20260825-MU-購買前確認.md"
+      ]
+    },
+    {
+      "id": "entity:Microsoft",
+      "name": "Microsoft",
+      "report_count": 1,
+      "tickers": [
+        "MSFT"
+      ],
+      "reports": [
+        "REPORT/Microsoft/深度分析/20260623-投研報告-Microsoft-research.md"
+      ]
+    },
+    {
+      "id": "entity:NVIDIA",
+      "name": "NVIDIA",
+      "report_count": 23,
+      "tickers": [
+        "NVDA"
+      ],
+      "reports": [
+        "REPORT/NVIDIA/估值分析/20260413-估值-NVIDIA-valuation.md",
+        "REPORT/NVIDIA/估值分析/20260420-估值-NVIDIA-財務估值分析.md",
+        "REPORT/NVIDIA/公眾號文章/00-系列說明.md",
+        "REPORT/NVIDIA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
+        "REPORT/NVIDIA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
+        "REPORT/NVIDIA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
+        "REPORT/NVIDIA/公眾號文章/04-競爭與威脅-四面楚歌.md",
+        "REPORT/NVIDIA/公眾號文章/05-風險估值與決策-終章.md",
+        "REPORT/NVIDIA/參考資料/資料-NVIDIA-段永平雪球發言-NVDA相關.md",
+        "REPORT/NVIDIA/團隊分析/最終報告-安全邊際-20260420.md",
+        "REPORT/NVIDIA/專題研究/20260413-專題-NVIDIA-反面證據.md",
+        "REPORT/NVIDIA/專題研究/20260419-專題-NVIDIA-自研晶片威脅.md",
+        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-CUDA護城河三問精簡版.md",
+        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告1-訓練vs推理市場分化.md",
+        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告2-NVIDIA推理護城河.md",
+        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告3-CUDA護城河本質.md",
+        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告4-AI程式設計對CUDA顛覆.md",
+        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-推理護城河與CUDA護城河.md",
+        "REPORT/NVIDIA/專題研究/20260426-專題-NVIDIA-安全墊分析.md",
+        "REPORT/NVIDIA/深度分析/20260408-投研報告-NVIDIA-research.md",
+        "REPORT/NVIDIA/深度分析/20260413-投研報告-NVIDIA-research.md",
+        "REPORT/NVIDIA/深度分析/20260830-投研報告-NVIDIA-research.md",
+        "REPORT/NVIDIA/財報分析/20260830-財報精讀-NVIDIA-FY2027Q2.md"
+      ]
+    },
+    {
       "id": "entity:PayPal",
       "name": "PayPal",
       "report_count": 3,
@@ -324,6 +377,15 @@
       ]
     },
     {
+      "id": "entity:Victoria's Secret",
+      "name": "Victoria's Secret",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "REPORT/Victoria's Secret/深度分析/Victoria's Secret-research-20260826.md"
+      ]
+    },
+    {
       "id": "entity:lululemon",
       "name": "lululemon",
       "report_count": 11,
@@ -353,68 +415,6 @@
       ],
       "reports": [
         "REPORT/京元電子/深度分析/20260719-投研報告-京元電子-research.md"
-      ]
-    },
-    {
-      "id": "entity:微軟",
-      "name": "微軟",
-      "report_count": 1,
-      "tickers": [
-        "MSFT"
-      ],
-      "reports": [
-        "REPORT/微軟/深度分析/20260623-投研報告-微軟-research.md"
-      ]
-    },
-    {
-      "id": "entity:維多利亞的秘密",
-      "name": "維多利亞的秘密",
-      "report_count": 1,
-      "tickers": [],
-      "reports": [
-        "REPORT/維多利亞的秘密/深度分析/維多利亞的秘密-research-20260826.md"
-      ]
-    },
-    {
-      "id": "entity:美光",
-      "name": "美光",
-      "report_count": 1,
-      "tickers": [],
-      "reports": [
-        "REPORT/美光/買前確認/20260825-MU-購買前確認.md"
-      ]
-    },
-    {
-      "id": "entity:英偉達",
-      "name": "英偉達",
-      "report_count": 23,
-      "tickers": [
-        "NVDA"
-      ],
-      "reports": [
-        "REPORT/英偉達/估值分析/20260413-估值-英偉達-valuation.md",
-        "REPORT/英偉達/估值分析/20260420-估值-英偉達-財務估值分析.md",
-        "REPORT/英偉達/公眾號文章/00-系列說明.md",
-        "REPORT/英偉達/公眾號文章/01-開篇-AI時代的賣鏟人.md",
-        "REPORT/英偉達/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
-        "REPORT/英偉達/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
-        "REPORT/英偉達/公眾號文章/04-競爭與威脅-四面楚歌.md",
-        "REPORT/英偉達/公眾號文章/05-風險估值與決策-終章.md",
-        "REPORT/英偉達/參考資料/資料-英偉達-段永平雪球發言-NVDA相關.md",
-        "REPORT/英偉達/團隊分析/最終報告-安全邊際-20260420.md",
-        "REPORT/英偉達/專題研究/20260413-專題-英偉達-反面證據.md",
-        "REPORT/英偉達/專題研究/20260419-專題-英偉達-自研晶片威脅.md",
-        "REPORT/英偉達/專題研究/20260424-專題-英偉達-CUDA護城河三問精簡版.md",
-        "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告1-訓練vs推理市場分化.md",
-        "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告2-NVIDIA推理護城河.md",
-        "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告3-CUDA護城河本質.md",
-        "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告4-AI程式設計對CUDA顛覆.md",
-        "REPORT/英偉達/專題研究/20260424-專題-英偉達-推理護城河與CUDA護城河.md",
-        "REPORT/英偉達/專題研究/20260426-專題-英偉達-安全墊分析.md",
-        "REPORT/英偉達/深度分析/20260408-投研報告-英偉達-research.md",
-        "REPORT/英偉達/深度分析/20260413-投研報告-英偉達-research.md",
-        "REPORT/英偉達/深度分析/20260830-投研報告-英偉達-research.md",
-        "REPORT/英偉達/財報分析/20260830-財報精讀-英偉達-FY2027Q2.md"
       ]
     }
   ],
@@ -1376,6 +1376,368 @@
       "bytes": 8263
     },
     {
+      "id": "REPORT/Micron/買前確認/20260825-MU-購買前確認.md",
+      "path": "REPORT/Micron/買前確認/20260825-MU-購買前確認.md",
+      "title": "20260825-MU-購買前確認",
+      "entity": "Micron",
+      "type": "other",
+      "skill": null,
+      "date": "2026-08-25",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 36520
+    },
+    {
+      "id": "REPORT/Microsoft/深度分析/20260623-投研報告-Microsoft-research.md",
+      "path": "REPORT/Microsoft/深度分析/20260623-投研報告-Microsoft-research.md",
+      "title": "20260623-投研報告-Microsoft-research",
+      "entity": "Microsoft",
+      "type": "research",
+      "skill": null,
+      "date": "2026-06-23",
+      "quarter": null,
+      "ticker": "MSFT",
+      "masters": [
+        "巴菲特",
+        "芒格",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 37537
+    },
+    {
+      "id": "REPORT/NVIDIA/估值分析/20260413-估值-NVIDIA-valuation.md",
+      "path": "REPORT/NVIDIA/估值分析/20260413-估值-NVIDIA-valuation.md",
+      "title": "20260413-估值-NVIDIA-valuation",
+      "entity": "NVIDIA",
+      "type": "valuation",
+      "skill": null,
+      "date": "2026-04-13",
+      "quarter": null,
+      "ticker": "NVDA",
+      "masters": [],
+      "bytes": 6908
+    },
+    {
+      "id": "REPORT/NVIDIA/估值分析/20260420-估值-NVIDIA-財務估值分析.md",
+      "path": "REPORT/NVIDIA/估值分析/20260420-估值-NVIDIA-財務估值分析.md",
+      "title": "20260420-估值-NVIDIA-財務估值分析",
+      "entity": "NVIDIA",
+      "type": "valuation",
+      "skill": null,
+      "date": "2026-04-20",
+      "quarter": null,
+      "ticker": "NVDA",
+      "masters": [
+        "巴菲特"
+      ],
+      "bytes": 14865
+    },
+    {
+      "id": "REPORT/NVIDIA/公眾號文章/00-系列說明.md",
+      "path": "REPORT/NVIDIA/公眾號文章/00-系列說明.md",
+      "title": "00-系列說明",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 3129
+    },
+    {
+      "id": "REPORT/NVIDIA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
+      "path": "REPORT/NVIDIA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
+      "title": "01-開篇-AI時代的賣鏟人",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 7976
+    },
+    {
+      "id": "REPORT/NVIDIA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
+      "path": "REPORT/NVIDIA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
+      "title": "02-商業本質-一座19年建成的軟體城堡",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 11176
+    },
+    {
+      "id": "REPORT/NVIDIA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
+      "path": "REPORT/NVIDIA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
+      "title": "03-訓練與推理-兩個不同的戰場",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 11149
+    },
+    {
+      "id": "REPORT/NVIDIA/公眾號文章/04-競爭與威脅-四面楚歌.md",
+      "path": "REPORT/NVIDIA/公眾號文章/04-競爭與威脅-四面楚歌.md",
+      "title": "04-競爭與威脅-四面楚歌",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 11701
+    },
+    {
+      "id": "REPORT/NVIDIA/公眾號文章/05-風險估值與決策-終章.md",
+      "path": "REPORT/NVIDIA/公眾號文章/05-風險估值與決策-終章.md",
+      "title": "05-風險估值與決策-終章",
+      "entity": "NVIDIA",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 14250
+    },
+    {
+      "id": "REPORT/NVIDIA/參考資料/資料-NVIDIA-段永平雪球發言-NVDA相關.md",
+      "path": "REPORT/NVIDIA/參考資料/資料-NVIDIA-段永平雪球發言-NVDA相關.md",
+      "title": "資料-NVIDIA-段永平雪球發言-NVDA相關",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "段永平"
+      ],
+      "bytes": 62203
+    },
+    {
+      "id": "REPORT/NVIDIA/團隊分析/最終報告-安全邊際-20260420.md",
+      "path": "REPORT/NVIDIA/團隊分析/最終報告-安全邊際-20260420.md",
+      "title": "最終報告-安全邊際-20260420",
+      "entity": "NVIDIA",
+      "type": "team",
+      "skill": null,
+      "date": "2026-04-20",
+      "quarter": null,
+      "ticker": "NVDA",
+      "masters": [
+        "巴菲特",
+        "芒格",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 11885
+    },
+    {
+      "id": "REPORT/NVIDIA/專題研究/20260413-專題-NVIDIA-反面證據.md",
+      "path": "REPORT/NVIDIA/專題研究/20260413-專題-NVIDIA-反面證據.md",
+      "title": "20260413-專題-NVIDIA-反面證據",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": "2026-04-13",
+      "quarter": null,
+      "ticker": "NVDA",
+      "masters": [],
+      "bytes": 25177
+    },
+    {
+      "id": "REPORT/NVIDIA/專題研究/20260419-專題-NVIDIA-自研晶片威脅.md",
+      "path": "REPORT/NVIDIA/專題研究/20260419-專題-NVIDIA-自研晶片威脅.md",
+      "title": "20260419-專題-NVIDIA-自研晶片威脅",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": "2026-04-19",
+      "quarter": null,
+      "ticker": "NVDA",
+      "masters": [],
+      "bytes": 31965
+    },
+    {
+      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-CUDA護城河三問精簡版.md",
+      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-CUDA護城河三問精簡版.md",
+      "title": "20260424-專題-NVIDIA-CUDA護城河三問精簡版",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": "2026-04-24",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 5107
+    },
+    {
+      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告1-訓練vs推理市場分化.md",
+      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告1-訓練vs推理市場分化.md",
+      "title": "20260424-專題-NVIDIA-子報告1-訓練vs推理市場分化",
+      "entity": "NVIDIA",
+      "type": "comparison",
+      "skill": null,
+      "date": "2026-04-24",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 9808
+    },
+    {
+      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告2-NVIDIA推理護城河.md",
+      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告2-NVIDIA推理護城河.md",
+      "title": "20260424-專題-NVIDIA-子報告2-NVIDIA推理護城河",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": "2026-04-24",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 9449
+    },
+    {
+      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告3-CUDA護城河本質.md",
+      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告3-CUDA護城河本質.md",
+      "title": "20260424-專題-NVIDIA-子報告3-CUDA護城河本質",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": "2026-04-24",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 8853
+    },
+    {
+      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告4-AI程式設計對CUDA顛覆.md",
+      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告4-AI程式設計對CUDA顛覆.md",
+      "title": "20260424-專題-NVIDIA-子報告4-AI程式設計對CUDA顛覆",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": "2026-04-24",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 9493
+    },
+    {
+      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-推理護城河與CUDA護城河.md",
+      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-推理護城河與CUDA護城河.md",
+      "title": "20260424-專題-NVIDIA-推理護城河與CUDA護城河",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": "2026-04-24",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 14723
+    },
+    {
+      "id": "REPORT/NVIDIA/專題研究/20260426-專題-NVIDIA-安全墊分析.md",
+      "path": "REPORT/NVIDIA/專題研究/20260426-專題-NVIDIA-安全墊分析.md",
+      "title": "20260426-專題-NVIDIA-安全墊分析",
+      "entity": "NVIDIA",
+      "type": "other",
+      "skill": null,
+      "date": "2026-04-26",
+      "quarter": null,
+      "ticker": "NVDA",
+      "masters": [
+        "巴菲特",
+        "段永平"
+      ],
+      "bytes": 20518
+    },
+    {
+      "id": "REPORT/NVIDIA/深度分析/20260408-投研報告-NVIDIA-research.md",
+      "path": "REPORT/NVIDIA/深度分析/20260408-投研報告-NVIDIA-research.md",
+      "title": "20260408-投研報告-NVIDIA-research",
+      "entity": "NVIDIA",
+      "type": "research",
+      "skill": null,
+      "date": "2026-04-08",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "芒格",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 10973
+    },
+    {
+      "id": "REPORT/NVIDIA/深度分析/20260413-投研報告-NVIDIA-research.md",
+      "path": "REPORT/NVIDIA/深度分析/20260413-投研報告-NVIDIA-research.md",
+      "title": "20260413-投研報告-NVIDIA-research",
+      "entity": "NVIDIA",
+      "type": "research",
+      "skill": null,
+      "date": "2026-04-13",
+      "quarter": null,
+      "ticker": "NVDA",
+      "masters": [
+        "巴菲特",
+        "芒格",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 20201
+    },
+    {
+      "id": "REPORT/NVIDIA/深度分析/20260830-投研報告-NVIDIA-research.md",
+      "path": "REPORT/NVIDIA/深度分析/20260830-投研報告-NVIDIA-research.md",
+      "title": "20260830-投研報告-NVIDIA-research",
+      "entity": "NVIDIA",
+      "type": "research",
+      "skill": null,
+      "date": "2026-08-30",
+      "quarter": null,
+      "ticker": "NVDA",
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 52199
+    },
+    {
+      "id": "REPORT/NVIDIA/財報分析/20260830-財報精讀-NVIDIA-FY2027Q2.md",
+      "path": "REPORT/NVIDIA/財報分析/20260830-財報精讀-NVIDIA-FY2027Q2.md",
+      "title": "20260830-財報精讀-NVIDIA-FY2027Q2",
+      "entity": "NVIDIA",
+      "type": "earnings",
+      "skill": null,
+      "date": "2026-08-30",
+      "quarter": "2027Q2",
+      "ticker": "NVDA",
+      "masters": [
+        "李錄"
+      ],
+      "bytes": 37322
+    },
+    {
       "id": "REPORT/PayPal/公眾號文章/01-PayPal-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
       "path": "REPORT/PayPal/公眾號文章/01-PayPal-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
       "title": "01-PayPal-8倍PE的支付巨頭是撿便宜還是接飛刀",
@@ -1934,6 +2296,23 @@
       "bytes": 6800
     },
     {
+      "id": "REPORT/Victoria's Secret/深度分析/Victoria's Secret-research-20260826.md",
+      "path": "REPORT/Victoria's Secret/深度分析/Victoria's Secret-research-20260826.md",
+      "title": "Victoria's Secret-research-20260826",
+      "entity": "Victoria's Secret",
+      "type": "research",
+      "skill": null,
+      "date": "2026-08-26",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 53839
+    },
+    {
       "id": "REPORT/lululemon/公眾號文章/00-系列說明.md",
       "path": "REPORT/lululemon/公眾號文章/00-系列說明.md",
       "title": "00-系列說明",
@@ -2101,385 +2480,6 @@
         "李錄"
       ],
       "bytes": 17747
-    },
-    {
-      "id": "REPORT/微軟/深度分析/20260623-投研報告-微軟-research.md",
-      "path": "REPORT/微軟/深度分析/20260623-投研報告-微軟-research.md",
-      "title": "20260623-投研報告-微軟-research",
-      "entity": "微軟",
-      "type": "research",
-      "skill": null,
-      "date": "2026-06-23",
-      "quarter": null,
-      "ticker": "MSFT",
-      "masters": [
-        "巴菲特",
-        "芒格",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 37537
-    },
-    {
-      "id": "REPORT/維多利亞的秘密/深度分析/維多利亞的秘密-research-20260826.md",
-      "path": "REPORT/維多利亞的秘密/深度分析/維多利亞的秘密-research-20260826.md",
-      "title": "維多利亞的秘密-research-20260826",
-      "entity": "維多利亞的秘密",
-      "type": "research",
-      "skill": null,
-      "date": "2026-08-26",
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "巴菲特",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 53839
-    },
-    {
-      "id": "REPORT/美光/買前確認/20260825-MU-購買前確認.md",
-      "path": "REPORT/美光/買前確認/20260825-MU-購買前確認.md",
-      "title": "20260825-MU-購買前確認",
-      "entity": "美光",
-      "type": "other",
-      "skill": null,
-      "date": "2026-08-25",
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "巴菲特",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 36615
-    },
-    {
-      "id": "REPORT/英偉達/估值分析/20260413-估值-英偉達-valuation.md",
-      "path": "REPORT/英偉達/估值分析/20260413-估值-英偉達-valuation.md",
-      "title": "20260413-估值-英偉達-valuation",
-      "entity": "英偉達",
-      "type": "valuation",
-      "skill": null,
-      "date": "2026-04-13",
-      "quarter": null,
-      "ticker": "NVDA",
-      "masters": [],
-      "bytes": 6908
-    },
-    {
-      "id": "REPORT/英偉達/估值分析/20260420-估值-英偉達-財務估值分析.md",
-      "path": "REPORT/英偉達/估值分析/20260420-估值-英偉達-財務估值分析.md",
-      "title": "20260420-估值-英偉達-財務估值分析",
-      "entity": "英偉達",
-      "type": "valuation",
-      "skill": null,
-      "date": "2026-04-20",
-      "quarter": null,
-      "ticker": "NVDA",
-      "masters": [
-        "巴菲特"
-      ],
-      "bytes": 14865
-    },
-    {
-      "id": "REPORT/英偉達/公眾號文章/00-系列說明.md",
-      "path": "REPORT/英偉達/公眾號文章/00-系列說明.md",
-      "title": "00-系列說明",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 3129
-    },
-    {
-      "id": "REPORT/英偉達/公眾號文章/01-開篇-AI時代的賣鏟人.md",
-      "path": "REPORT/英偉達/公眾號文章/01-開篇-AI時代的賣鏟人.md",
-      "title": "01-開篇-AI時代的賣鏟人",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 7976
-    },
-    {
-      "id": "REPORT/英偉達/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
-      "path": "REPORT/英偉達/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
-      "title": "02-商業本質-一座19年建成的軟體城堡",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 11176
-    },
-    {
-      "id": "REPORT/英偉達/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
-      "path": "REPORT/英偉達/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
-      "title": "03-訓練與推理-兩個不同的戰場",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 11149
-    },
-    {
-      "id": "REPORT/英偉達/公眾號文章/04-競爭與威脅-四面楚歌.md",
-      "path": "REPORT/英偉達/公眾號文章/04-競爭與威脅-四面楚歌.md",
-      "title": "04-競爭與威脅-四面楚歌",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 11701
-    },
-    {
-      "id": "REPORT/英偉達/公眾號文章/05-風險估值與決策-終章.md",
-      "path": "REPORT/英偉達/公眾號文章/05-風險估值與決策-終章.md",
-      "title": "05-風險估值與決策-終章",
-      "entity": "英偉達",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 14250
-    },
-    {
-      "id": "REPORT/英偉達/參考資料/資料-英偉達-段永平雪球發言-NVDA相關.md",
-      "path": "REPORT/英偉達/參考資料/資料-英偉達-段永平雪球發言-NVDA相關.md",
-      "title": "資料-英偉達-段永平雪球發言-NVDA相關",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "段永平"
-      ],
-      "bytes": 62203
-    },
-    {
-      "id": "REPORT/英偉達/團隊分析/最終報告-安全邊際-20260420.md",
-      "path": "REPORT/英偉達/團隊分析/最終報告-安全邊際-20260420.md",
-      "title": "最終報告-安全邊際-20260420",
-      "entity": "英偉達",
-      "type": "team",
-      "skill": null,
-      "date": "2026-04-20",
-      "quarter": null,
-      "ticker": "NVDA",
-      "masters": [
-        "巴菲特",
-        "芒格",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 11885
-    },
-    {
-      "id": "REPORT/英偉達/專題研究/20260413-專題-英偉達-反面證據.md",
-      "path": "REPORT/英偉達/專題研究/20260413-專題-英偉達-反面證據.md",
-      "title": "20260413-專題-英偉達-反面證據",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": "2026-04-13",
-      "quarter": null,
-      "ticker": "NVDA",
-      "masters": [],
-      "bytes": 25177
-    },
-    {
-      "id": "REPORT/英偉達/專題研究/20260419-專題-英偉達-自研晶片威脅.md",
-      "path": "REPORT/英偉達/專題研究/20260419-專題-英偉達-自研晶片威脅.md",
-      "title": "20260419-專題-英偉達-自研晶片威脅",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": "2026-04-19",
-      "quarter": null,
-      "ticker": "NVDA",
-      "masters": [],
-      "bytes": 31965
-    },
-    {
-      "id": "REPORT/英偉達/專題研究/20260424-專題-英偉達-CUDA護城河三問精簡版.md",
-      "path": "REPORT/英偉達/專題研究/20260424-專題-英偉達-CUDA護城河三問精簡版.md",
-      "title": "20260424-專題-英偉達-CUDA護城河三問精簡版",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": "2026-04-24",
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 5107
-    },
-    {
-      "id": "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告1-訓練vs推理市場分化.md",
-      "path": "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告1-訓練vs推理市場分化.md",
-      "title": "20260424-專題-英偉達-子報告1-訓練vs推理市場分化",
-      "entity": "英偉達",
-      "type": "comparison",
-      "skill": null,
-      "date": "2026-04-24",
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 9808
-    },
-    {
-      "id": "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告2-NVIDIA推理護城河.md",
-      "path": "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告2-NVIDIA推理護城河.md",
-      "title": "20260424-專題-英偉達-子報告2-NVIDIA推理護城河",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": "2026-04-24",
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 9449
-    },
-    {
-      "id": "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告3-CUDA護城河本質.md",
-      "path": "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告3-CUDA護城河本質.md",
-      "title": "20260424-專題-英偉達-子報告3-CUDA護城河本質",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": "2026-04-24",
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 8853
-    },
-    {
-      "id": "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告4-AI程式設計對CUDA顛覆.md",
-      "path": "REPORT/英偉達/專題研究/20260424-專題-英偉達-子報告4-AI程式設計對CUDA顛覆.md",
-      "title": "20260424-專題-英偉達-子報告4-AI程式設計對CUDA顛覆",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": "2026-04-24",
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 9493
-    },
-    {
-      "id": "REPORT/英偉達/專題研究/20260424-專題-英偉達-推理護城河與CUDA護城河.md",
-      "path": "REPORT/英偉達/專題研究/20260424-專題-英偉達-推理護城河與CUDA護城河.md",
-      "title": "20260424-專題-英偉達-推理護城河與CUDA護城河",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": "2026-04-24",
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 14723
-    },
-    {
-      "id": "REPORT/英偉達/專題研究/20260426-專題-英偉達-安全墊分析.md",
-      "path": "REPORT/英偉達/專題研究/20260426-專題-英偉達-安全墊分析.md",
-      "title": "20260426-專題-英偉達-安全墊分析",
-      "entity": "英偉達",
-      "type": "other",
-      "skill": null,
-      "date": "2026-04-26",
-      "quarter": null,
-      "ticker": "NVDA",
-      "masters": [
-        "巴菲特",
-        "段永平"
-      ],
-      "bytes": 20518
-    },
-    {
-      "id": "REPORT/英偉達/深度分析/20260408-投研報告-英偉達-research.md",
-      "path": "REPORT/英偉達/深度分析/20260408-投研報告-英偉達-research.md",
-      "title": "20260408-投研報告-英偉達-research",
-      "entity": "英偉達",
-      "type": "research",
-      "skill": null,
-      "date": "2026-04-08",
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "巴菲特",
-        "芒格",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 10973
-    },
-    {
-      "id": "REPORT/英偉達/深度分析/20260413-投研報告-英偉達-research.md",
-      "path": "REPORT/英偉達/深度分析/20260413-投研報告-英偉達-research.md",
-      "title": "20260413-投研報告-英偉達-research",
-      "entity": "英偉達",
-      "type": "research",
-      "skill": null,
-      "date": "2026-04-13",
-      "quarter": null,
-      "ticker": "NVDA",
-      "masters": [
-        "巴菲特",
-        "芒格",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 20201
-    },
-    {
-      "id": "REPORT/英偉達/深度分析/20260830-投研報告-英偉達-research.md",
-      "path": "REPORT/英偉達/深度分析/20260830-投研報告-英偉達-research.md",
-      "title": "20260830-投研報告-英偉達-research",
-      "entity": "英偉達",
-      "type": "research",
-      "skill": null,
-      "date": "2026-08-30",
-      "quarter": null,
-      "ticker": "NVDA",
-      "masters": [
-        "巴菲特",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 52214
-    },
-    {
-      "id": "REPORT/英偉達/財報分析/20260830-財報精讀-英偉達-FY2027Q2.md",
-      "path": "REPORT/英偉達/財報分析/20260830-財報精讀-英偉達-FY2027Q2.md",
-      "title": "20260830-財報精讀-英偉達-FY2027Q2",
-      "entity": "英偉達",
-      "type": "earnings",
-      "skill": null,
-      "date": "2026-08-30",
-      "quarter": "2027Q2",
-      "ticker": "NVDA",
-      "masters": [
-        "李錄"
-      ],
-      "bytes": 37322
     }
   ],
   "skills": [
