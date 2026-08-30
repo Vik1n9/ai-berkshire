@@ -17,7 +17,7 @@ This skill is generated from `skills/news-pulse.md` so Claude Code and Codex use
 > - 一律使用**繁體中文**輸出，採台灣慣用詞彙，非僅簡繁字元轉換（例如：软件→軟體、视频→影片、服务器→伺服器、信息→資訊、优化→最佳化、文件→檔案、数据→資料、硬盘→硬碟、打印→列印、内存→記憶體、质量→品質、在线→線上、屏幕→螢幕、软件包→套件）。
 > - 所有報告輸出目錄一律為本倉庫的 `reports/`（僅限美股與台股公開發行公司），可依需要在 `reports/{公司名}/` 下新增子目錄。
 >
-> **台股資料源（強制）**：凡分析台股（4 位數代碼，如 2330、2454、2449）時，行情、財報、籌碼等資料一律優先透過 FinMind API 取得：`python3 ~/.codex/skills/finmind-tw-market/scripts/finmind_fetch.py --dataset TaiwanStockPrice --data-id 2330 --start-date ... --end-date ...`；常用 dataset 對照與交叉驗證規範見 `financial-data` 技能（`~/Workspace/ai-berkshire/skills/financial-data.md`）「台股」章節。不得以網頁搜尋結果的數字作為台股主要資料來源。
+> **台股資料源（強制）**：凡分析台股（4 位數代碼，如 2330、2454、2449）時，行情、財報、籌碼等資料一律優先透過 FinMind API 取得：`python3 tools/twstock_data.py dataset TaiwanStockPrice --id 2330 --start ... --end ...`（本機 Codex 環境亦可用 `~/.codex/skills/finmind-tw-market/scripts/finmind_fetch.py`；雲端 session 沒有該目錄，一律用倉庫工具）；常用 dataset 對照與交叉驗證規範見 `financial-data` 技能（`~/Workspace/ai-berkshire/skills/financial-data.md`）「台股」章節。不得以網頁搜尋結果的數字作為台股主要資料來源。
 
 
 # 公司新聞脈搏：股價異動快速歸因團隊

@@ -33,4 +33,4 @@ jobs:
       - name: 檢查金鑰是否有效
         env:
           FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
-        run: python3 tools/finmind_token_check.py
+        run: python3 tools/finmind_token_check.py --require-token

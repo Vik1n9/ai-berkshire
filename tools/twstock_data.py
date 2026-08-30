@@ -17,6 +17,8 @@
     python3 tools/twstock_data.py revenue 2330      # 近13个月月营收及同比（台股独有月度披露）
     python3 tools/twstock_data.py dividend 2330     # 近年股利政策
     python3 tools/twstock_data.py search 台積        # 搜索股票代码（支持繁体/代码）
+    python3 tools/twstock_data.py dataset TaiwanStockPER --id 2330 --start 2026-01-01
+                                                    # 通用 dataset 直取（任意 FinMind 数据集）
 
 注意：
     - 所有金额单位为新台币（TWD）
@@ -354,6 +356,30 @@ def cmd_search(keyword):
         print(f"  {sid} {d['name']} [{board}] {cats}")
 
 
+def cmd_dataset(dataset, data_id=None, start=None, end=None, limit=20, fmt="csv"):
+    """通用 dataset 直取：涵蓋 quote/financials 等封裝指令沒包到的資料集。
+
+    讓不具備本機 Codex 技能目錄的環境（雲端 session、CI）也能取任意 FinMind
+    dataset，不必依賴 ~/.codex 下的腳本。
+    """
+    if start is None:
+        start = _days_ago(90)
+    rows = _get(dataset, data_id=data_id, start_date=start, end_date=end)
+    if not rows:
+        print(f"（{dataset} 無資料：檢查 dataset 名稱、股票代碼與日期區間，或該資料集需更高權限層級）")
+        return
+    if limit and limit > 0:
+        rows = rows[-limit:]          # FinMind 依日期升冪回傳，取最新的 N 筆
+    if fmt == "json":
+        print(json.dumps(rows, ensure_ascii=False, indent=2))
+        return
+    cols = list(rows[0].keys())
+    print(f"# dataset={dataset} data_id={data_id or '-'} rows={len(rows)}")
+    print(",".join(cols))
+    for r in rows:
+        print(",".join("" if r.get(c) is None else str(r.get(c)) for c in cols))
+
+
 # ---------------------------------------------------------------------------
 # CLI 入口
 # ---------------------------------------------------------------------------
@@ -378,6 +404,14 @@ def main():
     p_search = sub.add_parser("search", help="搜索股票代码")
     p_search.add_argument("keyword", help="公司名（繁体）或代码")
 
+    p_ds = sub.add_parser("dataset", help="通用 dataset 直取（法人买卖超/融资券/财报三表等）")
+    p_ds.add_argument("dataset", help="FinMind dataset 名，如 TaiwanStockPER")
+    p_ds.add_argument("--id", dest="data_id", default=None, help="股票代码，部分 dataset 可省略")
+    p_ds.add_argument("--start", default=None, help="起始日 YYYY-MM-DD，默认 90 天前")
+    p_ds.add_argument("--end", default=None, help="结束日 YYYY-MM-DD")
+    p_ds.add_argument("--limit", type=int, default=20, help="只取最新 N 笔，0 表示全部（默认 20）")
+    p_ds.add_argument("--format", dest="fmt", choices=["csv", "json"], default="csv")
+
     args = parser.parse_args()
     if not args.command:
         parser.print_help()
@@ -386,6 +420,8 @@ def main():
     try:
         if args.command == "search":
             cmd_search(args.keyword)
+        elif args.command == "dataset":
+            cmd_dataset(args.dataset, args.data_id, args.start, args.end, args.limit, args.fmt)
         else:
             {
                 "quote": cmd_quote,

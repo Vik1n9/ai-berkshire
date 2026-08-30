@@ -81,15 +81,23 @@ python3 tools/twstock_data.py search 台積        # 搜尋股票代碼（注意
 
 #### FinMind 取數（台股主資料源，必用）
 
-分析台股時**禁止**以網頁搜尋結果的數字作為主來源，一律先用 FinMind 取結構化資料：
+分析台股時**禁止**以網頁搜尋結果的數字作為主來源，一律先用 FinMind 取結構化資料。
+倉庫內的 `tools/twstock_data.py` 在本機與雲端 session 都跑得動，優先用它：
 
 ```bash
-python3 ~/.codex/skills/finmind-tw-market/scripts/finmind_fetch.py \
-  --dataset TaiwanStockPrice --data-id 2330 \
-  --start-date 2026-01-01 --end-date 2026-06-30 --format csv --limit 20
+python3 tools/twstock_data.py quote 2330            # 封裝好的常用視角：行情/估值/市值驗算
+python3 tools/twstock_data.py dataset TaiwanStockPrice --id 2330 \
+  --start 2026-01-01 --end 2026-06-30 --limit 20    # 通用 dataset 直取，輸出 CSV
 ```
 
-Token 優先讀環境變數 `FINMIND_TOKEN`，未設定時指令碼自動從技能內建 reference 提取；**嚴禁在任何輸出中列印 token**。`--usage` 可查 API 用量。
+本機 Codex 環境另有 `~/.codex/skills/finmind-tw-market/scripts/finmind_fetch.py`（功能相同，
+`--usage` 可查用量）。**雲端 session（手機、claude.ai/code）沒有 `~/.codex` 這個目錄，
+一律走 `tools/twstock_data.py`**，不要去呼叫本機路徑。
+
+金鑰不必寫在指令裡：工具自己讀環境變數 `FINMIND_TOKEN` 或 `local/finmind_token.txt`；
+雲端環境若用 API credential，金鑰由 agent proxy 在請求離開 session 之後才注入，
+session 內看不到金鑰是正常的。不確定有沒有生效就跑 `python3 tools/finmind_token_check.py`
+（設定方式見 `docs/finmind-token.md`）。**嚴禁在任何輸出中列印 token**。
 
 常用 dataset 對照：
 
@@ -106,10 +114,12 @@ Token 優先讀環境變數 `FINMIND_TOKEN`，未設定時指令碼自動從技�
 | 個股基本資料 | `TaiwanStockInfo` |
 | 個股新聞 | `TaiwanStockNews` |
 
-完整 dataset/欄位/許可權層級參考（大檔案，用 `rg -n "關鍵詞"` 檢索，不要整讀）：
+完整 dataset/欄位/許可權層級參考（**僅本機 Codex 環境有**，大檔案，用 `rg -n "關鍵詞"` 檢索，不要整讀）：
 `~/.codex/skills/finmind-tw-market/references/finmind_api_reference_full.md`
+雲端 session 取不到這個檔案，以上表的常用 dataset 對照為準，需要其他 dataset 時直接試呼叫，
+名稱錯會回 HTTP 422。
 
-**備援**（內含有效 token，均已驗證）：主參考檔案遺失時，依序改用：
+**備援**（內含有效 token，均已驗證，**兩份都只在本機 macOS 有**）：主參考檔案遺失時，依序改用：
 
 1. 本機備份：`~/.codex/skills/finmind-tw-market/references/finmind_api_reference_backup.md`
 2. iCloud 副本：`/Users/vikinglu/Library/Mobile Documents/com~apple~CloudDocs/Documents/llms-full.txt`
