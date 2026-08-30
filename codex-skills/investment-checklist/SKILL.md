@@ -235,8 +235,8 @@ python3 tools/financial_rigor.py three-scenario \
 - ❓ **灰色地帶** — 說明關鍵爭議點是什麼，投資者需要自行判斷什麼
 - N/A — 未上市/無法買入
 
-單一美股/台股公司：寫入 `REPORT/{公司名}/Checklist/巴菲特Checklist-{公司名}.md`
-多公司對比：寫入 `REPORT/跨公司比較/巴菲特Checklist-多公司對比-{YYYYMMDD}.md`
+單一美股/台股公司：寫入 `reports/{公司名}/Checklist/巴菲特Checklist-{公司名}.md`
+多公司對比：寫入 `reports/跨公司比較/巴菲特Checklist-多公司對比-{YYYYMMDD}.md`
 
 ## 輸出格式要求
 

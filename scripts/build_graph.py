@@ -3,7 +3,7 @@
 """
 build_graph.py — 為 AI Berkshire 專案建立知識圖譜，便於後續查詢。
 
-掃描 REPORT/ skills/ tools/ data/，抽取實體（公司/行業/主題）、報告、
+掃描 reports/ skills/ tools/ data/，抽取實體（公司/行業/主題）、報告、
 Skill、工具，構建節點+邊的圖譜，輸出：
 
   data/project_graph.json   機器可讀知識圖譜（供 query_graph.py / RAG 查詢）
@@ -29,7 +29,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REPORTS_DIR = os.path.join(ROOT, "REPORT")
+REPORTS_DIR = os.path.join(ROOT, "reports")
 SKILLS_DIR = os.path.join(ROOT, "skills")
 TOOLS_DIR = os.path.join(ROOT, "tools")
 DATA_DIR = os.path.join(ROOT, "data")
@@ -158,7 +158,7 @@ def scan_header(path: str) -> tuple[str, str | None]:
 
 
 def build_report_nodes():
-    """掃描 REPORT/，返回 (reports, entities)。"""
+    """掃描 reports/，返回 (reports, entities)。"""
     reports = []
     # entity_name -> {reports:[id], tickers:set, industries:set}
     entities = defaultdict(lambda: {"reports": [], "tickers": set()})
@@ -173,7 +173,7 @@ def build_report_nodes():
             name = fn[:-3]  # 去掉 .md
             name_lower = name.lower()
 
-            # 實體：REPORT/ 直屬檔案歸為「_root」（主題/多公司報告），
+            # 實體：reports/ 直屬檔案歸為「_root」（主題/多公司報告），
             # 子目錄檔案歸到目錄名（公司/主題）。
             sub = os.path.relpath(dirpath, REPORTS_DIR)
             if sub == ".":
@@ -355,7 +355,7 @@ def write_markdown(graph):
     A("# AI Berkshire 專案圖譜（PROJECT GRAPH）\n")
     A("> 自動生成，請勿手工編輯。執行 `python3 scripts/build_graph.py` 重新生成。")
     A(f"> 生成時間：{graph['meta']['generated_at']}\n")
-    A("本圖譜為專案的**查詢索引**：把散落在 `REPORT/`（僅限美股與台股公開發行公司）的報告，")
+    A("本圖譜為專案的**查詢索引**：把散落在 `reports/`（僅限美股與台股公開發行公司）的報告，")
     A("按「公司/主題實體 → 報告」組織，並附 Skill 與工具目錄，便於後續檢索。\n")
     A("機器可讀版本見 [`data/project_graph.json`](../data/project_graph.json)，")
     A("命令列查詢用 [`scripts/query_graph.py`](../scripts/query_graph.py)。\n")

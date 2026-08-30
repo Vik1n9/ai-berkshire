@@ -188,7 +188,7 @@ python3 tools/financial_rigor.py verify-valuation \
 
 ### 第七步：儲存報告
 
-將報告寫入 `REPORT/{公司名}/財報分析/{公司名}-earnings-{期間}.md`，例如 `REPORT/台積電/財報分析/台積電-earnings-2025Q4.md`（僅限美股與台股公開發行公司）
+將報告寫入 `reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md`，例如 `reports/台積電/財報分析/台積電-earnings-2025Q4.md`（僅限美股與台股公開發行公司）
 
 ### 第八步：資料抽檢（準出流程）
 
@@ -197,7 +197,7 @@ python3 tools/financial_rigor.py verify-valuation \
 ```bash
 # Step 1 — 提取抽檢清單
 python3 tools/report_audit.py extract \
-  --report REPORT/{公司名}/財報分析/{公司名}-earnings-{期間}.md
+  --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md
 
 # Step 2 — 對清單每項從可靠信源取數（參見 skills/financial-data.md）
 

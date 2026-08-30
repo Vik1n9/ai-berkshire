@@ -269,7 +269,7 @@ AI無法和管理層面對面交流，但可以透過公開渠道的側面資訊
 
 ### 第九步：儲存報告
 
-將報告寫入 `REPORT/{公司名}/管理層分析/{公司名}-management-{YYYYMMDD}.md`，例如 `REPORT/台積電/管理層分析/台積電-management-20260409.md`（僅限美股與台股公開發行公司）
+將報告寫入 `reports/{公司名}/管理層分析/{公司名}-management-{YYYYMMDD}.md`，例如 `reports/台積電/管理層分析/台積電-management-20260409.md`（僅限美股與台股公開發行公司）
 
 ---
 

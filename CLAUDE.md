@@ -12,19 +12,19 @@
 ```
 skills/          — 投研 Skill 定義（.md），複製到 ~/.claude/commands/ 使用
 tools/           — 輔助工具（financial_rigor.py 精確計算）
-REPORT/          — 研究報告輸出目錄（僅限美股與台股公開發行公司）
-PRIVATE/         — 非公開發行公司研究（如未上市新創），不計入 REPORT/
+reports/         — 研究報告輸出目錄（僅限美股與台股公開發行公司）
+PRIVATE/         — 非公開發行公司研究（如未上市新創），不計入 reports/
 assets/          — 圖片等靜態資源
 ```
 
 ## 報告輸出目錄
 
-所有 Skill 的報告統一寫入本倉庫內的 `REPORT/`。**REPORT/ 只收錄美股與台股的公開發行公司報告**，其餘（非公開發行公司、產業/跨公司比較、方法論筆記、人物語錄等）不放在這裡（見下方「非個股內容」）。
+所有 Skill 的報告統一寫入本倉庫內的 `reports/`。**reports/ 只收錄美股與台股的公開發行公司報告**，其餘（非公開發行公司、產業/跨公司比較、方法論筆記、人物語錄等）不放在這裡（見下方「非個股內容」）。
 
-結構為 `REPORT/{股票名稱}/{報告類別}/{報告內容}`：
+結構為 `reports/{股票名稱}/{報告類別}/{報告內容}`：
 
 ```
-REPORT/
+reports/
 ├── 台積電/
 │   ├── 深度分析/台積電-research-20260408.md
 │   ├── 財報分析/台積電-earnings-2025Q4.md
@@ -32,7 +32,7 @@ REPORT/
 │   ├── 投資論點/台積電-thesis.md
 │   ├── 團隊分析/最終報告.md
 │   └── 公眾號文章/01-開篇-....md
-├── NVIDIA/
+├── NVDA/
 │   └── ...（同上，類別依實際產出的報告種類建立）
 ├── 產業研究/           — 跨公司產業研究、篩選漏斗、產業主題公眾號（非單一個股）
 ├── 跨公司比較/          — 多公司 Checklist 對比
@@ -42,32 +42,32 @@ REPORT/
 
 `{報告類別}` 依報告性質命名，常見類別：深度分析、財報分析、管理層分析、投資論點、團隊分析、公眾號文章、Checklist、估值分析、專題研究、新聞追蹤、參考資料。無對應類別時可依需要新增，維持繁體中文命名。
 
-`{股票名稱}` 命名規則：**美股用公司英文名（如 NVIDIA、Microsoft、Micron、Adobe、GE Vernova），台股用中文名（如 台積電、京元電子）**，與各股票市場的慣用稱呼一致。建立新公司資料夾前，先確認命名與此規則一致，不要中英文混用或用中文翻譯名稱替代美股公司英文名。
+`{股票名稱}` 命名規則：**美股用股票代號（ticker，如 NVDA、MSFT、MU、ADBE、GEV），台股用中文名（如 台積電、京元電子）**，方便快速搜尋到正確股票。建立新公司資料夾前，先確認命名與此規則一致，不要用公司全名、中文翻譯名稱或中英文混用替代美股代號。
 
 ## 報告命名規範
 
 | Skill | 輸出位置 | 範例 |
 |------|---------|------|
-| /investment-team | `REPORT/{公司名}/團隊分析/` 目錄內含 4 個視角＋最終報告 | `REPORT/台積電/團隊分析/最終報告.md` |
-| /investment-research | `REPORT/{公司名}/深度分析/{公司名}-research-{YYYYMMDD}.md` | `REPORT/台積電/深度分析/台積電-research-20260408.md` |
-| /investment-checklist | 單一公司：`REPORT/{公司名}/Checklist/`；多公司：`REPORT/跨公司比較/` | `REPORT/台積電/Checklist/巴菲特Checklist-台積電.md` |
-| /industry-research | `REPORT/產業研究/{行業名}-industry-{YYYYMMDD}.md` | `REPORT/產業研究/核電-industry-20260409.md` |
-| /industry-funnel | `REPORT/產業研究/{行業名}-funnel-{YYYYMMDD}.md` | `REPORT/產業研究/AI算力-funnel-20260509.md` |
-| /private-company-research | `PRIVATE/{公司名}/{公司名}-private-{YYYYMMDD}.md`（非公開發行，不進 REPORT/） | `PRIVATE/位元組跳動/位元組跳動-private-20260408.md` |
-| /earnings-review | `REPORT/{公司名}/財報分析/{公司名}-earnings-{期間}.md` | `REPORT/台積電/財報分析/台積電-earnings-2025Q4.md` |
-| /earnings-team | `REPORT/{公司名}/財報分析/` 目錄內含 4 個大師視角＋研究底稿＋公眾號文章＋讀者評審 | `REPORT/台積電/財報分析/台積電-earnings-2025Q4.md`（公眾號定稿） |
-| /thesis-tracker | `REPORT/{公司名}/投資論點/{公司名}-thesis.md`（長期維護） | `REPORT/台積電/投資論點/台積電-thesis.md` |
-| /portfolio-review | `REPORT/組合管理/portfolio-latest.md`（持續更新） | `REPORT/組合管理/portfolio-latest.md` |
-| /management-deep-dive | `REPORT/{公司名}/管理層分析/{公司名}-management-{YYYYMMDD}.md` | `REPORT/台積電/管理層分析/台積電-management-20260409.md` |
-| /deep-company-series、/wechat-article（投資主題） | `REPORT/{公司名}/公眾號文章/` | `REPORT/台積電/公眾號文章/01-開篇-....md` |
-| /wechat-article（技術/產業/通用主題） | `REPORT/產業研究/` | `REPORT/產業研究/公眾號-{主題}-20260605.md` |
-| /news-pulse | `REPORT/{公司名}/新聞追蹤/{公司名}-news-{YYYYMMDD}.md` | `REPORT/台積電/新聞追蹤/台積電-news-20260409.md` |
-| /bottleneck-hunter | `REPORT/訊號掃描/bottleneck-map/`（跨標的訊號日誌，非單一個股） | `REPORT/訊號掃描/bottleneck-map/master-map.md` |
+| /investment-team | `reports/{公司名}/團隊分析/` 目錄內含 4 個視角＋最終報告 | `reports/台積電/團隊分析/最終報告.md` |
+| /investment-research | `reports/{公司名}/深度分析/{公司名}-research-{YYYYMMDD}.md` | `reports/台積電/深度分析/台積電-research-20260408.md` |
+| /investment-checklist | 單一公司：`reports/{公司名}/Checklist/`；多公司：`reports/跨公司比較/` | `reports/台積電/Checklist/巴菲特Checklist-台積電.md` |
+| /industry-research | `reports/產業研究/{行業名}-industry-{YYYYMMDD}.md` | `reports/產業研究/核電-industry-20260409.md` |
+| /industry-funnel | `reports/產業研究/{行業名}-funnel-{YYYYMMDD}.md` | `reports/產業研究/AI算力-funnel-20260509.md` |
+| /private-company-research | `PRIVATE/{公司名}/{公司名}-private-{YYYYMMDD}.md`（非公開發行，不進 reports/） | `PRIVATE/位元組跳動/位元組跳動-private-20260408.md` |
+| /earnings-review | `reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md` | `reports/台積電/財報分析/台積電-earnings-2025Q4.md` |
+| /earnings-team | `reports/{公司名}/財報分析/` 目錄內含 4 個大師視角＋研究底稿＋公眾號文章＋讀者評審 | `reports/台積電/財報分析/台積電-earnings-2025Q4.md`（公眾號定稿） |
+| /thesis-tracker | `reports/{公司名}/投資論點/{公司名}-thesis.md`（長期維護） | `reports/台積電/投資論點/台積電-thesis.md` |
+| /portfolio-review | `reports/組合管理/portfolio-latest.md`（持續更新） | `reports/組合管理/portfolio-latest.md` |
+| /management-deep-dive | `reports/{公司名}/管理層分析/{公司名}-management-{YYYYMMDD}.md` | `reports/台積電/管理層分析/台積電-management-20260409.md` |
+| /deep-company-series、/wechat-article（投資主題） | `reports/{公司名}/公眾號文章/` | `reports/台積電/公眾號文章/01-開篇-....md` |
+| /wechat-article（技術/產業/通用主題） | `reports/產業研究/` | `reports/產業研究/公眾號-{主題}-20260605.md` |
+| /news-pulse | `reports/{公司名}/新聞追蹤/{公司名}-news-{YYYYMMDD}.md` | `reports/台積電/新聞追蹤/台積電-news-20260409.md` |
+| /bottleneck-hunter | `reports/訊號掃描/bottleneck-map/`（跨標的訊號日誌，非單一個股） | `reports/訊號掃描/bottleneck-map/master-map.md` |
 
 ## /investment-team 檔案結構
 
 ```
-REPORT/{公司名}/團隊分析/
+reports/{公司名}/團隊分析/
 ├── 01-商業模式分析-段永平視角.md
 ├── 02-財務估值分析-巴菲特視角.md
 ├── 03-產業競爭分析-蒙格視角.md
@@ -166,7 +166,7 @@ git push origin main
 - 市值必須手算校驗：股價 × 總股本，與報告市值對比
 - 貨幣單位要明確（港幣／人民幣／美元），防止混淆
 - PE/ROE 等指標用 tools/financial_rigor.py 精確計算
-- 報告寫在本倉庫 `REPORT/` 內，且僅限美股與台股公開發行公司；是否推送到 GitHub 由使用者指示，**不主動**推送
+- 報告寫在本倉庫 `reports/` 內，且僅限美股與台股公開發行公司；是否推送到 GitHub 由使用者指示，**不主動**推送
 
 <!-- rtk-instructions v2 -->
 # RTK (Rust Token Killer) - Token-Optimized Commands
