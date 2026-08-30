@@ -1,7 +1,7 @@
 {
   "meta": {
     "project": "AI Berkshire",
-    "generated_at": "2026-08-30T19:28:13Z",
+    "generated_at": "2026-08-30T20:11:34Z",
     "generator": "scripts/build_graph.py",
     "note": "價值投資研究知識圖譜：公司/主題實體 + 報告 + Skill + 工具。可用 scripts/query_graph.py 查詢。"
   },
@@ -11,13 +11,13 @@
     "skills": 19,
     "tools": 10,
     "reports_by_type": {
-      "other": 76,
+      "other": 75,
       "valuation": 23,
       "research": 19,
       "management": 11,
       "team": 11,
       "earnings": 3,
-      "comparison": 2
+      "comparison": 3
     },
     "reports_by_skill": {
       "investment-research": 3
@@ -35,269 +35,314 @@
   },
   "entities": [
     {
-      "id": "entity:ADP",
-      "name": "ADP",
-      "report_count": 9,
-      "tickers": [],
-      "reports": [
-        "REPORT/ADP/公眾號文章/01-開篇-全球最大的發薪公司.md",
-        "REPORT/ADP/公眾號文章/02-商業模式-一臺三層收入的複利機器.md",
-        "REPORT/ADP/公眾號文章/03-競爭與增長-薪酬領域的Visa.md",
-        "REPORT/ADP/公眾號文章/04-風險與估值-打了七折的收費公路.md",
-        "REPORT/ADP/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/ADP/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/ADP/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/ADP/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/ADP/團隊分析/最終報告.md"
-      ]
-    },
-    {
-      "id": "entity:Accenture",
-      "name": "Accenture",
+      "id": "entity:ACN",
+      "name": "ACN",
       "report_count": 9,
       "tickers": [
         "ACN"
       ],
       "reports": [
-        "REPORT/Accenture/公眾號文章/01-開篇-全球最大IT諮詢公司的真面目.md",
-        "REPORT/Accenture/公眾號文章/02-商業模式-諮詢加外包的雙輪驅動.md",
-        "REPORT/Accenture/公眾號文章/03-競爭與增長-AI時代的護城河攻防戰.md",
-        "REPORT/Accenture/公眾號文章/04-風險與估值-14倍PE是恐慌還是理性.md",
-        "REPORT/Accenture/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/Accenture/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/Accenture/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/Accenture/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/Accenture/團隊分析/最終報告.md"
+        "reports/ACN/公眾號文章/01-開篇-全球最大IT諮詢公司的真面目.md",
+        "reports/ACN/公眾號文章/02-商業模式-諮詢加外包的雙輪驅動.md",
+        "reports/ACN/公眾號文章/03-競爭與增長-AI時代的護城河攻防戰.md",
+        "reports/ACN/公眾號文章/04-風險與估值-14倍PE是恐慌還是理性.md",
+        "reports/ACN/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/ACN/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/ACN/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/ACN/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/ACN/團隊分析/最終報告.md"
       ]
     },
     {
-      "id": "entity:Adobe",
-      "name": "Adobe",
+      "id": "entity:ADBE",
+      "name": "ADBE",
       "report_count": 10,
       "tickers": [
         "ADBE"
       ],
       "reports": [
-        "REPORT/Adobe/公眾號文章/01-開篇-創意軟體帝國的關鍵資料.md",
-        "REPORT/Adobe/公眾號文章/02-商業模式-訂閱制印鈔機的運轉邏輯.md",
-        "REPORT/Adobe/公眾號文章/03-AI衝擊-Firefly是救星還是掘墓人.md",
-        "REPORT/Adobe/公眾號文章/04-風險與估值-PE十年最低是機會還是陷阱.md",
-        "REPORT/Adobe/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/Adobe/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/Adobe/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/Adobe/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/Adobe/團隊分析/最終報告.md",
-        "REPORT/Adobe/深度分析/20260607-投研報告-Adobe-research.md"
+        "reports/ADBE/公眾號文章/01-開篇-創意軟體帝國的關鍵資料.md",
+        "reports/ADBE/公眾號文章/02-商業模式-訂閱制印鈔機的運轉邏輯.md",
+        "reports/ADBE/公眾號文章/03-AI衝擊-Firefly是救星還是掘墓人.md",
+        "reports/ADBE/公眾號文章/04-風險與估值-PE十年最低是機會還是陷阱.md",
+        "reports/ADBE/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/ADBE/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/ADBE/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/ADBE/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/ADBE/團隊分析/最終報告.md",
+        "reports/ADBE/深度分析/20260607-投研報告-ADBE-research.md"
       ]
     },
     {
-      "id": "entity:Booking",
-      "name": "Booking",
+      "id": "entity:ADP",
+      "name": "ADP",
+      "report_count": 9,
+      "tickers": [],
+      "reports": [
+        "reports/ADP/公眾號文章/01-開篇-全球最大的發薪公司.md",
+        "reports/ADP/公眾號文章/02-商業模式-一臺三層收入的複利機器.md",
+        "reports/ADP/公眾號文章/03-競爭與增長-薪酬領域的Visa.md",
+        "reports/ADP/公眾號文章/04-風險與估值-打了七折的收費公路.md",
+        "reports/ADP/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/ADP/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/ADP/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/ADP/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/ADP/團隊分析/最終報告.md"
+      ]
+    },
+    {
+      "id": "entity:BKNG",
+      "name": "BKNG",
       "report_count": 9,
       "tickers": [
         "BKNG"
       ],
       "reports": [
-        "REPORT/Booking/公眾號文章/01-開篇-全球最大的旅行撮合機器.md",
-        "REPORT/Booking/公眾號文章/02-商業模式-一門不擁有酒店的酒店生意.md",
-        "REPORT/Booking/公眾號文章/03-競爭與增長-一場關於搜尋入口的戰爭.md",
-        "REPORT/Booking/公眾號文章/04-風險與估值-好公司也需要好價格.md",
-        "REPORT/Booking/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/Booking/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/Booking/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/Booking/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/Booking/團隊分析/最終報告.md"
+        "reports/BKNG/公眾號文章/01-開篇-全球最大的旅行撮合機器.md",
+        "reports/BKNG/公眾號文章/02-商業模式-一門不擁有酒店的酒店生意.md",
+        "reports/BKNG/公眾號文章/03-競爭與增長-一場關於搜尋入口的戰爭.md",
+        "reports/BKNG/公眾號文章/04-風險與估值-好公司也需要好價格.md",
+        "reports/BKNG/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/BKNG/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/BKNG/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/BKNG/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/BKNG/團隊分析/最終報告.md"
       ]
     },
     {
-      "id": "entity:GE Vernova",
-      "name": "GE Vernova",
+      "id": "entity:GEV",
+      "name": "GEV",
       "report_count": 1,
       "tickers": [
         "GEV"
       ],
       "reports": [
-        "REPORT/GE Vernova/深度分析/20260623-投研報告-GE Vernova-GEV.md"
+        "reports/GEV/深度分析/20260623-投研報告-GEV-research.md"
       ]
     },
     {
-      "id": "entity:Google",
-      "name": "Google",
+      "id": "entity:GOOGL",
+      "name": "GOOGL",
       "report_count": 1,
       "tickers": [],
       "reports": [
-        "REPORT/Google/深度分析/20260623-投研報告-Google-Alphabet投資研究報告.md"
+        "reports/GOOGL/深度分析/20260623-投研報告-GOOGL-Alphabet投資研究報告.md"
       ]
     },
     {
-      "id": "entity:Intel",
-      "name": "Intel",
+      "id": "entity:INTC",
+      "name": "INTC",
       "report_count": 2,
       "tickers": [],
       "reports": [
-        "REPORT/Intel/深度分析/20260623-投研報告-Intel-investment-research.md",
-        "REPORT/Intel/買前確認/20260825-INTC-購買前確認.md"
+        "reports/INTC/深度分析/20260623-投研報告-INTC-investment-research.md",
+        "reports/INTC/買前確認/20260825-INTC-購買前確認.md"
       ]
     },
     {
-      "id": "entity:Marvell",
-      "name": "Marvell",
-      "report_count": 6,
+      "id": "entity:LULU",
+      "name": "LULU",
+      "report_count": 11,
       "tickers": [
-        "MRVL"
+        "LULU"
       ],
       "reports": [
-        "REPORT/Marvell/公眾號文章/01-開篇-定製晶片賽道的關鍵玩家.md",
-        "REPORT/Marvell/公眾號文章/02-商業模式-資料中心管道工的四塊業務.md",
-        "REPORT/Marvell/公眾號文章/03-AI機遇-定製晶片的黃金時代與博通之戰.md",
-        "REPORT/Marvell/公眾號文章/04-風險與估值-58倍PE在賭什麼.md",
-        "REPORT/Marvell/深度分析/20260516-投研報告-Marvell-research.md",
-        "REPORT/Marvell/深度分析/20260624-投研報告-Marvell-investment-research.md"
+        "reports/LULU/公眾號文章/00-系列說明.md",
+        "reports/LULU/公眾號文章/01-開篇-不只是瑜伽褲.md",
+        "reports/LULU/公眾號文章/02-品牌護城河的真實深度.md",
+        "reports/LULU/公眾號文章/03-增長引擎與中國市場.md",
+        "reports/LULU/公眾號文章/04-風險管理層與估值判斷.md",
+        "reports/LULU/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/LULU/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/LULU/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/LULU/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/LULU/團隊分析/最終報告.md",
+        "reports/LULU/深度分析/20260516-投研報告-LULU-research.md"
       ]
     },
     {
-      "id": "entity:Mastercard",
-      "name": "Mastercard",
+      "id": "entity:MA",
+      "name": "MA",
       "report_count": 11,
       "tickers": [
         "MA"
       ],
       "reports": [
-        "REPORT/Mastercard/公眾號文章/00-系列說明.md",
-        "REPORT/Mastercard/公眾號文章/01-開篇-全球支付網路的收費站.md",
-        "REPORT/Mastercard/公眾號文章/02-商業模式-四方模式與五層護城河.md",
-        "REPORT/Mastercard/公眾號文章/03-增長空間-三條曲線與天花板.md",
-        "REPORT/Mastercard/公眾號文章/04-競爭與風險-雙寡頭的壓力測試.md",
-        "REPORT/Mastercard/公眾號文章/05-估值判斷-為確定性付多少溢價（終章）.md",
-        "REPORT/Mastercard/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/Mastercard/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/Mastercard/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/Mastercard/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/Mastercard/團隊分析/最終報告.md"
+        "reports/MA/公眾號文章/00-系列說明.md",
+        "reports/MA/公眾號文章/01-開篇-全球支付網路的收費站.md",
+        "reports/MA/公眾號文章/02-商業模式-四方模式與五層護城河.md",
+        "reports/MA/公眾號文章/03-增長空間-三條曲線與天花板.md",
+        "reports/MA/公眾號文章/04-競爭與風險-雙寡頭的壓力測試.md",
+        "reports/MA/公眾號文章/05-估值判斷-為確定性付多少溢價（終章）.md",
+        "reports/MA/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/MA/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/MA/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/MA/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/MA/團隊分析/最終報告.md"
       ]
     },
     {
-      "id": "entity:Meta",
-      "name": "Meta",
+      "id": "entity:META",
+      "name": "META",
       "report_count": 10,
       "tickers": [
         "META"
       ],
       "reports": [
-        "REPORT/Meta/公眾號文章/01-開篇-社交廣告帝國的關鍵資料.md",
-        "REPORT/Meta/公眾號文章/02-廣告機器-AI驅動的注意力變現引擎.md",
-        "REPORT/Meta/公眾號文章/03-AI與元宇宙-1450億美元的豪賭與836億美元的沉沒成本.md",
-        "REPORT/Meta/公眾號文章/04-競爭與監管-護城河的實戰檢驗.md",
-        "REPORT/Meta/公眾號文章/05-估值判斷-一道關於信任的數學題.md",
-        "REPORT/Meta/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/Meta/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/Meta/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/Meta/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/Meta/團隊分析/最終報告.md"
+        "reports/META/公眾號文章/01-開篇-社交廣告帝國的關鍵資料.md",
+        "reports/META/公眾號文章/02-廣告機器-AI驅動的注意力變現引擎.md",
+        "reports/META/公眾號文章/03-AI與元宇宙-1450億美元的豪賭與836億美元的沉沒成本.md",
+        "reports/META/公眾號文章/04-競爭與監管-護城河的實戰檢驗.md",
+        "reports/META/公眾號文章/05-估值判斷-一道關於信任的數學題.md",
+        "reports/META/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/META/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/META/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/META/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/META/團隊分析/最終報告.md"
       ]
     },
     {
-      "id": "entity:Micron",
-      "name": "Micron",
-      "report_count": 1,
-      "tickers": [],
+      "id": "entity:MRVL",
+      "name": "MRVL",
+      "report_count": 6,
+      "tickers": [
+        "MRVL"
+      ],
       "reports": [
-        "REPORT/Micron/買前確認/20260825-MU-購買前確認.md"
+        "reports/MRVL/公眾號文章/01-開篇-定製晶片賽道的關鍵玩家.md",
+        "reports/MRVL/公眾號文章/02-商業模式-資料中心管道工的四塊業務.md",
+        "reports/MRVL/公眾號文章/03-AI機遇-定製晶片的黃金時代與博通之戰.md",
+        "reports/MRVL/公眾號文章/04-風險與估值-58倍PE在賭什麼.md",
+        "reports/MRVL/深度分析/20260516-投研報告-MRVL-research.md",
+        "reports/MRVL/深度分析/20260624-投研報告-MRVL-investment-research.md"
       ]
     },
     {
-      "id": "entity:Microsoft",
-      "name": "Microsoft",
+      "id": "entity:MSFT",
+      "name": "MSFT",
       "report_count": 1,
       "tickers": [
         "MSFT"
       ],
       "reports": [
-        "REPORT/Microsoft/深度分析/20260623-投研報告-Microsoft-research.md"
+        "reports/MSFT/深度分析/20260623-投研報告-MSFT-research.md"
       ]
     },
     {
-      "id": "entity:NVIDIA",
-      "name": "NVIDIA",
+      "id": "entity:MU",
+      "name": "MU",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/MU/買前確認/20260825-MU-購買前確認.md"
+      ]
+    },
+    {
+      "id": "entity:NOW",
+      "name": "NOW",
+      "report_count": 2,
+      "tickers": [
+        "NOW.US"
+      ],
+      "reports": [
+        "reports/NOW/深度分析/20260721-投研報告-NOW-research.md",
+        "reports/NOW/財報分析/20260724-財報精讀-NOW-2026Q2.md"
+      ]
+    },
+    {
+      "id": "entity:NVDA",
+      "name": "NVDA",
       "report_count": 23,
       "tickers": [
         "NVDA"
       ],
       "reports": [
-        "REPORT/NVIDIA/估值分析/20260413-估值-NVIDIA-valuation.md",
-        "REPORT/NVIDIA/估值分析/20260420-估值-NVIDIA-財務估值分析.md",
-        "REPORT/NVIDIA/公眾號文章/00-系列說明.md",
-        "REPORT/NVIDIA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
-        "REPORT/NVIDIA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
-        "REPORT/NVIDIA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
-        "REPORT/NVIDIA/公眾號文章/04-競爭與威脅-四面楚歌.md",
-        "REPORT/NVIDIA/公眾號文章/05-風險估值與決策-終章.md",
-        "REPORT/NVIDIA/參考資料/資料-NVIDIA-段永平雪球發言-NVDA相關.md",
-        "REPORT/NVIDIA/團隊分析/最終報告-安全邊際-20260420.md",
-        "REPORT/NVIDIA/專題研究/20260413-專題-NVIDIA-反面證據.md",
-        "REPORT/NVIDIA/專題研究/20260419-專題-NVIDIA-自研晶片威脅.md",
-        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-CUDA護城河三問精簡版.md",
-        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告1-訓練vs推理市場分化.md",
-        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告2-NVIDIA推理護城河.md",
-        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告3-CUDA護城河本質.md",
-        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告4-AI程式設計對CUDA顛覆.md",
-        "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-推理護城河與CUDA護城河.md",
-        "REPORT/NVIDIA/專題研究/20260426-專題-NVIDIA-安全墊分析.md",
-        "REPORT/NVIDIA/深度分析/20260408-投研報告-NVIDIA-research.md",
-        "REPORT/NVIDIA/深度分析/20260413-投研報告-NVIDIA-research.md",
-        "REPORT/NVIDIA/深度分析/20260830-投研報告-NVIDIA-research.md",
-        "REPORT/NVIDIA/財報分析/20260830-財報精讀-NVIDIA-FY2027Q2.md"
+        "reports/NVDA/估值分析/20260413-估值-NVDA-valuation.md",
+        "reports/NVDA/估值分析/20260420-估值-NVDA-財務估值分析.md",
+        "reports/NVDA/公眾號文章/00-系列說明.md",
+        "reports/NVDA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
+        "reports/NVDA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
+        "reports/NVDA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
+        "reports/NVDA/公眾號文章/04-競爭與威脅-四面楚歌.md",
+        "reports/NVDA/公眾號文章/05-風險估值與決策-終章.md",
+        "reports/NVDA/參考資料/資料-NVDA-段永平雪球發言-NVDA相關.md",
+        "reports/NVDA/團隊分析/最終報告-安全邊際-20260420.md",
+        "reports/NVDA/專題研究/20260413-專題-NVDA-反面證據.md",
+        "reports/NVDA/專題研究/20260419-專題-NVDA-自研晶片威脅.md",
+        "reports/NVDA/專題研究/20260424-專題-NVDA-CUDA護城河三問精簡版.md",
+        "reports/NVDA/專題研究/20260424-專題-NVDA-子報告1-訓練vs推理市場分化.md",
+        "reports/NVDA/專題研究/20260424-專題-NVDA-子報告2-NVDA推理護城河.md",
+        "reports/NVDA/專題研究/20260424-專題-NVDA-子報告3-CUDA護城河本質.md",
+        "reports/NVDA/專題研究/20260424-專題-NVDA-子報告4-AI程式設計對CUDA顛覆.md",
+        "reports/NVDA/專題研究/20260424-專題-NVDA-推理護城河與CUDA護城河.md",
+        "reports/NVDA/專題研究/20260426-專題-NVDA-安全墊分析.md",
+        "reports/NVDA/深度分析/20260408-投研報告-NVDA-research.md",
+        "reports/NVDA/深度分析/20260413-投研報告-NVDA-research.md",
+        "reports/NVDA/深度分析/20260830-投研報告-NVDA-research.md",
+        "reports/NVDA/財報分析/20260830-財報精讀-NVDA-FY2027Q2.md"
       ]
     },
     {
-      "id": "entity:PayPal",
-      "name": "PayPal",
-      "report_count": 3,
-      "tickers": [
-        "PYPL"
-      ],
-      "reports": [
-        "REPORT/PayPal/公眾號文章/01-PayPal-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
-        "REPORT/PayPal/專題研究/20260608-專題-PayPal-vs-螞蟻集團-對比分析.md",
-        "REPORT/PayPal/深度分析/20260607-投研報告-PayPal-深度研究報告.md"
-      ]
-    },
-    {
-      "id": "entity:Progressive",
-      "name": "Progressive",
+      "id": "entity:PGR",
+      "name": "PGR",
       "report_count": 9,
       "tickers": [
         "PGR"
       ],
       "reports": [
-        "REPORT/Progressive/公眾號文章/01-開篇-美國車險之王的誕生.md",
-        "REPORT/Progressive/公眾號文章/02-商業模式-一家偽裝成保險公司的資料公司.md",
-        "REPORT/Progressive/公眾號文章/03-競爭與增長-從老二到老大之後怎麼辦.md",
-        "REPORT/Progressive/公眾號文章/04-風險與估值-10倍PE到底貴不貴.md",
-        "REPORT/Progressive/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/Progressive/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/Progressive/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/Progressive/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/Progressive/團隊分析/最終報告.md"
+        "reports/PGR/公眾號文章/01-開篇-美國車險之王的誕生.md",
+        "reports/PGR/公眾號文章/02-商業模式-一家偽裝成保險公司的資料公司.md",
+        "reports/PGR/公眾號文章/03-競爭與增長-從老二到老大之後怎麼辦.md",
+        "reports/PGR/公眾號文章/04-風險與估值-10倍PE到底貴不貴.md",
+        "reports/PGR/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/PGR/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/PGR/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/PGR/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/PGR/團隊分析/最終報告.md"
       ]
     },
     {
-      "id": "entity:Qualcomm",
-      "name": "Qualcomm",
+      "id": "entity:PYPL",
+      "name": "PYPL",
+      "report_count": 3,
+      "tickers": [
+        "PYPL"
+      ],
+      "reports": [
+        "reports/PYPL/公眾號文章/01-PYPL-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
+        "reports/PYPL/專題研究/20260608-專題-PYPL-vs-螞蟻集團-對比分析.md",
+        "reports/PYPL/深度分析/20260607-投研報告-PYPL-深度研究報告.md"
+      ]
+    },
+    {
+      "id": "entity:QCOM",
+      "name": "QCOM",
       "report_count": 9,
       "tickers": [
         "QCOM"
       ],
       "reports": [
-        "REPORT/Qualcomm/公眾號文章/01-開篇-移動晶片之王的真面目.md",
-        "REPORT/Qualcomm/公眾號文章/02-商業模式-晶片加專利的雙輪印鈔機.md",
-        "REPORT/Qualcomm/公眾號文章/03-AI與多元化-後手機時代的三條賽道.md",
-        "REPORT/Qualcomm/公眾號文章/04-風險與估值-五重壓力下的價格判斷.md",
-        "REPORT/Qualcomm/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/Qualcomm/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/Qualcomm/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/Qualcomm/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/Qualcomm/團隊分析/最終報告.md"
+        "reports/QCOM/公眾號文章/01-開篇-移動晶片之王的真面目.md",
+        "reports/QCOM/公眾號文章/02-商業模式-晶片加專利的雙輪印鈔機.md",
+        "reports/QCOM/公眾號文章/03-AI與多元化-後手機時代的三條賽道.md",
+        "reports/QCOM/公眾號文章/04-風險與估值-五重壓力下的價格判斷.md",
+        "reports/QCOM/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/QCOM/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/QCOM/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/QCOM/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/QCOM/團隊分析/最終報告.md"
+      ]
+    },
+    {
+      "id": "entity:RDDT",
+      "name": "RDDT",
+      "report_count": 2,
+      "tickers": [
+        "RDDT"
+      ],
+      "reports": [
+        "reports/RDDT/深度分析/RDDT-research-20260830.md",
+        "reports/RDDT/財報分析/RDDT-earnings-2026Q2.md"
       ]
     },
     {
@@ -308,102 +353,57 @@
         "RKLB"
       ],
       "reports": [
-        "REPORT/RKLB/深度分析/投研報告-RKLB-investment-research.md"
+        "reports/RKLB/深度分析/投研報告-RKLB-investment-research.md"
       ]
     },
     {
-      "id": "entity:Reddit",
-      "name": "Reddit",
-      "report_count": 2,
-      "tickers": [
-        "RDDT"
-      ],
-      "reports": [
-        "REPORT/Reddit/深度分析/Reddit-research-20260830.md",
-        "REPORT/Reddit/財報分析/Reddit-earnings-2026Q2.md"
-      ]
-    },
-    {
-      "id": "entity:ServiceNow",
-      "name": "ServiceNow",
-      "report_count": 2,
-      "tickers": [
-        "NOW.US"
-      ],
-      "reports": [
-        "REPORT/ServiceNow/深度分析/20260721-投研報告-ServiceNow-research.md",
-        "REPORT/ServiceNow/財報分析/20260724-財報精讀-ServiceNow-2026Q2.md"
-      ]
-    },
-    {
-      "id": "entity:Take-Two",
-      "name": "Take-Two",
-      "report_count": 1,
-      "tickers": [],
-      "reports": [
-        "REPORT/Take-Two/深度分析/Take-Two-research-20260827.md"
-      ]
-    },
-    {
-      "id": "entity:Tesla",
-      "name": "Tesla",
+      "id": "entity:TSLA",
+      "name": "TSLA",
       "report_count": 2,
       "tickers": [
         "TSLA"
       ],
       "reports": [
-        "REPORT/Tesla/深度分析/20260624-投研報告-Tesla-research.md",
-        "REPORT/Tesla/深度分析/20260702-投研報告-Tesla-特斯拉投資研究報告.md"
+        "reports/TSLA/深度分析/20260624-投研報告-TSLA-research.md",
+        "reports/TSLA/深度分析/20260702-投研報告-TSLA-特斯拉投資研究報告.md"
       ]
     },
     {
-      "id": "entity:Uber",
-      "name": "Uber",
+      "id": "entity:TTWO",
+      "name": "TTWO",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/TTWO/深度分析/TTWO-research-20260827.md"
+      ]
+    },
+    {
+      "id": "entity:UBER",
+      "name": "UBER",
       "report_count": 10,
       "tickers": [
         "UBER"
       ],
       "reports": [
-        "REPORT/Uber/公眾號文章/00-系列說明.md",
-        "REPORT/Uber/公眾號文章/01-開篇-從虧損之王到盈利機器.md",
-        "REPORT/Uber/公眾號文章/02-商業模式-出行加外賣的雙飛輪.md",
-        "REPORT/Uber/公眾號文章/03-自動駕駛-機遇還是威脅.md",
-        "REPORT/Uber/公眾號文章/04-風險與估值-終章.md",
-        "REPORT/Uber/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/Uber/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/Uber/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/Uber/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/Uber/團隊分析/最終報告.md"
+        "reports/UBER/公眾號文章/00-系列說明.md",
+        "reports/UBER/公眾號文章/01-開篇-從虧損之王到盈利機器.md",
+        "reports/UBER/公眾號文章/02-商業模式-出行加外賣的雙飛輪.md",
+        "reports/UBER/公眾號文章/03-自動駕駛-機遇還是威脅.md",
+        "reports/UBER/公眾號文章/04-風險與估值-終章.md",
+        "reports/UBER/團隊分析/01-商業模式分析-段永平視角.md",
+        "reports/UBER/團隊分析/02-財務估值分析-巴菲特視角.md",
+        "reports/UBER/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/UBER/團隊分析/04-風險管理層評估-李錄視角.md",
+        "reports/UBER/團隊分析/最終報告.md"
       ]
     },
     {
-      "id": "entity:Victoria's Secret",
-      "name": "Victoria's Secret",
+      "id": "entity:VSXY",
+      "name": "VSXY",
       "report_count": 1,
       "tickers": [],
       "reports": [
-        "REPORT/Victoria's Secret/深度分析/Victoria's Secret-research-20260826.md"
-      ]
-    },
-    {
-      "id": "entity:lululemon",
-      "name": "lululemon",
-      "report_count": 11,
-      "tickers": [
-        "LULU"
-      ],
-      "reports": [
-        "REPORT/lululemon/公眾號文章/00-系列說明.md",
-        "REPORT/lululemon/公眾號文章/01-開篇-不只是瑜伽褲.md",
-        "REPORT/lululemon/公眾號文章/02-品牌護城河的真實深度.md",
-        "REPORT/lululemon/公眾號文章/03-增長引擎與中國市場.md",
-        "REPORT/lululemon/公眾號文章/04-風險管理層與估值判斷.md",
-        "REPORT/lululemon/團隊分析/01-商業模式分析-段永平視角.md",
-        "REPORT/lululemon/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "REPORT/lululemon/團隊分析/03-行業競爭分析-芒格視角.md",
-        "REPORT/lululemon/團隊分析/04-風險管理層評估-李錄視角.md",
-        "REPORT/lululemon/團隊分析/最終報告.md",
-        "REPORT/lululemon/深度分析/20260516-投研報告-lululemon-research.md"
+        "reports/VSXY/深度分析/VSXY-research-20260826.md"
       ]
     },
     {
@@ -414,14 +414,277 @@
         "2449.TW"
       ],
       "reports": [
-        "REPORT/京元電子/深度分析/20260719-投研報告-京元電子-research.md"
+        "reports/京元電子/深度分析/20260719-投研報告-京元電子-research.md"
       ]
     }
   ],
   "reports": [
     {
-      "id": "REPORT/ADP/公眾號文章/01-開篇-全球最大的發薪公司.md",
-      "path": "REPORT/ADP/公眾號文章/01-開篇-全球最大的發薪公司.md",
+      "id": "reports/ACN/公眾號文章/01-開篇-全球最大IT諮詢公司的真面目.md",
+      "path": "reports/ACN/公眾號文章/01-開篇-全球最大IT諮詢公司的真面目.md",
+      "title": "01-開篇-全球最大IT諮詢公司的真面目",
+      "entity": "ACN",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 7557
+    },
+    {
+      "id": "reports/ACN/公眾號文章/02-商業模式-諮詢加外包的雙輪驅動.md",
+      "path": "reports/ACN/公眾號文章/02-商業模式-諮詢加外包的雙輪驅動.md",
+      "title": "02-商業模式-諮詢加外包的雙輪驅動",
+      "entity": "ACN",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 9141
+    },
+    {
+      "id": "reports/ACN/公眾號文章/03-競爭與增長-AI時代的護城河攻防戰.md",
+      "path": "reports/ACN/公眾號文章/03-競爭與增長-AI時代的護城河攻防戰.md",
+      "title": "03-競爭與增長-AI時代的護城河攻防戰",
+      "entity": "ACN",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 11032
+    },
+    {
+      "id": "reports/ACN/公眾號文章/04-風險與估值-14倍PE是恐慌還是理性.md",
+      "path": "reports/ACN/公眾號文章/04-風險與估值-14倍PE是恐慌還是理性.md",
+      "title": "04-風險與估值-14倍PE是恐慌還是理性",
+      "entity": "ACN",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 11305
+    },
+    {
+      "id": "reports/ACN/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/ACN/團隊分析/01-商業模式分析-段永平視角.md",
+      "title": "01-商業模式分析-段永平視角",
+      "entity": "ACN",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "ACN",
+      "masters": [
+        "段永平"
+      ],
+      "bytes": 4862
+    },
+    {
+      "id": "reports/ACN/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/ACN/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "title": "02-財務估值分析-巴菲特視角",
+      "entity": "ACN",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "ACN",
+      "masters": [
+        "巴菲特"
+      ],
+      "bytes": 5585
+    },
+    {
+      "id": "reports/ACN/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/ACN/團隊分析/03-行業競爭分析-芒格視角.md",
+      "title": "03-行業競爭分析-芒格視角",
+      "entity": "ACN",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "ACN",
+      "masters": [
+        "芒格"
+      ],
+      "bytes": 6440
+    },
+    {
+      "id": "reports/ACN/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/ACN/團隊分析/04-風險管理層評估-李錄視角.md",
+      "title": "04-風險管理層評估-李錄視角",
+      "entity": "ACN",
+      "type": "management",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "ACN",
+      "masters": [
+        "李錄"
+      ],
+      "bytes": 7135
+    },
+    {
+      "id": "reports/ACN/團隊分析/最終報告.md",
+      "path": "reports/ACN/團隊分析/最終報告.md",
+      "title": "最終報告",
+      "entity": "ACN",
+      "type": "team",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "ACN",
+      "masters": [],
+      "bytes": 7298
+    },
+    {
+      "id": "reports/ADBE/公眾號文章/01-開篇-創意軟體帝國的關鍵資料.md",
+      "path": "reports/ADBE/公眾號文章/01-開篇-創意軟體帝國的關鍵資料.md",
+      "title": "01-開篇-創意軟體帝國的關鍵資料",
+      "entity": "ADBE",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 8899
+    },
+    {
+      "id": "reports/ADBE/公眾號文章/02-商業模式-訂閱制印鈔機的運轉邏輯.md",
+      "path": "reports/ADBE/公眾號文章/02-商業模式-訂閱制印鈔機的運轉邏輯.md",
+      "title": "02-商業模式-訂閱制印鈔機的運轉邏輯",
+      "entity": "ADBE",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 12356
+    },
+    {
+      "id": "reports/ADBE/公眾號文章/03-AI衝擊-Firefly是救星還是掘墓人.md",
+      "path": "reports/ADBE/公眾號文章/03-AI衝擊-Firefly是救星還是掘墓人.md",
+      "title": "03-AI衝擊-Firefly是救星還是掘墓人",
+      "entity": "ADBE",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 12631
+    },
+    {
+      "id": "reports/ADBE/公眾號文章/04-風險與估值-PE十年最低是機會還是陷阱.md",
+      "path": "reports/ADBE/公眾號文章/04-風險與估值-PE十年最低是機會還是陷阱.md",
+      "title": "04-風險與估值-PE十年最低是機會還是陷阱",
+      "entity": "ADBE",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 14391
+    },
+    {
+      "id": "reports/ADBE/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/ADBE/團隊分析/01-商業模式分析-段永平視角.md",
+      "title": "01-商業模式分析-段永平視角",
+      "entity": "ADBE",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "段永平"
+      ],
+      "bytes": 5037
+    },
+    {
+      "id": "reports/ADBE/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/ADBE/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "title": "02-財務估值分析-巴菲特視角",
+      "entity": "ADBE",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特"
+      ],
+      "bytes": 5621
+    },
+    {
+      "id": "reports/ADBE/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/ADBE/團隊分析/03-行業競爭分析-芒格視角.md",
+      "title": "03-行業競爭分析-芒格視角",
+      "entity": "ADBE",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "芒格"
+      ],
+      "bytes": 7092
+    },
+    {
+      "id": "reports/ADBE/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/ADBE/團隊分析/04-風險管理層評估-李錄視角.md",
+      "title": "04-風險管理層評估-李錄視角",
+      "entity": "ADBE",
+      "type": "management",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "李錄"
+      ],
+      "bytes": 7486
+    },
+    {
+      "id": "reports/ADBE/團隊分析/最終報告.md",
+      "path": "reports/ADBE/團隊分析/最終報告.md",
+      "title": "最終報告",
+      "entity": "ADBE",
+      "type": "team",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "ADBE",
+      "masters": [],
+      "bytes": 6553
+    },
+    {
+      "id": "reports/ADBE/深度分析/20260607-投研報告-ADBE-research.md",
+      "path": "reports/ADBE/深度分析/20260607-投研報告-ADBE-research.md",
+      "title": "20260607-投研報告-ADBE-research",
+      "entity": "ADBE",
+      "type": "research",
+      "skill": null,
+      "date": "2026-06-07",
+      "quarter": null,
+      "ticker": "ADBE",
+      "masters": [],
+      "bytes": 14237
+    },
+    {
+      "id": "reports/ADP/公眾號文章/01-開篇-全球最大的發薪公司.md",
+      "path": "reports/ADP/公眾號文章/01-開篇-全球最大的發薪公司.md",
       "title": "01-開篇-全球最大的發薪公司",
       "entity": "ADP",
       "type": "other",
@@ -433,8 +696,8 @@
       "bytes": 8147
     },
     {
-      "id": "REPORT/ADP/公眾號文章/02-商業模式-一臺三層收入的複利機器.md",
-      "path": "REPORT/ADP/公眾號文章/02-商業模式-一臺三層收入的複利機器.md",
+      "id": "reports/ADP/公眾號文章/02-商業模式-一臺三層收入的複利機器.md",
+      "path": "reports/ADP/公眾號文章/02-商業模式-一臺三層收入的複利機器.md",
       "title": "02-商業模式-一臺三層收入的複利機器",
       "entity": "ADP",
       "type": "other",
@@ -446,8 +709,8 @@
       "bytes": 11147
     },
     {
-      "id": "REPORT/ADP/公眾號文章/03-競爭與增長-薪酬領域的Visa.md",
-      "path": "REPORT/ADP/公眾號文章/03-競爭與增長-薪酬領域的Visa.md",
+      "id": "reports/ADP/公眾號文章/03-競爭與增長-薪酬領域的Visa.md",
+      "path": "reports/ADP/公眾號文章/03-競爭與增長-薪酬領域的Visa.md",
       "title": "03-競爭與增長-薪酬領域的Visa",
       "entity": "ADP",
       "type": "other",
@@ -459,8 +722,8 @@
       "bytes": 10762
     },
     {
-      "id": "REPORT/ADP/公眾號文章/04-風險與估值-打了七折的收費公路.md",
-      "path": "REPORT/ADP/公眾號文章/04-風險與估值-打了七折的收費公路.md",
+      "id": "reports/ADP/公眾號文章/04-風險與估值-打了七折的收費公路.md",
+      "path": "reports/ADP/公眾號文章/04-風險與估值-打了七折的收費公路.md",
       "title": "04-風險與估值-打了七折的收費公路",
       "entity": "ADP",
       "type": "valuation",
@@ -472,8 +735,8 @@
       "bytes": 11804
     },
     {
-      "id": "REPORT/ADP/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/ADP/團隊分析/01-商業模式分析-段永平視角.md",
+      "id": "reports/ADP/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/ADP/團隊分析/01-商業模式分析-段永平視角.md",
       "title": "01-商業模式分析-段永平視角",
       "entity": "ADP",
       "type": "other",
@@ -487,8 +750,8 @@
       "bytes": 4412
     },
     {
-      "id": "REPORT/ADP/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/ADP/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "id": "reports/ADP/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/ADP/團隊分析/02-財務估值分析-巴菲特視角.md",
       "title": "02-財務估值分析-巴菲特視角",
       "entity": "ADP",
       "type": "valuation",
@@ -502,8 +765,8 @@
       "bytes": 4550
     },
     {
-      "id": "REPORT/ADP/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/ADP/團隊分析/03-行業競爭分析-芒格視角.md",
+      "id": "reports/ADP/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/ADP/團隊分析/03-行業競爭分析-芒格視角.md",
       "title": "03-行業競爭分析-芒格視角",
       "entity": "ADP",
       "type": "other",
@@ -517,8 +780,8 @@
       "bytes": 6170
     },
     {
-      "id": "REPORT/ADP/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/ADP/團隊分析/04-風險管理層評估-李錄視角.md",
+      "id": "reports/ADP/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/ADP/團隊分析/04-風險管理層評估-李錄視角.md",
       "title": "04-風險管理層評估-李錄視角",
       "entity": "ADP",
       "type": "management",
@@ -532,8 +795,8 @@
       "bytes": 6759
     },
     {
-      "id": "REPORT/ADP/團隊分析/最終報告.md",
-      "path": "REPORT/ADP/團隊分析/最終報告.md",
+      "id": "reports/ADP/團隊分析/最終報告.md",
+      "path": "reports/ADP/團隊分析/最終報告.md",
       "title": "最終報告",
       "entity": "ADP",
       "type": "team",
@@ -545,273 +808,10 @@
       "bytes": 5954
     },
     {
-      "id": "REPORT/Accenture/公眾號文章/01-開篇-全球最大IT諮詢公司的真面目.md",
-      "path": "REPORT/Accenture/公眾號文章/01-開篇-全球最大IT諮詢公司的真面目.md",
-      "title": "01-開篇-全球最大IT諮詢公司的真面目",
-      "entity": "Accenture",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 7557
-    },
-    {
-      "id": "REPORT/Accenture/公眾號文章/02-商業模式-諮詢加外包的雙輪驅動.md",
-      "path": "REPORT/Accenture/公眾號文章/02-商業模式-諮詢加外包的雙輪驅動.md",
-      "title": "02-商業模式-諮詢加外包的雙輪驅動",
-      "entity": "Accenture",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 9141
-    },
-    {
-      "id": "REPORT/Accenture/公眾號文章/03-競爭與增長-AI時代的護城河攻防戰.md",
-      "path": "REPORT/Accenture/公眾號文章/03-競爭與增長-AI時代的護城河攻防戰.md",
-      "title": "03-競爭與增長-AI時代的護城河攻防戰",
-      "entity": "Accenture",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 11032
-    },
-    {
-      "id": "REPORT/Accenture/公眾號文章/04-風險與估值-14倍PE是恐慌還是理性.md",
-      "path": "REPORT/Accenture/公眾號文章/04-風險與估值-14倍PE是恐慌還是理性.md",
-      "title": "04-風險與估值-14倍PE是恐慌還是理性",
-      "entity": "Accenture",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 11305
-    },
-    {
-      "id": "REPORT/Accenture/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/Accenture/團隊分析/01-商業模式分析-段永平視角.md",
-      "title": "01-商業模式分析-段永平視角",
-      "entity": "Accenture",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "ACN",
-      "masters": [
-        "段永平"
-      ],
-      "bytes": 4862
-    },
-    {
-      "id": "REPORT/Accenture/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/Accenture/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "title": "02-財務估值分析-巴菲特視角",
-      "entity": "Accenture",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "ACN",
-      "masters": [
-        "巴菲特"
-      ],
-      "bytes": 5585
-    },
-    {
-      "id": "REPORT/Accenture/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/Accenture/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
-      "entity": "Accenture",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "ACN",
-      "masters": [
-        "芒格"
-      ],
-      "bytes": 6440
-    },
-    {
-      "id": "REPORT/Accenture/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/Accenture/團隊分析/04-風險管理層評估-李錄視角.md",
-      "title": "04-風險管理層評估-李錄視角",
-      "entity": "Accenture",
-      "type": "management",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "ACN",
-      "masters": [
-        "李錄"
-      ],
-      "bytes": 7135
-    },
-    {
-      "id": "REPORT/Accenture/團隊分析/最終報告.md",
-      "path": "REPORT/Accenture/團隊分析/最終報告.md",
-      "title": "最終報告",
-      "entity": "Accenture",
-      "type": "team",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "ACN",
-      "masters": [],
-      "bytes": 7298
-    },
-    {
-      "id": "REPORT/Adobe/公眾號文章/01-開篇-創意軟體帝國的關鍵資料.md",
-      "path": "REPORT/Adobe/公眾號文章/01-開篇-創意軟體帝國的關鍵資料.md",
-      "title": "01-開篇-創意軟體帝國的關鍵資料",
-      "entity": "Adobe",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 8899
-    },
-    {
-      "id": "REPORT/Adobe/公眾號文章/02-商業模式-訂閱制印鈔機的運轉邏輯.md",
-      "path": "REPORT/Adobe/公眾號文章/02-商業模式-訂閱制印鈔機的運轉邏輯.md",
-      "title": "02-商業模式-訂閱制印鈔機的運轉邏輯",
-      "entity": "Adobe",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 12356
-    },
-    {
-      "id": "REPORT/Adobe/公眾號文章/03-AI衝擊-Firefly是救星還是掘墓人.md",
-      "path": "REPORT/Adobe/公眾號文章/03-AI衝擊-Firefly是救星還是掘墓人.md",
-      "title": "03-AI衝擊-Firefly是救星還是掘墓人",
-      "entity": "Adobe",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 12631
-    },
-    {
-      "id": "REPORT/Adobe/公眾號文章/04-風險與估值-PE十年最低是機會還是陷阱.md",
-      "path": "REPORT/Adobe/公眾號文章/04-風險與估值-PE十年最低是機會還是陷阱.md",
-      "title": "04-風險與估值-PE十年最低是機會還是陷阱",
-      "entity": "Adobe",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 14391
-    },
-    {
-      "id": "REPORT/Adobe/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/Adobe/團隊分析/01-商業模式分析-段永平視角.md",
-      "title": "01-商業模式分析-段永平視角",
-      "entity": "Adobe",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "段永平"
-      ],
-      "bytes": 5037
-    },
-    {
-      "id": "REPORT/Adobe/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/Adobe/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "title": "02-財務估值分析-巴菲特視角",
-      "entity": "Adobe",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "巴菲特"
-      ],
-      "bytes": 5621
-    },
-    {
-      "id": "REPORT/Adobe/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/Adobe/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
-      "entity": "Adobe",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "芒格"
-      ],
-      "bytes": 7092
-    },
-    {
-      "id": "REPORT/Adobe/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/Adobe/團隊分析/04-風險管理層評估-李錄視角.md",
-      "title": "04-風險管理層評估-李錄視角",
-      "entity": "Adobe",
-      "type": "management",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "李錄"
-      ],
-      "bytes": 7486
-    },
-    {
-      "id": "REPORT/Adobe/團隊分析/最終報告.md",
-      "path": "REPORT/Adobe/團隊分析/最終報告.md",
-      "title": "最終報告",
-      "entity": "Adobe",
-      "type": "team",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "ADBE",
-      "masters": [],
-      "bytes": 6553
-    },
-    {
-      "id": "REPORT/Adobe/深度分析/20260607-投研報告-Adobe-research.md",
-      "path": "REPORT/Adobe/深度分析/20260607-投研報告-Adobe-research.md",
-      "title": "20260607-投研報告-Adobe-research",
-      "entity": "Adobe",
-      "type": "research",
-      "skill": null,
-      "date": "2026-06-07",
-      "quarter": null,
-      "ticker": "ADBE",
-      "masters": [],
-      "bytes": 14237
-    },
-    {
-      "id": "REPORT/Booking/公眾號文章/01-開篇-全球最大的旅行撮合機器.md",
-      "path": "REPORT/Booking/公眾號文章/01-開篇-全球最大的旅行撮合機器.md",
+      "id": "reports/BKNG/公眾號文章/01-開篇-全球最大的旅行撮合機器.md",
+      "path": "reports/BKNG/公眾號文章/01-開篇-全球最大的旅行撮合機器.md",
       "title": "01-開篇-全球最大的旅行撮合機器",
-      "entity": "Booking",
+      "entity": "BKNG",
       "type": "other",
       "skill": null,
       "date": null,
@@ -821,10 +821,10 @@
       "bytes": 8762
     },
     {
-      "id": "REPORT/Booking/公眾號文章/02-商業模式-一門不擁有酒店的酒店生意.md",
-      "path": "REPORT/Booking/公眾號文章/02-商業模式-一門不擁有酒店的酒店生意.md",
+      "id": "reports/BKNG/公眾號文章/02-商業模式-一門不擁有酒店的酒店生意.md",
+      "path": "reports/BKNG/公眾號文章/02-商業模式-一門不擁有酒店的酒店生意.md",
       "title": "02-商業模式-一門不擁有酒店的酒店生意",
-      "entity": "Booking",
+      "entity": "BKNG",
       "type": "other",
       "skill": null,
       "date": null,
@@ -834,10 +834,10 @@
       "bytes": 10067
     },
     {
-      "id": "REPORT/Booking/公眾號文章/03-競爭與增長-一場關於搜尋入口的戰爭.md",
-      "path": "REPORT/Booking/公眾號文章/03-競爭與增長-一場關於搜尋入口的戰爭.md",
+      "id": "reports/BKNG/公眾號文章/03-競爭與增長-一場關於搜尋入口的戰爭.md",
+      "path": "reports/BKNG/公眾號文章/03-競爭與增長-一場關於搜尋入口的戰爭.md",
       "title": "03-競爭與增長-一場關於搜尋入口的戰爭",
-      "entity": "Booking",
+      "entity": "BKNG",
       "type": "other",
       "skill": null,
       "date": null,
@@ -847,10 +847,10 @@
       "bytes": 10588
     },
     {
-      "id": "REPORT/Booking/公眾號文章/04-風險與估值-好公司也需要好價格.md",
-      "path": "REPORT/Booking/公眾號文章/04-風險與估值-好公司也需要好價格.md",
+      "id": "reports/BKNG/公眾號文章/04-風險與估值-好公司也需要好價格.md",
+      "path": "reports/BKNG/公眾號文章/04-風險與估值-好公司也需要好價格.md",
       "title": "04-風險與估值-好公司也需要好價格",
-      "entity": "Booking",
+      "entity": "BKNG",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -860,10 +860,10 @@
       "bytes": 11425
     },
     {
-      "id": "REPORT/Booking/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/Booking/團隊分析/01-商業模式分析-段永平視角.md",
+      "id": "reports/BKNG/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/BKNG/團隊分析/01-商業模式分析-段永平視角.md",
       "title": "01-商業模式分析-段永平視角",
-      "entity": "Booking",
+      "entity": "BKNG",
       "type": "other",
       "skill": null,
       "date": null,
@@ -875,10 +875,10 @@
       "bytes": 5406
     },
     {
-      "id": "REPORT/Booking/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/Booking/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "id": "reports/BKNG/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/BKNG/團隊分析/02-財務估值分析-巴菲特視角.md",
       "title": "02-財務估值分析-巴菲特視角",
-      "entity": "Booking",
+      "entity": "BKNG",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -890,10 +890,10 @@
       "bytes": 6823
     },
     {
-      "id": "REPORT/Booking/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/Booking/團隊分析/03-行業競爭分析-芒格視角.md",
+      "id": "reports/BKNG/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/BKNG/團隊分析/03-行業競爭分析-芒格視角.md",
       "title": "03-行業競爭分析-芒格視角",
-      "entity": "Booking",
+      "entity": "BKNG",
       "type": "other",
       "skill": null,
       "date": null,
@@ -905,10 +905,10 @@
       "bytes": 7458
     },
     {
-      "id": "REPORT/Booking/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/Booking/團隊分析/04-風險管理層評估-李錄視角.md",
+      "id": "reports/BKNG/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/BKNG/團隊分析/04-風險管理層評估-李錄視角.md",
       "title": "04-風險管理層評估-李錄視角",
-      "entity": "Booking",
+      "entity": "BKNG",
       "type": "management",
       "skill": null,
       "date": null,
@@ -920,10 +920,10 @@
       "bytes": 8969
     },
     {
-      "id": "REPORT/Booking/團隊分析/最終報告.md",
-      "path": "REPORT/Booking/團隊分析/最終報告.md",
+      "id": "reports/BKNG/團隊分析/最終報告.md",
+      "path": "reports/BKNG/團隊分析/最終報告.md",
       "title": "最終報告",
-      "entity": "Booking",
+      "entity": "BKNG",
       "type": "team",
       "skill": null,
       "date": null,
@@ -933,11 +933,11 @@
       "bytes": 8182
     },
     {
-      "id": "REPORT/GE Vernova/深度分析/20260623-投研報告-GE Vernova-GEV.md",
-      "path": "REPORT/GE Vernova/深度分析/20260623-投研報告-GE Vernova-GEV.md",
-      "title": "20260623-投研報告-GE Vernova-GEV",
-      "entity": "GE Vernova",
-      "type": "other",
+      "id": "reports/GEV/深度分析/20260623-投研報告-GEV-research.md",
+      "path": "reports/GEV/深度分析/20260623-投研報告-GEV-research.md",
+      "title": "20260623-投研報告-GEV-research",
+      "entity": "GEV",
+      "type": "research",
       "skill": null,
       "date": "2026-06-23",
       "quarter": null,
@@ -951,10 +951,10 @@
       "bytes": 33339
     },
     {
-      "id": "REPORT/Google/深度分析/20260623-投研報告-Google-Alphabet投資研究報告.md",
-      "path": "REPORT/Google/深度分析/20260623-投研報告-Google-Alphabet投資研究報告.md",
-      "title": "20260623-投研報告-Google-Alphabet投資研究報告",
-      "entity": "Google",
+      "id": "reports/GOOGL/深度分析/20260623-投研報告-GOOGL-Alphabet投資研究報告.md",
+      "path": "reports/GOOGL/深度分析/20260623-投研報告-GOOGL-Alphabet投資研究報告.md",
+      "title": "20260623-投研報告-GOOGL-Alphabet投資研究報告",
+      "entity": "GOOGL",
       "type": "research",
       "skill": null,
       "date": "2026-06-23",
@@ -964,10 +964,10 @@
       "bytes": 25590
     },
     {
-      "id": "REPORT/Intel/深度分析/20260623-投研報告-Intel-investment-research.md",
-      "path": "REPORT/Intel/深度分析/20260623-投研報告-Intel-investment-research.md",
-      "title": "20260623-投研報告-Intel-investment-research",
-      "entity": "Intel",
+      "id": "reports/INTC/深度分析/20260623-投研報告-INTC-investment-research.md",
+      "path": "reports/INTC/深度分析/20260623-投研報告-INTC-investment-research.md",
+      "title": "20260623-投研報告-INTC-investment-research",
+      "entity": "INTC",
       "type": "research",
       "skill": "investment-research",
       "date": "2026-06-23",
@@ -982,10 +982,10 @@
       "bytes": 26129
     },
     {
-      "id": "REPORT/Intel/買前確認/20260825-INTC-購買前確認.md",
-      "path": "REPORT/Intel/買前確認/20260825-INTC-購買前確認.md",
+      "id": "reports/INTC/買前確認/20260825-INTC-購買前確認.md",
+      "path": "reports/INTC/買前確認/20260825-INTC-購買前確認.md",
       "title": "20260825-INTC-購買前確認",
-      "entity": "Intel",
+      "entity": "INTC",
       "type": "other",
       "skill": null,
       "date": "2026-08-25",
@@ -996,13 +996,453 @@
         "段永平",
         "李錄"
       ],
-      "bytes": 26615
+      "bytes": 26614
     },
     {
-      "id": "REPORT/Marvell/公眾號文章/01-開篇-定製晶片賽道的關鍵玩家.md",
-      "path": "REPORT/Marvell/公眾號文章/01-開篇-定製晶片賽道的關鍵玩家.md",
+      "id": "reports/LULU/公眾號文章/00-系列說明.md",
+      "path": "reports/LULU/公眾號文章/00-系列說明.md",
+      "title": "00-系列說明",
+      "entity": "LULU",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 2702
+    },
+    {
+      "id": "reports/LULU/公眾號文章/01-開篇-不只是瑜伽褲.md",
+      "path": "reports/LULU/公眾號文章/01-開篇-不只是瑜伽褲.md",
+      "title": "01-開篇-不只是瑜伽褲",
+      "entity": "LULU",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 8267
+    },
+    {
+      "id": "reports/LULU/公眾號文章/02-品牌護城河的真實深度.md",
+      "path": "reports/LULU/公眾號文章/02-品牌護城河的真實深度.md",
+      "title": "02-品牌護城河的真實深度",
+      "entity": "LULU",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 11014
+    },
+    {
+      "id": "reports/LULU/公眾號文章/03-增長引擎與中國市場.md",
+      "path": "reports/LULU/公眾號文章/03-增長引擎與中國市場.md",
+      "title": "03-增長引擎與中國市場",
+      "entity": "LULU",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 11384
+    },
+    {
+      "id": "reports/LULU/公眾號文章/04-風險管理層與估值判斷.md",
+      "path": "reports/LULU/公眾號文章/04-風險管理層與估值判斷.md",
+      "title": "04-風險管理層與估值判斷",
+      "entity": "LULU",
+      "type": "management",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 14143
+    },
+    {
+      "id": "reports/LULU/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/LULU/團隊分析/01-商業模式分析-段永平視角.md",
+      "title": "01-商業模式分析-段永平視角",
+      "entity": "LULU",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "段永平"
+      ],
+      "bytes": 5145
+    },
+    {
+      "id": "reports/LULU/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/LULU/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "title": "02-財務估值分析-巴菲特視角",
+      "entity": "LULU",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特"
+      ],
+      "bytes": 6341
+    },
+    {
+      "id": "reports/LULU/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/LULU/團隊分析/03-行業競爭分析-芒格視角.md",
+      "title": "03-行業競爭分析-芒格視角",
+      "entity": "LULU",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "芒格"
+      ],
+      "bytes": 7753
+    },
+    {
+      "id": "reports/LULU/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/LULU/團隊分析/04-風險管理層評估-李錄視角.md",
+      "title": "04-風險管理層評估-李錄視角",
+      "entity": "LULU",
+      "type": "management",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "李錄"
+      ],
+      "bytes": 8568
+    },
+    {
+      "id": "reports/LULU/團隊分析/最終報告.md",
+      "path": "reports/LULU/團隊分析/最終報告.md",
+      "title": "最終報告",
+      "entity": "LULU",
+      "type": "team",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "LULU",
+      "masters": [],
+      "bytes": 6295
+    },
+    {
+      "id": "reports/LULU/深度分析/20260516-投研報告-LULU-research.md",
+      "path": "reports/LULU/深度分析/20260516-投研報告-LULU-research.md",
+      "title": "20260516-投研報告-LULU-research",
+      "entity": "LULU",
+      "type": "research",
+      "skill": null,
+      "date": "2026-05-16",
+      "quarter": null,
+      "ticker": "LULU",
+      "masters": [],
+      "bytes": 6694
+    },
+    {
+      "id": "reports/MA/公眾號文章/00-系列說明.md",
+      "path": "reports/MA/公眾號文章/00-系列說明.md",
+      "title": "00-系列說明",
+      "entity": "MA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 2320
+    },
+    {
+      "id": "reports/MA/公眾號文章/01-開篇-全球支付網路的收費站.md",
+      "path": "reports/MA/公眾號文章/01-開篇-全球支付網路的收費站.md",
+      "title": "01-開篇-全球支付網路的收費站",
+      "entity": "MA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 5972
+    },
+    {
+      "id": "reports/MA/公眾號文章/02-商業模式-四方模式與五層護城河.md",
+      "path": "reports/MA/公眾號文章/02-商業模式-四方模式與五層護城河.md",
+      "title": "02-商業模式-四方模式與五層護城河",
+      "entity": "MA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 9131
+    },
+    {
+      "id": "reports/MA/公眾號文章/03-增長空間-三條曲線與天花板.md",
+      "path": "reports/MA/公眾號文章/03-增長空間-三條曲線與天花板.md",
+      "title": "03-增長空間-三條曲線與天花板",
+      "entity": "MA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 9041
+    },
+    {
+      "id": "reports/MA/公眾號文章/04-競爭與風險-雙寡頭的壓力測試.md",
+      "path": "reports/MA/公眾號文章/04-競爭與風險-雙寡頭的壓力測試.md",
+      "title": "04-競爭與風險-雙寡頭的壓力測試",
+      "entity": "MA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 11823
+    },
+    {
+      "id": "reports/MA/公眾號文章/05-估值判斷-為確定性付多少溢價（終章）.md",
+      "path": "reports/MA/公眾號文章/05-估值判斷-為確定性付多少溢價（終章）.md",
+      "title": "05-估值判斷-為確定性付多少溢價（終章）",
+      "entity": "MA",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 10930
+    },
+    {
+      "id": "reports/MA/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/MA/團隊分析/01-商業模式分析-段永平視角.md",
+      "title": "01-商業模式分析-段永平視角",
+      "entity": "MA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "MA",
+      "masters": [
+        "段永平"
+      ],
+      "bytes": 4336
+    },
+    {
+      "id": "reports/MA/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/MA/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "title": "02-財務估值分析-巴菲特視角",
+      "entity": "MA",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "MA",
+      "masters": [
+        "巴菲特"
+      ],
+      "bytes": 4884
+    },
+    {
+      "id": "reports/MA/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/MA/團隊分析/03-行業競爭分析-芒格視角.md",
+      "title": "03-行業競爭分析-芒格視角",
+      "entity": "MA",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "MA",
+      "masters": [
+        "芒格"
+      ],
+      "bytes": 5753
+    },
+    {
+      "id": "reports/MA/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/MA/團隊分析/04-風險管理層評估-李錄視角.md",
+      "title": "04-風險管理層評估-李錄視角",
+      "entity": "MA",
+      "type": "management",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "MA",
+      "masters": [
+        "李錄"
+      ],
+      "bytes": 5961
+    },
+    {
+      "id": "reports/MA/團隊分析/最終報告.md",
+      "path": "reports/MA/團隊分析/最終報告.md",
+      "title": "最終報告",
+      "entity": "MA",
+      "type": "team",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "MA",
+      "masters": [],
+      "bytes": 7086
+    },
+    {
+      "id": "reports/META/公眾號文章/01-開篇-社交廣告帝國的關鍵資料.md",
+      "path": "reports/META/公眾號文章/01-開篇-社交廣告帝國的關鍵資料.md",
+      "title": "01-開篇-社交廣告帝國的關鍵資料",
+      "entity": "META",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 8513
+    },
+    {
+      "id": "reports/META/公眾號文章/02-廣告機器-AI驅動的注意力變現引擎.md",
+      "path": "reports/META/公眾號文章/02-廣告機器-AI驅動的注意力變現引擎.md",
+      "title": "02-廣告機器-AI驅動的注意力變現引擎",
+      "entity": "META",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 11711
+    },
+    {
+      "id": "reports/META/公眾號文章/03-AI與元宇宙-1450億美元的豪賭與836億美元的沉沒成本.md",
+      "path": "reports/META/公眾號文章/03-AI與元宇宙-1450億美元的豪賭與836億美元的沉沒成本.md",
+      "title": "03-AI與元宇宙-1450億美元的豪賭與836億美元的沉沒成本",
+      "entity": "META",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 12374
+    },
+    {
+      "id": "reports/META/公眾號文章/04-競爭與監管-護城河的實戰檢驗.md",
+      "path": "reports/META/公眾號文章/04-競爭與監管-護城河的實戰檢驗.md",
+      "title": "04-競爭與監管-護城河的實戰檢驗",
+      "entity": "META",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 12490
+    },
+    {
+      "id": "reports/META/公眾號文章/05-估值判斷-一道關於信任的數學題.md",
+      "path": "reports/META/公眾號文章/05-估值判斷-一道關於信任的數學題.md",
+      "title": "05-估值判斷-一道關於信任的數學題",
+      "entity": "META",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 12728
+    },
+    {
+      "id": "reports/META/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/META/團隊分析/01-商業模式分析-段永平視角.md",
+      "title": "01-商業模式分析-段永平視角",
+      "entity": "META",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "段永平"
+      ],
+      "bytes": 5130
+    },
+    {
+      "id": "reports/META/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/META/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "title": "02-財務估值分析-巴菲特視角",
+      "entity": "META",
+      "type": "valuation",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特"
+      ],
+      "bytes": 5327
+    },
+    {
+      "id": "reports/META/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/META/團隊分析/03-行業競爭分析-芒格視角.md",
+      "title": "03-行業競爭分析-芒格視角",
+      "entity": "META",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "芒格"
+      ],
+      "bytes": 6471
+    },
+    {
+      "id": "reports/META/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/META/團隊分析/04-風險管理層評估-李錄視角.md",
+      "title": "04-風險管理層評估-李錄視角",
+      "entity": "META",
+      "type": "management",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "李錄"
+      ],
+      "bytes": 7342
+    },
+    {
+      "id": "reports/META/團隊分析/最終報告.md",
+      "path": "reports/META/團隊分析/最終報告.md",
+      "title": "最終報告",
+      "entity": "META",
+      "type": "team",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "META",
+      "masters": [],
+      "bytes": 8263
+    },
+    {
+      "id": "reports/MRVL/公眾號文章/01-開篇-定製晶片賽道的關鍵玩家.md",
+      "path": "reports/MRVL/公眾號文章/01-開篇-定製晶片賽道的關鍵玩家.md",
       "title": "01-開篇-定製晶片賽道的關鍵玩家",
-      "entity": "Marvell",
+      "entity": "MRVL",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1012,10 +1452,10 @@
       "bytes": 9426
     },
     {
-      "id": "REPORT/Marvell/公眾號文章/02-商業模式-資料中心管道工的四塊業務.md",
-      "path": "REPORT/Marvell/公眾號文章/02-商業模式-資料中心管道工的四塊業務.md",
+      "id": "reports/MRVL/公眾號文章/02-商業模式-資料中心管道工的四塊業務.md",
+      "path": "reports/MRVL/公眾號文章/02-商業模式-資料中心管道工的四塊業務.md",
       "title": "02-商業模式-資料中心管道工的四塊業務",
-      "entity": "Marvell",
+      "entity": "MRVL",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1025,10 +1465,10 @@
       "bytes": 10600
     },
     {
-      "id": "REPORT/Marvell/公眾號文章/03-AI機遇-定製晶片的黃金時代與博通之戰.md",
-      "path": "REPORT/Marvell/公眾號文章/03-AI機遇-定製晶片的黃金時代與博通之戰.md",
+      "id": "reports/MRVL/公眾號文章/03-AI機遇-定製晶片的黃金時代與博通之戰.md",
+      "path": "reports/MRVL/公眾號文章/03-AI機遇-定製晶片的黃金時代與博通之戰.md",
       "title": "03-AI機遇-定製晶片的黃金時代與博通之戰",
-      "entity": "Marvell",
+      "entity": "MRVL",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1038,10 +1478,10 @@
       "bytes": 10553
     },
     {
-      "id": "REPORT/Marvell/公眾號文章/04-風險與估值-58倍PE在賭什麼.md",
-      "path": "REPORT/Marvell/公眾號文章/04-風險與估值-58倍PE在賭什麼.md",
+      "id": "reports/MRVL/公眾號文章/04-風險與估值-58倍PE在賭什麼.md",
+      "path": "reports/MRVL/公眾號文章/04-風險與估值-58倍PE在賭什麼.md",
       "title": "04-風險與估值-58倍PE在賭什麼",
-      "entity": "Marvell",
+      "entity": "MRVL",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -1051,10 +1491,10 @@
       "bytes": 15956
     },
     {
-      "id": "REPORT/Marvell/深度分析/20260516-投研報告-Marvell-research.md",
-      "path": "REPORT/Marvell/深度分析/20260516-投研報告-Marvell-research.md",
-      "title": "20260516-投研報告-Marvell-research",
-      "entity": "Marvell",
+      "id": "reports/MRVL/深度分析/20260516-投研報告-MRVL-research.md",
+      "path": "reports/MRVL/深度分析/20260516-投研報告-MRVL-research.md",
+      "title": "20260516-投研報告-MRVL-research",
+      "entity": "MRVL",
       "type": "research",
       "skill": null,
       "date": "2026-05-16",
@@ -1069,10 +1509,10 @@
       "bytes": 22945
     },
     {
-      "id": "REPORT/Marvell/深度分析/20260624-投研報告-Marvell-investment-research.md",
-      "path": "REPORT/Marvell/深度分析/20260624-投研報告-Marvell-investment-research.md",
-      "title": "20260624-投研報告-Marvell-investment-research",
-      "entity": "Marvell",
+      "id": "reports/MRVL/深度分析/20260624-投研報告-MRVL-investment-research.md",
+      "path": "reports/MRVL/深度分析/20260624-投研報告-MRVL-investment-research.md",
+      "title": "20260624-投研報告-MRVL-investment-research",
+      "entity": "MRVL",
       "type": "research",
       "skill": "investment-research",
       "date": "2026-06-24",
@@ -1087,316 +1527,10 @@
       "bytes": 26679
     },
     {
-      "id": "REPORT/Mastercard/公眾號文章/00-系列說明.md",
-      "path": "REPORT/Mastercard/公眾號文章/00-系列說明.md",
-      "title": "00-系列說明",
-      "entity": "Mastercard",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 2320
-    },
-    {
-      "id": "REPORT/Mastercard/公眾號文章/01-開篇-全球支付網路的收費站.md",
-      "path": "REPORT/Mastercard/公眾號文章/01-開篇-全球支付網路的收費站.md",
-      "title": "01-開篇-全球支付網路的收費站",
-      "entity": "Mastercard",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 5972
-    },
-    {
-      "id": "REPORT/Mastercard/公眾號文章/02-商業模式-四方模式與五層護城河.md",
-      "path": "REPORT/Mastercard/公眾號文章/02-商業模式-四方模式與五層護城河.md",
-      "title": "02-商業模式-四方模式與五層護城河",
-      "entity": "Mastercard",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 9131
-    },
-    {
-      "id": "REPORT/Mastercard/公眾號文章/03-增長空間-三條曲線與天花板.md",
-      "path": "REPORT/Mastercard/公眾號文章/03-增長空間-三條曲線與天花板.md",
-      "title": "03-增長空間-三條曲線與天花板",
-      "entity": "Mastercard",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 9041
-    },
-    {
-      "id": "REPORT/Mastercard/公眾號文章/04-競爭與風險-雙寡頭的壓力測試.md",
-      "path": "REPORT/Mastercard/公眾號文章/04-競爭與風險-雙寡頭的壓力測試.md",
-      "title": "04-競爭與風險-雙寡頭的壓力測試",
-      "entity": "Mastercard",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 11823
-    },
-    {
-      "id": "REPORT/Mastercard/公眾號文章/05-估值判斷-為確定性付多少溢價（終章）.md",
-      "path": "REPORT/Mastercard/公眾號文章/05-估值判斷-為確定性付多少溢價（終章）.md",
-      "title": "05-估值判斷-為確定性付多少溢價（終章）",
-      "entity": "Mastercard",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 10930
-    },
-    {
-      "id": "REPORT/Mastercard/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/Mastercard/團隊分析/01-商業模式分析-段永平視角.md",
-      "title": "01-商業模式分析-段永平視角",
-      "entity": "Mastercard",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "MA",
-      "masters": [
-        "段永平"
-      ],
-      "bytes": 4336
-    },
-    {
-      "id": "REPORT/Mastercard/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/Mastercard/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "title": "02-財務估值分析-巴菲特視角",
-      "entity": "Mastercard",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "MA",
-      "masters": [
-        "巴菲特"
-      ],
-      "bytes": 4884
-    },
-    {
-      "id": "REPORT/Mastercard/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/Mastercard/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
-      "entity": "Mastercard",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "MA",
-      "masters": [
-        "芒格"
-      ],
-      "bytes": 5753
-    },
-    {
-      "id": "REPORT/Mastercard/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/Mastercard/團隊分析/04-風險管理層評估-李錄視角.md",
-      "title": "04-風險管理層評估-李錄視角",
-      "entity": "Mastercard",
-      "type": "management",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "MA",
-      "masters": [
-        "李錄"
-      ],
-      "bytes": 5961
-    },
-    {
-      "id": "REPORT/Mastercard/團隊分析/最終報告.md",
-      "path": "REPORT/Mastercard/團隊分析/最終報告.md",
-      "title": "最終報告",
-      "entity": "Mastercard",
-      "type": "team",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "MA",
-      "masters": [],
-      "bytes": 7086
-    },
-    {
-      "id": "REPORT/Meta/公眾號文章/01-開篇-社交廣告帝國的關鍵資料.md",
-      "path": "REPORT/Meta/公眾號文章/01-開篇-社交廣告帝國的關鍵資料.md",
-      "title": "01-開篇-社交廣告帝國的關鍵資料",
-      "entity": "Meta",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 8513
-    },
-    {
-      "id": "REPORT/Meta/公眾號文章/02-廣告機器-AI驅動的注意力變現引擎.md",
-      "path": "REPORT/Meta/公眾號文章/02-廣告機器-AI驅動的注意力變現引擎.md",
-      "title": "02-廣告機器-AI驅動的注意力變現引擎",
-      "entity": "Meta",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 11711
-    },
-    {
-      "id": "REPORT/Meta/公眾號文章/03-AI與元宇宙-1450億美元的豪賭與836億美元的沉沒成本.md",
-      "path": "REPORT/Meta/公眾號文章/03-AI與元宇宙-1450億美元的豪賭與836億美元的沉沒成本.md",
-      "title": "03-AI與元宇宙-1450億美元的豪賭與836億美元的沉沒成本",
-      "entity": "Meta",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 12374
-    },
-    {
-      "id": "REPORT/Meta/公眾號文章/04-競爭與監管-護城河的實戰檢驗.md",
-      "path": "REPORT/Meta/公眾號文章/04-競爭與監管-護城河的實戰檢驗.md",
-      "title": "04-競爭與監管-護城河的實戰檢驗",
-      "entity": "Meta",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 12490
-    },
-    {
-      "id": "REPORT/Meta/公眾號文章/05-估值判斷-一道關於信任的數學題.md",
-      "path": "REPORT/Meta/公眾號文章/05-估值判斷-一道關於信任的數學題.md",
-      "title": "05-估值判斷-一道關於信任的數學題",
-      "entity": "Meta",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 12728
-    },
-    {
-      "id": "REPORT/Meta/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/Meta/團隊分析/01-商業模式分析-段永平視角.md",
-      "title": "01-商業模式分析-段永平視角",
-      "entity": "Meta",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "段永平"
-      ],
-      "bytes": 5130
-    },
-    {
-      "id": "REPORT/Meta/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/Meta/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "title": "02-財務估值分析-巴菲特視角",
-      "entity": "Meta",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "巴菲特"
-      ],
-      "bytes": 5327
-    },
-    {
-      "id": "REPORT/Meta/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/Meta/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
-      "entity": "Meta",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "芒格"
-      ],
-      "bytes": 6471
-    },
-    {
-      "id": "REPORT/Meta/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/Meta/團隊分析/04-風險管理層評估-李錄視角.md",
-      "title": "04-風險管理層評估-李錄視角",
-      "entity": "Meta",
-      "type": "management",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "李錄"
-      ],
-      "bytes": 7342
-    },
-    {
-      "id": "REPORT/Meta/團隊分析/最終報告.md",
-      "path": "REPORT/Meta/團隊分析/最終報告.md",
-      "title": "最終報告",
-      "entity": "Meta",
-      "type": "team",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "META",
-      "masters": [],
-      "bytes": 8263
-    },
-    {
-      "id": "REPORT/Micron/買前確認/20260825-MU-購買前確認.md",
-      "path": "REPORT/Micron/買前確認/20260825-MU-購買前確認.md",
-      "title": "20260825-MU-購買前確認",
-      "entity": "Micron",
-      "type": "other",
-      "skill": null,
-      "date": "2026-08-25",
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "巴菲特",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 36520
-    },
-    {
-      "id": "REPORT/Microsoft/深度分析/20260623-投研報告-Microsoft-research.md",
-      "path": "REPORT/Microsoft/深度分析/20260623-投研報告-Microsoft-research.md",
-      "title": "20260623-投研報告-Microsoft-research",
-      "entity": "Microsoft",
+      "id": "reports/MSFT/深度分析/20260623-投研報告-MSFT-research.md",
+      "path": "reports/MSFT/深度分析/20260623-投研報告-MSFT-research.md",
+      "title": "20260623-投研報告-MSFT-research",
+      "entity": "MSFT",
       "type": "research",
       "skill": null,
       "date": "2026-06-23",
@@ -1411,10 +1545,58 @@
       "bytes": 37537
     },
     {
-      "id": "REPORT/NVIDIA/估值分析/20260413-估值-NVIDIA-valuation.md",
-      "path": "REPORT/NVIDIA/估值分析/20260413-估值-NVIDIA-valuation.md",
-      "title": "20260413-估值-NVIDIA-valuation",
-      "entity": "NVIDIA",
+      "id": "reports/MU/買前確認/20260825-MU-購買前確認.md",
+      "path": "reports/MU/買前確認/20260825-MU-購買前確認.md",
+      "title": "20260825-MU-購買前確認",
+      "entity": "MU",
+      "type": "other",
+      "skill": null,
+      "date": "2026-08-25",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 36520
+    },
+    {
+      "id": "reports/NOW/深度分析/20260721-投研報告-NOW-research.md",
+      "path": "reports/NOW/深度分析/20260721-投研報告-NOW-research.md",
+      "title": "20260721-投研報告-NOW-research",
+      "entity": "NOW",
+      "type": "research",
+      "skill": null,
+      "date": "2026-07-21",
+      "quarter": null,
+      "ticker": "NOW.US",
+      "masters": [
+        "巴菲特",
+        "芒格",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 24743
+    },
+    {
+      "id": "reports/NOW/財報分析/20260724-財報精讀-NOW-2026Q2.md",
+      "path": "reports/NOW/財報分析/20260724-財報精讀-NOW-2026Q2.md",
+      "title": "20260724-財報精讀-NOW-2026Q2",
+      "entity": "NOW",
+      "type": "earnings",
+      "skill": null,
+      "date": "2026-07-24",
+      "quarter": "2026Q2",
+      "ticker": "NOW.US",
+      "masters": [],
+      "bytes": 16854
+    },
+    {
+      "id": "reports/NVDA/估值分析/20260413-估值-NVDA-valuation.md",
+      "path": "reports/NVDA/估值分析/20260413-估值-NVDA-valuation.md",
+      "title": "20260413-估值-NVDA-valuation",
+      "entity": "NVDA",
       "type": "valuation",
       "skill": null,
       "date": "2026-04-13",
@@ -1424,10 +1606,10 @@
       "bytes": 6908
     },
     {
-      "id": "REPORT/NVIDIA/估值分析/20260420-估值-NVIDIA-財務估值分析.md",
-      "path": "REPORT/NVIDIA/估值分析/20260420-估值-NVIDIA-財務估值分析.md",
-      "title": "20260420-估值-NVIDIA-財務估值分析",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/估值分析/20260420-估值-NVDA-財務估值分析.md",
+      "path": "reports/NVDA/估值分析/20260420-估值-NVDA-財務估值分析.md",
+      "title": "20260420-估值-NVDA-財務估值分析",
+      "entity": "NVDA",
       "type": "valuation",
       "skill": null,
       "date": "2026-04-20",
@@ -1439,10 +1621,10 @@
       "bytes": 14865
     },
     {
-      "id": "REPORT/NVIDIA/公眾號文章/00-系列說明.md",
-      "path": "REPORT/NVIDIA/公眾號文章/00-系列說明.md",
+      "id": "reports/NVDA/公眾號文章/00-系列說明.md",
+      "path": "reports/NVDA/公眾號文章/00-系列說明.md",
       "title": "00-系列說明",
-      "entity": "NVIDIA",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1452,10 +1634,10 @@
       "bytes": 3129
     },
     {
-      "id": "REPORT/NVIDIA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
-      "path": "REPORT/NVIDIA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
+      "id": "reports/NVDA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
+      "path": "reports/NVDA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
       "title": "01-開篇-AI時代的賣鏟人",
-      "entity": "NVIDIA",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1465,10 +1647,10 @@
       "bytes": 7976
     },
     {
-      "id": "REPORT/NVIDIA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
-      "path": "REPORT/NVIDIA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
+      "id": "reports/NVDA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
+      "path": "reports/NVDA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
       "title": "02-商業本質-一座19年建成的軟體城堡",
-      "entity": "NVIDIA",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1478,10 +1660,10 @@
       "bytes": 11176
     },
     {
-      "id": "REPORT/NVIDIA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
-      "path": "REPORT/NVIDIA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
+      "id": "reports/NVDA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
+      "path": "reports/NVDA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
       "title": "03-訓練與推理-兩個不同的戰場",
-      "entity": "NVIDIA",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1491,10 +1673,10 @@
       "bytes": 11149
     },
     {
-      "id": "REPORT/NVIDIA/公眾號文章/04-競爭與威脅-四面楚歌.md",
-      "path": "REPORT/NVIDIA/公眾號文章/04-競爭與威脅-四面楚歌.md",
+      "id": "reports/NVDA/公眾號文章/04-競爭與威脅-四面楚歌.md",
+      "path": "reports/NVDA/公眾號文章/04-競爭與威脅-四面楚歌.md",
       "title": "04-競爭與威脅-四面楚歌",
-      "entity": "NVIDIA",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1504,10 +1686,10 @@
       "bytes": 11701
     },
     {
-      "id": "REPORT/NVIDIA/公眾號文章/05-風險估值與決策-終章.md",
-      "path": "REPORT/NVIDIA/公眾號文章/05-風險估值與決策-終章.md",
+      "id": "reports/NVDA/公眾號文章/05-風險估值與決策-終章.md",
+      "path": "reports/NVDA/公眾號文章/05-風險估值與決策-終章.md",
       "title": "05-風險估值與決策-終章",
-      "entity": "NVIDIA",
+      "entity": "NVDA",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -1517,10 +1699,10 @@
       "bytes": 14250
     },
     {
-      "id": "REPORT/NVIDIA/參考資料/資料-NVIDIA-段永平雪球發言-NVDA相關.md",
-      "path": "REPORT/NVIDIA/參考資料/資料-NVIDIA-段永平雪球發言-NVDA相關.md",
-      "title": "資料-NVIDIA-段永平雪球發言-NVDA相關",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/參考資料/資料-NVDA-段永平雪球發言-NVDA相關.md",
+      "path": "reports/NVDA/參考資料/資料-NVDA-段永平雪球發言-NVDA相關.md",
+      "title": "資料-NVDA-段永平雪球發言-NVDA相關",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1532,10 +1714,10 @@
       "bytes": 62203
     },
     {
-      "id": "REPORT/NVIDIA/團隊分析/最終報告-安全邊際-20260420.md",
-      "path": "REPORT/NVIDIA/團隊分析/最終報告-安全邊際-20260420.md",
+      "id": "reports/NVDA/團隊分析/最終報告-安全邊際-20260420.md",
+      "path": "reports/NVDA/團隊分析/最終報告-安全邊際-20260420.md",
       "title": "最終報告-安全邊際-20260420",
-      "entity": "NVIDIA",
+      "entity": "NVDA",
       "type": "team",
       "skill": null,
       "date": "2026-04-20",
@@ -1550,10 +1732,10 @@
       "bytes": 11885
     },
     {
-      "id": "REPORT/NVIDIA/專題研究/20260413-專題-NVIDIA-反面證據.md",
-      "path": "REPORT/NVIDIA/專題研究/20260413-專題-NVIDIA-反面證據.md",
-      "title": "20260413-專題-NVIDIA-反面證據",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/專題研究/20260413-專題-NVDA-反面證據.md",
+      "path": "reports/NVDA/專題研究/20260413-專題-NVDA-反面證據.md",
+      "title": "20260413-專題-NVDA-反面證據",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": "2026-04-13",
@@ -1563,10 +1745,10 @@
       "bytes": 25177
     },
     {
-      "id": "REPORT/NVIDIA/專題研究/20260419-專題-NVIDIA-自研晶片威脅.md",
-      "path": "REPORT/NVIDIA/專題研究/20260419-專題-NVIDIA-自研晶片威脅.md",
-      "title": "20260419-專題-NVIDIA-自研晶片威脅",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/專題研究/20260419-專題-NVDA-自研晶片威脅.md",
+      "path": "reports/NVDA/專題研究/20260419-專題-NVDA-自研晶片威脅.md",
+      "title": "20260419-專題-NVDA-自研晶片威脅",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": "2026-04-19",
@@ -1576,10 +1758,10 @@
       "bytes": 31965
     },
     {
-      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-CUDA護城河三問精簡版.md",
-      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-CUDA護城河三問精簡版.md",
-      "title": "20260424-專題-NVIDIA-CUDA護城河三問精簡版",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-CUDA護城河三問精簡版.md",
+      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-CUDA護城河三問精簡版.md",
+      "title": "20260424-專題-NVDA-CUDA護城河三問精簡版",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": "2026-04-24",
@@ -1589,10 +1771,10 @@
       "bytes": 5107
     },
     {
-      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告1-訓練vs推理市場分化.md",
-      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告1-訓練vs推理市場分化.md",
-      "title": "20260424-專題-NVIDIA-子報告1-訓練vs推理市場分化",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告1-訓練vs推理市場分化.md",
+      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告1-訓練vs推理市場分化.md",
+      "title": "20260424-專題-NVDA-子報告1-訓練vs推理市場分化",
+      "entity": "NVDA",
       "type": "comparison",
       "skill": null,
       "date": "2026-04-24",
@@ -1602,10 +1784,10 @@
       "bytes": 9808
     },
     {
-      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告2-NVIDIA推理護城河.md",
-      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告2-NVIDIA推理護城河.md",
-      "title": "20260424-專題-NVIDIA-子報告2-NVIDIA推理護城河",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告2-NVDA推理護城河.md",
+      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告2-NVDA推理護城河.md",
+      "title": "20260424-專題-NVDA-子報告2-NVDA推理護城河",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": "2026-04-24",
@@ -1615,10 +1797,10 @@
       "bytes": 9449
     },
     {
-      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告3-CUDA護城河本質.md",
-      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告3-CUDA護城河本質.md",
-      "title": "20260424-專題-NVIDIA-子報告3-CUDA護城河本質",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告3-CUDA護城河本質.md",
+      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告3-CUDA護城河本質.md",
+      "title": "20260424-專題-NVDA-子報告3-CUDA護城河本質",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": "2026-04-24",
@@ -1628,10 +1810,10 @@
       "bytes": 8853
     },
     {
-      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告4-AI程式設計對CUDA顛覆.md",
-      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-子報告4-AI程式設計對CUDA顛覆.md",
-      "title": "20260424-專題-NVIDIA-子報告4-AI程式設計對CUDA顛覆",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告4-AI程式設計對CUDA顛覆.md",
+      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告4-AI程式設計對CUDA顛覆.md",
+      "title": "20260424-專題-NVDA-子報告4-AI程式設計對CUDA顛覆",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": "2026-04-24",
@@ -1641,10 +1823,10 @@
       "bytes": 9493
     },
     {
-      "id": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-推理護城河與CUDA護城河.md",
-      "path": "REPORT/NVIDIA/專題研究/20260424-專題-NVIDIA-推理護城河與CUDA護城河.md",
-      "title": "20260424-專題-NVIDIA-推理護城河與CUDA護城河",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-推理護城河與CUDA護城河.md",
+      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-推理護城河與CUDA護城河.md",
+      "title": "20260424-專題-NVDA-推理護城河與CUDA護城河",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": "2026-04-24",
@@ -1654,10 +1836,10 @@
       "bytes": 14723
     },
     {
-      "id": "REPORT/NVIDIA/專題研究/20260426-專題-NVIDIA-安全墊分析.md",
-      "path": "REPORT/NVIDIA/專題研究/20260426-專題-NVIDIA-安全墊分析.md",
-      "title": "20260426-專題-NVIDIA-安全墊分析",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/專題研究/20260426-專題-NVDA-安全墊分析.md",
+      "path": "reports/NVDA/專題研究/20260426-專題-NVDA-安全墊分析.md",
+      "title": "20260426-專題-NVDA-安全墊分析",
+      "entity": "NVDA",
       "type": "other",
       "skill": null,
       "date": "2026-04-26",
@@ -1670,10 +1852,10 @@
       "bytes": 20518
     },
     {
-      "id": "REPORT/NVIDIA/深度分析/20260408-投研報告-NVIDIA-research.md",
-      "path": "REPORT/NVIDIA/深度分析/20260408-投研報告-NVIDIA-research.md",
-      "title": "20260408-投研報告-NVIDIA-research",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/深度分析/20260408-投研報告-NVDA-research.md",
+      "path": "reports/NVDA/深度分析/20260408-投研報告-NVDA-research.md",
+      "title": "20260408-投研報告-NVDA-research",
+      "entity": "NVDA",
       "type": "research",
       "skill": null,
       "date": "2026-04-08",
@@ -1688,10 +1870,10 @@
       "bytes": 10973
     },
     {
-      "id": "REPORT/NVIDIA/深度分析/20260413-投研報告-NVIDIA-research.md",
-      "path": "REPORT/NVIDIA/深度分析/20260413-投研報告-NVIDIA-research.md",
-      "title": "20260413-投研報告-NVIDIA-research",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/深度分析/20260413-投研報告-NVDA-research.md",
+      "path": "reports/NVDA/深度分析/20260413-投研報告-NVDA-research.md",
+      "title": "20260413-投研報告-NVDA-research",
+      "entity": "NVDA",
       "type": "research",
       "skill": null,
       "date": "2026-04-13",
@@ -1706,10 +1888,10 @@
       "bytes": 20201
     },
     {
-      "id": "REPORT/NVIDIA/深度分析/20260830-投研報告-NVIDIA-research.md",
-      "path": "REPORT/NVIDIA/深度分析/20260830-投研報告-NVIDIA-research.md",
-      "title": "20260830-投研報告-NVIDIA-research",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/深度分析/20260830-投研報告-NVDA-research.md",
+      "path": "reports/NVDA/深度分析/20260830-投研報告-NVDA-research.md",
+      "title": "20260830-投研報告-NVDA-research",
+      "entity": "NVDA",
       "type": "research",
       "skill": null,
       "date": "2026-08-30",
@@ -1720,13 +1902,13 @@
         "段永平",
         "李錄"
       ],
-      "bytes": 52199
+      "bytes": 52192
     },
     {
-      "id": "REPORT/NVIDIA/財報分析/20260830-財報精讀-NVIDIA-FY2027Q2.md",
-      "path": "REPORT/NVIDIA/財報分析/20260830-財報精讀-NVIDIA-FY2027Q2.md",
-      "title": "20260830-財報精讀-NVIDIA-FY2027Q2",
-      "entity": "NVIDIA",
+      "id": "reports/NVDA/財報分析/20260830-財報精讀-NVDA-FY2027Q2.md",
+      "path": "reports/NVDA/財報分析/20260830-財報精讀-NVDA-FY2027Q2.md",
+      "title": "20260830-財報精讀-NVDA-FY2027Q2",
+      "entity": "NVDA",
       "type": "earnings",
       "skill": null,
       "date": "2026-08-30",
@@ -1738,49 +1920,10 @@
       "bytes": 37322
     },
     {
-      "id": "REPORT/PayPal/公眾號文章/01-PayPal-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
-      "path": "REPORT/PayPal/公眾號文章/01-PayPal-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
-      "title": "01-PayPal-8倍PE的支付巨頭是撿便宜還是接飛刀",
-      "entity": "PayPal",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 7590
-    },
-    {
-      "id": "REPORT/PayPal/專題研究/20260608-專題-PayPal-vs-螞蟻集團-對比分析.md",
-      "path": "REPORT/PayPal/專題研究/20260608-專題-PayPal-vs-螞蟻集團-對比分析.md",
-      "title": "20260608-專題-PayPal-vs-螞蟻集團-對比分析",
-      "entity": "PayPal",
-      "type": "comparison",
-      "skill": null,
-      "date": "2026-06-08",
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 4642
-    },
-    {
-      "id": "REPORT/PayPal/深度分析/20260607-投研報告-PayPal-深度研究報告.md",
-      "path": "REPORT/PayPal/深度分析/20260607-投研報告-PayPal-深度研究報告.md",
-      "title": "20260607-投研報告-PayPal-深度研究報告",
-      "entity": "PayPal",
-      "type": "research",
-      "skill": null,
-      "date": "2026-06-07",
-      "quarter": null,
-      "ticker": "PYPL",
-      "masters": [],
-      "bytes": 15819
-    },
-    {
-      "id": "REPORT/Progressive/公眾號文章/01-開篇-美國車險之王的誕生.md",
-      "path": "REPORT/Progressive/公眾號文章/01-開篇-美國車險之王的誕生.md",
+      "id": "reports/PGR/公眾號文章/01-開篇-美國車險之王的誕生.md",
+      "path": "reports/PGR/公眾號文章/01-開篇-美國車險之王的誕生.md",
       "title": "01-開篇-美國車險之王的誕生",
-      "entity": "Progressive",
+      "entity": "PGR",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1790,10 +1933,10 @@
       "bytes": 7683
     },
     {
-      "id": "REPORT/Progressive/公眾號文章/02-商業模式-一家偽裝成保險公司的資料公司.md",
-      "path": "REPORT/Progressive/公眾號文章/02-商業模式-一家偽裝成保險公司的資料公司.md",
+      "id": "reports/PGR/公眾號文章/02-商業模式-一家偽裝成保險公司的資料公司.md",
+      "path": "reports/PGR/公眾號文章/02-商業模式-一家偽裝成保險公司的資料公司.md",
       "title": "02-商業模式-一家偽裝成保險公司的資料公司",
-      "entity": "Progressive",
+      "entity": "PGR",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1803,10 +1946,10 @@
       "bytes": 9991
     },
     {
-      "id": "REPORT/Progressive/公眾號文章/03-競爭與增長-從老二到老大之後怎麼辦.md",
-      "path": "REPORT/Progressive/公眾號文章/03-競爭與增長-從老二到老大之後怎麼辦.md",
+      "id": "reports/PGR/公眾號文章/03-競爭與增長-從老二到老大之後怎麼辦.md",
+      "path": "reports/PGR/公眾號文章/03-競爭與增長-從老二到老大之後怎麼辦.md",
       "title": "03-競爭與增長-從老二到老大之後怎麼辦",
-      "entity": "Progressive",
+      "entity": "PGR",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1816,10 +1959,10 @@
       "bytes": 11237
     },
     {
-      "id": "REPORT/Progressive/公眾號文章/04-風險與估值-10倍PE到底貴不貴.md",
-      "path": "REPORT/Progressive/公眾號文章/04-風險與估值-10倍PE到底貴不貴.md",
+      "id": "reports/PGR/公眾號文章/04-風險與估值-10倍PE到底貴不貴.md",
+      "path": "reports/PGR/公眾號文章/04-風險與估值-10倍PE到底貴不貴.md",
       "title": "04-風險與估值-10倍PE到底貴不貴",
-      "entity": "Progressive",
+      "entity": "PGR",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -1829,10 +1972,10 @@
       "bytes": 13986
     },
     {
-      "id": "REPORT/Progressive/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/Progressive/團隊分析/01-商業模式分析-段永平視角.md",
+      "id": "reports/PGR/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/PGR/團隊分析/01-商業模式分析-段永平視角.md",
       "title": "01-商業模式分析-段永平視角",
-      "entity": "Progressive",
+      "entity": "PGR",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1844,10 +1987,10 @@
       "bytes": 4635
     },
     {
-      "id": "REPORT/Progressive/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/Progressive/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "id": "reports/PGR/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/PGR/團隊分析/02-財務估值分析-巴菲特視角.md",
       "title": "02-財務估值分析-巴菲特視角",
-      "entity": "Progressive",
+      "entity": "PGR",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -1859,10 +2002,10 @@
       "bytes": 5665
     },
     {
-      "id": "REPORT/Progressive/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/Progressive/團隊分析/03-行業競爭分析-芒格視角.md",
+      "id": "reports/PGR/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/PGR/團隊分析/03-行業競爭分析-芒格視角.md",
       "title": "03-行業競爭分析-芒格視角",
-      "entity": "Progressive",
+      "entity": "PGR",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1874,10 +2017,10 @@
       "bytes": 6277
     },
     {
-      "id": "REPORT/Progressive/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/Progressive/團隊分析/04-風險管理層評估-李錄視角.md",
+      "id": "reports/PGR/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/PGR/團隊分析/04-風險管理層評估-李錄視角.md",
       "title": "04-風險管理層評估-李錄視角",
-      "entity": "Progressive",
+      "entity": "PGR",
       "type": "management",
       "skill": null,
       "date": null,
@@ -1889,10 +2032,10 @@
       "bytes": 7358
     },
     {
-      "id": "REPORT/Progressive/團隊分析/最終報告.md",
-      "path": "REPORT/Progressive/團隊分析/最終報告.md",
+      "id": "reports/PGR/團隊分析/最終報告.md",
+      "path": "reports/PGR/團隊分析/最終報告.md",
       "title": "最終報告",
-      "entity": "Progressive",
+      "entity": "PGR",
       "type": "team",
       "skill": null,
       "date": null,
@@ -1902,10 +2045,49 @@
       "bytes": 6666
     },
     {
-      "id": "REPORT/Qualcomm/公眾號文章/01-開篇-移動晶片之王的真面目.md",
-      "path": "REPORT/Qualcomm/公眾號文章/01-開篇-移動晶片之王的真面目.md",
+      "id": "reports/PYPL/公眾號文章/01-PYPL-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
+      "path": "reports/PYPL/公眾號文章/01-PYPL-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
+      "title": "01-PYPL-8倍PE的支付巨頭是撿便宜還是接飛刀",
+      "entity": "PYPL",
+      "type": "other",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 7590
+    },
+    {
+      "id": "reports/PYPL/專題研究/20260608-專題-PYPL-vs-螞蟻集團-對比分析.md",
+      "path": "reports/PYPL/專題研究/20260608-專題-PYPL-vs-螞蟻集團-對比分析.md",
+      "title": "20260608-專題-PYPL-vs-螞蟻集團-對比分析",
+      "entity": "PYPL",
+      "type": "comparison",
+      "skill": null,
+      "date": "2026-06-08",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 4642
+    },
+    {
+      "id": "reports/PYPL/深度分析/20260607-投研報告-PYPL-深度研究報告.md",
+      "path": "reports/PYPL/深度分析/20260607-投研報告-PYPL-深度研究報告.md",
+      "title": "20260607-投研報告-PYPL-深度研究報告",
+      "entity": "PYPL",
+      "type": "research",
+      "skill": null,
+      "date": "2026-06-07",
+      "quarter": null,
+      "ticker": "PYPL",
+      "masters": [],
+      "bytes": 15819
+    },
+    {
+      "id": "reports/QCOM/公眾號文章/01-開篇-移動晶片之王的真面目.md",
+      "path": "reports/QCOM/公眾號文章/01-開篇-移動晶片之王的真面目.md",
       "title": "01-開篇-移動晶片之王的真面目",
-      "entity": "Qualcomm",
+      "entity": "QCOM",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1915,10 +2097,10 @@
       "bytes": 9126
     },
     {
-      "id": "REPORT/Qualcomm/公眾號文章/02-商業模式-晶片加專利的雙輪印鈔機.md",
-      "path": "REPORT/Qualcomm/公眾號文章/02-商業模式-晶片加專利的雙輪印鈔機.md",
+      "id": "reports/QCOM/公眾號文章/02-商業模式-晶片加專利的雙輪印鈔機.md",
+      "path": "reports/QCOM/公眾號文章/02-商業模式-晶片加專利的雙輪印鈔機.md",
       "title": "02-商業模式-晶片加專利的雙輪印鈔機",
-      "entity": "Qualcomm",
+      "entity": "QCOM",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1928,10 +2110,10 @@
       "bytes": 10788
     },
     {
-      "id": "REPORT/Qualcomm/公眾號文章/03-AI與多元化-後手機時代的三條賽道.md",
-      "path": "REPORT/Qualcomm/公眾號文章/03-AI與多元化-後手機時代的三條賽道.md",
+      "id": "reports/QCOM/公眾號文章/03-AI與多元化-後手機時代的三條賽道.md",
+      "path": "reports/QCOM/公眾號文章/03-AI與多元化-後手機時代的三條賽道.md",
       "title": "03-AI與多元化-後手機時代的三條賽道",
-      "entity": "Qualcomm",
+      "entity": "QCOM",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1941,10 +2123,10 @@
       "bytes": 12013
     },
     {
-      "id": "REPORT/Qualcomm/公眾號文章/04-風險與估值-五重壓力下的價格判斷.md",
-      "path": "REPORT/Qualcomm/公眾號文章/04-風險與估值-五重壓力下的價格判斷.md",
+      "id": "reports/QCOM/公眾號文章/04-風險與估值-五重壓力下的價格判斷.md",
+      "path": "reports/QCOM/公眾號文章/04-風險與估值-五重壓力下的價格判斷.md",
       "title": "04-風險與估值-五重壓力下的價格判斷",
-      "entity": "Qualcomm",
+      "entity": "QCOM",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -1954,10 +2136,10 @@
       "bytes": 12289
     },
     {
-      "id": "REPORT/Qualcomm/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/Qualcomm/團隊分析/01-商業模式分析-段永平視角.md",
+      "id": "reports/QCOM/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/QCOM/團隊分析/01-商業模式分析-段永平視角.md",
       "title": "01-商業模式分析-段永平視角",
-      "entity": "Qualcomm",
+      "entity": "QCOM",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1969,10 +2151,10 @@
       "bytes": 4547
     },
     {
-      "id": "REPORT/Qualcomm/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/Qualcomm/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "id": "reports/QCOM/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/QCOM/團隊分析/02-財務估值分析-巴菲特視角.md",
       "title": "02-財務估值分析-巴菲特視角",
-      "entity": "Qualcomm",
+      "entity": "QCOM",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -1984,10 +2166,10 @@
       "bytes": 5331
     },
     {
-      "id": "REPORT/Qualcomm/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/Qualcomm/團隊分析/03-行業競爭分析-芒格視角.md",
+      "id": "reports/QCOM/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/QCOM/團隊分析/03-行業競爭分析-芒格視角.md",
       "title": "03-行業競爭分析-芒格視角",
-      "entity": "Qualcomm",
+      "entity": "QCOM",
       "type": "other",
       "skill": null,
       "date": null,
@@ -1999,10 +2181,10 @@
       "bytes": 6618
     },
     {
-      "id": "REPORT/Qualcomm/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/Qualcomm/團隊分析/04-風險管理層評估-李錄視角.md",
+      "id": "reports/QCOM/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/QCOM/團隊分析/04-風險管理層評估-李錄視角.md",
       "title": "04-風險管理層評估-李錄視角",
-      "entity": "Qualcomm",
+      "entity": "QCOM",
       "type": "management",
       "skill": null,
       "date": null,
@@ -2014,10 +2196,10 @@
       "bytes": 7148
     },
     {
-      "id": "REPORT/Qualcomm/團隊分析/最終報告.md",
-      "path": "REPORT/Qualcomm/團隊分析/最終報告.md",
+      "id": "reports/QCOM/團隊分析/最終報告.md",
+      "path": "reports/QCOM/團隊分析/最終報告.md",
       "title": "最終報告",
-      "entity": "Qualcomm",
+      "entity": "QCOM",
       "type": "team",
       "skill": null,
       "date": null,
@@ -2027,8 +2209,42 @@
       "bytes": 7098
     },
     {
-      "id": "REPORT/RKLB/深度分析/投研報告-RKLB-investment-research.md",
-      "path": "REPORT/RKLB/深度分析/投研報告-RKLB-investment-research.md",
+      "id": "reports/RDDT/深度分析/RDDT-research-20260830.md",
+      "path": "reports/RDDT/深度分析/RDDT-research-20260830.md",
+      "title": "RDDT-research-20260830",
+      "entity": "RDDT",
+      "type": "research",
+      "skill": null,
+      "date": "2026-08-30",
+      "quarter": null,
+      "ticker": "RDDT",
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 54645
+    },
+    {
+      "id": "reports/RDDT/財報分析/RDDT-earnings-2026Q2.md",
+      "path": "reports/RDDT/財報分析/RDDT-earnings-2026Q2.md",
+      "title": "RDDT-earnings-2026Q2",
+      "entity": "RDDT",
+      "type": "earnings",
+      "skill": null,
+      "date": null,
+      "quarter": "2026Q2",
+      "ticker": "RDDT",
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 32561
+    },
+    {
+      "id": "reports/RKLB/深度分析/投研報告-RKLB-investment-research.md",
+      "path": "reports/RKLB/深度分析/投研報告-RKLB-investment-research.md",
       "title": "投研報告-RKLB-investment-research",
       "entity": "RKLB",
       "type": "research",
@@ -2045,92 +2261,10 @@
       "bytes": 28408
     },
     {
-      "id": "REPORT/Reddit/深度分析/Reddit-research-20260830.md",
-      "path": "REPORT/Reddit/深度分析/Reddit-research-20260830.md",
-      "title": "Reddit-research-20260830",
-      "entity": "Reddit",
-      "type": "research",
-      "skill": null,
-      "date": "2026-08-30",
-      "quarter": null,
-      "ticker": "RDDT",
-      "masters": [
-        "巴菲特",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 54645
-    },
-    {
-      "id": "REPORT/Reddit/財報分析/Reddit-earnings-2026Q2.md",
-      "path": "REPORT/Reddit/財報分析/Reddit-earnings-2026Q2.md",
-      "title": "Reddit-earnings-2026Q2",
-      "entity": "Reddit",
-      "type": "earnings",
-      "skill": null,
-      "date": null,
-      "quarter": "2026Q2",
-      "ticker": "RDDT",
-      "masters": [
-        "巴菲特",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 32561
-    },
-    {
-      "id": "REPORT/ServiceNow/深度分析/20260721-投研報告-ServiceNow-research.md",
-      "path": "REPORT/ServiceNow/深度分析/20260721-投研報告-ServiceNow-research.md",
-      "title": "20260721-投研報告-ServiceNow-research",
-      "entity": "ServiceNow",
-      "type": "research",
-      "skill": null,
-      "date": "2026-07-21",
-      "quarter": null,
-      "ticker": "NOW.US",
-      "masters": [
-        "巴菲特",
-        "芒格",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 24743
-    },
-    {
-      "id": "REPORT/ServiceNow/財報分析/20260724-財報精讀-ServiceNow-2026Q2.md",
-      "path": "REPORT/ServiceNow/財報分析/20260724-財報精讀-ServiceNow-2026Q2.md",
-      "title": "20260724-財報精讀-ServiceNow-2026Q2",
-      "entity": "ServiceNow",
-      "type": "earnings",
-      "skill": null,
-      "date": "2026-07-24",
-      "quarter": "2026Q2",
-      "ticker": "NOW.US",
-      "masters": [],
-      "bytes": 16867
-    },
-    {
-      "id": "REPORT/Take-Two/深度分析/Take-Two-research-20260827.md",
-      "path": "REPORT/Take-Two/深度分析/Take-Two-research-20260827.md",
-      "title": "Take-Two-research-20260827",
-      "entity": "Take-Two",
-      "type": "research",
-      "skill": null,
-      "date": "2026-08-27",
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "巴菲特",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 48571
-    },
-    {
-      "id": "REPORT/Tesla/深度分析/20260624-投研報告-Tesla-research.md",
-      "path": "REPORT/Tesla/深度分析/20260624-投研報告-Tesla-research.md",
-      "title": "20260624-投研報告-Tesla-research",
-      "entity": "Tesla",
+      "id": "reports/TSLA/深度分析/20260624-投研報告-TSLA-research.md",
+      "path": "reports/TSLA/深度分析/20260624-投研報告-TSLA-research.md",
+      "title": "20260624-投研報告-TSLA-research",
+      "entity": "TSLA",
       "type": "research",
       "skill": null,
       "date": "2026-06-24",
@@ -2140,10 +2274,10 @@
       "bytes": 27294
     },
     {
-      "id": "REPORT/Tesla/深度分析/20260702-投研報告-Tesla-特斯拉投資研究報告.md",
-      "path": "REPORT/Tesla/深度分析/20260702-投研報告-Tesla-特斯拉投資研究報告.md",
-      "title": "20260702-投研報告-Tesla-特斯拉投資研究報告",
-      "entity": "Tesla",
+      "id": "reports/TSLA/深度分析/20260702-投研報告-TSLA-特斯拉投資研究報告.md",
+      "path": "reports/TSLA/深度分析/20260702-投研報告-TSLA-特斯拉投資研究報告.md",
+      "title": "20260702-投研報告-TSLA-特斯拉投資研究報告",
+      "entity": "TSLA",
       "type": "research",
       "skill": null,
       "date": "2026-07-02",
@@ -2158,10 +2292,27 @@
       "bytes": 22233
     },
     {
-      "id": "REPORT/Uber/公眾號文章/00-系列說明.md",
-      "path": "REPORT/Uber/公眾號文章/00-系列說明.md",
+      "id": "reports/TTWO/深度分析/TTWO-research-20260827.md",
+      "path": "reports/TTWO/深度分析/TTWO-research-20260827.md",
+      "title": "TTWO-research-20260827",
+      "entity": "TTWO",
+      "type": "research",
+      "skill": null,
+      "date": "2026-08-27",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 48571
+    },
+    {
+      "id": "reports/UBER/公眾號文章/00-系列說明.md",
+      "path": "reports/UBER/公眾號文章/00-系列說明.md",
       "title": "00-系列說明",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "other",
       "skill": null,
       "date": null,
@@ -2171,10 +2322,10 @@
       "bytes": 2134
     },
     {
-      "id": "REPORT/Uber/公眾號文章/01-開篇-從虧損之王到盈利機器.md",
-      "path": "REPORT/Uber/公眾號文章/01-開篇-從虧損之王到盈利機器.md",
+      "id": "reports/UBER/公眾號文章/01-開篇-從虧損之王到盈利機器.md",
+      "path": "reports/UBER/公眾號文章/01-開篇-從虧損之王到盈利機器.md",
       "title": "01-開篇-從虧損之王到盈利機器",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "other",
       "skill": null,
       "date": null,
@@ -2184,10 +2335,10 @@
       "bytes": 8931
     },
     {
-      "id": "REPORT/Uber/公眾號文章/02-商業模式-出行加外賣的雙飛輪.md",
-      "path": "REPORT/Uber/公眾號文章/02-商業模式-出行加外賣的雙飛輪.md",
+      "id": "reports/UBER/公眾號文章/02-商業模式-出行加外賣的雙飛輪.md",
+      "path": "reports/UBER/公眾號文章/02-商業模式-出行加外賣的雙飛輪.md",
       "title": "02-商業模式-出行加外賣的雙飛輪",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "other",
       "skill": null,
       "date": null,
@@ -2197,10 +2348,10 @@
       "bytes": 10308
     },
     {
-      "id": "REPORT/Uber/公眾號文章/03-自動駕駛-機遇還是威脅.md",
-      "path": "REPORT/Uber/公眾號文章/03-自動駕駛-機遇還是威脅.md",
+      "id": "reports/UBER/公眾號文章/03-自動駕駛-機遇還是威脅.md",
+      "path": "reports/UBER/公眾號文章/03-自動駕駛-機遇還是威脅.md",
       "title": "03-自動駕駛-機遇還是威脅",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "other",
       "skill": null,
       "date": null,
@@ -2210,10 +2361,10 @@
       "bytes": 10819
     },
     {
-      "id": "REPORT/Uber/公眾號文章/04-風險與估值-終章.md",
-      "path": "REPORT/Uber/公眾號文章/04-風險與估值-終章.md",
+      "id": "reports/UBER/公眾號文章/04-風險與估值-終章.md",
+      "path": "reports/UBER/公眾號文章/04-風險與估值-終章.md",
       "title": "04-風險與估值-終章",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -2223,10 +2374,10 @@
       "bytes": 10936
     },
     {
-      "id": "REPORT/Uber/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/Uber/團隊分析/01-商業模式分析-段永平視角.md",
+      "id": "reports/UBER/團隊分析/01-商業模式分析-段永平視角.md",
+      "path": "reports/UBER/團隊分析/01-商業模式分析-段永平視角.md",
       "title": "01-商業模式分析-段永平視角",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "other",
       "skill": null,
       "date": null,
@@ -2238,10 +2389,10 @@
       "bytes": 4587
     },
     {
-      "id": "REPORT/Uber/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/Uber/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "id": "reports/UBER/團隊分析/02-財務估值分析-巴菲特視角.md",
+      "path": "reports/UBER/團隊分析/02-財務估值分析-巴菲特視角.md",
       "title": "02-財務估值分析-巴菲特視角",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "valuation",
       "skill": null,
       "date": null,
@@ -2253,10 +2404,10 @@
       "bytes": 5174
     },
     {
-      "id": "REPORT/Uber/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/Uber/團隊分析/03-行業競爭分析-芒格視角.md",
+      "id": "reports/UBER/團隊分析/03-行業競爭分析-芒格視角.md",
+      "path": "reports/UBER/團隊分析/03-行業競爭分析-芒格視角.md",
       "title": "03-行業競爭分析-芒格視角",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "other",
       "skill": null,
       "date": null,
@@ -2268,10 +2419,10 @@
       "bytes": 6273
     },
     {
-      "id": "REPORT/Uber/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/Uber/團隊分析/04-風險管理層評估-李錄視角.md",
+      "id": "reports/UBER/團隊分析/04-風險管理層評估-李錄視角.md",
+      "path": "reports/UBER/團隊分析/04-風險管理層評估-李錄視角.md",
       "title": "04-風險管理層評估-李錄視角",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "management",
       "skill": null,
       "date": null,
@@ -2283,10 +2434,10 @@
       "bytes": 6676
     },
     {
-      "id": "REPORT/Uber/團隊分析/最終報告.md",
-      "path": "REPORT/Uber/團隊分析/最終報告.md",
+      "id": "reports/UBER/團隊分析/最終報告.md",
+      "path": "reports/UBER/團隊分析/最終報告.md",
       "title": "最終報告",
-      "entity": "Uber",
+      "entity": "UBER",
       "type": "team",
       "skill": null,
       "date": null,
@@ -2296,11 +2447,11 @@
       "bytes": 6800
     },
     {
-      "id": "REPORT/Victoria's Secret/深度分析/Victoria's Secret-research-20260826.md",
-      "path": "REPORT/Victoria's Secret/深度分析/Victoria's Secret-research-20260826.md",
-      "title": "Victoria's Secret-research-20260826",
-      "entity": "Victoria's Secret",
-      "type": "research",
+      "id": "reports/VSXY/深度分析/VSXY-research-20260826.md",
+      "path": "reports/VSXY/深度分析/VSXY-research-20260826.md",
+      "title": "VSXY-research-20260826",
+      "entity": "VSXY",
+      "type": "comparison",
       "skill": null,
       "date": "2026-08-26",
       "quarter": null,
@@ -2313,159 +2464,8 @@
       "bytes": 53839
     },
     {
-      "id": "REPORT/lululemon/公眾號文章/00-系列說明.md",
-      "path": "REPORT/lululemon/公眾號文章/00-系列說明.md",
-      "title": "00-系列說明",
-      "entity": "lululemon",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 2702
-    },
-    {
-      "id": "REPORT/lululemon/公眾號文章/01-開篇-不只是瑜伽褲.md",
-      "path": "REPORT/lululemon/公眾號文章/01-開篇-不只是瑜伽褲.md",
-      "title": "01-開篇-不只是瑜伽褲",
-      "entity": "lululemon",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 8267
-    },
-    {
-      "id": "REPORT/lululemon/公眾號文章/02-品牌護城河的真實深度.md",
-      "path": "REPORT/lululemon/公眾號文章/02-品牌護城河的真實深度.md",
-      "title": "02-品牌護城河的真實深度",
-      "entity": "lululemon",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 11014
-    },
-    {
-      "id": "REPORT/lululemon/公眾號文章/03-增長引擎與中國市場.md",
-      "path": "REPORT/lululemon/公眾號文章/03-增長引擎與中國市場.md",
-      "title": "03-增長引擎與中國市場",
-      "entity": "lululemon",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 11384
-    },
-    {
-      "id": "REPORT/lululemon/公眾號文章/04-風險管理層與估值判斷.md",
-      "path": "REPORT/lululemon/公眾號文章/04-風險管理層與估值判斷.md",
-      "title": "04-風險管理層與估值判斷",
-      "entity": "lululemon",
-      "type": "management",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [],
-      "bytes": 14143
-    },
-    {
-      "id": "REPORT/lululemon/團隊分析/01-商業模式分析-段永平視角.md",
-      "path": "REPORT/lululemon/團隊分析/01-商業模式分析-段永平視角.md",
-      "title": "01-商業模式分析-段永平視角",
-      "entity": "lululemon",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "段永平"
-      ],
-      "bytes": 5145
-    },
-    {
-      "id": "REPORT/lululemon/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "path": "REPORT/lululemon/團隊分析/02-財務估值分析-巴菲特視角.md",
-      "title": "02-財務估值分析-巴菲特視角",
-      "entity": "lululemon",
-      "type": "valuation",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "巴菲特"
-      ],
-      "bytes": 6341
-    },
-    {
-      "id": "REPORT/lululemon/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "REPORT/lululemon/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
-      "entity": "lululemon",
-      "type": "other",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "芒格"
-      ],
-      "bytes": 7753
-    },
-    {
-      "id": "REPORT/lululemon/團隊分析/04-風險管理層評估-李錄視角.md",
-      "path": "REPORT/lululemon/團隊分析/04-風險管理層評估-李錄視角.md",
-      "title": "04-風險管理層評估-李錄視角",
-      "entity": "lululemon",
-      "type": "management",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "李錄"
-      ],
-      "bytes": 8568
-    },
-    {
-      "id": "REPORT/lululemon/團隊分析/最終報告.md",
-      "path": "REPORT/lululemon/團隊分析/最終報告.md",
-      "title": "最終報告",
-      "entity": "lululemon",
-      "type": "team",
-      "skill": null,
-      "date": null,
-      "quarter": null,
-      "ticker": "LULU",
-      "masters": [],
-      "bytes": 6295
-    },
-    {
-      "id": "REPORT/lululemon/深度分析/20260516-投研報告-lululemon-research.md",
-      "path": "REPORT/lululemon/深度分析/20260516-投研報告-lululemon-research.md",
-      "title": "20260516-投研報告-lululemon-research",
-      "entity": "lululemon",
-      "type": "research",
-      "skill": null,
-      "date": "2026-05-16",
-      "quarter": null,
-      "ticker": "LULU",
-      "masters": [],
-      "bytes": 6694
-    },
-    {
-      "id": "REPORT/京元電子/深度分析/20260719-投研報告-京元電子-research.md",
-      "path": "REPORT/京元電子/深度分析/20260719-投研報告-京元電子-research.md",
+      "id": "reports/京元電子/深度分析/20260719-投研報告-京元電子-research.md",
+      "path": "reports/京元電子/深度分析/20260719-投研報告-京元電子-research.md",
       "title": "20260719-投研報告-京元電子-research",
       "entity": "京元電子",
       "type": "research",

@@ -19,8 +19,8 @@ body:
     id: source
     attributes:
       label: 出現問題的 Skill 或報告
-      description: 哪個 skill 生成的、或 REPORT/ 下哪份報告（貼路徑或連結）。
-      placeholder: "REPORT/台積電/深度分析/台積電-research-20260408.md，或 /investment-research"
+      description: 哪個 skill 生成的、或 reports/ 下哪份報告（貼路徑或連結）。
+      placeholder: "reports/台積電/深度分析/台積電-research-20260408.md，或 /investment-research"
     validations:
       required: true
   - type: textarea

@@ -14,7 +14,7 @@ body:
       label: 你觀察到的問題 + 具體出處（必填）
       description: 在哪份報告、哪一段或哪張表看到的？請貼連結或截圖，最好把有問題的原文片段貼出來。
       placeholder: |
-        REPORT/英偉達/深度分析/20260830-投研報告-英偉達-research.md 的市值對比表，
+        reports/英偉達/深度分析/20260830-投研報告-英偉達-research.md 的市值對比表，
         同一列裡 NVIDIA 用美元、台積電用新台幣，沒法橫向比大小。
     validations:
       required: true
