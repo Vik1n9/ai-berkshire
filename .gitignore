@@ -36,3 +36,6 @@ reports/portfolio-latest.md
 # ===== 工具產生的本機暫存目錄，不入庫 =====
 /.reasonix/
 /.rtk/
+
+# web 報告閱讀器的產生檔（39MB 索引，本機自行重建，不入庫）
+/web/
