@@ -19,8 +19,8 @@ This skill is generated from `skills/thesis-drift.md` so Claude Code and Codex u
 
 **支援輸入格式**：
 - `公司名 舊報告路徑 新報告路徑` — 指定兩份研究報告或論文快照進行對比
-- `公司名 reports/{公司名}-thesis-舊日期.md reports/{公司名}-thesis-新日期.md` — 對比兩份帶日期的論文快照
-- `公司名` — 自動查詢 `reports/{公司名}-thesis.md` 及同目錄歷史快照；如果沒有基線則轉入缺失基線處理
+- `公司名 REPORT/{公司名}/投資論點/{公司名}-thesis-舊日期.md REPORT/{公司名}/投資論點/{公司名}-thesis-新日期.md` — 對比兩份帶日期的論文快照
+- `公司名` — 自動查詢 `REPORT/{公司名}/投資論點/{公司名}-thesis.md` 及同目錄歷史快照；如果沒有基線則轉入缺失基線處理
 
 > "當事實改變時，我就改變想法。你呢？" —— 凱恩斯
 >
@@ -43,7 +43,7 @@ This skill is generated from `skills/thesis-drift.md` so Claude Code and Codex u
 
 解析 `$ARGUMENTS`：
 - 如果提供兩份報告路徑 → 進入**指定報告對比**模式
-- 如果只提供公司名 → 查詢 `reports/{公司名}-thesis.md` 及歷史快照，進入**自動快照對比**模式
+- 如果只提供公司名 → 查詢 `REPORT/{公司名}/投資論點/{公司名}-thesis.md` 及歷史快照，進入**自動快照對比**模式
 - 如果只找到一份報告或沒有歷史基線 → 進入**缺失基線處理**模式
 - 如果兩份報告不是同一家公司 → 停止並要求使用者確認，不做跨公司漂移判斷
 
@@ -54,7 +54,7 @@ This skill is generated from `skills/thesis-drift.md` so Claude Code and Codex u
 ### A1：讀取並校驗兩份報告
 
 讀取舊報告和新報告，提取：
-- 報告日期、公司名、股票程式碼
+- 報告日期、公司名、股票代碼
 - 核心論文（5句話）
 - 核心假設清單
 - 紅線清單
@@ -168,17 +168,17 @@ python3 tools/financial_rigor.py calc --expr '{精確算式}'
 
 ### B1：查詢快照
 
-在 `reports/` 中查詢：
-- `reports/{公司名}-thesis.md`
-- `reports/{公司名}-thesis-*.md`
-- `reports/{公司名}/` 目錄下包含 `thesis`、`論文`、`追蹤` 的報告
+在 `REPORT/{公司名}/投資論點/` 中查詢：
+- `REPORT/{公司名}/投資論點/{公司名}-thesis.md`
+- `REPORT/{公司名}/投資論點/{公司名}-thesis-*.md`
+- `REPORT/{公司名}/` 目錄下包含 `thesis`、`論文`、`追蹤` 的報告
 
 選擇時間最早且結構完整的檔案作為舊報告，時間最新的檔案作為新報告。若使用者指定日期，以使用者指定為準。
 
 ### B2：防止錯誤配對
 
 對比前必須確認：
-- 公司名或股票程式碼一致
+- 公司名或股票代碼一致
 - 報告日期不同
 - 兩份報告都包含可抽取的論文結構或研究結論
 
@@ -197,7 +197,7 @@ python3 tools/financial_rigor.py calc --expr '{精確算式}'
 1. 明確說明：**缺少可比較的歷史基線，不能執行漂移檢測**
 2. 不要根據記憶或市場印象補造舊論文
 3. 引導使用者先使用 `/thesis-tracker {公司名} 建立論文` 建立結構化基線
-4. 如果當前報告已足夠完整，可建議將它儲存為 `reports/{公司名}-thesis.md` 作為未來漂移檢測基線
+4. 如果當前報告已足夠完整，可建議將它儲存為 `REPORT/{公司名}/投資論點/{公司名}-thesis.md` 作為未來漂移檢測基線
 
 輸出格式：
 

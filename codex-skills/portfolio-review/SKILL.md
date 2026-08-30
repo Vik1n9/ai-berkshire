@@ -20,7 +20,7 @@ This skill is generated from `skills/portfolio-review.md` so Claude Code and Cod
 **支援輸入格式**：
 - 持倉清單，例如：`騰訊30%, 美團20%, 茅台20%, 輝達15%, 現金15%`
 - 或：`騰訊 500股 @480港元, 美團 1000股 @130港元, ...`
-- 或：`我的持倉`（如果已有儲存的組合檔案 `reports/portfolio-latest.md`）
+- 或：`我的持倉`（如果已有儲存的組合檔案 `REPORT/組合管理/portfolio-latest.md`）
 
 > "分散投資是對無知的保護。如果你知道自己在做什麼，分散投資就沒有意義。" —— 巴菲特
 >
@@ -47,7 +47,7 @@ This skill is generated from `skills/portfolio-review.md` so Claude Code and Cod
 
 如果輸入只有比例沒有金額，按比例分析即可。
 
-同時檢查是否存在已有的組合檔案（`reports/portfolio-latest.md`），如有則讀取並更新。
+同時檢查是否存在已有的組合檔案（`REPORT/組合管理/portfolio-latest.md`），如有則讀取並更新。
 
 ### 第二步：獲取最新資料
 
@@ -188,7 +188,7 @@ This skill is generated from `skills/portfolio-review.md` so Claude Code and Cod
 
 ### 第七步：儲存組合檔案
 
-將組合資訊寫入 `reports/portfolio-latest.md`，包含：
+將組合資訊寫入 `REPORT/組合管理/portfolio-latest.md`（持倉組合橫跨多家公司，不屬於單一個股，放 REPORT/組合管理/ 目錄），包含：
 - 最新持倉表
 - 本次審視日期和結論
 - 調倉記錄（追加）

@@ -39,7 +39,7 @@ This skill is generated from `skills/thesis-tracker.md` so Claude Code and Codex
 
 ### 第一步：判斷操作模式
 
-檢查是否已存在該公司的投資論文檔案（`reports/{公司名}-thesis.md`）：
+檢查是否已存在該公司的投資論文檔案（`REPORT/{公司名}/投資論點/{公司名}-thesis.md`）：
 - 如果不存在 → 進入**建立論文**模式
 - 如果存在 → 進入**追蹤檢查**模式
 - 如果找不到但使用者表示已有 → 詢問檔案路徑
@@ -107,7 +107,7 @@ This skill is generated from `skills/thesis-tracker.md` so Claude Code and Codex
 
 ### A5：儲存論文
 
-將投資論文寫入 `reports/{公司名}-thesis.md`，包含：
+將投資論文寫入 `REPORT/{公司名}/投資論點/{公司名}-thesis.md`（僅限美股與台股公開發行公司），包含：
 - 建立日期
 - 買入價格和倉位
 - 核心論文（5句話）
@@ -122,7 +122,7 @@ This skill is generated from `skills/thesis-tracker.md` so Claude Code and Codex
 
 ### B1：讀取現有論文
 
-讀取 `reports/{公司名}-thesis.md`，載入：
+讀取 `REPORT/{公司名}/投資論點/{公司名}-thesis.md`，載入：
 - 核心論文
 - 核心假設清單
 - 紅線清單
@@ -208,7 +208,7 @@ This skill is generated from `skills/thesis-tracker.md` so Claude Code and Codex
 
 ### B7：更新論文檔案
 
-將本次檢查記錄追加到 `reports/{公司名}-thesis.md` 的追蹤記錄表中：
+將本次檢查記錄追加到 `REPORT/{公司名}/投資論點/{公司名}-thesis.md` 的追蹤記錄表中：
 
 | 檢查日期 | 健康度 | 核心變化 | 動作建議 |
 |---------|:------:|---------|---------|

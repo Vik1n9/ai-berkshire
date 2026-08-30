@@ -1062,7 +1062,9 @@ Top 3 核心風險及應對策略
 
 ### 第八步：儲存報告
 
-將完整最終報告寫入 `reports/{公司名}/{公司名}-private-{YYYYMMDD}.md`。
+將完整最終報告寫入 `PRIVATE/{公司名}/{公司名}-private-{YYYYMMDD}.md`。
+
+非公開發行公司不在美股/台股範圍內，因此不寫入 `REPORT/`（REPORT/ 僅收錄美股與台股公開發行公司報告），統一存放於倉庫根目錄的 `PRIVATE/`。若該公司之後掛牌上市，改用 `/investment-research` 或 `/investment-team` 於 `REPORT/{公司名}/` 下建立正式報告。
 
 ### 第九步：清理團隊
 

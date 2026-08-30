@@ -358,7 +358,7 @@ B級瓶頸（有壓力）：
 
 ### 7.2 狀態檔案
 
-在 `reports/bottleneck-map/` 目錄維護：
+在 `REPORT/訊號掃描/bottleneck-map/` 目錄維護：
 - `master-map.md` — 瓶頸總地圖（持續更新）
 - `watchlist.md` — 觀察名單（持續更新）
 - `YYYY-MM-DD/` — 每天一個資料夾，包含該天所有掃描報告
@@ -384,7 +384,7 @@ B級瓶頸（有壓力）：
 
 ### 報告輸出規則
 
-**每天一個資料夾**：`reports/bottleneck-map/YYYY-MM-DD/`
+**每天一個資料夾**：`REPORT/訊號掃描/bottleneck-map/YYYY-MM-DD/`
 
 **檔案命名規則**（透過檔名一眼看出有沒有標的）：
 
@@ -480,10 +480,10 @@ B級瓶頸（有壓力）：
 ## 輸出要求
 
 1. **報告位置**：
-   - 完整掃描：`reports/bottleneck-map/{趨勢名}-bottleneck-{YYYYMMDD}.md`
-   - 每日掃描：`reports/bottleneck-map/daily/{YYYY-MM-DD}-{am/pm}.md`
-   - 瓶頸總地圖：`reports/bottleneck-map/master-map.md`
-   - 觀察名單：`reports/bottleneck-map/watchlist.md`
+   - 完整掃描：`REPORT/訊號掃描/bottleneck-map/{趨勢名}-bottleneck-{YYYYMMDD}.md`
+   - 每日掃描：`REPORT/訊號掃描/bottleneck-map/daily/{YYYY-MM-DD}-{am/pm}.md`
+   - 瓶頸總地圖：`REPORT/訊號掃描/bottleneck-map/master-map.md`
+   - 觀察名單：`REPORT/訊號掃描/bottleneck-map/watchlist.md`
 2. **語言**：中文
 3. **風格**：直接、犀利、不說廢話
 4. **資料**：所有資料標註來源；估計值標"估計"

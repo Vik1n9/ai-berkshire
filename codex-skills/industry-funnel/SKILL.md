@@ -279,7 +279,7 @@ A = 資料充分可信；B = 部分缺失但不影響主結論；C = 缺失較�
 
 ## 輸出要求
 
-1. **報告位置**：`reports/{行業名}-funnel-{YYYYMMDD}.md`（行業報告放 reports/ 根目錄）
+1. **報告位置**：`REPORT/產業研究/{行業名}-funnel-{YYYYMMDD}.md`（跨公司篩選報告不屬於單一個股，放 REPORT/產業研究/ 目錄）
 2. **語言**：中文
 3. **風格**：直接、犀利、不說廢話
 4. **資料**：所有資料標註來源；估計值標"估計"
@@ -313,7 +313,7 @@ python3 tools/report_audit.py verdict \
 ## 後續動作
 
 漏斗終選 3 家後，對每家可單獨執行：
-- `/investment-team` —— 完整四大師並行深度研究（獨立子目錄 + 5 文件）
+- `/investment-team` —— 完整四大師並行深度研究（獨立子目錄 + 5 檔案）
 - `/investment-checklist` —— 巴菲特買入前 checklist 系統過一遍
 - `/management-deep-dive` —— 管理層縱深研究
 

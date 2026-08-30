@@ -108,7 +108,7 @@ This skill is generated from `skills/industry-research.md` so Claude Code and Co
 
 ### 對每家公司收集
 - 公司名稱（中英文）
-- 股票程式碼和交易所
+- 股票代碼和交易所
 - 市值（近似）
 - 一句話描述（在產業鏈中的位置和作用）
 - 是否純正標的（純核電 vs 多元化中有核電業務）
@@ -259,7 +259,7 @@ This skill is generated from `skills/industry-research.md` so Claude Code and Co
 3. 產業鏈全景圖用程式碼塊的文字圖表示
 4. 每個環節至少分析2-3家頭部公司
 5. 全球公司掃描要儘可能完整（A股/港股/美股/國際）
-6. 最終將完整報告寫入 `reports/[行業名]產業鏈投資研究報告.md`
+6. 最終將完整報告寫入 `REPORT/產業研究/{行業名}-industry-{YYYYMMDD}.md`（跨公司產業研究不屬於單一個股，統一放在 REPORT/ 根目錄下的產業研究資料夾）
 7. 結論要明確，給出具體的標的、倉位和價格區間建議
 8. 每個分析模組末尾有對應大師的"追問"
 

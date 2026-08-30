@@ -26,7 +26,7 @@
 
 | 優先順序 | 來源 | URL | 獲取方式 |
 |--------|------|-----|---------|
-| 1（主） | **東方財富** | eastmoney.com → 搜股票程式碼 → 財務報表 | 直接訪問 |
+| 1（主） | **東方財富** | eastmoney.com → 搜股票代碼 → 財務報表 | 直接訪問 |
 | 2（副） | **巨潮資訊** | cninfo.com.cn | 原始年報/季報PDF |
 
 ### 台股（台積電2330、聯發科2454、大立光3008等）
@@ -45,7 +45,7 @@ python3 tools/twstock_data.py valuation 2330    # 估值指標 + PER一年區間
 python3 tools/twstock_data.py financials 2330   # 近5年年度核心財務（營收/毛利率/歸母淨利/EPS/ROE）
 python3 tools/twstock_data.py revenue 2330      # 近13個月月營收及同比
 python3 tools/twstock_data.py dividend 2330     # 近年股利政策（現金/股票股利、除息日）
-python3 tools/twstock_data.py search 台積        # 搜尋股票程式碼（注意台股名稱為繁體）
+python3 tools/twstock_data.py search 台積        # 搜尋股票代碼（注意台股名稱為繁體）
 ```
 
 台股特別注意：
@@ -91,7 +91,7 @@ Token 優先讀環境變數 `FINMIND_TOKEN`，未設定時指令碼自動從技�
 | 個股基本資料 | `TaiwanStockInfo` |
 | 個股新聞 | `TaiwanStockNews` |
 
-完整 dataset/欄位/權限層級參考（大檔案，用 `rg -n "關鍵詞"` 檢索，不要整讀）：
+完整 dataset/欄位/許可權層級參考（大檔案，用 `rg -n "關鍵詞"` 檢索，不要整讀）：
 `~/.codex/skills/finmind-tw-market/references/finmind_api_reference_full.md`
 
 **備援**（內含有效 token，均已驗證）：主參考檔案遺失時，依序改用：
