@@ -30,17 +30,26 @@ reports/
 │   ├── 財報分析/台積電-earnings-2025Q4.md
 │   ├── 管理層分析/台積電-management-20260409.md
 │   ├── 投資論點/台積電-thesis.md
+│   ├── 買前確認/台積電-checklist-20260825.md
 │   ├── 團隊分析/最終報告.md
 │   └── 公眾號文章/01-開篇-....md
 ├── NVDA/
 │   └── ...（同上，類別依實際產出的報告種類建立）
 ├── 產業研究/           — 跨公司產業研究、篩選漏斗、產業主題公眾號（非單一個股）
-├── 跨公司比較/          — 多公司 Checklist 對比
+├── 跨公司比較/          — 多公司買前確認對比
 ├── 組合管理/portfolio-latest.md — 持倉組合報告（持續更新）
 └── 訊號掃描/bottleneck-map/    — 瓶頸訊號掃描日誌
 ```
 
-`{報告類別}` 依報告性質命名，常見類別：深度分析、財報分析、管理層分析、投資論點、團隊分析、公眾號文章、Checklist、估值分析、專題研究、新聞追蹤、參考資料。無對應類別時可依需要新增，維持繁體中文命名。
+上面四個非個股目錄（產業研究、跨公司比較、組合管理、訊號掃描）目前**都還沒有內容**，
+是保留給對應 Skill 的輸出位置，第一次跑到時再建。個股資料夾目前只有下列這些：
+
+```
+ACN ADBE ADP BKNG GEV GOOGL INTC LULU MA META MRVL MSFT MU NOW NVDA
+PGR PYPL QCOM RDDT RKLB TSLA TTWO UBER VSXY 京元電子
+```
+
+`{報告類別}` 依報告性質命名，常見類別：深度分析、財報分析、管理層分析、投資論點、團隊分析、公眾號文章、買前確認、估值分析、專題研究、新聞追蹤、參考資料。無對應類別時可依需要新增，**一律用繁體中文命名，不要混英文**（類別名會被下游工具當索引鍵，中英混用會讓同一種報告分裂成兩類）。
 
 `{股票名稱}` 命名規則：**美股用股票代號（ticker，如 NVDA、MSFT、MU、ADBE、GEV），台股用中文名（如 台積電、京元電子）**，方便快速搜尋到正確股票。建立新公司資料夾前，先確認命名與此規則一致，不要用公司全名、中文翻譯名稱或中英文混用替代美股代號。
 
@@ -50,7 +59,7 @@ reports/
 |------|---------|------|
 | /investment-team | `reports/{公司名}/團隊分析/` 目錄內含 4 個視角＋最終報告 | `reports/台積電/團隊分析/最終報告.md` |
 | /investment-research | `reports/{公司名}/深度分析/{公司名}-research-{YYYYMMDD}.md` | `reports/台積電/深度分析/台積電-research-20260408.md` |
-| /investment-checklist | 單一公司：`reports/{公司名}/Checklist/`；多公司：`reports/跨公司比較/` | `reports/台積電/Checklist/巴菲特Checklist-台積電.md` |
+| /investment-checklist | 單一公司：`reports/{公司名}/買前確認/{公司名}-checklist-{YYYYMMDD}.md`；多公司：`reports/跨公司比較/` | `reports/台積電/買前確認/台積電-checklist-20260825.md` |
 | /industry-research | `reports/產業研究/{行業名}-industry-{YYYYMMDD}.md` | `reports/產業研究/核電-industry-20260409.md` |
 | /industry-funnel | `reports/產業研究/{行業名}-funnel-{YYYYMMDD}.md` | `reports/產業研究/AI算力-funnel-20260509.md` |
 | /private-company-research | `PRIVATE/{公司名}/{公司名}-private-{YYYYMMDD}.md`（非公開發行，不進 reports/） | `PRIVATE/位元組跳動/位元組跳動-private-20260408.md` |
