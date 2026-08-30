@@ -1,0 +1,36 @@
+# FinMind 金鑰檢查
+#
+# 金鑰本體存在 GitHub 的 Repository secret（Settings → Secrets and variables →
+# Actions），名稱 FINMIND_TOKEN；這個 workflow 只在執行時把它注入成環境變數，
+# 驗證金鑰還有沒有效、額度剩多少。設定步驟見 docs/finmind-token.md。
+#
+# 本倉庫是 public，Actions 執行紀錄任何人都看得到，所以：
+#   - 觸發條件只有手動與排程，不接 pull_request（外部 PR 拿不到 secret）
+#   - 檢查腳本只印 sha256 前 8 碼指紋，絕不印 token 內容
+name: FinMind 金鑰檢查
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 每週一 09:00（台北時間，UTC+8）＝ 01:00 UTC，提早發現 token 過期
+    - cron: '0 1 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: 驗證 FINMIND_TOKEN
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 檢查金鑰是否有效
+        env:
+          FINMIND_TOKEN: ${{ secrets.FINMIND_TOKEN }}
+        run: python3 tools/finmind_token_check.py

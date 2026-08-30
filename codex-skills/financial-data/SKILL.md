@@ -68,7 +68,7 @@ python3 tools/twstock_data.py search 台積        # 搜尋股票代碼（注意
 1. **貨幣單位是新台幣（TWD）**，與港幣/人民幣/美元混排時必須顯式標註，跨市場對比先統一換算
 2. **月營收是台股獨有優勢**：上市櫃公司每月10日前強制披露上月營收，是跟蹤基本面拐點最快的公開訊號，earnings-review/thesis-tracker 類分析應優先利用（`revenue` 子命令）
 3. FinMind 損益表為**單季值**，工具已自動加總為年度值；不足4季的年份會標註"僅前N季累計"
-4. FinMind 未註冊可直接用（有小時級限額）。註冊後的 API token **只存本機、嚴禁提交到 git**，工具按優先順序自動讀取：①環境變數 `FINMIND_TOKEN`；②本地檔案 `local/finmind_token.txt`（`local/` 已被 `.gitignore` 永久排除，把 token 單獨一行寫入該檔案即可）。token 不得出現在報告、skill、commit 中
+4. FinMind 未註冊可直接用（有小時級限額）。註冊後的 API token **只存本機、嚴禁提交到 git**，工具按優先順序自動讀取：①環境變數 `FINMIND_TOKEN`（GitHub Actions 由 Repository secret `FINMIND_TOKEN` 注入）；②本地檔案 `local/finmind_token.txt`（`local/` 已被 `.gitignore` 永久排除，把 token 單獨一行寫入該檔案即可）。token 不得出現在報告、skill、commit 中。設定與驗證步驟見 `docs/finmind-token.md`，查金鑰是否有效跑 `python3 tools/finmind_token_check.py`
 5. 交叉驗證：FinMind 數值與 Goodinfo（或 macrotrends 上的 ADR，如 TSM）對照，誤差規則同下；台積電等有 ADR 的公司注意 ADR 與台股原股的匯率/存託比率差異（1 TSM ADR = 5 股 2330）
 
 ### 台股（台積電2330、聯發科2454、京元電子2449等，4位數代碼）
