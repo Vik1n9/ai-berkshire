@@ -1,45 +1,45 @@
-name: 💡 改进建议
-description: 对报告格式、skill 流程或框架的改进建议
-title: "[建议] "
+name: 💡 改進建議
+description: 對報告格式、skill 流程或框架的改進建議
+title: "[建議] "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        感谢建议 🙏 **请附具体、可复现的例子**：在哪份报告/哪张表看到的问题，以及期望改成什么样。
-        只有抽象描述（如"读起来不方便"）而没有具体出处的建议很难落地，会被要求补充。
+        感謝建議 🙏 **請附具體、可復現的例子**：在哪份報告/哪張表看到的問題，以及期望改成什麼樣。
+        只有抽象描述（如"讀起來不方便"）而沒有具體出處的建議很難落地，會被要求補充。
   - type: textarea
     id: problem
     attributes:
-      label: 你观察到的问题 + 具体出处（必填）
-      description: 在哪份报告、哪一段或哪张表看到的？请贴链接或截图，最好把有问题的原文片段贴出来。
+      label: 你觀察到的問題 + 具體出處（必填）
+      description: 在哪份報告、哪一段或哪張表看到的？請貼連結或截圖，最好把有問題的原文片段貼出來。
       placeholder: |
-        reports/全球AI赛道10家核心标的筛选-20260628.md 的市值对比表，
-        同一列里 NVIDIA 用美元、SK海力士用韩元，没法横向比大小。
+        REPORT/英偉達/深度分析/20260830-投研報告-英偉達-research.md 的市值對比表，
+        同一列裡 NVIDIA 用美元、台積電用新台幣，沒法橫向比大小。
     validations:
       required: true
   - type: textarea
     id: expectation
     attributes:
-      label: 期望的改进效果（必填）
-      description: 最好给"当前长这样 → 期望长这样"的对比，越具体越容易被采纳。
+      label: 期望的改進效果（必填）
+      description: 最好給"當前長這樣 → 期望長這樣"的對比，越具體越容易被採納。
       placeholder: |
-        当前：市值列混用美元/韩元
-        期望：跨市场对比表里，绝对量级的列统一换算成美元并注明汇率
+        當前：市值列混用美元/韓元
+        期望：跨市場對比表裡，絕對量級的列統一換算成美元並註明匯率
     validations:
       required: true
   - type: textarea
     id: extra
     attributes:
-      label: 补充说明（选填）
+      label: 補充說明（選填）
     validations:
       required: false
   - type: checkboxes
     id: confirm
     attributes:
-      label: 确认
+      label: 確認
       options:
-        - label: 我已搜索过现有 issue，确认没有重复
+        - label: 我已搜尋過現有 issue，確認沒有重複
           required: true
-        - label: 我已提供具体出处和期望效果，而非仅抽象描述
+        - label: 我已提供具體出處和期望效果，而非僅抽象描述
           required: true

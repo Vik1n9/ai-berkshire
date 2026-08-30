@@ -3,62 +3,69 @@
 ## 專案概述
 
 基於 Claude Code 的價值投資研究 Skill 合集。四大師框架：巴菲特、蒙格、段永平、李錄。
-GitHub: xbtlin/ai-berkshire
+上游原倉庫：xbtlin/ai-berkshire。**本倉庫（Vik1n9/ai-berkshire）為其分支，定位為個人使用**：
+一律使用繁體中文（台灣正體），研究標的聚焦美股與台股公開發行公司，不追求對外開源專案的
+多語言/社群貢獻維護（README_EN.md、README_JA.md 為既有內容保留，非本倉庫維護重點）。
 
 ## 專案結構
 
 ```
 skills/          — 投研 Skill 定義（.md），複製到 ~/.claude/commands/ 使用
 tools/           — 輔助工具（financial_rigor.py 精確計算）
-reports/         — 研究報告輸出目錄
+REPORT/          — 研究報告輸出目錄（僅限美股與台股公開發行公司）
+PRIVATE/         — 非公開發行公司研究（如未上市新創），不計入 REPORT/
 assets/          — 圖片等靜態資源
 ```
 
 ## 報告輸出目錄
 
-所有 Skill 的報告統一寫入本倉庫內的 `reports/`。可依需要在
-`reports/` 下新增公司或主題子目錄，結構沿用原本規範：
+所有 Skill 的報告統一寫入本倉庫內的 `REPORT/`。**REPORT/ 只收錄美股與台股的公開發行公司報告**，其餘（非公開發行公司、產業/跨公司比較、方法論筆記、人物語錄等）不放在這裡（見下方「非個股內容」）。
+
+結構為 `REPORT/{股票名稱}/{報告類別}/{報告內容}`：
 
 ```
-reports/
-├── AI產業研究/              — AI 產業鏈全景研究（置頂）
-│   ├── AI五層蛋糕-產業全景研究-20260605.md
-│   └── AI五層蛋糕-公眾號-20260605.md
-├── 騰訊/                    — 騰訊所有研究報告
-│   ├── 騰訊-research-20260408.md
-│   ├── 騰訊-earnings-2025Q4.md
-│   ├── 騰訊-management-20260409.md
-│   └── 騰訊-thesis.md
-├── 拼多多/                  — 拼多多所有研究報告
-├── 泡泡瑪特/                — 泡泡瑪特所有研究報告
-├── 核電-industry-20260409.md — 產業報告放根目錄
-├── AI算力-funnel-20260509.md  — 漏斗篩選報告放根目錄
-├── AI-輪動判斷-20260509.md    — 主題級綜合判斷報告放根目錄
-├── portfolio-latest.md       — 組合報告放根目錄
-└── 多公司對比-checklist-20260408.md — 多公司報告放根目錄
+REPORT/
+├── 台積電/
+│   ├── 深度分析/台積電-research-20260408.md
+│   ├── 財報分析/台積電-earnings-2025Q4.md
+│   ├── 管理層分析/台積電-management-20260409.md
+│   ├── 投資論點/台積電-thesis.md
+│   ├── 團隊分析/最終報告.md
+│   └── 公眾號文章/01-開篇-....md
+├── 英偉達/
+│   └── ...（同上，類別依實際產出的報告種類建立）
+├── 產業研究/           — 跨公司產業研究、篩選漏斗、產業主題公眾號（非單一個股）
+├── 跨公司比較/          — 多公司 Checklist 對比
+├── 組合管理/portfolio-latest.md — 持倉組合報告（持續更新）
+└── 訊號掃描/bottleneck-map/    — 瓶頸訊號掃描日誌
 ```
+
+`{報告類別}` 依報告性質命名，常見類別：深度分析、財報分析、管理層分析、投資論點、團隊分析、公眾號文章、Checklist、估值分析、專題研究、新聞追蹤、參考資料。無對應類別時可依需要新增，維持繁體中文命名。
 
 ## 報告命名規範
 
-| Skill | 檔案命名格式 | 範例 |
+| Skill | 輸出位置 | 範例 |
 |------|---------|------|
-| /investment-team | `{公司名}/` 目錄內含 4 個視角＋最終報告 | `reports/拼多多/最終報告.md` |
-| /investment-research | `{公司名}-research-{YYYYMMDD}.md` | `reports/騰訊/騰訊-research-20260408.md` |
-| /investment-checklist | `{公司名}-checklist-{YYYYMMDD}.md` | `reports/騰訊/騰訊-checklist-20260408.md` |
-| /industry-research | `{行業名}-industry-{YYYYMMDD}.md`（根目錄） | `reports/核電-industry-20260409.md` |
-| /industry-funnel | `{行業名}-funnel-{YYYYMMDD}.md`（根目錄） | `reports/AI算力-funnel-20260509.md` |
-| /private-company-research | `{公司名}-private-{YYYYMMDD}.md` | `reports/字節跳動/字節跳動-private-20260408.md` |
-| /earnings-review | `{公司名}-earnings-{期間}.md` | `reports/騰訊/騰訊-earnings-2025Q4.md` |
-| /earnings-team | `{公司名}/` 目錄內含 4 個大師視角＋研究底稿＋公眾號文章＋讀者評審 | `reports/騰訊/騰訊-earnings-2025Q4.md`（公眾號定稿） |
-| /thesis-tracker | `{公司名}-thesis.md`（長期維護） | `reports/騰訊/騰訊-thesis.md` |
-| /portfolio-review | `portfolio-latest.md`（根目錄，持續更新） | `reports/portfolio-latest.md` |
-| /management-deep-dive | `{公司名}-management-{YYYYMMDD}.md` | `reports/騰訊/騰訊-management-20260409.md` |
+| /investment-team | `REPORT/{公司名}/團隊分析/` 目錄內含 4 個視角＋最終報告 | `REPORT/台積電/團隊分析/最終報告.md` |
+| /investment-research | `REPORT/{公司名}/深度分析/{公司名}-research-{YYYYMMDD}.md` | `REPORT/台積電/深度分析/台積電-research-20260408.md` |
+| /investment-checklist | 單一公司：`REPORT/{公司名}/Checklist/`；多公司：`REPORT/跨公司比較/` | `REPORT/台積電/Checklist/巴菲特Checklist-台積電.md` |
+| /industry-research | `REPORT/產業研究/{行業名}-industry-{YYYYMMDD}.md` | `REPORT/產業研究/核電-industry-20260409.md` |
+| /industry-funnel | `REPORT/產業研究/{行業名}-funnel-{YYYYMMDD}.md` | `REPORT/產業研究/AI算力-funnel-20260509.md` |
+| /private-company-research | `PRIVATE/{公司名}/{公司名}-private-{YYYYMMDD}.md`（非公開發行，不進 REPORT/） | `PRIVATE/位元組跳動/位元組跳動-private-20260408.md` |
+| /earnings-review | `REPORT/{公司名}/財報分析/{公司名}-earnings-{期間}.md` | `REPORT/台積電/財報分析/台積電-earnings-2025Q4.md` |
+| /earnings-team | `REPORT/{公司名}/財報分析/` 目錄內含 4 個大師視角＋研究底稿＋公眾號文章＋讀者評審 | `REPORT/台積電/財報分析/台積電-earnings-2025Q4.md`（公眾號定稿） |
+| /thesis-tracker | `REPORT/{公司名}/投資論點/{公司名}-thesis.md`（長期維護） | `REPORT/台積電/投資論點/台積電-thesis.md` |
+| /portfolio-review | `REPORT/組合管理/portfolio-latest.md`（持續更新） | `REPORT/組合管理/portfolio-latest.md` |
+| /management-deep-dive | `REPORT/{公司名}/管理層分析/{公司名}-management-{YYYYMMDD}.md` | `REPORT/台積電/管理層分析/台積電-management-20260409.md` |
+| /deep-company-series、/wechat-article（投資主題） | `REPORT/{公司名}/公眾號文章/` | `REPORT/台積電/公眾號文章/01-開篇-....md` |
+| /wechat-article（技術/產業/通用主題） | `REPORT/產業研究/` | `REPORT/產業研究/公眾號-{主題}-20260605.md` |
+| /news-pulse | `REPORT/{公司名}/新聞追蹤/{公司名}-news-{YYYYMMDD}.md` | `REPORT/台積電/新聞追蹤/台積電-news-20260409.md` |
+| /bottleneck-hunter | `REPORT/訊號掃描/bottleneck-map/`（跨標的訊號日誌，非單一個股） | `REPORT/訊號掃描/bottleneck-map/master-map.md` |
 
 ## /investment-team 檔案結構
 
 ```
-reports/{公司名}/
-├── README.md                         — 研究框架概覽＋核心結論
+REPORT/{公司名}/團隊分析/
 ├── 01-商業模式分析-段永平視角.md
 ├── 02-財務估值分析-巴菲特視角.md
 ├── 03-產業競爭分析-蒙格視角.md
@@ -74,7 +81,8 @@ reports/{公司名}/
 - 禁止使用"我認為"、"我覺得"、"顯然"等主觀表述，改用"資料顯示"、"證據表明"、"根據XX來源"
 - **呈現正反兩面**：每個核心判斷都必須附帶反面論據（"但另一方面..."），讓讀者自己權衡
 - 對不確定的事情誠實說"不確定"或"資料不足"，不要用推測填充確定性
-- 所有skill（investment-team、investment-research、earnings-review等）在執行時都必須遵守以上原則
+- 所有skill（investment-team、investment-research、earnings-review等）在執行時都必須遵守以上原則，
+  行文風格另見下方「去除 AI 寫作痕跡」一節
 
 ## 報告語言與風格
 
@@ -86,6 +94,51 @@ reports/{公司名}/
 - 估計值必須註明"估計"
 - 評分使用★符號（★1-5），不含半星
 - 穿插巴菲特/蒙格/段永平/李錄的語錄點評
+
+## 去除 AI 寫作痕跡（避免報告有明顯 AI 味）
+
+規則參考 [Humanizer-zh](https://github.com/op7418/Humanizer-zh) 整理的 24 種 AI 寫作痕跡，所有 skill
+輸出的報告、公眾號文章、回覆都必須避免以下模式。**與「投研分析核心原則」的客觀性規範衝突時，
+以客觀性規範為準**（例如：不得因為追求「人味」而加入未經資料支撐的主觀臆斷；下方「適度第一人稱」
+指的是行文語氣自然，不是允許"我認為/我覺得"式無依據判斷）。
+
+**內容層面：**
+- 不誇大意義：避免"標誌著""至關重要的時刻""具有里程碑意義"這類詞彙，除非有具體資料證明影響力
+- 不堆砌無內容支撐的媒體引用/知名度描述
+- 不用"……ing"式空洞總結句帶過分析（如"象徵著……""反映了……"卻沒有展開論證）
+- 不用宣傳性形容詞：迷人的、令人驚嘆的、卓越非凡的
+- 不用模糊歸因：禁止"專家認為""市場普遍認為"，必須具名或標明具體來源
+- 結尾不要套用制式化「挑戰與展望」段落，改用報告本身的具體結論
+
+**語言與語法層面：**
+- 避免高頻 AI 詞彙氾濫：此外、至關重要、深入探討、強調、持久的、增強、培養、賦能、突出、相互作用、
+  複雜性、格局、關鍵性的、展示、織錦、寶貴的、充滿活力的、獨特、堅實——這些詞不是禁用，是禁止氾濫堆疊
+- 該用"是"就用"是"，不要為了顯得高階而用"充當""代表"等迂迴表達
+- 避免"不僅……而且……"式否定排比句連續堆疊
+- 不要每個分析都機械式硬湊三點（三段式），論點該幾點就幾點
+- 不要為了不重複而刻意換同義詞，同一概念前後用詞盡量一致，精確優先於花俏
+- 避免"從 X 到 Y，涵蓋一切"這類虛假範圍式空洞總括
+- 破折號、粗體不濫用：粗體只標記真正的重點，不要整段加粗；破折號不是每句都用
+- 不要用「行內小標題＋條列」硬湊版面（連續多個「**重點：** xxx」堆疊）
+- 標題不用表情符號，不用不自然的逐字大寫
+
+**交流與填充層面：**
+- 不寫"希望這份報告對您有幫助"之類的客套/協作語句
+- 不諂媚附和使用者既有立場——證據指向哪裡就寫哪裡
+- 刪除填充短語："值得注意的是""需要指出的是""為了實現這一目標"，直接講重點
+- 不要疊加限定詞軟化判斷（"可能""或許""在某種程度上"疊用），該給明確結論就給明確結論
+- 結尾不要用"整體來看，前景樂觀/謹慎樂觀"這類萬用正面收尾，改成具體的下一步觀察重點
+
+**具體寫法：**
+- 給觀點和判斷，不只是條列事實
+- 句子長短交錯，避免連續三句以上長度雷同
+- 承認不確定性與複雜性，不把每件事講成非黑即白
+- 行文語氣可以有作者感（自然口吻），但結論仍須有資料佐證，不能變成主觀臆測
+- 用具體數字與細節取代模糊概括
+
+**自我檢查（收尾前快速過一遍）：**
+連續三句長度是否雷同？段落是否每行都用破折號起頭？"此外""然而"是否可以直接刪掉？
+是不是每個列點都湊成三項？結尾是不是套用了萬用正面結論？
 
 ## GitHub 操作
 
@@ -111,7 +164,7 @@ git push origin main
 - 市值必須手算校驗：股價 × 總股本，與報告市值對比
 - 貨幣單位要明確（港幣／人民幣／美元），防止混淆
 - PE/ROE 等指標用 tools/financial_rigor.py 精確計算
-- 報告寫在本倉庫 `reports/` 內；是否推送到 GitHub 由使用者指示，**不主動**推送
+- 報告寫在本倉庫 `REPORT/` 內，且僅限美股與台股公開發行公司；是否推送到 GitHub 由使用者指示，**不主動**推送
 
 <!-- rtk-instructions v2 -->
 # RTK (Rust Token Killer) - Token-Optimized Commands

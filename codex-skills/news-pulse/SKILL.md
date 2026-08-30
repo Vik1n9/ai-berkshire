@@ -15,7 +15,7 @@ This skill is generated from `skills/news-pulse.md` so Claude Code and Codex use
 
 > **輸出規範（全域，優先於下文其他語言/路徑說明）**
 > - 一律使用**繁體中文**輸出，採台灣慣用詞彙，非僅簡繁字元轉換（例如：软件→軟體、视频→影片、服务器→伺服器、信息→資訊、优化→最佳化、文件→檔案、数据→資料、硬盘→硬碟、打印→列印、内存→記憶體、质量→品質、在线→線上、屏幕→螢幕、软件包→套件）。
-> - 所有報告輸出目錄一律為本倉庫的 `reports/`，可依需要在此目錄下新增公司/主題子目錄。
+> - 所有報告輸出目錄一律為本倉庫的 `REPORT/`（僅限美股與台股公開發行公司），可依需要在 `REPORT/{公司名}/` 下新增子目錄。
 >
 > **台股資料源（強制）**：凡分析台股（4 位數代碼，如 2330、2454、2449）時，行情、財報、籌碼等資料一律優先透過 FinMind API 取得：`python3 ~/.codex/skills/finmind-tw-market/scripts/finmind_fetch.py --dataset TaiwanStockPrice --data-id 2330 --start-date ... --end-date ...`；常用 dataset 對照與交叉驗證規範見 `financial-data` 技能（`~/Workspace/ai-berkshire/skills/financial-data.md`）「台股」章節。不得以網頁搜尋結果的數字作為台股主要資料來源。
 
@@ -39,7 +39,7 @@ This skill is generated from `skills/news-pulse.md` so Claude Code and Codex use
 
 | 引數 | 說明 | 預設 |
 |------|------|------|
-| **公司名** | 中文/英文/股票程式碼均可 | 必填 |
+| **公司名** | 中文/英文/股票代碼均可 | 必填 |
 | **時間視窗** | 偵察新聞的回溯天數 | 預設 14 天，財報季可縮到 7 天 |
 | **股價異動** | 漲/跌幅度 + 時間，如"跌 12%/3 天" | 選填，有則用於聚焦歸因 |
 | **關注側重** | 公司事件 / 監管 / 行業 / 情緒 | 預設四方平均 |
@@ -115,7 +115,7 @@ This skill is generated from `skills/news-pulse.md` so Claude Code and Codex use
   3. **做空資料**：做空比例、新發布的做空報告（如有）
   4. **大 V 觀點**：可呼叫 `python3 tools/xueqiu_scraper.py` 抓段永平等大 V 最近相關發言
      - 段永平 user_id: `1247347556`
-     - 命令示例：`python3 tools/xueqiu_scraper.py --user-id 1247347556 --keywords {公司名},{股票程式碼} --output /tmp/dyp-{公司名}.md`
+     - 命令示例：`python3 tools/xueqiu_scraper.py --user-id 1247347556 --keywords {公司名},{股票代碼} --output /tmp/dyp-{公司名}.md`
      - 僅在該公司是段永平/李錄關注標的時呼叫，否則跳過節省時間
   5. **傳言與小作文**：媒體未證實的傳言、社交媒體討論熱點（雪球/X/Reddit）
   6. **技術面訊號**：是否觸及關鍵支撐/阻力、是否有大宗交易、融資融券異常
@@ -233,7 +233,7 @@ This skill is generated from `skills/news-pulse.md` so Claude Code and Codex use
 
 ### 第八步：儲存報告
 
-寫入 `reports/{公司名}/{公司名}-news-{YYYYMMDD}.md`。如果 `reports/{公司名}/` 目錄不存在則建立（說明該公司還沒建過任何研究報告）。
+寫入 `REPORT/{公司名}/新聞追蹤/{公司名}-news-{YYYYMMDD}.md`。如果 `REPORT/{公司名}/新聞追蹤/` 目錄不存在則建立（說明該公司還沒建過任何研究報告）。
 
 ### 第九步：清理團隊
 

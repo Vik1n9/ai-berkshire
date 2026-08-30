@@ -193,7 +193,14 @@ This skill is generated from `skills/investment-team.md` so Claude Code and Code
 
 ### 第八步：儲存報告
 
-將完整最終報告寫入 `reports/{公司名}投資研究報告_{日期}.md`（日期格式 YYYYMMDD）。
+將四個角色視角分析與最終報告寫入 `REPORT/{公司名}/團隊分析/`：
+- `01-商業模式分析-段永平視角.md`
+- `02-財務估值分析-巴菲特視角.md`
+- `03-產業競爭分析-蒙格視角.md`
+- `04-風險管理層評估-李錄視角.md`
+- `最終報告.md`（Team Lead 綜合報告）
+
+僅適用於美股與台股公開發行公司；非公開發行公司請改用 `/private-company-research`。
 
 ### 第九步：資料抽檢（準出流程）
 
