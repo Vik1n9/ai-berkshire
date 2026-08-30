@@ -613,7 +613,7 @@ $ python3 tools/financial_rigor.py calc --expr "693321/935000"
 ### A2. 資料抽檢記錄（準出流程）
 
 ```
-$ python3 tools/report_audit.py extract --report REPORT/英偉達/深度分析/20260830-投研報告-英偉達-research.md
+$ python3 tools/report_audit.py extract --report REPORT/NVIDIA/深度分析/20260830-投研報告-NVIDIA-research.md
   總提取資料點：190 ｜ 抽樣比例 15% ｜ 抽檢數量 29
 ```
 
@@ -643,8 +643,8 @@ $ python3 tools/report_audit.py extract --report REPORT/英偉達/深度分析/2
 | NVIDIA FY2027 Q2 10-Q（截至 2026/7/26） | 全部財務數字、承諾與或有負債附註、客戶集中度 |
 | NVIDIA FY2027 Q2 8-K EX-99.1／EX-99.2（CFO Commentary） | 分部營收、指引、毛利率路徑 |
 | FY2027 Q2 電話會議逐字紀錄 | 管理層語氣、Q&A 品質評估 |
-| 本倉庫 `REPORT/英偉達/財報分析/20260830-財報精讀-英偉達-FY2027Q2.md` | 上述一手資料的整理與交叉驗證 |
-| 段永平雪球公開發言（`REPORT/英偉達/參考資料/`，60 條） | 外部參考點 |
+| 本倉庫 `REPORT/NVIDIA/財報分析/20260830-財報精讀-NVIDIA-FY2027Q2.md` | 上述一手資料的整理與交叉驗證 |
+| 段永平雪球公開發言（`REPORT/NVIDIA/參考資料/`，60 條） | 外部參考點 |
 
 **二手（B 級，僅用於市場預期與產業資料的交叉驗證）**
 - [stockanalysis.com — NVDA 報價與財報](https://stockanalysis.com/stocks/nvda/)

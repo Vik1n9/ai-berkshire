@@ -633,7 +633,7 @@ Usage:
 
 | Company | Skill Used | Core Conclusion | Report |
 |---------|-----------|----------------|--------|
-| NVIDIA (NVDA) | `/investment-team` | Composite 2.5/5 — excellent quality but seriously overvalued at $200 (DCF ~$90), no margin of safety | [View Report](REPORT/英偉達/團隊分析/最終報告-安全邊際-20260420.md) |
+| NVIDIA (NVDA) | `/investment-team` | Composite 2.5/5 — excellent quality but seriously overvalued at $200 (DCF ~$90), no margin of safety | [View Report](REPORT/NVIDIA/團隊分析/最終報告-安全邊際-20260420.md) |
 | ADP (ADP) | `/investment-team` | Three-layer compounding revenue machine (processing fees + float interest + value-added services); FY2025 revenue $20.6B | [View Report](REPORT/ADP/團隊分析/最終報告.md) |
 | Alphabet (GOOGL) | `/investment-research` | A-grade information availability — 20+ years public, dense analyst coverage | [View Report](REPORT/Google/深度分析/) |
 | Reddit (RDDT) | `/earnings-review` | 2026 Q2 earnings deep-read — most metrics accelerating, but US DAU down 0.6% QoQ | [View Report](REPORT/Reddit/財報分析/) |

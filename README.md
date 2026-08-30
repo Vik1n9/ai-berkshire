@@ -642,7 +642,7 @@ REM 可選：安裝 Codex slash prompts
 
 | 公司 | 使用 Skill | 核心結論 | 報告連結 |
 |------|-----------|---------|---------|
-| 英偉達 (NVDA) | `/investment-team` | 綜合2.5/5，品質極佳但$200價位下嚴重高估，DCF僅$90，缺乏安全邊際 | [檢視報告](REPORT/英偉達/團隊分析/最終報告-安全邊際-20260420.md) |
+| 英偉達 (NVDA) | `/investment-team` | 綜合2.5/5，品質極佳但$200價位下嚴重高估，DCF僅$90，缺乏安全邊際 | [檢視報告](REPORT/NVIDIA/團隊分析/最終報告-安全邊際-20260420.md) |
 | ADP (ADP) | `/investment-team` | 三層收入複利機器（處理費+浮存金利息+加值服務），FY2025營收206億美元 | [檢視報告](REPORT/ADP/團隊分析/最終報告.md) |
 | Alphabet (GOOGL) | `/investment-research` | A級資訊豐富度，上市20餘年、券商覆蓋密集 | [檢視報告](REPORT/Google/深度分析/) |
 | Reddit (RDDT) | `/earnings-review` | 2026 Q2財報精讀，多數指標加速但美國DAU季減0.6% | [檢視報告](REPORT/Reddit/財報分析/) |
