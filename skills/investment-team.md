@@ -114,7 +114,7 @@
 **研究方法**：
 - 使用 WebSearch 搜尋最新公開資訊（財報、行業報告、新聞）
 - **財務資料必須來自兩個獨立來源，來源1 必須是權威來源**，按 `skills/financial-data.md` 規範執行：美股 SEC EDGAR／公司 IR ＋ stockanalysis；台股 MOPS／證交所／公司官網 ＋ FinMind `tools/twstock_data.py` 或 Goodinfo；港股 HKEXnews ＋ aastocks；A股 巨潮資訊 ＋ 東方財富。兩源誤差>1%須標記；本倉庫既有報告不得當核驗來源
-- 取數時檢查 `financial-data.md`「口徑陷阱清單」（關係人科目加總、公司自定義指標不得回推、官方已揭露的數字不得用推算值取代）
+- 取數時遵守 `financial-data.md`「數字可信度通則」，數字同步記入資料帳本（原始值、口徑、期間、來源位置），衍生數字寫成帳本公式
 - 確保資料準確，關鍵資料標註來源
 - 分析要深入，不流於表面
 
@@ -190,26 +190,19 @@
 
 ### 第九步：資料抽檢（準出流程）
 
-報告寫入後**必須**執行資料抽檢，全部通過方可釋出。完整規則見 `skills/financial-data.md`「資料抽檢標準流程」：
+報告附錄必須有 `## 附錄：資料帳本`（格式見 `skills/financial-data.md`「資料帳本與驗算流程」），驗算全部通過方可釋出：
 
 ```bash
-# Step 0 — 口徑與出處檢查：逐項修正，或在報告中說明不適用的理由
-python3 tools/report_audit.py lint --report <報告檔案路徑>
+# 1. 帳本驗算：公式重算、勾稽、來源檢查、核心章節每個數字回對帳本（口徑、期間一致）
+python3 tools/report_audit.py ledger --report <報告檔案路徑> \
+  --must-section 核心財務資料 --require-official
 
-# Step 1 — 提取抽檢清單：最終報告「核心財務資料」章節每列本期值全數納入，其餘隨機抽 15%
-python3 tools/report_audit.py extract --report <報告檔案路徑> \
-  --must-section 核心財務資料 --seed <當天日期，如 20260928>
-
-# Step 2 — 取數：fetched_source 填權威來源並寫到檔名＋頁碼／科目，
-#          依報告標示的口徑取值（標稀釋就取稀釋），填官方原始精度，不先四捨五入；
-#          fetched_source2 填第三方；計算值填 financial_rigor.py；不得填本倉庫報告
-
-# Step 3 — 判決（必須加 --require-official）
-python3 tools/report_audit.py verdict --results '<填好的JSON>' \
-  --report <報告檔案路徑> --require-official
+# 2. 來源重取：抽樣帳本原始值，回到權威來源重新取數後判決
+python3 tools/report_audit.py ledger --report <報告檔案路徑> --sample 0.2 --seed <當天日期>
+python3 tools/report_audit.py verdict --results '<填好的JSON>' --require-official
 ```
 
-**【準出】** 全部通過 → 釋出；**【打回】** 有不通過 → 修正後重跑 Step 0–3。權威來源的值必須四捨五入後與報告顯示值完全一致；權威來源不符時，第三方相符也不能抵銷。
+**【準出】** 兩步都通過 → 釋出；**【打回】** 修正報告或帳本後兩步全部重跑。
 
 ### 第十步：清理團隊
 

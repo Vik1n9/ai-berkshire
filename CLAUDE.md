@@ -175,7 +175,7 @@ git push origin main
 - 市值必須手算校驗：股價 × 總股本，與報告市值對比
 - 貨幣單位要明確（港幣／人民幣／美元），防止混淆
 - PE/ROE 等指標用 tools/financial_rigor.py 精確計算
-- 深度分析、財報分析的資料抽檢照 `skills/financial-data.md`「資料抽檢標準流程」執行：先 `report_audit.py lint`，再 `extract --must-section`，最後 `verdict --require-official`；新錯誤類型要追加到該檔「檢討紀錄」
+- 深度分析、財報分析須附資料帳本，並通過 `tools/report_audit.py ledger`（帳本驗算）與 `verdict --require-official`（來源重取）；流程與「數字可信度通則」見 `skills/financial-data.md`。新錯誤先對照通則、補強驗算機制，不為單一案例新增特例規則
 - 報告寫在本倉庫 `reports/` 內，且僅限美股與台股公開發行公司；是否推送到 GitHub 由使用者指示，**不主動**推送
 
 <!-- rtk-instructions v2 -->

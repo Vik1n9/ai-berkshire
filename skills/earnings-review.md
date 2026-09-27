@@ -39,11 +39,11 @@
 4. **投資者日/分析師日材料**（如近期有）
 
 > **權威來源優先（必須遵守，詳見 `skills/financial-data.md`）**：財報數字、股本與公司自行揭露的指標，**來源1 一律取自權威來源**——美股 SEC EDGAR（10-K／10-Q／8-K Exhibit 99.1、XBRL API）與公司官網 IR；台股公開資訊觀測站（MOPS）、證交所／櫃買中心與公司官網（每季財報、營運報告、法說簡報）；港股 HKEXnews；A股 巨潮資訊。第三方網站（stockanalysis、macrotrends、FinMind、Goodinfo、aastocks、東方財富）只作來源2 交叉驗證。本倉庫 `reports/` 內的既有報告不得當核驗來源。
-> 取數時逐項檢查 `financial-data.md`「口徑陷阱清單」：關係人科目分列要加總、公司自定義指標（FCF、EBITDA）不得用來回推其他科目、官方已揭露的數字不得用推算值取代、PDF 圖表數字要看圖確認。
+> 取數時遵守 `financial-data.md`「數字可信度通則」，每取得一個數字就同步記入報告附錄的資料帳本（原始值、口徑、期間、來源位置），衍生數字寫成帳本公式交由工具計算。
 
 權威來源確實取不到時（需登入、檔案未上架、PDF 無法解析），才按 `skills/financial-data.md` 使用第三方資料（美股 stockanalysis／macrotrends；台股 FinMind `tools/twstock_data.py`／Goodinfo；港股 aastocks；A股 東方財富），並在報告開頭寫明嘗試過的權威來源與取不到的原因，標註"非原始財報，來自第三方彙總"，資料可得性評級不得高於 B 級。
 
-**台股特別注意**：公司官網「每季營運報告」通常直接揭露應收帳款週轉天數、營業活動現金流、資本支出、折舊攤銷、製程別／應用別結構，這些**必須引用公司揭露值**，不得自行推算取代。資產負債表的「應收帳款」與「應收帳款－關係人」要加總後再算週轉天數。
+**公司自行揭露的指標**：財報新聞稿、法說簡報、營運報告常直接揭露比率與拆分（週轉天數、現金流、資本支出、分部結構等）。凡是來源已揭露的數字直接引用；自己另外計算的指標，要在帳本列勾稽列與揭露值比對（通則 5）。
 
 ### 第二步：核心財務資料提取與驗證
 
@@ -199,26 +199,19 @@ python3 tools/financial_rigor.py verify-valuation \
 
 ### 第八步：資料抽檢（準出流程）
 
-報告寫入後**必須**執行資料抽檢，全部通過方可釋出。完整規則見 `skills/financial-data.md`「資料抽檢標準流程」：
+報告附錄必須有 `## 附錄：資料帳本`（格式見 `skills/financial-data.md`「資料帳本與驗算流程」），驗算全部通過方可釋出：
 
 ```bash
-# Step 0 — 口徑與出處檢查：逐項修正，或在報告中說明不適用的理由
-python3 tools/report_audit.py lint --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md
+# 1. 帳本驗算：公式重算、勾稽、來源檢查、核心章節每個數字回對帳本（口徑、期間一致）
+python3 tools/report_audit.py ledger --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md \
+  --must-section 速覽 --require-official
 
-# Step 1 — 提取抽檢清單：「速覽」章節（核心資料速覽表）每列本期值全數納入，其餘隨機抽 15%
-python3 tools/report_audit.py extract --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md \
-  --must-section 速覽 --seed <當天日期，如 20260928>
-
-# Step 2 — 取數：fetched_source 填權威來源並寫到檔名＋頁碼／科目，
-#          依報告標示的口徑取值（標稀釋就取稀釋），填官方原始精度，不先四捨五入；
-#          fetched_source2 填第三方；計算值填 financial_rigor.py；不得填本倉庫報告
-
-# Step 3 — 判決（必須加 --require-official）
-python3 tools/report_audit.py verdict --results '<填好的JSON>' \
-  --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md --require-official
+# 2. 來源重取：抽樣帳本原始值，回到權威來源重新取數後判決
+python3 tools/report_audit.py ledger --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md --sample 0.2 --seed <當天日期>
+python3 tools/report_audit.py verdict --results '<填好的JSON>' --require-official
 ```
 
-**【準出】** 全部通過 → 釋出；**【打回】** 有不通過 → 修正後重跑 Step 0–3。權威來源的值必須四捨五入後與報告顯示值完全一致；權威來源不符時，第三方相符也不能抵銷。
+**【準出】** 兩步都通過 → 釋出；**【打回】** 修正報告或帳本後兩步全部重跑。
 
 ## 關鍵原則
 
