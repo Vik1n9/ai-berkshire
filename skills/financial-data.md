@@ -93,14 +93,33 @@
 - 同一「項目＋口徑＋單位」有多個期間時，工具會自動推導跨期間的變化率與差額（年增、季增、pp），不必逐一登記
 - 容差留空＝以來源值顯示精度比對；若口徑差異無法避免（例：期末值 vs 平均值），填絕對值或百分比容差，並在「口徑」欄寫明理由
 
+### 用工具從官方來源產生帳本列
+
+手抄是誤差的主要來源，帳本原始值優先用 `tools/official_data.py` 直接從權威來源產生，再貼進附錄：
+
+```bash
+# 美股：SEC XBRL（指定一份申報的 accession number；--period-map 把期末日換成報告用的期間標籤）
+python3 tools/official_data.py sec --cik <CIK> --accn <accession> \
+  --concepts RevenueFromContractWithCustomerExcludingAssessedTax,GrossProfit,NetIncomeLoss \
+  --period-map 2026-05-28=FY2026Q3,2025-05-29=FY2025Q3 --prefix S
+# 台股：公司官網或公開資訊觀測站下載的 MOPS 格式財報 PDF（--col 指定數字欄位）
+python3 tools/official_data.py tw-pdf --file <PDF> --accounts 營業收入合計,營業利益（損失） \
+  --col 0 --period 2026Q2 --source "官網合併損益表 115Q2" --prefix I
+# 行情：證交所、Nasdaq（--start 另輸出區間最高／最低）
+python3 tools/official_data.py twse-price --stock 2449 --date 2026-08-31 --start 2025-09-01
+python3 tools/official_data.py nasdaq-price --symbol MU --date 2026-09-25
+```
+
+工具輸出的「項目」「口徑」「期間」要依報告用詞調整成一致（同一項目跨期間要用相同名稱，工具才能自動推導變化率）。SEC 若要求聯絡資訊，自行設定環境變數 `SEC_USER_AGENT`，工具本身不含任何個人資料。
+
 ### 驗算流程
 
 | 步驟 | 指令 | 通過條件 |
 |------|------|---------|
-| 1. 帳本驗算 | `python3 tools/report_audit.py ledger --report <檔案> --must-section <核心章節> --require-official` | 公式全部可算；勾稽列全部一致；原始值都有權威來源（或標 `[第三方唯一]`／「假設」）且無循環來源；核心章節每個數字都能追溯到帳本，且標示的口徑、期間與帳本一致 |
+| 1. 帳本驗算 | `python3 tools/report_audit.py ledger --report <檔案> --must-section <核心章節> --all-tables --require-official` | 公式全部可算；勾稽列全部一致；原始值都有權威來源（或標 `[第三方唯一]`／「假設」）且無循環來源；核心章節每個數字都能追溯到帳本，且標示的口徑、期間與帳本一致 |
 | 2. 來源重取 | `python3 tools/report_audit.py ledger --report <檔案> --sample 0.2 --seed <日期>` 產生抽樣清單，回到來源重新取數後，`python3 tools/report_audit.py verdict --results '<JSON>' --require-official` | 抽樣的原始值與重新取得的權威來源值，四捨五入到帳本精度後完全一致 |
 
-「核心章節」是報告集中列出關鍵財務數字的章節（財報分析的「核心資料速覽」、深度分析的「核心財務資料」），以標題文字指定，子標題下的內容一併納入；`--must-section` 可重複指定，凡是用來下判斷的表格（趨勢表、估值表）都應列入。必檢範圍以外無法追溯的數字，工具會列出供複核，撰稿者要補進帳本，或在報告中標明「估計」「未核實」。
+`--all-tables` 讓全文每張表格的數字都必須追溯到帳本；只有該儲存格明寫「估計」「假設」「推測」「未經官方核實」者除外（這類數字仍須說明來源性質）。「核心章節」是報告集中列出關鍵財務數字的章節（財報分析的「核心資料速覽」、深度分析的「核心財務資料」），以標題文字指定，子標題下的內容一併納入；`--must-section` 可重複指定，凡是用來下判斷的表格（趨勢表、估值表）都應列入。必檢範圍以外無法追溯的數字，工具會列出供複核，撰稿者要補進帳本，或在報告中標明「估計」「未核實」。
 
 任一步驟不通過：修正報告或帳本後，兩個步驟全部重跑。
 
