@@ -25,20 +25,25 @@
 
 | 等級 | 特徵 | 影響 |
 |------|------|------|
-| A級 | 獲取到完整原文（10-K/年報/電話會紀要） | 正常執行全部步驟 |
-| B級 | 僅獲取到部分原文或第三方彙總 | 標註"非原始來源"，降低附註分析權重 |
+| A級 | 獲取到完整原文（10-K/10-Q/MOPS 財報/公司官網財報與營運報告/電話會紀要） | 正常執行全部步驟 |
+| B級 | 僅獲取到部分原文或第三方彙總 | 標註"非原始來源"，降低附註分析權重；**必須列出嘗試過哪些權威來源、為何取不到** |
 | C級 | 僅有新聞報道和資料網站摘要 | 聚焦核心財務資料變化，跳過附註挖掘，標註"一手資料不足" |
 
 ### 第一步：獲取一手資料
 
 使用 Task 工具啟動多個後台 Agent **並行**獲取以下原始材料：
 
-1. **財報原文**：從公司IR頁面、SEC EDGAR（美股10-K/10-Q）、港交所披露易（港股）、巨潮資訊網（A股）獲取
+1. **財報原文**：從公司IR頁面、SEC EDGAR（美股10-K/10-Q/8-K Exhibit 99.1）、公開資訊觀測站 MOPS 與公司官網（台股每季財務報告、營運報告、法說簡報）、港交所披露易（港股）、巨潮資訊網（A股）獲取。**這一步是必做，不是選項**：損益表、資產負債表、現金流量表的數字一律從原文取得
 2. **業績電話會紀要/錄音**：從 Seeking Alpha、公司IR頁面、雪球等獲取
 3. **管理層致股東信**（如有年報）：完整閱讀
 4. **投資者日/分析師日材料**（如近期有）
 
-如果無法獲取完整原文，按 `skills/financial-data.md` 規範使用標準資料來源拼湊（美股：macrotrends+stockanalysis；港股：aastocks+macrotrends；A股：東方財富+巨潮資訊；台股：FinMind `tools/twstock_data.py`+Goodinfo），但必須標註"非原始財報，來自第三方彙總"，且關鍵資料兩源誤差>1%須標記。
+> **權威來源優先（必須遵守，詳見 `skills/financial-data.md`）**：財報數字、股本與公司自行揭露的指標，**來源1 一律取自權威來源**——美股 SEC EDGAR（10-K／10-Q／8-K Exhibit 99.1、XBRL API）與公司官網 IR；台股公開資訊觀測站（MOPS）、證交所／櫃買中心與公司官網（每季財報、營運報告、法說簡報）；港股 HKEXnews；A股 巨潮資訊。第三方網站（stockanalysis、macrotrends、FinMind、Goodinfo、aastocks、東方財富）只作來源2 交叉驗證。本倉庫 `reports/` 內的既有報告不得當核驗來源。
+> 取數時遵守 `financial-data.md`「數字可信度通則」，每取得一個數字就同步記入報告附錄的資料帳本（原始值、口徑、期間、來源位置），衍生數字寫成帳本公式交由工具計算。
+
+權威來源確實取不到時（需登入、檔案未上架、PDF 無法解析），才按 `skills/financial-data.md` 使用第三方資料（美股 stockanalysis／macrotrends；台股 FinMind `tools/twstock_data.py`／Goodinfo；港股 aastocks；A股 東方財富），並在報告開頭寫明嘗試過的權威來源與取不到的原因，標註"非原始財報，來自第三方彙總"，資料可得性評級不得高於 B 級。
+
+**公司自行揭露的指標**：財報新聞稿、法說簡報、營運報告常直接揭露比率與拆分（週轉天數、現金流、資本支出、分部結構等）。凡是來源已揭露的數字直接引用；自己另外計算的指標，要在帳本列勾稽列與揭露值比對（通則 5）。
 
 ### 第二步：核心財務資料提取與驗證
 
@@ -106,6 +111,8 @@ python3 tools/financial_rigor.py verify-valuation \
 | 🔴 **模糊訊號** | 大量使用"我們相信"、"長期來看"等沒有實質內容的話 | "我們對未來充滿信心" |
 | 🔴 **轉移訊號** | 迴避直接問題、用其他話題帶過 | 被問利潤率時轉談收入增速 |
 | 🔴 **歸因外部化** | 把問題全歸咎於宏觀/行業/競爭對手 | "由於宏觀環境影響..." |
+
+**引述規範**：表中的管理層原話必須附出處（法說場次日期、逐字稿或新聞稿連結、時間碼）。找不到原始出處的說法不得加引號、不得掛名，查無出處就刪除。
 
 #### 3.2 承諾追蹤
 
@@ -192,22 +199,19 @@ python3 tools/financial_rigor.py verify-valuation \
 
 ### 第八步：資料抽檢（準出流程）
 
-報告寫入後，執行資料抽檢，透過方可釋出：
+報告附錄必須有 `## 附錄：資料帳本`（格式見 `skills/financial-data.md`「資料帳本與驗算流程」），驗算全部通過方可釋出：
 
 ```bash
-# Step 1 — 提取抽檢清單
-python3 tools/report_audit.py extract \
-  --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md
+# 1. 帳本驗算：公式重算、勾稽、來源檢查、核心章節每個數字回對帳本（口徑、期間一致）
+python3 tools/report_audit.py ledger --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md \
+  --must-section 速覽 --require-official
 
-# Step 2 — 對清單每項從可靠信源取數（參見 skills/financial-data.md）
-
-# Step 3 — 輸出準出/打回判決
-python3 tools/report_audit.py verdict \
-  --results '<填好的JSON>' \
-  --report {報告檔名}
+# 2. 來源重取：抽樣帳本原始值，回到權威來源重新取數後判決
+python3 tools/report_audit.py ledger --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md --sample 0.2 --seed <當天日期>
+python3 tools/report_audit.py verdict --results '<填好的JSON>' --require-official
 ```
 
-**【準出】** 全部透過 → 釋出；**【打回】** 有不透過 → 修正後重審。
+**【準出】** 兩步都通過 → 釋出；**【打回】** 修正報告或帳本後兩步全部重跑。
 
 ## 關鍵原則
 

@@ -25,7 +25,7 @@
 
 | 資料型別 | 獲取來源 | 優先順序 |
 |---------|---------|--------|
-| 財報原文 | 公司IR頁面、SEC EDGAR（美股）、港交所披露易（港股）、巨潮資訊網（A股） | 最高 |
+| 財報原文 | 公司IR頁面、SEC EDGAR（美股）、公開資訊觀測站 MOPS 與公司官網每季財報／營運報告（台股）、港交所披露易（港股）、巨潮資訊網（A股） | 最高（必做） |
 | 業績電話會紀要 | Seeking Alpha、公司IR頁面、雪球 | 最高 |
 | 管理層致股東信 | 年報中提取 | 高（僅年報時） |
 | 上一期財報/電話會 | 同上 | 高（用於承諾追蹤） |
@@ -39,6 +39,11 @@
 | C級 | 僅有新聞報道和資料網站摘要 | 聚焦核心資料變化，跳過附註挖掘，標註"一手資料不足" |
 
 將資料可得性評級告知每個 Agent，影響其分析深度。
+
+> **權威來源優先（必須遵守，詳見 `skills/financial-data.md`）**：財報數字、股本與公司自行揭露的指標，**來源1 一律取自權威來源**——美股 SEC EDGAR（10-K／10-Q／8-K Exhibit 99.1、XBRL API）與公司官網 IR；台股公開資訊觀測站（MOPS）、證交所／櫃買中心與公司官網（每季財報、營運報告、法說簡報）；港股 HKEXnews；A股 巨潮資訊。第三方網站（stockanalysis、macrotrends、FinMind、Goodinfo、aastocks、東方財富）只作來源2 交叉驗證。本倉庫 `reports/` 內的既有報告不得當核驗來源。
+> 取數時遵守 `financial-data.md`「數字可信度通則」，每取得一個數字就同步記入報告附錄的資料帳本（原始值、口徑、期間、來源位置），衍生數字寫成帳本公式交由工具計算。
+
+交給各 Agent 的任務說明中必須附上上述權威來源的檔案連結，並要求 Agent 的財務數字以這些原文為來源1。
 
 ### 第二步：向使用者展示團隊框架
 
@@ -105,7 +110,7 @@
 1. **核心財務資料提取與驗證**
    - 收入、毛利、經營利潤、淨利潤——GAAP和Non-GAAP都要
    - GAAP vs Non-GAAP差異：差了多少、差在哪裡、差距擴大還是縮小
-   - 關鍵資料至少兩個來源交叉驗證
+   - 關鍵資料至少兩個來源交叉驗證，來源1 必須是財報原文（SEC／MOPS／公司官網），第三方只作來源2
 
    ```bash
    python3 tools/financial_rigor.py cross-validate \
@@ -411,18 +416,19 @@ reports/{公司名}/財報分析/
 
 ## 資料抽檢（準出流程）
 
-對最終文章執行抽檢：
+報告附錄必須有 `## 附錄：資料帳本`（格式見 `skills/financial-data.md`「資料帳本與驗算流程」），驗算全部通過方可釋出：
 
 ```bash
-python3 tools/report_audit.py extract \
-  --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md
+# 1. 帳本驗算：公式重算、勾稽、來源檢查、核心章節每個數字回對帳本（口徑、期間一致）
+python3 tools/report_audit.py ledger --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md \
+  --must-section 速覽 --require-official
 
-python3 tools/report_audit.py verdict \
-  --results '<填好的JSON>' \
-  --report {報告檔名}
+# 2. 來源重取：抽樣帳本原始值，回到權威來源重新取數後判決
+python3 tools/report_audit.py ledger --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md --sample 0.2 --seed <當天日期>
+python3 tools/report_audit.py verdict --results '<填好的JSON>' --require-official
 ```
 
-**【準出】** 全部透過 → 可釋出；**【打回】** 有不透過 → 修正後重審。
+**【準出】** 兩步都通過 → 釋出；**【打回】** 修正報告或帳本後兩步全部重跑。
 
 ## 與現有 Skill 的關係
 

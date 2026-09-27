@@ -215,7 +215,7 @@ AI Berkshire 確保：**同樣的輸入 → 結構一致、深度一致的輸出
 | Skill | 用途 | 適合場景 |
 |-------|------|---------|
 | [`/dyp-ask`](skills/dyp-ask.md) | 段永平問答 | 以段永平的方式思考任何問題——商業、投資、人生 |
-| [`/financial-data`](skills/financial-data.md) | 財務資料獲取與交叉驗證規範 | 確保關鍵資料來自2個獨立來源，誤差>1%告警 |
+| [`/financial-data`](skills/financial-data.md) | 財務資料獲取與交叉驗證規範 | 權威來源（SEC／MOPS／交易所／公司官網）優先，關鍵資料2個獨立來源，誤差>1%告警 |
 | [`/wechat-article`](skills/wechat-article.md) | 微信公眾號文章 | 作者、編輯、讀者三Agent協作，產出可釋出文章 |
 
 ---
