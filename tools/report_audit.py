@@ -911,7 +911,9 @@ def check_report_against_ledger(md_text: str, rows: list, env: dict, must_sectio
             return {x for x in found if not any(x != y and x in y for y in found)}
         # 储存格本身写明的期间优先于列标签／栏标题
         lab_periods = _maximal(p.get('cell', '')) or _maximal(label)
-        lab_basis = {t for t in basis_vocab if t in label}
+        # 口径只约束储存格的主数字；同格的附带算式数字（#2 起）与「计算／公式」栏只检查期间
+        explanatory = re.search(r'#\d+$', label) or re.search(r'· [^·]*(計算|计算|公式|算式)[^·]*$', label)
+        lab_basis = set() if explanatory else {t for t in basis_vocab if t in label}
         consistent = [c for c in matches
                       if lab_periods <= c['periods']
                       and all(t in c['text'] for t in lab_basis)]
