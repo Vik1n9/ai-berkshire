@@ -25,20 +25,25 @@
 
 | 等級 | 特徵 | 影響 |
 |------|------|------|
-| A級 | 獲取到完整原文（10-K/年報/電話會紀要） | 正常執行全部步驟 |
-| B級 | 僅獲取到部分原文或第三方彙總 | 標註"非原始來源"，降低附註分析權重 |
+| A級 | 獲取到完整原文（10-K/10-Q/MOPS 財報/公司官網財報與營運報告/電話會紀要） | 正常執行全部步驟 |
+| B級 | 僅獲取到部分原文或第三方彙總 | 標註"非原始來源"，降低附註分析權重；**必須列出嘗試過哪些權威來源、為何取不到** |
 | C級 | 僅有新聞報道和資料網站摘要 | 聚焦核心財務資料變化，跳過附註挖掘，標註"一手資料不足" |
 
 ### 第一步：獲取一手資料
 
 使用 Task 工具啟動多個後台 Agent **並行**獲取以下原始材料：
 
-1. **財報原文**：從公司IR頁面、SEC EDGAR（美股10-K/10-Q）、港交所披露易（港股）、巨潮資訊網（A股）獲取
+1. **財報原文**：從公司IR頁面、SEC EDGAR（美股10-K/10-Q/8-K Exhibit 99.1）、公開資訊觀測站 MOPS 與公司官網（台股每季財務報告、營運報告、法說簡報）、港交所披露易（港股）、巨潮資訊網（A股）獲取。**這一步是必做，不是選項**：損益表、資產負債表、現金流量表的數字一律從原文取得
 2. **業績電話會紀要/錄音**：從 Seeking Alpha、公司IR頁面、雪球等獲取
 3. **管理層致股東信**（如有年報）：完整閱讀
 4. **投資者日/分析師日材料**（如近期有）
 
-如果無法獲取完整原文，按 `skills/financial-data.md` 規範使用標準資料來源拼湊（美股：macrotrends+stockanalysis；港股：aastocks+macrotrends；A股：東方財富+巨潮資訊；台股：FinMind `tools/twstock_data.py`+Goodinfo），但必須標註"非原始財報，來自第三方彙總"，且關鍵資料兩源誤差>1%須標記。
+> **權威來源優先（必須遵守，詳見 `skills/financial-data.md`）**：財報數字、股本與公司自行揭露的指標，**來源1 一律取自權威來源**——美股 SEC EDGAR（10-K／10-Q／8-K Exhibit 99.1、XBRL API）與公司官網 IR；台股公開資訊觀測站（MOPS）、證交所／櫃買中心與公司官網（每季財報、營運報告、法說簡報）；港股 HKEXnews；A股 巨潮資訊。第三方網站（stockanalysis、macrotrends、FinMind、Goodinfo、aastocks、東方財富）只作來源2 交叉驗證。本倉庫 `reports/` 內的既有報告不得當核驗來源。
+> 取數時逐項檢查 `financial-data.md`「口徑陷阱清單」：關係人科目分列要加總、公司自定義指標（FCF、EBITDA）不得用來回推其他科目、官方已揭露的數字不得用推算值取代、PDF 圖表數字要看圖確認。
+
+權威來源確實取不到時（需登入、檔案未上架、PDF 無法解析），才按 `skills/financial-data.md` 使用第三方資料（美股 stockanalysis／macrotrends；台股 FinMind `tools/twstock_data.py`／Goodinfo；港股 aastocks；A股 東方財富），並在報告開頭寫明嘗試過的權威來源與取不到的原因，標註"非原始財報，來自第三方彙總"，資料可得性評級不得高於 B 級。
+
+**台股特別注意**：公司官網「每季營運報告」通常直接揭露應收帳款週轉天數、營業活動現金流、資本支出、折舊攤銷、製程別／應用別結構，這些**必須引用公司揭露值**，不得自行推算取代。資產負債表的「應收帳款」與「應收帳款－關係人」要加總後再算週轉天數。
 
 ### 第二步：核心財務資料提取與驗證
 
@@ -199,15 +204,17 @@ python3 tools/financial_rigor.py verify-valuation \
 python3 tools/report_audit.py extract \
   --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md
 
-# Step 2 — 對清單每項從可靠信源取數（參見 skills/financial-data.md）
+# Step 2 — 對清單每項取數（參見 skills/financial-data.md）：
+#   fetched_source 填權威來源（10-Q / MOPS / 公司官網原始檔），fetched_source2 填第三方；
+#   計算值填 financial_rigor.py；不得填本倉庫報告
 
-# Step 3 — 輸出準出/打回判決
+# Step 3 — 輸出準出/打回判決（必須加 --require-official）
 python3 tools/report_audit.py verdict \
   --results '<填好的JSON>' \
-  --report {報告檔名}
+  --report {報告檔名} --require-official
 ```
 
-**【準出】** 全部透過 → 釋出；**【打回】** 有不透過 → 修正後重審。
+**【準出】** 全部透過且來源合格 → 釋出；**【打回】** 有不透過 → 修正後重審。
 
 ## 關鍵原則
 

@@ -1,43 +1,82 @@
 # 財務資料獲取與交叉驗證規範
 
-本規範適用於所有涉及企業財務資料的研究。**每個關鍵資料必須來自兩個獨立來源，誤差>1%須標記。**
+本規範適用於所有涉及企業財務資料的研究（深度分析、財報分析、團隊分析、買前確認、投資論點）。
+
+**兩條鐵律：**
+
+1. **權威來源優先（必查）**：財務報表數字、股本、公司自行揭露的指標（應收帳款週轉天數、EBITDA、資本支出、自由現金流、產品／應用別佔比等），**一律先查權威來源**：監理機關申報系統（SEC EDGAR、公開資訊觀測站 MOPS、HKEXnews、巨潮資訊）、交易所，或**公司官網投資人關係頁**的原始檔（財報、新聞稿、法說會簡報、營運報告）。第三方網站（macrotrends、stockanalysis、FinMind、Goodinfo、aastocks、東方財富、新聞）只能作為**第二來源交叉驗證**，或在權威來源確實取不到時使用並降級標註。
+2. **兩個獨立來源**：每個關鍵資料至少兩個來源，其中**至少一個必須是權威來源**；誤差>1%須標記。**本倉庫內的其他報告不是獨立來源**，不得用來核驗新報告（循環驗證）。
+
+> 立規背景（2026-09-27）：京元電子 2026Q2 財報分析以 FinMind＋法說摘要撰寫，漏計資產負債表「應收帳款－關係人」一行，誤判 DSO 由 54 天惡化到 68 天；又用公司自定義的自由現金流回推營業現金流（48.32 億，實際 26.32 億）。公司官網營運報告直接揭露了週轉天數 67 天與實際現金流，先查官網就不會出錯。後續深度分析抽檢又拿該財報分析當核驗來源，錯誤因此通過抽檢。
 
 ---
 
-## 資料來源優先順序
+## 來源分層
 
-### 美股（PDD、騰訊ADR、網易ADR等）
+| 層級 | 定義 | 用途 | 報告標註 |
+|------|------|------|---------|
+| **第一層：權威來源** | 監理機關申報原文、交易所公告、公司官網 IR 原始檔 | 財報數字、股本、公司揭露指標的**主來源（來源1）** | `[官方]` |
+| **第二層：第三方結構化資料** | macrotrends、stockanalysis、FinMind、Goodinfo、aastocks、東方財富 | 交叉驗證（來源2）、歷史時間序列、批次取數 | `[第三方]` |
+| **第三層：媒體與分析師** | 新聞、券商報告摘要、共識預估 | 事件、市場預期；**不得作為財報數字來源** | 具名標出處 |
+| 推算值 | 由上述資料計算得出 | 必須寫出公式；**權威來源已有揭露的數字，不得用推算值取代** | `（估計）`或`（本報告計算）` |
 
-| 優先順序 | 來源 | URL | 獲取方式 |
-|--------|------|-----|---------|
-| 1（主） | **macrotrends** | macrotrends.net/stocks/charts/{ticker} | 直接訪問，無需註冊 |
-| 2（副） | **stockanalysis** | stockanalysis.com/stocks/{ticker}/financials | 直接訪問，無需註冊 |
-| 原始一手 | SEC EDGAR | sec.gov/cgi-bin/browse-edgar | 10-K / 10-Q 原文 |
+### 美股
 
-### 港股（騰訊0700、網易9999、美團3690等）
+| 層級 | 來源 | 位置 | 取得內容 |
+|------|------|------|---------|
+| 第一層 | **SEC EDGAR** | sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={ticker} | 10-K、10-Q、8-K（Exhibit 99.1 新聞稿）、20-F／6-K（外國發行人）、DEF 14A、Form 4 |
+| 第一層 | **SEC XBRL API** | `https://data.sec.gov/api/xbrl/companyfacts/CIK{10位CIK}.json`（需帶 User-Agent 標頭） | 結構化財報數字，可程式化核對 |
+| 第一層 | **公司官網 IR** | investors.{公司}.com | 財報新聞稿、財報簡報、法說會準備稿、公司自行揭露指標 |
+| 第二層 | stockanalysis / macrotrends | stockanalysis.com/stocks/{ticker}；macrotrends.net/stocks/charts/{ticker} | 交叉驗證、長期序列、估值倍數 |
+| 行情 | 交易所（nasdaq.com / nyse.com）；stockanalysis、Investing.com 為第二層 | | 收盤價、歷史價格 |
 
-| 優先順序 | 來源 | URL | 獲取方式 |
-|--------|------|-----|---------|
-| 1（主） | **aastocks** | aastocks.com/tc/stocks/analysis/company-fundamental | 直接訪問 |
-| 2（副） | **macrotrends**（ADR程式碼） | 騰訊用TCEHY，網易用NTES | 直接訪問 |
-| 原始一手 | HKEX披露易 | hkexnews.hk | 年報PDF |
+### 台股（4 位數代碼）
 
-### A股（三七互娛、吉位元等）
+| 層級 | 來源 | 位置 | 取得內容 |
+|------|------|------|---------|
+| 第一層 | **公開資訊觀測站（MOPS）** | mops.twse.com.tw | 財務報告書（含附註）、月營收、重大訊息、股東會年報、法說會資訊 |
+| 第一層 | **證交所／櫃買中心** | twse.com.tw、tpex.org.tw | 收盤價、本益比、除權息參考價 |
+| 第一層 | **公司官網 IR** | 例：kyec.com.tw/zh-tw/Ir/Quarterly（每季財務報告）、/Ir/TradeReport（每季營運報告） | 合併損益表、資產負債表、營運報告（製程別／應用別、週轉天數、現金流、資本支出） |
+| 第二層 | FinMind（`tools/twstock_data.py`）、Goodinfo | 見下 | 行情、月營收、時間序列、交叉驗證 |
 
-| 優先順序 | 來源 | URL | 獲取方式 |
-|--------|------|-----|---------|
-| 1（主） | **東方財富** | eastmoney.com → 搜股票代碼 → 財務報表 | 直接訪問 |
-| 2（副） | **巨潮資訊** | cninfo.com.cn | 原始年報/季報PDF |
+### 港股
 
-### 台股（台積電2330、聯發科2454、大立光3008等）
+| 層級 | 來源 | 位置 |
+|------|------|------|
+| 第一層 | **HKEXnews 披露易**、公司官網 IR | hkexnews.hk |
+| 第二層 | aastocks、macrotrends（ADR 代碼） | aastocks.com；騰訊 TCEHY、網易 NTES |
 
-| 優先順序 | 來源 | URL | 獲取方式 |
-|--------|------|-----|---------|
-| 1（主） | **FinMind API** | api.finmindtrade.com | `tools/twstock_data.py`（零依賴指令碼，見下） |
-| 2（副） | **Goodinfo台灣股市資訊網** | goodinfo.tw/tw/StockDetail.asp?STOCK_ID={程式碼} | 直接訪問 |
-| 原始一手 | 公開資訊觀測站（MOPS） | mops.twse.com.tw | 財報原文/月營收公告 |
+### A 股
 
-**FinMind 取數工具**（分析台股時優先呼叫，輸出自帶市值驗算）：
+| 層級 | 來源 | 位置 |
+|------|------|------|
+| 第一層 | **巨潮資訊**（證監會指定披露網站）、上交所／深交所、公司官網 | cninfo.com.cn；sse.com.cn；szse.cn |
+| 第二層 | 東方財富 | eastmoney.com |
+
+### 權威來源取不到時
+
+必須在報告開頭的「資料可得性」說明：**嘗試過哪些權威來源、為何取不到**（例如需登入、檔案未上架、PDF 無法解析），並將該數字標為 `[第三方]`，資料可得性評級不得高於 B 級。不得只寫「來自第三方彙總」帶過。
+
+---
+
+## 口徑陷阱清單（取數時逐項檢查）
+
+| 陷阱 | 說明 | 正確做法 |
+|------|------|---------|
+| **關係人科目分列** | 台股／IFRS 資產負債表把「應收帳款」與「應收帳款－關係人」、「應付帳款」與「應付帳款－關係人」分成不同行 | 計算 DSO、應收成長率時**兩行加總**；關係人金額大幅變動要另外說明 |
+| **公司自定義指標** | 「自由現金流」「EBITDA」「Non-GAAP」各公司定義不同（例：京元電子 FCF = 營業利益＋折舊攤銷＋利息收入－資本支出－利息－稅－現金股利） | 照抄公司定義並寫明；**不得用自定義指標回推其他科目**（例：FCF＋資本支出 ≠ 營業現金流） |
+| **公司已揭露的比率** | 週轉天數、ROE、毛利率等公司自己會揭露 | 優先引用公司揭露值；自行計算時寫明公式，與公司值不一致要說明 |
+| **推算值取代官方值** | 官方檔案已有的數字（營業現金流、資本支出）卻用推算 | 禁止；推算只用於官方未揭露的項目 |
+| **除權／配股後股數** | 配股後股數增加，資料商的 PER／EPS 常仍用舊股數 | 市值、EPS、每股淨值統一用最新股本（資產負債表「股本合計」÷ 面額） |
+| **單季 vs 累計** | 台股與美股 10-Q 同時列單季與年初至今累計 | 確認欄位；全年 Q4 = 全年 − 前三季累計 |
+| **圖表抽取錯位** | 圓餅圖、長條圖的 PDF 文字抽取會打亂標籤與數值的對應 | 圖表數字必須看圖（轉成圖片檢視）確認對應關係 |
+| **GAAP vs Non-GAAP** | 利潤類最常見差異 | 標明口徑，同一表格不得混用 |
+
+---
+
+## 台股工具與第二層資料
+
+**FinMind 取數工具**（第二層；輸出自帶市值驗算，適合行情與月營收）：
 
 ```bash
 python3 tools/twstock_data.py quote 2330        # 最新行情 + PER/PBR/殖利率 + 市值驗算
@@ -51,22 +90,15 @@ python3 tools/twstock_data.py search 台積        # 搜尋股票代碼（注意
 台股特別注意：
 
 1. **貨幣單位是新台幣（TWD）**，與港幣/人民幣/美元混排時必須顯式標註，跨市場對比先統一換算
-2. **月營收是台股獨有優勢**：上市櫃公司每月10日前強制披露上月營收，是跟蹤基本面拐點最快的公開訊號，earnings-review/thesis-tracker 類分析應優先利用（`revenue` 子命令）
+2. **月營收是台股獨有優勢**：上市櫃公司每月10日前強制披露上月營收，是跟蹤基本面拐點最快的公開訊號，earnings-review/thesis-tracker 類分析應優先利用（`revenue` 子命令，並以 MOPS 或公司官網月營收公告核對）
 3. FinMind 損益表為**單季值**，工具已自動加總為年度值；不足4季的年份會標註"僅前N季累計"
-4. FinMind 未註冊可直接用（有小時級限額）。註冊後的 API token **只存本機、嚴禁提交到 git**，工具按優先順序自動讀取：①環境變數 `FINMIND_TOKEN`；②本地檔案 `local/finmind_token.txt`（`local/` 已被 `.gitignore` 永久排除，把 token 單獨一行寫入該檔案即可）。token 不得出現在報告、skill、commit 中
-5. 交叉驗證：FinMind 數值與 Goodinfo（或 macrotrends 上的 ADR，如 TSM）對照，誤差規則同下；台積電等有 ADR 的公司注意 ADR 與台股原股的匯率/存託比率差異（1 TSM ADR = 5 股 2330）
+4. FinMind 的 PER／PBR 在除權配股後可能仍用舊股數 EPS，估值一律用最新股本自行重算
+5. FinMind 未註冊可直接用（有小時級限額）。註冊後的 API token **只存本機、嚴禁提交到 git**，工具按優先順序自動讀取：①環境變數 `FINMIND_TOKEN`；②本地檔案 `local/finmind_token.txt`（`local/` 已被 `.gitignore` 永久排除，把 token 單獨一行寫入該檔案即可）。token 不得出現在報告、skill、commit 中
+6. 台積電等有 ADR 的公司注意 ADR 與台股原股的匯率/存託比率差異（1 TSM ADR = 5 股 2330）
 
-### 台股（台積電2330、聯發科2454、京元電子2449等，4位數代碼）
+#### FinMind 取數（第二層：結構化資料與交叉驗證）
 
-| 優先順序 | 來源 | URL / 位置 | 獲取方式 |
-|--------|------|-----|---------|
-| 1（主） | **FinMind API** | 本地指令碼，見下方「FinMind 取數」 | 結構化資料直取，行情/財報/籌碼全覆蓋 |
-| 2（副） | **Goodinfo 台灣股市資訊網** | goodinfo.tw → 搜股票代碼 | 直接訪問 |
-| 原始一手 | 公開資訊觀測站（MOPS） | mops.twse.com.tw | 財報原文；行情以 TWSE/TPEx 官網為準 |
-
-#### FinMind 取數（台股主資料源，必用）
-
-分析台股時**禁止**以網頁搜尋結果的數字作為主來源，一律先用 FinMind 取結構化資料：
+FinMind 是 MOPS／TWSE 資料的第三方整理，適合批次取行情、月營收與時間序列，**但財報數字仍須回到 MOPS 或公司官網原始報表核對**（見上方第一層）。網頁搜尋結果的數字不得作為任何一層的來源。
 
 ```bash
 python3 ~/.codex/skills/finmind-tw-market/scripts/finmind_fetch.py \
@@ -108,7 +140,7 @@ Token 優先讀環境變數 `FINMIND_TOKEN`，未設定時指令碼自動從技�
 - 週末/假日無交易紀錄，日期比較以實際交易日為準（`TaiwanStockTradingDate`）
 - 部分 dataset 需 FinMind Backer/Sponsor 層級，或當日尚未到更新時間；取不到時明確說明原因，不得用估計值冒充
 - 台股財報為 IFRS（合併報表），單位多為新台幣千元，與美股口徑比較時注意換算
-- 交叉驗證照常執行：FinMind 為來源1，Goodinfo/MOPS 為來源2，>1% 誤差須標記
+- 交叉驗證：MOPS／公司官網為來源1，FinMind／Goodinfo 為來源2，>1% 誤差須標記
 
 ---
 
@@ -116,7 +148,11 @@ Token 優先讀環境變數 `FINMIND_TOKEN`，未設定時指令碼自動從技�
 
 ### 第一步：獲取資料
 
-對每個財務指標（收入、淨利潤、毛利率、經營現金流、資產負債率等），分別從**來源1**和**來源2**取數。
+對每個財務指標（收入、淨利潤、毛利率、經營現金流、資產負債率等）：
+
+1. **先從第一層權威來源取數**，作為來源1（記下檔案名稱／網址與期間）
+2. 再從第二層取數作為來源2
+3. 權威來源取不到時，依「權威來源取不到時」一節說明並降級
 
 ### 第二步：誤差計算與標記
 
@@ -136,16 +172,16 @@ Token 優先讀環境變數 `FINMIND_TOKEN`，未設定時指令碼自動從技�
 
 ```
 收入：1,239億元 ✅
-  - macrotrends: 1,241億元
-  - stockanalysis: 1,237億元
-  - 誤差: 0.3%
+  - [官方] 10-K（FY2025，SEC EDGAR）: 1,239億元
+  - [第三方] stockanalysis: 1,237億元
+  - 誤差: 0.2%
 ```
 
 差異示例：
 ```
 淨利潤：245億元 ⚠️ 資料存在差異
-  - macrotrends: 245億元（GAAP）
-  - stockanalysis: 278億元（Non-GAAP）
+  - [官方] 8-K Exhibit 99.1: 245億元（GAAP）
+  - [第三方] stockanalysis: 278億元（Non-GAAP）
   - 誤差: 13.5% — 原因：會計口徑不同（GAAP vs Non-GAAP）
 ```
 
@@ -167,7 +203,8 @@ Token 優先讀環境變數 `FINMIND_TOKEN`，未設定時指令碼自動從技�
 
 1. **未上市公司**（米哈遊、莉莉絲等）：只有一手資料來源時，資料前標記 `[估計]`，不執行交叉驗證
 2. **季度資料 vs 年度資料**：優先使用年度資料做交叉驗證，季度資料部分來源可能有滯後
-3. **原始財報優先**：若兩個來源均與原始財報（10-K/年報PDF）不符，以原始財報為準，標記來源錯誤
+3. **原始財報為準**：第三方與原始財報（10-K／MOPS 財報／公司官網原始檔）不符時，以原始財報為準，並在報告中標記第三方錯誤
+4. **不得循環驗證**：本倉庫 `reports/` 內的既有報告只能作為「對照前期結論」，不能當核驗來源。沿用前期報告的數字時，必須回到權威來源重新核對
 
 ---
 
@@ -193,14 +230,11 @@ Token 優先讀環境變數 `FINMIND_TOKEN`，未設定時指令碼自動從技�
 
 ## 快速索引
 
-| 場景 | 主要來源 | 備用來源 |
+| 場景 | 第一層（來源1） | 第二層（來源2） |
 |------|---------|---------|
-| PDD / 拼多多 | macrotrends.net/stocks/charts/PDD | stockanalysis.com/stocks/pdd |
-| 騰訊 | macrotrends.net/stocks/charts/TCEHY | aastocks（0700.HK） |
-| 網易 | macrotrends.net/stocks/charts/NTES | aastocks（9999.HK） |
-| 三七互娛 | eastmoney.com（002555） | cninfo.com.cn |
-| 吉位元 | eastmoney.com（603444） | cninfo.com.cn |
-| Nintendo | macrotrends.net/stocks/charts/NTDOY | stockanalysis.com/stocks/ntdoy |
-| Capcom | macrotrends（CCOEY） | stockanalysis（CCOEY） |
-| 台積電 | tools/twstock_data.py（2330） | goodinfo.tw / macrotrends（TSM，注意1 ADR=5股） |
-| 聯發科 | tools/twstock_data.py（2454） | goodinfo.tw |
+| 美股（NVDA、MU 等） | SEC EDGAR 10-K／10-Q／8-K、公司 IR | stockanalysis.com／macrotrends.net |
+| PDD / 拼多多 | SEC EDGAR 20-F／6-K、公司 IR | stockanalysis.com/stocks/pdd |
+| 騰訊 | HKEXnews 年報／業績公告 | aastocks（0700.HK）／macrotrends（TCEHY） |
+| 三七互娛 | cninfo.com.cn 定期報告 | eastmoney.com（002555） |
+| 台積電 | MOPS 財報、investor.tsmc.com | tools/twstock_data.py（2330）／goodinfo.tw |
+| 京元電子 | MOPS 財報、kyec.com.tw/zh-tw/Ir/Quarterly、/Ir/TradeReport | tools/twstock_data.py（2449）／goodinfo.tw |

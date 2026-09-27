@@ -11,8 +11,11 @@ Requires Python >= 3.7.
   Step 1 — 提取数据点，随机抽样15%：
     python3 tools/report_audit.py extract --report reports/xxx公司/深度分析/xxx.md
 
-  Step 2 — Claude 对抽检清单中的每个数据点，从可靠信源（macrotrends/
-            stockanalysis/aastocks/eastmoney）取数，填入 fetched_value
+  Step 2 — Claude 对抽检清单中的每个数据点取数，填入 fetched_value。
+            来源1必须是权威来源（SEC EDGAR / MOPS / 交易所 / 公司官网 IR 原始档），
+            来源2可用第三方（stockanalysis / macrotrends / FinMind / Goodinfo）交叉验证。
+            本仓库 reports/ 内的报告不得作为核验来源（循环验证）。
+            深度分析、财报分析的 verdict 必须加 --require-official。
 
   Step 3 — 输入核验结果，输出准出/打回判决：
     python3 tools/report_audit.py verdict --results '[...]'
@@ -250,13 +253,81 @@ def _pct_diff(reported: float, fetched: float) -> float:
     return abs(reported - fetched) / abs(reported)
 
 
-def render_verdict(results: list, report_name: str = "") -> dict:
+# ---------------------------------------------------------------------------
+# 来源分类：权威来源 / 计算值 / 循环来源 / 第三方
+# ---------------------------------------------------------------------------
+
+# 权威来源：监理机关申报、交易所、公司官网 IR 原始档
+_OFFICIAL_KEYS = (
+    'sec.gov', 'edgar', 'xbrl', '10-k', '10-q', '8-k', '20-f', '6-k', 'def 14a', 'form 4',
+    'mops', '公開資訊觀測站', '公开资讯观测站', 'twse', 'tpex', '證交所', '证交所', '櫃買', '柜买',
+    'hkexnews', '披露易', 'cninfo', '巨潮', 'sse.com.cn', 'szse',
+    'nasdaq.com', 'nyse.com',
+    '官網', '官网', '官方', 'investor relations', 'investors.', '公司公告', '公司新聞稿', '公司新闻稿',
+    'press release', 'earnings release', '營運報告', '营运报告', '法說會簡報', '法说会简报',
+    '財報原文', '财报原文', '財務報告書', '财务报告书', '年報', '年报', 'annual report',
+)
+# 计算值 / 非数据点：不需要外部来源
+_COMPUTED_KEYS = (
+    'financial_rigor', 'three-scenario', '計算', '计算', '重算', '參數', '参数',
+    '假設', '假设', '非數據點', '非数据点', '章節', '章节', '年份標籤', '年份标签',
+)
+# 循环来源：本仓库其他报告
+_CIRCULAR_KEYS = (
+    'reports/', '.md', '報告轉引', '报告转引', '本倉庫', '本仓库', '版報告', '版报告',
+)
+# 本仓库报告档名样式：{公司}-research-20260926、earnings-2026Q2、checklist-20260825、-thesis
+_CIRCULAR_RE = re.compile(r'(research|earnings|checklist|management|news|industry|funnel)-(19|20)\d{2}|-thesis\b',
+                          re.IGNORECASE)
+# 明示「此类数据没有权威来源」（如分析师共识、法人预估）
+_NO_OFFICIAL_MARK = '[第三方唯一]'
+
+
+def classify_source(src: str) -> str:
+    """返回 'official' | 'computed' | 'circular' | 'third_party' | 'none'。"""
+    if not src:
+        return 'none'
+    low = src.lower()
+    if any(k in low for k in _CIRCULAR_KEYS) or _CIRCULAR_RE.search(src):
+        return 'circular'
+    if any(k in low for k in _COMPUTED_KEYS):
+        return 'computed'
+    if any(k in low for k in _OFFICIAL_KEYS):
+        return 'official'
+    return 'third_party'
+
+
+def official_check(item: dict) -> tuple:
+    """检查单一抽检点的来源是否满足「至少一个权威来源、无循环来源」。
+
+    返回 (ok: bool, reason: str)。
+    """
+    s1 = item.get('fetched_source', '') or ''
+    s2 = item.get('fetched_source2', '') or ''
+    classes = [classify_source(s1)]
+    if item.get('fetched_value2') is not None:
+        classes.append(classify_source(s2))
+    if 'circular' in classes:
+        return False, '引用本仓库报告作为核验来源（循环验证）'
+    if 'official' in classes:
+        return True, ''
+    if 'computed' in classes:
+        return True, ''
+    if _NO_OFFICIAL_MARK in s1 or _NO_OFFICIAL_MARK in s2:
+        return True, '标注为无权威来源的第三方数据'
+    return False, '两个来源都不是权威来源（SEC/MOPS/交易所/公司官网）'
+
+
+def render_verdict(results: list, report_name: str = "", require_official: bool = False) -> dict:
     """
     根据核验结果输出准出/打回判决。
 
     results: list of dict，每项包含：
       - id, label, reported_value, unit, fetched_value, fetched_source
       - (可选) fetched_value2, fetched_source2   ← 第二来源
+
+    require_official=True 时，来源不含权威来源、或引用本仓库报告的数据点
+    一律判为不通过（深度分析、财报分析必须开启）。
 
     返回：
       {
@@ -283,6 +354,7 @@ def render_verdict(results: list, report_name: str = "") -> dict:
 
     fail_items = []
     warn_items = []
+    source_issues = []
 
     for item in results:
         label = item.get('label', '?')
@@ -312,7 +384,24 @@ def render_verdict(results: list, report_name: str = "") -> dict:
         pass1 = diff1 <= _TOLERANCE
         pass2 = (diff2 is None) or (diff2 <= _TOLERANCE)
 
-        if pass1 and pass2:
+        src_ok, src_reason = official_check(item)
+        if not src_ok:
+            source_issues.append({'id': item['id'], 'label': label, 'reason': src_reason,
+                                  'line_number': item.get('line_number', 0)})
+
+        if require_official and not src_ok:
+            status = f'{RED}❌ 来源不合格{RESET}'
+            detail = f'{source} / {source2 or "-"} → {src_reason}'
+            fail_items.append({
+                'id': item['id'], 'label': label, 'reported': reported, 'unit': unit,
+                'fetched': fetched, 'source': source, 'fetched2': fetched2, 'source2': source2,
+                'diff1_pct': round(diff1 * 100, 2),
+                'diff2_pct': round(diff2 * 100, 2) if diff2 is not None else None,
+                'raw_text': item.get('raw_text', ''),
+                'line_number': item.get('line_number', 0),
+                'source_reason': src_reason,
+            })
+        elif pass1 and pass2:
             status = f'{GREEN}✅ 通过{RESET}'
             detail = f'{source}: {fetched:.2f} (偏差 {diff1*100:.2f}%)'
             if diff2 is not None:
@@ -376,6 +465,8 @@ def render_verdict(results: list, report_name: str = "") -> dict:
             print(f'     {fi["source"]}：{fi["fetched"]}  （偏差 {fi["diff1_pct"]}%）')
             if fi.get('fetched2') is not None:
                 print(f'     {fi["source2"]}：{fi["fetched2"]}  （偏差 {fi["diff2_pct"]}%）')
+            if fi.get('source_reason'):
+                print(f'     来源问题：{fi["source_reason"]}')
             print(f'     原文：{fi["raw_text"][:80]}')
             print()
         verdict = 'FAIL'
@@ -384,6 +475,11 @@ def render_verdict(results: list, report_name: str = "") -> dict:
         print(f'{YELLOW}注意：{warn_count} 个数据点两来源结果不一致（超过1%），可能是口径差异（GAAP/Non-GAAP或汇率），请人工复核。{RESET}')
         for wi in warn_items:
             print(f'  ⚠️  {wi["label"]}  报告:{wi["reported"]} {wi["unit"]}  偏差: {wi["diff1_pct"]}% / {wi["diff2_pct"]}%')
+
+    if source_issues and not require_official:
+        print(f'{YELLOW}来源提醒：{len(source_issues)} 个数据点缺少权威来源或引用本仓库报告（未开启 --require-official，不计入打回）：{RESET}')
+        for si in source_issues:
+            print(f'  ⚠️  第 {si["line_number"]} 行 | {si["label"]} → {si["reason"]}')
 
     print('=' * 70)
 
@@ -395,6 +491,8 @@ def render_verdict(results: list, report_name: str = "") -> dict:
         'total': total,
         'fail_items': fail_items,
         'warn_items': warn_items,
+        'source_issues': source_issues,
+        'require_official': require_official,
     }
 
 
@@ -417,9 +515,13 @@ def main():
 
   Step 3 — 输入核验结果，输出准出/打回判决：
     python3 tools/report_audit.py verdict --results '[
-      {"id":1,"label":"营业收入","reported_value":7518,"unit":"亿","fetched_value":7518,"fetched_source":"macrotrends","fetched_value2":7500,"fetched_source2":"stockanalysis"},
+      {"id":1,"label":"营业收入","reported_value":7518,"unit":"亿","fetched_value":7518,"fetched_source":"10-K FY2025 (SEC EDGAR)","fetched_value2":7500,"fetched_source2":"stockanalysis"},
       ...
-    ]'
+    ]' --require-official
+
+  --require-official：来源1/来源2 都不是权威来源（SEC/MOPS/交易所/公司官网），
+    或引用本仓库报告（循环验证）的数据点判为不通过。深度分析、财报分析必须开启。
+    分析师共识等本来就没有权威来源的数据，来源名称加注 [第三方唯一]。
 
   一步预览（只打印抽检清单，不核验）：
     python3 tools/report_audit.py extract --report reports/xxx公司/深度分析/xxx.md --dry-run
@@ -445,6 +547,8 @@ def main():
     vrd.add_argument('--results', required=True, help='JSON 数组，含 fetched_value 等字段')
     vrd.add_argument('--report', default='', help='报告名称（可选，用于显示）')
     vrd.add_argument('--output-json', action='store_true', help='将判决结果以 JSON 输出到 stdout')
+    vrd.add_argument('--require-official', action='store_true',
+                     help='要求每个数据点至少一个权威来源且不得引用本仓库报告（深度分析/财报分析必开）')
 
     args = parser.parse_args()
 
@@ -472,10 +576,11 @@ def main():
         for p in sampled:
             print(f'{p["id"]:>3}  {p["line_number"]:>5}  {p["label"][:35]:<35}  {p["reported_value"]:>12.2f}  {p["unit"]}')
         print()
-        print('↑ 请对上述每个数据点，从以下信源取数，填入 fetched_value：')
-        print('  美股：macrotrends.net（主）+ stockanalysis.com（副）')
-        print('  港股：aastocks.com（主）+ macrotrends ADR（副）')
-        print('  A股： eastmoney.com（主）+ cninfo.com.cn（副）')
+        print('↑ 请对上述每个数据点取数，填入 fetched_value（规范见 skills/financial-data.md）：')
+        print('  来源1（权威，必查）：美股 SEC EDGAR / 公司 IR；台股 MOPS / 证交所 / 公司官网；')
+        print('                       港股 HKEXnews；A股 cninfo / 交易所')
+        print('  来源2（交叉验证）：  stockanalysis / macrotrends / FinMind / Goodinfo / aastocks / eastmoney')
+        print('  禁止：以本仓库 reports/ 内报告作为核验来源（循环验证）')
         print()
 
         if not args.dry_run:
@@ -506,7 +611,8 @@ def main():
             sys.exit(1)
 
         report_name = args.report or ''
-        outcome = render_verdict(results, report_name=report_name)
+        outcome = render_verdict(results, report_name=report_name,
+                                 require_official=args.require_official)
 
         if args.output_json:
             print(json.dumps(outcome, ensure_ascii=False, indent=2))

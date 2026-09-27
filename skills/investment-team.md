@@ -113,7 +113,8 @@
 
 **研究方法**：
 - 使用 WebSearch 搜尋最新公開資訊（財報、行業報告、新聞）
-- **財務資料必須來自兩個獨立來源**，按 `skills/financial-data.md` 規範執行（美股：macrotrends+stockanalysis；港股：aastocks+macrotrends；A股：東方財富+巨潮資訊；台股：FinMind `tools/twstock_data.py`+Goodinfo），兩源誤差>1%須標記
+- **財務資料必須來自兩個獨立來源，來源1 必須是權威來源**，按 `skills/financial-data.md` 規範執行：美股 SEC EDGAR／公司 IR ＋ stockanalysis；台股 MOPS／證交所／公司官網 ＋ FinMind `tools/twstock_data.py` 或 Goodinfo；港股 HKEXnews ＋ aastocks；A股 巨潮資訊 ＋ 東方財富。兩源誤差>1%須標記；本倉庫既有報告不得當核驗來源
+- 取數時檢查 `financial-data.md`「口徑陷阱清單」（關係人科目加總、公司自定義指標不得回推、官方已揭露的數字不得用推算值取代）
 - 確保資料準確，關鍵資料標註來源
 - 分析要深入，不流於表面
 
@@ -194,12 +195,13 @@
 python3 tools/report_audit.py extract \
   --report <報告檔案路徑>
 
-# Step 2 — 對清單每項從可靠信源取數（參見 skills/financial-data.md）
+# Step 2 — 對清單每項取數（參見 skills/financial-data.md）：
+#   fetched_source 填權威來源，fetched_source2 填第三方；不得填本倉庫報告
 
-# Step 3 — 輸出準出/打回判決
+# Step 3 — 輸出準出/打回判決（必須加 --require-official）
 python3 tools/report_audit.py verdict \
   --results '<填好的JSON>' \
-  --report <報告檔名>
+  --report <報告檔名> --require-official
 ```
 
 **【準出】** 全部透過 → 報告可釋出；**【打回】** 有不透過 → 修正後重審。

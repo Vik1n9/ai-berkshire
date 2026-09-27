@@ -34,10 +34,14 @@
 
 ### 第一步：資料收集
 
-> **資料來源規範**：參見 `skills/financial-data.md`。所有財務資料必須來自兩個獨立來源，誤差>1%須標記。
-> - 美股：macrotrends（主）+ stockanalysis（副）
-> - 港股：aastocks（主）+ macrotrends ADR（副）
-> - A股：東方財富（主）+ 巨潮資訊（副）
+> **資料來源規範**：參見 `skills/financial-data.md`。所有財務資料必須來自兩個獨立來源，**其中至少一個是權威來源**，誤差>1%須標記。
+> - 美股：SEC EDGAR／公司 IR（來源1）＋ stockanalysis 或 macrotrends（來源2）
+> - 台股：MOPS／證交所／公司官網（來源1）＋ FinMind `tools/twstock_data.py` 或 Goodinfo（來源2）
+> - 港股：HKEXnews／公司官網（來源1）＋ aastocks（來源2）
+> - A股：巨潮資訊／交易所（來源1）＋ 東方財富（來源2）
+>
+> **權威來源優先（必須遵守，詳見 `skills/financial-data.md`）**：財報數字、股本與公司自行揭露的指標，**來源1 一律取自權威來源**——美股 SEC EDGAR（10-K／10-Q／8-K Exhibit 99.1、XBRL API）與公司官網 IR；台股公開資訊觀測站（MOPS）、證交所／櫃買中心與公司官網（每季財報、營運報告、法說簡報）；港股 HKEXnews；A股 巨潮資訊。第三方網站（stockanalysis、macrotrends、FinMind、Goodinfo、aastocks、東方財富）只作來源2 交叉驗證。本倉庫 `reports/` 內的既有報告不得當核驗來源。
+> 取數時逐項檢查 `financial-data.md`「口徑陷阱清單」：關係人科目分列要加總、公司自定義指標（FCF、EBITDA）不得用來回推其他科目、官方已揭露的數字不得用推算值取代、PDF 圖表數字要看圖確認。
 
 使用 Task 工具啟動後台 Agent，從網路收集以下資料：
 
@@ -57,9 +61,9 @@
 資料收集完成後，**必須呼叫 `tools/financial_rigor.py` 對關鍵資料進行程式化驗證**，杜絕LLM心算誤差。
 
 **必須驗證的資料點**：
-- 總股本（從交易所、Yahoo Finance、StockAnalysis 等至少2個源確認）
+- 總股本（以最新財報／交易所資料為準，第三方資料僅作交叉確認；配股、減資後重新確認）
 - 當前股價和市值（**手動計算 股價×總股本 並與報告市值對比，防止單位錯誤**）
-- 最近財年收入和淨利潤（從公司年報+至少1個第三方源確認）
+- 最近財年收入和淨利潤（從公司年報／10-K／MOPS 財報原文取數，再以1個第三方源確認）
 - 現金儲備和淨現金（現金+短期投資-總債務，注意口徑差異）
 - 管理層持股比例（區分經濟權益和投票權，注意AB股結構）
 
@@ -86,7 +90,7 @@ python3 tools/financial_rigor.py verify-valuation \
 
 **驗證規則**：
 1. 每個關鍵資料點至少2個獨立來源
-2. 發現來源間有差異時，優先採用公司年報/交易所資料，並註明差異原因
+2. 發現來源間有差異時，以公司原始財報／交易所資料為準，並註明差異原因
 3. **所有涉及計算的資料必須透過工具驗算，禁止LLM心算**
 4. 工具輸出結果直接嵌入報告附錄"關鍵資料交叉驗證記錄"
 5. 如果工具報告 ❌ 偏差過大，必須排查原因後才能繼續分析
@@ -220,16 +224,15 @@ python3 tools/report_audit.py extract \
 輸出 JSON 模板，每項含 `fetched_value`（待填）。
 
 **Step 2 — 取數核驗：**
-對清單中每個資料點，按 `skills/financial-data.md` 規範從可靠信源取數
-（美股：macrotrends+stockanalysis；港股：aastocks+macrotrends；A股：東方財富+巨潮資訊），
-填入 `fetched_value` / `fetched_source` / `fetched_value2` / `fetched_source2`。
+對清單中每個資料點，按 `skills/financial-data.md` 規範取數：`fetched_source` 填**權威來源**（例：`10-Q FY26Q3 (SEC EDGAR)`、`MOPS 2026Q2 合併資產負債表`、`公司官網營運報告 p8`），`fetched_source2` 填第三方交叉驗證來源。計算值填 `financial_rigor.py`；分析師共識等本來就沒有權威來源的資料，來源名稱加註 `[第三方唯一]`。**不得填入本倉庫報告**。
 
 **Step 3 — 輸出判決：**
 ```bash
 python3 tools/report_audit.py verdict \
   --results '<填好的JSON>' \
-  --report <報告檔名>
+  --report <報告檔名> --require-official
 ```
 
-- **【準出】**：所有抽檢點偏差 ≤ 1% → 報告可釋出
+- `--require-official` **必須開啟**：來源不含權威來源、或引用本倉庫報告的抽檢點直接判為不通過
+- **【準出】**：所有抽檢點偏差 ≤ 1% 且來源合格 → 報告可釋出
 - **【打回】**：任意點偏差 > 1% → 修正對應資料後重新抽檢，直到準出
