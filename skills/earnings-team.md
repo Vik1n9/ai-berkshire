@@ -416,20 +416,26 @@ reports/{公司名}/財報分析/
 
 ## 資料抽檢（準出流程）
 
-對最終文章執行抽檢：
+報告寫入後**必須**執行資料抽檢，全部通過方可釋出。完整規則見 `skills/financial-data.md`「資料抽檢標準流程」：
 
 ```bash
-python3 tools/report_audit.py extract \
-  --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md
+# Step 0 — 口徑與出處檢查：逐項修正，或在報告中說明不適用的理由
+python3 tools/report_audit.py lint --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md
 
-python3 tools/report_audit.py verdict \
-  --results '<填好的JSON>' \
-  --report {報告檔名} --require-official
+# Step 1 — 提取抽檢清單：「速覽」章節（核心資料速覽表）每列本期值全數納入，其餘隨機抽 15%
+python3 tools/report_audit.py extract --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md \
+  --must-section 速覽 --seed <當天日期，如 20260928>
+
+# Step 2 — 取數：fetched_source 填權威來源並寫到檔名＋頁碼／科目，
+#          依報告標示的口徑取值（標稀釋就取稀釋），填官方原始精度，不先四捨五入；
+#          fetched_source2 填第三方；計算值填 financial_rigor.py；不得填本倉庫報告
+
+# Step 3 — 判決（必須加 --require-official）
+python3 tools/report_audit.py verdict --results '<填好的JSON>' \
+  --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md --require-official
 ```
 
-抽檢取數規則同 `skills/financial-data.md`：來源1 為權威來源，不得以本倉庫報告核驗。
-
-**【準出】** 全部透過且來源合格 → 可釋出；**【打回】** 有不透過 → 修正後重審。
+**【準出】** 全部通過 → 釋出；**【打回】** 有不通過 → 修正後重跑 Step 0–3。權威來源的值必須四捨五入後與報告顯示值完全一致；權威來源不符時，第三方相符也不能抵銷。
 
 ## 與現有 Skill 的關係
 

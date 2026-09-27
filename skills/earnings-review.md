@@ -112,6 +112,8 @@ python3 tools/financial_rigor.py verify-valuation \
 | 🔴 **轉移訊號** | 迴避直接問題、用其他話題帶過 | 被問利潤率時轉談收入增速 |
 | 🔴 **歸因外部化** | 把問題全歸咎於宏觀/行業/競爭對手 | "由於宏觀環境影響..." |
 
+**引述規範**：表中的管理層原話必須附出處（法說場次日期、逐字稿或新聞稿連結、時間碼）。找不到原始出處的說法不得加引號、不得掛名，查無出處就刪除。
+
 #### 3.2 承諾追蹤
 
 從上一期財報/電話會中提取管理層的具體承諾，與本期實際情況對比：
@@ -197,24 +199,26 @@ python3 tools/financial_rigor.py verify-valuation \
 
 ### 第八步：資料抽檢（準出流程）
 
-報告寫入後，執行資料抽檢，透過方可釋出：
+報告寫入後**必須**執行資料抽檢，全部通過方可釋出。完整規則見 `skills/financial-data.md`「資料抽檢標準流程」：
 
 ```bash
-# Step 1 — 提取抽檢清單
-python3 tools/report_audit.py extract \
-  --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md
+# Step 0 — 口徑與出處檢查：逐項修正，或在報告中說明不適用的理由
+python3 tools/report_audit.py lint --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md
 
-# Step 2 — 對清單每項取數（參見 skills/financial-data.md）：
-#   fetched_source 填權威來源（10-Q / MOPS / 公司官網原始檔），fetched_source2 填第三方；
-#   計算值填 financial_rigor.py；不得填本倉庫報告
+# Step 1 — 提取抽檢清單：「速覽」章節（核心資料速覽表）每列本期值全數納入，其餘隨機抽 15%
+python3 tools/report_audit.py extract --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md \
+  --must-section 速覽 --seed <當天日期，如 20260928>
 
-# Step 3 — 輸出準出/打回判決（必須加 --require-official）
-python3 tools/report_audit.py verdict \
-  --results '<填好的JSON>' \
-  --report {報告檔名} --require-official
+# Step 2 — 取數：fetched_source 填權威來源並寫到檔名＋頁碼／科目，
+#          依報告標示的口徑取值（標稀釋就取稀釋），填官方原始精度，不先四捨五入；
+#          fetched_source2 填第三方；計算值填 financial_rigor.py；不得填本倉庫報告
+
+# Step 3 — 判決（必須加 --require-official）
+python3 tools/report_audit.py verdict --results '<填好的JSON>' \
+  --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md --require-official
 ```
 
-**【準出】** 全部透過且來源合格 → 釋出；**【打回】** 有不透過 → 修正後重審。
+**【準出】** 全部通過 → 釋出；**【打回】** 有不通過 → 修正後重跑 Step 0–3。權威來源的值必須四捨五入後與報告顯示值完全一致；權威來源不符時，第三方相符也不能抵銷。
 
 ## 關鍵原則
 

@@ -190,21 +190,26 @@
 
 ### 第九步：資料抽檢（準出流程）
 
+報告寫入後**必須**執行資料抽檢，全部通過方可釋出。完整規則見 `skills/financial-data.md`「資料抽檢標準流程」：
+
 ```bash
-# Step 1 — 提取抽檢清單（15%隨機抽樣）
-python3 tools/report_audit.py extract \
-  --report <報告檔案路徑>
+# Step 0 — 口徑與出處檢查：逐項修正，或在報告中說明不適用的理由
+python3 tools/report_audit.py lint --report <報告檔案路徑>
 
-# Step 2 — 對清單每項取數（參見 skills/financial-data.md）：
-#   fetched_source 填權威來源，fetched_source2 填第三方；不得填本倉庫報告
+# Step 1 — 提取抽檢清單：最終報告「核心財務資料」章節每列本期值全數納入，其餘隨機抽 15%
+python3 tools/report_audit.py extract --report <報告檔案路徑> \
+  --must-section 核心財務資料 --seed <當天日期，如 20260928>
 
-# Step 3 — 輸出準出/打回判決（必須加 --require-official）
-python3 tools/report_audit.py verdict \
-  --results '<填好的JSON>' \
-  --report <報告檔名> --require-official
+# Step 2 — 取數：fetched_source 填權威來源並寫到檔名＋頁碼／科目，
+#          依報告標示的口徑取值（標稀釋就取稀釋），填官方原始精度，不先四捨五入；
+#          fetched_source2 填第三方；計算值填 financial_rigor.py；不得填本倉庫報告
+
+# Step 3 — 判決（必須加 --require-official）
+python3 tools/report_audit.py verdict --results '<填好的JSON>' \
+  --report <報告檔案路徑> --require-official
 ```
 
-**【準出】** 全部透過 → 報告可釋出；**【打回】** 有不透過 → 修正後重審。
+**【準出】** 全部通過 → 釋出；**【打回】** 有不通過 → 修正後重跑 Step 0–3。權威來源的值必須四捨五入後與報告顯示值完全一致；權威來源不符時，第三方相符也不能抵銷。
 
 ### 第十步：清理團隊
 

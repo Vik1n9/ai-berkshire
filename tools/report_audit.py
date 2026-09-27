@@ -7,9 +7,13 @@
 Zero external dependencies — uses only Python stdlib.
 Requires Python >= 3.7.
 
-工作流程（三步）：
-  Step 1 — 提取数据点，随机抽样15%：
-    python3 tools/report_audit.py extract --report reports/xxx公司/深度分析/xxx.md
+工作流程（Step 0–3，规范见 skills/financial-data.md「資料抽檢標準流程」）：
+  Step 0 — 口径与出处检查（EPS 口径、推算值、具名引述、关系人科目）：
+    python3 tools/report_audit.py lint --report reports/xxx.md
+
+  Step 1 — 提取数据点：核心表每列本期值全数纳入，其余随机抽样15%：
+    python3 tools/report_audit.py extract --report reports/xxx公司/深度分析/xxx.md \
+      --must-section 核心財務資料 --seed 20260928
 
   Step 2 — Claude 对抽检清单中的每个数据点取数，填入 fetched_value。
             来源1必须是权威来源（SEC EDGAR / MOPS / 交易所 / 公司官网 IR 原始档），
@@ -113,6 +117,49 @@ _KV_LABEL_RE = re.compile(
 )
 
 
+_CELL_NUM_RE = re.compile(r'[~约約]?\$?([\d,，\.]+)\s*(亿[元美港]?元?|億[元美港]?元?|万亿|兆|[xX倍]|%|[BMT])?')
+
+
+def _is_noise_number(text: str, start: int, end: int, unit: str) -> bool:
+    """判断 text[start:end] 的数字是否为非数据（年份、季度、月份、章节编号）。"""
+    before = text[max(0, start - 2):start]
+    after = text[end:end + 1]
+    num = text[start:end]
+    if unit:
+        return False
+    # 日期的月／日部分：2026-07、2026/09
+    if re.search(r'(19|20)\d{2}[\-/]$', text[max(0, start - 5):start]):
+        return True
+    # 季度／半年／财年标签：Q2、H1、FY2027、第3季
+    if re.search(r'(Q|H|FY|第)$', before, re.IGNORECASE):
+        return True
+    # 年份或日期：2026-07、2026/09、2026年、1Q26 前后
+    if re.fullmatch(r'(19|20)\d{2}', num) and after in ('', '-', '/', '年', 'Q', 'q', ' ', '）', ')', '|'):
+        return True
+    # 月份、日期、区间：10-11月、7/28、9月
+    if after in ('月', '日', '/', '-', '年') or re.match(r'[\-–]\d+月', text[end:end + 4]):
+        return True
+    # 章节编号：§9.3、见 9.3
+    if re.search(r'(§|見|见)\s?$', before):
+        return True
+    return False
+
+
+def _first_data_number(text: str):
+    """返回单元格中第一个「数据型」数字 (value, unit)，跳过年份／季度／月份等噪声。"""
+    for m in _CELL_NUM_RE.finditer(text):
+        raw = m.group(1).strip('.，,')
+        if not raw or not re.search(r'\d', raw):
+            continue
+        unit = (m.group(2) or '').strip()
+        if _is_noise_number(text, m.start(1), m.start(1) + len(m.group(1).rstrip('.，,')), unit):
+            continue
+        val = _clean_num(raw)
+        if val is not None:
+            return val, unit
+    return None, ''
+
+
 def _parse_md_tables(lines: list) -> list:
     """解析 Markdown 中所有表格，返回 (row_label, col_header, value, unit, lineno, raw) 列表。"""
     results = []
@@ -140,19 +187,17 @@ def _parse_md_tables(lines: list) -> list:
                     for col_idx, cell in enumerate(cells[1:], start=1):
                         col_header = headers_raw[col_idx] if col_idx < len(headers_raw) else f'列{col_idx}'
                         # 提取 cell 中的数字+单位
-                        m = re.search(
-                            r'[~约]?\$?([\d,，\.]+)\s*(亿[元美港]?元?|万亿|[xX倍]|%|[BMT])?',
-                            cell
-                        )
-                        if m:
-                            val = _clean_num(m.group(1))
-                            unit = (m.group(2) or '').strip()
-                            if val and val != 0 and val < 1e15:
-                                results.append((row_label, col_header, val, unit, i + 1, dline))
+                        val, unit = _first_data_number(cell)
+                        if val and val != 0 and val < 1e15:
+                            results.append((row_label, col_header, val, unit, i + 1, dline))
                     i += 1
                 continue
         i += 1
     return results
+
+
+# 变化率栏（QoQ、YoY、pp、变化）：由基础数值推导，不列入必检章节的 100% 核验
+_DERIVED_COL_RE = re.compile(r'QoQ|YoY|HoH|MoM|季增|年增|月增|變化|变化|差異|差异|偏差|pp', re.IGNORECASE)
 
 
 def extract_data_points(md_text: str) -> list:
@@ -169,7 +214,7 @@ def extract_data_points(md_text: str) -> list:
     points = []
     seen = set()
 
-    def _add(label, val, unit, lineno, raw):
+    def _add(label, val, unit, lineno, raw, derived=False):
         label = re.sub(r'[\*_`]+', '', label).strip()
         if not _is_valid_label(label):
             return
@@ -189,10 +234,23 @@ def extract_data_points(md_text: str) -> list:
             'unit': unit,
             'raw_text': raw[:120],
             'line_number': lineno,
+            'section': section_of[lineno - 1] if 0 < lineno <= len(section_of) else '',
+            'derived': derived,
         })
 
     lines = md_text.split('\n')
     in_code = False
+
+    # 每一行所属的最近标题（供 --must-section 分层抽样）
+    # 记录完整标题路径（「一、核心數據速覽 > 1.1 損益表」），子标题下的数据也归属上层章节
+    section_of = []
+    stack = []
+    for ln in lines:
+        hm = re.match(r'^(#{1,6})\s+(.*)', ln.strip())
+        if hm:
+            level = len(hm.group(1))
+            stack = [h for h in stack if h[0] < level] + [(level, hm.group(2).strip())]
+        section_of.append(' > '.join(h[1] for h in stack))
 
     # --- 1. 多列表格 ---
     for row_label, col_header, val, unit, lineno, raw in _parse_md_tables(lines):
@@ -202,12 +260,16 @@ def extract_data_points(md_text: str) -> list:
         # 跳过无意义列标题（YoY增速列单独标注，不作为待核验数据）
         if col_header.upper() in ('YOY', 'YOY增速', '增速', '同比', '变化', '趋势', '说明', '备注'):
             continue
+        # 评分／品质栏（1-5 分、★）不是财务数据
+        if re.search(r'評分|评分|質量|质量|分數|分数|1-5|★', col_header):
+            continue
         # label = "行标签 · 列标题"（若列标题是行标签的补充）
         if col_header and col_header != row_label:
             label = f"{row_label} · {col_header}"
         else:
             label = row_label
-        _add(label, val, unit, lineno, raw)
+        _add(label, val, unit, lineno, raw,
+             derived=bool(_DERIVED_COL_RE.search(col_header or '')))
 
     # --- 2. KV 冒号行 ---
     for lineno, line in enumerate(lines, start=1):
@@ -224,17 +286,32 @@ def extract_data_points(md_text: str) -> list:
             label = m.group('label')
             val = _clean_num(m.group('num'))
             unit = (m.group('unit') or '').strip()
+            if _is_noise_number(stripped, m.start('num'), m.end('num'), unit):
+                continue
             _add(label, val, unit, lineno, stripped)
 
     return points
 
 
-def sample_points(points: list, ratio: float = 0.15, seed: int = None) -> list:
-    """随机抽取 ratio 比例的数据点，最少 3 个，最多 30 个。"""
-    n = max(3, min(30, math.ceil(len(points) * ratio)))
-    n = min(n, len(points))
+def sample_points(points: list, ratio: float = 0.15, seed: int = None,
+                  must_sections: list = None) -> list:
+    """分层抽样：must_sections 标题（子字串匹配，含上层标题）下，每一列的「本期」值
+    （该行第一个非变化率的数值）全数纳入；其余数据点随机抽取 ratio 比例（最少 3 个，最多 30 个）。"""
+    must_sections = must_sections or []
+    # 必检：章节内每一列的「本期」值（该行第一个基础数值），即报告最常被引用的标题数字
+    must, seen_lines = [], set()
+    for p in points:
+        if p.get('derived') or p['line_number'] in seen_lines:
+            continue
+        if any(ms and ms in p.get('section', '') for ms in must_sections):
+            must.append(p)
+            seen_lines.add(p['line_number'])
+    must_ids = {p['id'] for p in must}
+    rest = [p for p in points if p['id'] not in must_ids]
+    n = max(3, min(30, math.ceil(len(rest) * ratio)))
+    n = min(n, len(rest))
     rng = Random(seed)
-    sampled = rng.sample(points, n)
+    sampled = must + rng.sample(rest, n)
     # 按行号排序，方便人工比对
     return sorted(sampled, key=lambda p: p['line_number'])
 
@@ -244,6 +321,21 @@ def sample_points(points: list, ratio: float = 0.15, seed: int = None) -> list:
 # ---------------------------------------------------------------------------
 
 _TOLERANCE = 0.01   # 1% 容差
+
+
+def _decimals(v: float) -> int:
+    """报告值显示的小数位数（26.0 → 0，35.53 → 2）。"""
+    txt = repr(float(v))
+    if 'e' in txt or 'E' in txt:
+        return 0
+    frac = txt.split('.')[1].rstrip('0') if '.' in txt else ''
+    return len(frac)
+
+
+def _within_rounding(reported: float, fetched: float) -> bool:
+    """官方值四舍五入到报告显示位数后是否与报告值一致。"""
+    half = 0.5 * 10 ** (-_decimals(reported))
+    return abs(abs(reported) - abs(fetched)) <= half + 1e-9
 
 
 def _pct_diff(reported: float, fetched: float) -> float:
@@ -380,9 +472,19 @@ def render_verdict(results: list, report_name: str = "", require_official: bool 
             fetched2 = float(fetched2)
             diff2 = _pct_diff(reported, fetched2)
 
-        # 判断
-        pass1 = diff1 <= _TOLERANCE
-        pass2 = (diff2 is None) or (diff2 <= _TOLERANCE)
+        # 判断：权威来源用「四舍五入到报告显示位数」比对（官方值是精确值，
+        # 1% 容差会放过 1.78 vs 1.77、35.53% vs 35.54% 这类口径或抄录错误）；
+        # 其余来源沿用 1% 容差
+        if classify_source(source) == 'official':
+            pass1 = _within_rounding(reported, fetched)
+        else:
+            pass1 = diff1 <= _TOLERANCE
+        if diff2 is None:
+            pass2 = True
+        elif classify_source(source2) == 'official':
+            pass2 = _within_rounding(reported, fetched2)
+        else:
+            pass2 = diff2 <= _TOLERANCE
 
         src_ok, src_reason = official_check(item)
         if not src_ok:
@@ -401,42 +503,49 @@ def render_verdict(results: list, report_name: str = "", require_official: bool 
                 'line_number': item.get('line_number', 0),
                 'source_reason': src_reason,
             })
-        elif pass1 and pass2:
-            status = f'{GREEN}✅ 通过{RESET}'
-            detail = f'{source}: {fetched:.2f} (偏差 {diff1*100:.2f}%)'
-            if diff2 is not None:
-                detail += f'  |  {source2}: {fetched2:.2f} (偏差 {diff2*100:.2f}%)'
-        elif not pass1 and not pass2:
-            status = f'{RED}❌ 不通过{RESET}'
-            detail = f'{source}: {fetched:.2f} (偏差 {diff1*100:.2f}%)'
-            if diff2 is not None:
-                detail += f'  |  {source2}: {fetched2:.2f} (偏差 {diff2*100:.2f}%)'
-            fail_items.append({
-                'id': item['id'],
-                'label': label,
-                'reported': reported,
-                'unit': unit,
-                'fetched': fetched,
-                'source': source,
-                'fetched2': fetched2,
-                'source2': source2,
-                'diff1_pct': round(diff1 * 100, 2),
-                'diff2_pct': round(diff2 * 100, 2) if diff2 is not None else None,
-                'raw_text': item.get('raw_text', ''),
-                'line_number': item.get('line_number', 0),
-            })
         else:
-            # 一个来源通过，一个不通过 → 警告，不计入失败
-            status = f'{YELLOW}⚠️  警告{RESET}'
+            # 判定：权威来源不符 → 不通过（第三方相符也不能抵销）；
+            #       只有一个来源且不符 → 不通过；
+            #       两个非权威来源一符一不符、或权威相符但第三方不符 → 警告
+            off1 = classify_source(source) == 'official'
+            off2 = diff2 is not None and classify_source(source2) == 'official'
+            if off1 or off2:
+                official_bad = (off1 and not pass1) or (off2 and not pass2)
+                outcome = 'fail' if official_bad else ('pass' if pass1 and pass2 else 'warn')
+            elif diff2 is None:
+                outcome = 'pass' if pass1 else 'fail'
+            else:
+                outcome = 'pass' if pass1 and pass2 else ('fail' if not pass1 and not pass2 else 'warn')
+
             detail = f'{source}: {fetched:.2f} (偏差 {diff1*100:.2f}%)'
             if diff2 is not None:
                 detail += f'  |  {source2}: {fetched2:.2f} (偏差 {diff2*100:.2f}%)'
-            warn_items.append({
-                'id': item['id'], 'label': label,
-                'reported': reported, 'unit': unit,
-                'diff1_pct': round(diff1 * 100, 2),
-                'diff2_pct': round(diff2 * 100, 2) if diff2 is not None else None,
-            })
+            if outcome == 'pass':
+                status = f'{GREEN}✅ 通过{RESET}'
+            elif outcome == 'fail':
+                status = f'{RED}❌ 不通过{RESET}'
+                fail_items.append({
+                    'id': item['id'],
+                    'label': label,
+                    'reported': reported,
+                    'unit': unit,
+                    'fetched': fetched,
+                    'source': source,
+                    'fetched2': fetched2,
+                    'source2': source2,
+                    'diff1_pct': round(diff1 * 100, 2),
+                    'diff2_pct': round(diff2 * 100, 2) if diff2 is not None else None,
+                    'raw_text': item.get('raw_text', ''),
+                    'line_number': item.get('line_number', 0),
+                })
+            else:
+                status = f'{YELLOW}⚠️  警告{RESET}'
+                warn_items.append({
+                    'id': item['id'], 'label': label,
+                    'reported': reported, 'unit': unit,
+                    'diff1_pct': round(diff1 * 100, 2),
+                    'diff2_pct': round(diff2 * 100, 2) if diff2 is not None else None,
+                })
 
         print(f'  {status} [{item["id"]:>2}] {label[:35]:35s}  报告: {reported:>12.2f} {unit}')
         print(f'              {" " * 38}{detail}')
@@ -472,7 +581,7 @@ def render_verdict(results: list, report_name: str = "", require_official: bool 
         verdict = 'FAIL'
 
     if warn_count > 0:
-        print(f'{YELLOW}注意：{warn_count} 个数据点两来源结果不一致（超过1%），可能是口径差异（GAAP/Non-GAAP或汇率），请人工复核。{RESET}')
+        print(f'{YELLOW}注意：{warn_count} 个数据点的第三方来源与报告不一致（权威来源相符或两个第三方来源分歧），可能是口径差异（GAAP/Non-GAAP、汇率、关系人科目），请人工复核。{RESET}')
         for wi in warn_items:
             print(f'  ⚠️  {wi["label"]}  报告:{wi["reported"]} {wi["unit"]}  偏差: {wi["diff1_pct"]}% / {wi["diff2_pct"]}%')
 
@@ -494,6 +603,61 @@ def render_verdict(results: list, report_name: str = "", require_official: bool 
         'source_issues': source_issues,
         'require_official': require_official,
     }
+
+
+# ---------------------------------------------------------------------------
+# 口径与出处检查（lint）：抽检前扫描已知的错误模式
+# ---------------------------------------------------------------------------
+
+_EPS_RE = re.compile(r'EPS|每股盈餘|每股盈余|每股收益', re.IGNORECASE)
+_EPS_BASIS_RE = re.compile(r'基本|稀釋|稀释|diluted|basic|GAAP|估計|估计|預估|预估|共識|共识|指引|guidance|法人|\d{4}E\b',
+                           re.IGNORECASE)
+_DERIVED_RE = re.compile(r'推算|回推|估算')
+_OFFICIAL_METRIC_RE = re.compile(r'營業現金流|營業活動現金流|經營現金流|经营现金流|OCF|資本支出|资本支出|CapEx|'
+                                 r'週轉天數|周转天数|DSO|DIO|股本', re.IGNORECASE)
+_BACKDERIVE_RE = re.compile(r'FCF\s*[+＋]\s*CapEx|自由現金流\s*[+＋]\s*資本支出|自由现金流\s*[+＋]\s*资本支出',
+                            re.IGNORECASE)
+_NAMED_QUOTE_RE = re.compile(r'[「“"][^」”"]{8,}[」”"]\s*[（(][\u4e00-\u9fa5A-Za-z·\s]{2,12}[）)]')
+_QUOTE_SOURCE_RE = re.compile(r'http|法說|法说|電話會|电话会|逐字稿|新聞稿|新闻稿|\d{1,2}/\d{1,2}|\d{4}-\d{2}-\d{2}|年報|年报|10-[KQ]')
+
+
+def lint_report(md_text: str) -> list:
+    """扫描报告中的已知错误模式，返回 [(line_number, rule, message, text)]。"""
+    issues = []
+    lines = md_text.split('\n')
+    in_code = False
+    for n, line in enumerate(lines, start=1):
+        st = line.strip()
+        if st.startswith('```'):
+            in_code = not in_code
+            continue
+        if in_code or not st:
+            continue
+        # L1 EPS 未标口径
+        if st.startswith('|') and not re.match(r'^\|[\-\s\|:]+\|$', st):
+            first = st.strip('|').split('|')[0]
+            if _EPS_RE.search(first) and not _EPS_BASIS_RE.search(st):
+                issues.append((n, 'L1', 'EPS 未标示口径（基本／稀释、GAAP／Non-GAAP）', st))
+        # L2 官方通常已揭露的数字却用推算
+        if _DERIVED_RE.search(st) and _OFFICIAL_METRIC_RE.search(st):
+            issues.append((n, 'L2', '营业现金流／资本支出／周转天数／股本等官方通常已揭露，'
+                                    '确认是否已查官方原始档；若官方有揭露不得用推算值', st))
+        # L3 用公司自定义 FCF 回推
+        if _BACKDERIVE_RE.search(st):
+            issues.append((n, 'L3', '不得以公司自定义 FCF 加回资本支出推算营业现金流', st))
+        # L4 具名引述缺出处
+        if _NAMED_QUOTE_RE.search(st) and not _QUOTE_SOURCE_RE.search(st):
+            issues.append((n, 'L4', '具名引述缺出处（连结、日期或法说场次）；无法核实的引述应删除', st))
+    # L5 讨论应收周转天数却未交代关系人科目（仅台股报告：IFRS 台股报表常分列，美国 GAAP 通常不分列）
+    text = md_text
+    summed = re.search(r'(含|加總|合計|加总|合计|兩行|两行)\S{0,8}(關係人|关系人)|(關係人|关系人)\S{0,12}(加總|合計|加总|合计)',
+                       text) or re.search(r'related[- ]part(y|ies).{0,40}(includ|sum|combin)', text, re.IGNORECASE)
+    is_tw = re.search(r'新台幣|新台币|TWD|MOPS|公開資訊觀測站|公开资讯观测站|台股', text)
+    if is_tw and re.search(r'DSO|應收帳款週轉|应收账款周转', text) and not summed:
+        first_line = next((i for i, l in enumerate(lines, start=1)
+                           if re.search(r'DSO|應收帳款週轉|应收账款周转', l)), 0)
+        issues.append((first_line, 'L5', '讨论应收周转却未写明「应收帐款－关系人」是否已加总（须明写「含关系人」或「两行合计」）', lines[first_line - 1].strip()))
+    return issues
 
 
 # ---------------------------------------------------------------------------
@@ -541,6 +705,14 @@ def main():
     ext.add_argument('--ratio', type=float, default=0.15, help='抽样比例，默认 0.15')
     ext.add_argument('--seed', type=int, default=None, help='随机种子（可选，用于复现）')
     ext.add_argument('--dry-run', action='store_true', help='只打印，不输出 JSON')
+    ext.add_argument('--must-section', action='append', default=[],
+                     help='该标题（子字串匹配）下每一列的本期值全数纳入抽检，可重复指定；'
+                          '财报分析用「核心數據速覽」，深度分析用「核心財務資料」')
+
+    # lint
+    lnt = sub.add_parser('lint', help='抽检前扫描口径与出处问题（EPS 口径、推算值、具名引述、关系人科目）')
+    lnt.add_argument('--report', required=True, help='报告文件路径（Markdown）')
+    lnt.add_argument('--strict', action='store_true', help='有任何问题即以非零码退出')
 
     # verdict
     vrd = sub.add_parser('verdict', help='根据核验结果输出准出/打回判决')
@@ -561,7 +733,8 @@ def main():
             text = f.read()
 
         all_points = extract_data_points(text)
-        sampled = sample_points(all_points, ratio=args.ratio, seed=args.seed)
+        sampled = sample_points(all_points, ratio=args.ratio, seed=args.seed,
+                                must_sections=args.must_section)
 
         print('=' * 70)
         print(f'报告数据抽检清单')
@@ -569,6 +742,12 @@ def main():
         print(f'总提取数据点：{len(all_points)}  |  抽样比例：{args.ratio:.0%}  |  抽检数量：{len(sampled)}')
         if args.seed is not None:
             print(f'随机种子：{args.seed}（可用于复现同一批样本）')
+        if args.must_section:
+            n_must = sum(1 for p in sampled
+                         if any(ms in p.get('section', '') for ms in args.must_section))
+            print(f'必检章节：{"、".join(args.must_section)}（每列本期值 {n_must} 点全数纳入，其余随机抽样）')
+            if n_must == 0:
+                print('⚠️  必检章节未匹配到任何数据点，请确认标题文字')
         print('=' * 70)
         print()
         print(f'{"ID":>3}  {"行号":>5}  {"数据标签":<35}  {"报告值":>12}  {"单位"}')
@@ -593,6 +772,7 @@ def main():
                     'reported_value': p['reported_value'],
                     'unit': p['unit'],
                     'line_number': p['line_number'],
+                    'section': p.get('section', ''),
                     'raw_text': p['raw_text'],
                     'fetched_value': None,       # ← 填入主来源核验值
                     'fetched_source': '',        # ← 填入主来源名称
@@ -602,6 +782,22 @@ def main():
             print('抽检清单 JSON（填入 fetched_value 后，传给 verdict 命令）：')
             print()
             print(json.dumps(template, ensure_ascii=False, indent=2))
+
+    elif args.command == 'lint':
+        if not os.path.exists(args.report):
+            print(f'❌ 文件不存在: {args.report}', file=sys.stderr)
+            sys.exit(1)
+        with open(args.report, 'r', encoding='utf-8') as f:
+            issues = lint_report(f.read())
+        print('=' * 70)
+        print(f'口径与出处检查：{args.report}')
+        print('=' * 70)
+        for n, rule, msg, txt in issues:
+            print(f'  ⚠️  [{rule}] 第 {n} 行：{msg}')
+            print(f'       {txt[:110]}')
+        print('-' * 70)
+        print(f'  共 {len(issues)} 项。逐项修正，或在报告中说明为何不适用，再进行抽检。')
+        sys.exit(1 if (args.strict and issues) else 0)
 
     elif args.command == 'verdict':
         try:
