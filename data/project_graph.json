@@ -1,43 +1,43 @@
 {
   "meta": {
     "project": "AI Berkshire",
-    "generated_at": "2026-08-30T20:11:34Z",
+    "generated_at": "2026-09-27T14:25:24Z",
     "generator": "scripts/build_graph.py",
     "note": "價值投資研究知識圖譜：公司/主題實體 + 報告 + Skill + 工具。可用 scripts/query_graph.py 查詢。"
   },
   "stats": {
-    "reports": 145,
-    "entities": 25,
+    "reports": 197,
+    "entities": 49,
     "skills": 19,
-    "tools": 10,
+    "tools": 12,
     "reports_by_type": {
-      "other": 75,
+      "other": 73,
+      "research": 52,
       "valuation": 23,
-      "research": 19,
       "management": 11,
       "team": 11,
-      "earnings": 3,
-      "comparison": 3
+      "earnings": 10,
+      "thesis": 7,
+      "checklist": 6,
+      "comparison": 4
     },
-    "reports_by_skill": {
-      "investment-research": 3
-    },
+    "reports_by_skill": {},
     "reports_by_master": {
-      "段永平": 31,
-      "巴菲特": 31,
-      "李錄": 30,
-      "芒格": 22
+      "巴菲特": 42,
+      "李錄": 42,
+      "段永平": 41,
+      "芒格": 13
     },
     "date_range": [
       "2026-04-08",
-      "2026-08-30"
+      "2026-09-26"
     ]
   },
   "entities": [
     {
       "id": "entity:ACN",
       "name": "ACN",
-      "report_count": 9,
+      "report_count": 10,
       "tickers": [
         "ACN"
       ],
@@ -48,9 +48,10 @@
         "reports/ACN/公眾號文章/04-風險與估值-14倍PE是恐慌還是理性.md",
         "reports/ACN/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/ACN/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/ACN/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/ACN/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/ACN/團隊分析/04-風險管理層評估-李錄視角.md",
-        "reports/ACN/團隊分析/最終報告.md"
+        "reports/ACN/團隊分析/最終報告.md",
+        "reports/ACN/深度分析/ACN-research-20260901.md"
       ]
     },
     {
@@ -67,16 +68,16 @@
         "reports/ADBE/公眾號文章/04-風險與估值-PE十年最低是機會還是陷阱.md",
         "reports/ADBE/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/ADBE/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/ADBE/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/ADBE/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/ADBE/團隊分析/04-風險管理層評估-李錄視角.md",
         "reports/ADBE/團隊分析/最終報告.md",
-        "reports/ADBE/深度分析/20260607-投研報告-ADBE-research.md"
+        "reports/ADBE/深度分析/ADBE-research-20260607.md"
       ]
     },
     {
       "id": "entity:ADP",
       "name": "ADP",
-      "report_count": 9,
+      "report_count": 10,
       "tickers": [],
       "reports": [
         "reports/ADP/公眾號文章/01-開篇-全球最大的發薪公司.md",
@@ -85,15 +86,38 @@
         "reports/ADP/公眾號文章/04-風險與估值-打了七折的收費公路.md",
         "reports/ADP/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/ADP/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/ADP/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/ADP/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/ADP/團隊分析/04-風險管理層評估-李錄視角.md",
-        "reports/ADP/團隊分析/最終報告.md"
+        "reports/ADP/團隊分析/最終報告.md",
+        "reports/ADP/深度分析/ADP-research-20260901.md"
+      ]
+    },
+    {
+      "id": "entity:AMPX",
+      "name": "AMPX",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/AMPX/深度分析/AMPX-research-20260907.md"
+      ]
+    },
+    {
+      "id": "entity:AVGO",
+      "name": "AVGO",
+      "report_count": 3,
+      "tickers": [
+        "AVGO"
+      ],
+      "reports": [
+        "reports/AVGO/投資論點/AVGO-thesis.md",
+        "reports/AVGO/深度分析/AVGO-research-20260904.md",
+        "reports/AVGO/財報分析/AVGO-earnings-FY2026Q3.md"
       ]
     },
     {
       "id": "entity:BKNG",
       "name": "BKNG",
-      "report_count": 9,
+      "report_count": 10,
       "tickers": [
         "BKNG"
       ],
@@ -104,9 +128,37 @@
         "reports/BKNG/公眾號文章/04-風險與估值-好公司也需要好價格.md",
         "reports/BKNG/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/BKNG/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/BKNG/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/BKNG/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/BKNG/團隊分析/04-風險管理層評估-李錄視角.md",
-        "reports/BKNG/團隊分析/最終報告.md"
+        "reports/BKNG/團隊分析/最終報告.md",
+        "reports/BKNG/深度分析/BKNG-research-20260901.md"
+      ]
+    },
+    {
+      "id": "entity:CAPR",
+      "name": "CAPR",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/CAPR/深度分析/CAPR-research-20260907.md"
+      ]
+    },
+    {
+      "id": "entity:CNTB",
+      "name": "CNTB",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/CNTB/深度分析/CNTB-research-20260907.md"
+      ]
+    },
+    {
+      "id": "entity:EOSE",
+      "name": "EOSE",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/EOSE/深度分析/EOSE-research-20260907.md"
       ]
     },
     {
@@ -117,7 +169,19 @@
         "GEV"
       ],
       "reports": [
-        "reports/GEV/深度分析/20260623-投研報告-GEV-research.md"
+        "reports/GEV/深度分析/GEV-research-20260623.md"
+      ]
+    },
+    {
+      "id": "entity:GFS",
+      "name": "GFS",
+      "report_count": 2,
+      "tickers": [
+        "GFS"
+      ],
+      "reports": [
+        "reports/GFS/深度分析/GFS-research-20260923.md",
+        "reports/GFS/財報分析/GFS-earnings-2026Q2.md"
       ]
     },
     {
@@ -126,7 +190,25 @@
       "report_count": 1,
       "tickers": [],
       "reports": [
-        "reports/GOOGL/深度分析/20260623-投研報告-GOOGL-Alphabet投資研究報告.md"
+        "reports/GOOGL/深度分析/GOOGL-research-20260623.md"
+      ]
+    },
+    {
+      "id": "entity:GOSS",
+      "name": "GOSS",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/GOSS/深度分析/GOSS-research-20260907.md"
+      ]
+    },
+    {
+      "id": "entity:INO",
+      "name": "INO",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/INO/深度分析/INO-research-20260907.md"
       ]
     },
     {
@@ -135,8 +217,35 @@
       "report_count": 2,
       "tickers": [],
       "reports": [
-        "reports/INTC/深度分析/20260623-投研報告-INTC-investment-research.md",
-        "reports/INTC/買前確認/20260825-INTC-購買前確認.md"
+        "reports/INTC/深度分析/INTC-research-20260623.md",
+        "reports/INTC/買前確認/INTC-checklist-20260825.md"
+      ]
+    },
+    {
+      "id": "entity:IREN",
+      "name": "IREN",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/IREN/深度分析/IREN-research-20260907.md"
+      ]
+    },
+    {
+      "id": "entity:IVA",
+      "name": "IVA",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/IVA/深度分析/IVA-research-20260907.md"
+      ]
+    },
+    {
+      "id": "entity:KYTX",
+      "name": "KYTX",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/KYTX/深度分析/KYTX-research-20260907.md"
       ]
     },
     {
@@ -154,16 +263,16 @@
         "reports/LULU/公眾號文章/04-風險管理層與估值判斷.md",
         "reports/LULU/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/LULU/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/LULU/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/LULU/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/LULU/團隊分析/04-風險管理層評估-李錄視角.md",
         "reports/LULU/團隊分析/最終報告.md",
-        "reports/LULU/深度分析/20260516-投研報告-LULU-research.md"
+        "reports/LULU/深度分析/LULU-research-20260516.md"
       ]
     },
     {
       "id": "entity:MA",
       "name": "MA",
-      "report_count": 11,
+      "report_count": 12,
       "tickers": [
         "MA"
       ],
@@ -176,15 +285,29 @@
         "reports/MA/公眾號文章/05-估值判斷-為確定性付多少溢價（終章）.md",
         "reports/MA/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/MA/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/MA/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/MA/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/MA/團隊分析/04-風險管理層評估-李錄視角.md",
-        "reports/MA/團隊分析/最終報告.md"
+        "reports/MA/團隊分析/最終報告.md",
+        "reports/MA/深度分析/MA-research-20260901.md"
+      ]
+    },
+    {
+      "id": "entity:MCD",
+      "name": "MCD",
+      "report_count": 3,
+      "tickers": [
+        "MCD"
+      ],
+      "reports": [
+        "reports/MCD/深度分析/MCD-research-20260923.md",
+        "reports/MCD/財報分析/MCD-earnings-2026Q2.md",
+        "reports/MCD/買前確認/MCD-checklist-20260923.md"
       ]
     },
     {
       "id": "entity:META",
       "name": "META",
-      "report_count": 10,
+      "report_count": 11,
       "tickers": [
         "META"
       ],
@@ -196,9 +319,10 @@
         "reports/META/公眾號文章/05-估值判斷-一道關於信任的數學題.md",
         "reports/META/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/META/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/META/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/META/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/META/團隊分析/04-風險管理層評估-李錄視角.md",
-        "reports/META/團隊分析/最終報告.md"
+        "reports/META/團隊分析/最終報告.md",
+        "reports/META/深度分析/META-research-20260901.md"
       ]
     },
     {
@@ -213,8 +337,8 @@
         "reports/MRVL/公眾號文章/02-商業模式-資料中心管道工的四塊業務.md",
         "reports/MRVL/公眾號文章/03-AI機遇-定製晶片的黃金時代與博通之戰.md",
         "reports/MRVL/公眾號文章/04-風險與估值-58倍PE在賭什麼.md",
-        "reports/MRVL/深度分析/20260516-投研報告-MRVL-research.md",
-        "reports/MRVL/深度分析/20260624-投研報告-MRVL-investment-research.md"
+        "reports/MRVL/深度分析/MRVL-research-20260516.md",
+        "reports/MRVL/深度分析/MRVL-research-20260624.md"
       ]
     },
     {
@@ -225,16 +349,22 @@
         "MSFT"
       ],
       "reports": [
-        "reports/MSFT/深度分析/20260623-投研報告-MSFT-research.md"
+        "reports/MSFT/深度分析/MSFT-research-20260623.md"
       ]
     },
     {
       "id": "entity:MU",
       "name": "MU",
-      "report_count": 1,
-      "tickers": [],
+      "report_count": 5,
+      "tickers": [
+        "MU"
+      ],
       "reports": [
-        "reports/MU/買前確認/20260825-MU-購買前確認.md"
+        "reports/MU/投資論點/MU-thesis.md",
+        "reports/MU/深度分析/MU-research-20260831.md",
+        "reports/MU/財報分析/MU-earnings-FY2026Q3.md",
+        "reports/MU/買前確認/MU-checklist-20260825.md",
+        "reports/MU/買前確認/MU-checklist-20260926.md"
       ]
     },
     {
@@ -245,47 +375,57 @@
         "NOW.US"
       ],
       "reports": [
-        "reports/NOW/深度分析/20260721-投研報告-NOW-research.md",
-        "reports/NOW/財報分析/20260724-財報精讀-NOW-2026Q2.md"
+        "reports/NOW/深度分析/NOW-research-20260721.md",
+        "reports/NOW/財報分析/NOW-earnings-2026Q2.md"
       ]
     },
     {
       "id": "entity:NVDA",
       "name": "NVDA",
-      "report_count": 23,
+      "report_count": 24,
       "tickers": [
         "NVDA"
       ],
       "reports": [
-        "reports/NVDA/估值分析/20260413-估值-NVDA-valuation.md",
-        "reports/NVDA/估值分析/20260420-估值-NVDA-財務估值分析.md",
+        "reports/NVDA/估值分析/NVDA-valuation-20260413.md",
+        "reports/NVDA/估值分析/NVDA-valuation-20260420.md",
         "reports/NVDA/公眾號文章/00-系列說明.md",
         "reports/NVDA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
         "reports/NVDA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
         "reports/NVDA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
         "reports/NVDA/公眾號文章/04-競爭與威脅-四面楚歌.md",
         "reports/NVDA/公眾號文章/05-風險估值與決策-終章.md",
-        "reports/NVDA/參考資料/資料-NVDA-段永平雪球發言-NVDA相關.md",
-        "reports/NVDA/團隊分析/最終報告-安全邊際-20260420.md",
-        "reports/NVDA/專題研究/20260413-專題-NVDA-反面證據.md",
-        "reports/NVDA/專題研究/20260419-專題-NVDA-自研晶片威脅.md",
-        "reports/NVDA/專題研究/20260424-專題-NVDA-CUDA護城河三問精簡版.md",
-        "reports/NVDA/專題研究/20260424-專題-NVDA-子報告1-訓練vs推理市場分化.md",
-        "reports/NVDA/專題研究/20260424-專題-NVDA-子報告2-NVDA推理護城河.md",
-        "reports/NVDA/專題研究/20260424-專題-NVDA-子報告3-CUDA護城河本質.md",
-        "reports/NVDA/專題研究/20260424-專題-NVDA-子報告4-AI程式設計對CUDA顛覆.md",
-        "reports/NVDA/專題研究/20260424-專題-NVDA-推理護城河與CUDA護城河.md",
-        "reports/NVDA/專題研究/20260426-專題-NVDA-安全墊分析.md",
-        "reports/NVDA/深度分析/20260408-投研報告-NVDA-research.md",
-        "reports/NVDA/深度分析/20260413-投研報告-NVDA-research.md",
-        "reports/NVDA/深度分析/20260830-投研報告-NVDA-research.md",
-        "reports/NVDA/財報分析/20260830-財報精讀-NVDA-FY2027Q2.md"
+        "reports/NVDA/參考資料/NVDA-reference-段永平雪球發言.md",
+        "reports/NVDA/團隊分析/最終報告.md",
+        "reports/NVDA/專題研究/NVDA-topic-20260413-反面證據.md",
+        "reports/NVDA/專題研究/NVDA-topic-20260419-自研晶片威脅.md",
+        "reports/NVDA/專題研究/NVDA-topic-20260424-CUDA護城河三問精簡版.md",
+        "reports/NVDA/專題研究/NVDA-topic-20260424-子報告1-訓練vs推理市場分化.md",
+        "reports/NVDA/專題研究/NVDA-topic-20260424-子報告2-推理護城河.md",
+        "reports/NVDA/專題研究/NVDA-topic-20260424-子報告3-CUDA護城河本質.md",
+        "reports/NVDA/專題研究/NVDA-topic-20260424-子報告4-AI程式設計對CUDA顛覆.md",
+        "reports/NVDA/專題研究/NVDA-topic-20260424-推理護城河與CUDA護城河.md",
+        "reports/NVDA/專題研究/NVDA-topic-20260426-安全墊分析.md",
+        "reports/NVDA/投資論點/NVDA-thesis.md",
+        "reports/NVDA/深度分析/NVDA-research-20260408.md",
+        "reports/NVDA/深度分析/NVDA-research-20260413.md",
+        "reports/NVDA/深度分析/NVDA-research-20260830.md",
+        "reports/NVDA/財報分析/NVDA-earnings-FY2027Q2.md"
+      ]
+    },
+    {
+      "id": "entity:OKLO",
+      "name": "OKLO",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/OKLO/深度分析/OKLO-research-20260907.md"
       ]
     },
     {
       "id": "entity:PGR",
       "name": "PGR",
-      "report_count": 9,
+      "report_count": 10,
       "tickers": [
         "PGR"
       ],
@@ -296,9 +436,19 @@
         "reports/PGR/公眾號文章/04-風險與估值-10倍PE到底貴不貴.md",
         "reports/PGR/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/PGR/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/PGR/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/PGR/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/PGR/團隊分析/04-風險管理層評估-李錄視角.md",
-        "reports/PGR/團隊分析/最終報告.md"
+        "reports/PGR/團隊分析/最終報告.md",
+        "reports/PGR/深度分析/PGR-research-20260901.md"
+      ]
+    },
+    {
+      "id": "entity:PRQR",
+      "name": "PRQR",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/PRQR/深度分析/PRQR-research-20260907.md"
       ]
     },
     {
@@ -309,15 +459,24 @@
         "PYPL"
       ],
       "reports": [
-        "reports/PYPL/公眾號文章/01-PYPL-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
-        "reports/PYPL/專題研究/20260608-專題-PYPL-vs-螞蟻集團-對比分析.md",
-        "reports/PYPL/深度分析/20260607-投研報告-PYPL-深度研究報告.md"
+        "reports/PYPL/公眾號文章/01-開篇-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
+        "reports/PYPL/專題研究/PYPL-topic-20260608-vs螞蟻集團對比分析.md",
+        "reports/PYPL/深度分析/PYPL-research-20260607.md"
+      ]
+    },
+    {
+      "id": "entity:QBTS",
+      "name": "QBTS",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/QBTS/深度分析/QBTS-research-20260907.md"
       ]
     },
     {
       "id": "entity:QCOM",
       "name": "QCOM",
-      "report_count": 9,
+      "report_count": 10,
       "tickers": [
         "QCOM"
       ],
@@ -328,21 +487,42 @@
         "reports/QCOM/公眾號文章/04-風險與估值-五重壓力下的價格判斷.md",
         "reports/QCOM/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/QCOM/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/QCOM/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/QCOM/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/QCOM/團隊分析/04-風險管理層評估-李錄視角.md",
-        "reports/QCOM/團隊分析/最終報告.md"
+        "reports/QCOM/團隊分析/最終報告.md",
+        "reports/QCOM/深度分析/QCOM-research-20260901.md"
+      ]
+    },
+    {
+      "id": "entity:RANI",
+      "name": "RANI",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/RANI/深度分析/RANI-research-20260907.md"
       ]
     },
     {
       "id": "entity:RDDT",
       "name": "RDDT",
-      "report_count": 2,
+      "report_count": 4,
       "tickers": [
         "RDDT"
       ],
       "reports": [
+        "reports/RDDT/投資論點/RDDT-thesis.md",
         "reports/RDDT/深度分析/RDDT-research-20260830.md",
-        "reports/RDDT/財報分析/RDDT-earnings-2026Q2.md"
+        "reports/RDDT/財報分析/RDDT-earnings-2026Q2.md",
+        "reports/RDDT/買前確認/RDDT-checklist-20260831.md"
+      ]
+    },
+    {
+      "id": "entity:RGTI",
+      "name": "RGTI",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/RGTI/深度分析/RGTI-research-20260907.md"
       ]
     },
     {
@@ -353,7 +533,34 @@
         "RKLB"
       ],
       "reports": [
-        "reports/RKLB/深度分析/投研報告-RKLB-investment-research.md"
+        "reports/RKLB/深度分析/RKLB-research-20260624.md"
+      ]
+    },
+    {
+      "id": "entity:SILC",
+      "name": "SILC",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/SILC/深度分析/SILC-research-20260907.md"
+      ]
+    },
+    {
+      "id": "entity:SLS",
+      "name": "SLS",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/SLS/深度分析/SLS-research-20260907.md"
+      ]
+    },
+    {
+      "id": "entity:SMR",
+      "name": "SMR",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/SMR/深度分析/SMR-research-20260907.md"
       ]
     },
     {
@@ -364,23 +571,27 @@
         "TSLA"
       ],
       "reports": [
-        "reports/TSLA/深度分析/20260624-投研報告-TSLA-research.md",
-        "reports/TSLA/深度分析/20260702-投研報告-TSLA-特斯拉投資研究報告.md"
+        "reports/TSLA/深度分析/TSLA-research-20260624.md",
+        "reports/TSLA/深度分析/TSLA-research-20260702.md"
       ]
     },
     {
       "id": "entity:TTWO",
       "name": "TTWO",
-      "report_count": 1,
-      "tickers": [],
+      "report_count": 3,
+      "tickers": [
+        "TTWO"
+      ],
       "reports": [
-        "reports/TTWO/深度分析/TTWO-research-20260827.md"
+        "reports/TTWO/投資論點/TTWO-thesis.md",
+        "reports/TTWO/深度分析/TTWO-research-20260827.md",
+        "reports/TTWO/財報分析/TTWO-earnings-FY2027Q1.md"
       ]
     },
     {
       "id": "entity:UBER",
       "name": "UBER",
-      "report_count": 10,
+      "report_count": 14,
       "tickers": [
         "UBER"
       ],
@@ -392,9 +603,22 @@
         "reports/UBER/公眾號文章/04-風險與估值-終章.md",
         "reports/UBER/團隊分析/01-商業模式分析-段永平視角.md",
         "reports/UBER/團隊分析/02-財務估值分析-巴菲特視角.md",
-        "reports/UBER/團隊分析/03-行業競爭分析-芒格視角.md",
+        "reports/UBER/團隊分析/03-產業競爭分析-蒙格視角.md",
         "reports/UBER/團隊分析/04-風險管理層評估-李錄視角.md",
-        "reports/UBER/團隊分析/最終報告.md"
+        "reports/UBER/團隊分析/最終報告.md",
+        "reports/UBER/投資論點/UBER-thesis.md",
+        "reports/UBER/深度分析/UBER-research-20260901.md",
+        "reports/UBER/財報分析/UBER-earnings-2026Q2.md",
+        "reports/UBER/買前確認/UBER-checklist-20260901.md"
+      ]
+    },
+    {
+      "id": "entity:VSTM",
+      "name": "VSTM",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/VSTM/深度分析/VSTM-research-20260907.md"
       ]
     },
     {
@@ -407,14 +631,47 @@
       ]
     },
     {
+      "id": "entity:WULF",
+      "name": "WULF",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/WULF/深度分析/WULF-research-20260907.md"
+      ]
+    },
+    {
+      "id": "entity:ZVRA",
+      "name": "ZVRA",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/ZVRA/深度分析/ZVRA-research-20260907.md"
+      ]
+    },
+    {
       "id": "entity:京元電子",
       "name": "京元電子",
-      "report_count": 1,
+      "report_count": 4,
       "tickers": [
+        "2449",
         "2449.TW"
       ],
       "reports": [
-        "reports/京元電子/深度分析/20260719-投研報告-京元電子-research.md"
+        "reports/京元電子/投資論點/京元電子-thesis.md",
+        "reports/京元電子/深度分析/京元電子-research-20260719.md",
+        "reports/京元電子/深度分析/京元電子-research-20260926.md",
+        "reports/京元電子/財報分析/京元電子-earnings-2026Q2.md"
+      ]
+    },
+    {
+      "id": "entity:訊芯-KY",
+      "name": "訊芯-KY",
+      "report_count": 1,
+      "tickers": [
+        "6451.TW"
+      ],
+      "reports": [
+        "reports/訊芯-KY/深度分析/訊芯-KY-research-20260831.md"
       ]
     }
   ],
@@ -502,18 +759,16 @@
       "bytes": 5585
     },
     {
-      "id": "reports/ACN/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/ACN/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/ACN/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/ACN/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "ACN",
       "type": "other",
       "skill": null,
       "date": null,
       "quarter": null,
       "ticker": "ACN",
-      "masters": [
-        "芒格"
-      ],
+      "masters": [],
       "bytes": 6440
     },
     {
@@ -543,6 +798,19 @@
       "ticker": "ACN",
       "masters": [],
       "bytes": 7298
+    },
+    {
+      "id": "reports/ACN/深度分析/ACN-research-20260901.md",
+      "path": "reports/ACN/深度分析/ACN-research-20260901.md",
+      "title": "ACN-research-20260901",
+      "entity": "ACN",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 52603
     },
     {
       "id": "reports/ADBE/公眾號文章/01-開篇-創意軟體帝國的關鍵資料.md",
@@ -627,18 +895,16 @@
       "bytes": 5621
     },
     {
-      "id": "reports/ADBE/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/ADBE/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/ADBE/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/ADBE/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "ADBE",
       "type": "other",
       "skill": null,
       "date": null,
       "quarter": null,
       "ticker": null,
-      "masters": [
-        "芒格"
-      ],
+      "masters": [],
       "bytes": 7092
     },
     {
@@ -670,9 +936,9 @@
       "bytes": 6553
     },
     {
-      "id": "reports/ADBE/深度分析/20260607-投研報告-ADBE-research.md",
-      "path": "reports/ADBE/深度分析/20260607-投研報告-ADBE-research.md",
-      "title": "20260607-投研報告-ADBE-research",
+      "id": "reports/ADBE/深度分析/ADBE-research-20260607.md",
+      "path": "reports/ADBE/深度分析/ADBE-research-20260607.md",
+      "title": "ADBE-research-20260607",
       "entity": "ADBE",
       "type": "research",
       "skill": null,
@@ -765,18 +1031,16 @@
       "bytes": 4550
     },
     {
-      "id": "reports/ADP/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/ADP/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/ADP/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/ADP/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "ADP",
       "type": "other",
       "skill": null,
       "date": null,
       "quarter": null,
       "ticker": null,
-      "masters": [
-        "芒格"
-      ],
+      "masters": [],
       "bytes": 6170
     },
     {
@@ -806,6 +1070,75 @@
       "ticker": null,
       "masters": [],
       "bytes": 5954
+    },
+    {
+      "id": "reports/ADP/深度分析/ADP-research-20260901.md",
+      "path": "reports/ADP/深度分析/ADP-research-20260901.md",
+      "title": "ADP-research-20260901",
+      "entity": "ADP",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 33922
+    },
+    {
+      "id": "reports/AMPX/深度分析/AMPX-research-20260907.md",
+      "path": "reports/AMPX/深度分析/AMPX-research-20260907.md",
+      "title": "AMPX-research-20260907",
+      "entity": "AMPX",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 22810
+    },
+    {
+      "id": "reports/AVGO/投資論點/AVGO-thesis.md",
+      "path": "reports/AVGO/投資論點/AVGO-thesis.md",
+      "title": "AVGO-thesis",
+      "entity": "AVGO",
+      "type": "thesis",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "AVGO",
+      "masters": [],
+      "bytes": 4682
+    },
+    {
+      "id": "reports/AVGO/深度分析/AVGO-research-20260904.md",
+      "path": "reports/AVGO/深度分析/AVGO-research-20260904.md",
+      "title": "AVGO-research-20260904",
+      "entity": "AVGO",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-04",
+      "quarter": null,
+      "ticker": "AVGO",
+      "masters": [],
+      "bytes": 15980
+    },
+    {
+      "id": "reports/AVGO/財報分析/AVGO-earnings-FY2026Q3.md",
+      "path": "reports/AVGO/財報分析/AVGO-earnings-FY2026Q3.md",
+      "title": "AVGO-earnings-FY2026Q3",
+      "entity": "AVGO",
+      "type": "earnings",
+      "skill": null,
+      "date": null,
+      "quarter": "2026Q3",
+      "ticker": "AVGO",
+      "masters": [],
+      "bytes": 7910
     },
     {
       "id": "reports/BKNG/公眾號文章/01-開篇-全球最大的旅行撮合機器.md",
@@ -890,18 +1223,16 @@
       "bytes": 6823
     },
     {
-      "id": "reports/BKNG/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/BKNG/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/BKNG/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/BKNG/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "BKNG",
       "type": "other",
       "skill": null,
       "date": null,
       "quarter": null,
       "ticker": "BKNG",
-      "masters": [
-        "芒格"
-      ],
+      "masters": [],
       "bytes": 7458
     },
     {
@@ -933,9 +1264,65 @@
       "bytes": 8182
     },
     {
-      "id": "reports/GEV/深度分析/20260623-投研報告-GEV-research.md",
-      "path": "reports/GEV/深度分析/20260623-投研報告-GEV-research.md",
-      "title": "20260623-投研報告-GEV-research",
+      "id": "reports/BKNG/深度分析/BKNG-research-20260901.md",
+      "path": "reports/BKNG/深度分析/BKNG-research-20260901.md",
+      "title": "BKNG-research-20260901",
+      "entity": "BKNG",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 37798
+    },
+    {
+      "id": "reports/CAPR/深度分析/CAPR-research-20260907.md",
+      "path": "reports/CAPR/深度分析/CAPR-research-20260907.md",
+      "title": "CAPR-research-20260907",
+      "entity": "CAPR",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 16071
+    },
+    {
+      "id": "reports/CNTB/深度分析/CNTB-research-20260907.md",
+      "path": "reports/CNTB/深度分析/CNTB-research-20260907.md",
+      "title": "CNTB-research-20260907",
+      "entity": "CNTB",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 20785
+    },
+    {
+      "id": "reports/EOSE/深度分析/EOSE-research-20260907.md",
+      "path": "reports/EOSE/深度分析/EOSE-research-20260907.md",
+      "title": "EOSE-research-20260907",
+      "entity": "EOSE",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 21363
+    },
+    {
+      "id": "reports/GEV/深度分析/GEV-research-20260623.md",
+      "path": "reports/GEV/深度分析/GEV-research-20260623.md",
+      "title": "GEV-research-20260623",
       "entity": "GEV",
       "type": "research",
       "skill": null,
@@ -951,9 +1338,35 @@
       "bytes": 33339
     },
     {
-      "id": "reports/GOOGL/深度分析/20260623-投研報告-GOOGL-Alphabet投資研究報告.md",
-      "path": "reports/GOOGL/深度分析/20260623-投研報告-GOOGL-Alphabet投資研究報告.md",
-      "title": "20260623-投研報告-GOOGL-Alphabet投資研究報告",
+      "id": "reports/GFS/深度分析/GFS-research-20260923.md",
+      "path": "reports/GFS/深度分析/GFS-research-20260923.md",
+      "title": "GFS-research-20260923",
+      "entity": "GFS",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-23",
+      "quarter": null,
+      "ticker": "GFS",
+      "masters": [],
+      "bytes": 27468
+    },
+    {
+      "id": "reports/GFS/財報分析/GFS-earnings-2026Q2.md",
+      "path": "reports/GFS/財報分析/GFS-earnings-2026Q2.md",
+      "title": "GFS-earnings-2026Q2",
+      "entity": "GFS",
+      "type": "earnings",
+      "skill": null,
+      "date": null,
+      "quarter": "2026Q2",
+      "ticker": "GFS",
+      "masters": [],
+      "bytes": 20458
+    },
+    {
+      "id": "reports/GOOGL/深度分析/GOOGL-research-20260623.md",
+      "path": "reports/GOOGL/深度分析/GOOGL-research-20260623.md",
+      "title": "GOOGL-research-20260623",
       "entity": "GOOGL",
       "type": "research",
       "skill": null,
@@ -964,12 +1377,38 @@
       "bytes": 25590
     },
     {
-      "id": "reports/INTC/深度分析/20260623-投研報告-INTC-investment-research.md",
-      "path": "reports/INTC/深度分析/20260623-投研報告-INTC-investment-research.md",
-      "title": "20260623-投研報告-INTC-investment-research",
+      "id": "reports/GOSS/深度分析/GOSS-research-20260907.md",
+      "path": "reports/GOSS/深度分析/GOSS-research-20260907.md",
+      "title": "GOSS-research-20260907",
+      "entity": "GOSS",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 15466
+    },
+    {
+      "id": "reports/INO/深度分析/INO-research-20260907.md",
+      "path": "reports/INO/深度分析/INO-research-20260907.md",
+      "title": "INO-research-20260907",
+      "entity": "INO",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 14668
+    },
+    {
+      "id": "reports/INTC/深度分析/INTC-research-20260623.md",
+      "path": "reports/INTC/深度分析/INTC-research-20260623.md",
+      "title": "INTC-research-20260623",
       "entity": "INTC",
       "type": "research",
-      "skill": "investment-research",
+      "skill": null,
       "date": "2026-06-23",
       "quarter": null,
       "ticker": null,
@@ -982,11 +1421,11 @@
       "bytes": 26129
     },
     {
-      "id": "reports/INTC/買前確認/20260825-INTC-購買前確認.md",
-      "path": "reports/INTC/買前確認/20260825-INTC-購買前確認.md",
-      "title": "20260825-INTC-購買前確認",
+      "id": "reports/INTC/買前確認/INTC-checklist-20260825.md",
+      "path": "reports/INTC/買前確認/INTC-checklist-20260825.md",
+      "title": "INTC-checklist-20260825",
       "entity": "INTC",
-      "type": "other",
+      "type": "checklist",
       "skill": null,
       "date": "2026-08-25",
       "quarter": null,
@@ -996,7 +1435,46 @@
         "段永平",
         "李錄"
       ],
-      "bytes": 26614
+      "bytes": 26592
+    },
+    {
+      "id": "reports/IREN/深度分析/IREN-research-20260907.md",
+      "path": "reports/IREN/深度分析/IREN-research-20260907.md",
+      "title": "IREN-research-20260907",
+      "entity": "IREN",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 16798
+    },
+    {
+      "id": "reports/IVA/深度分析/IVA-research-20260907.md",
+      "path": "reports/IVA/深度分析/IVA-research-20260907.md",
+      "title": "IVA-research-20260907",
+      "entity": "IVA",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 21087
+    },
+    {
+      "id": "reports/KYTX/深度分析/KYTX-research-20260907.md",
+      "path": "reports/KYTX/深度分析/KYTX-research-20260907.md",
+      "title": "KYTX-research-20260907",
+      "entity": "KYTX",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 19846
     },
     {
       "id": "reports/LULU/公眾號文章/00-系列說明.md",
@@ -1094,18 +1572,16 @@
       "bytes": 6341
     },
     {
-      "id": "reports/LULU/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/LULU/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/LULU/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/LULU/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "LULU",
       "type": "other",
       "skill": null,
       "date": null,
       "quarter": null,
       "ticker": null,
-      "masters": [
-        "芒格"
-      ],
+      "masters": [],
       "bytes": 7753
     },
     {
@@ -1137,9 +1613,9 @@
       "bytes": 6295
     },
     {
-      "id": "reports/LULU/深度分析/20260516-投研報告-LULU-research.md",
-      "path": "reports/LULU/深度分析/20260516-投研報告-LULU-research.md",
-      "title": "20260516-投研報告-LULU-research",
+      "id": "reports/LULU/深度分析/LULU-research-20260516.md",
+      "path": "reports/LULU/深度分析/LULU-research-20260516.md",
+      "title": "LULU-research-20260516",
       "entity": "LULU",
       "type": "research",
       "skill": null,
@@ -1258,18 +1734,16 @@
       "bytes": 4884
     },
     {
-      "id": "reports/MA/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/MA/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/MA/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/MA/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "MA",
       "type": "other",
       "skill": null,
       "date": null,
       "quarter": null,
       "ticker": "MA",
-      "masters": [
-        "芒格"
-      ],
+      "masters": [],
       "bytes": 5753
     },
     {
@@ -1299,6 +1773,70 @@
       "ticker": "MA",
       "masters": [],
       "bytes": 7086
+    },
+    {
+      "id": "reports/MA/深度分析/MA-research-20260901.md",
+      "path": "reports/MA/深度分析/MA-research-20260901.md",
+      "title": "MA-research-20260901",
+      "entity": "MA",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 44442
+    },
+    {
+      "id": "reports/MCD/深度分析/MCD-research-20260923.md",
+      "path": "reports/MCD/深度分析/MCD-research-20260923.md",
+      "title": "MCD-research-20260923",
+      "entity": "MCD",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-23",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 24531
+    },
+    {
+      "id": "reports/MCD/財報分析/MCD-earnings-2026Q2.md",
+      "path": "reports/MCD/財報分析/MCD-earnings-2026Q2.md",
+      "title": "MCD-earnings-2026Q2",
+      "entity": "MCD",
+      "type": "earnings",
+      "skill": null,
+      "date": null,
+      "quarter": "2026Q2",
+      "ticker": "MCD",
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 14357
+    },
+    {
+      "id": "reports/MCD/買前確認/MCD-checklist-20260923.md",
+      "path": "reports/MCD/買前確認/MCD-checklist-20260923.md",
+      "title": "MCD-checklist-20260923",
+      "entity": "MCD",
+      "type": "checklist",
+      "skill": null,
+      "date": "2026-09-23",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 14232
     },
     {
       "id": "reports/META/公眾號文章/01-開篇-社交廣告帝國的關鍵資料.md",
@@ -1396,9 +1934,9 @@
       "bytes": 5327
     },
     {
-      "id": "reports/META/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/META/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/META/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/META/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "META",
       "type": "other",
       "skill": null,
@@ -1437,6 +1975,23 @@
       "ticker": "META",
       "masters": [],
       "bytes": 8263
+    },
+    {
+      "id": "reports/META/深度分析/META-research-20260901.md",
+      "path": "reports/META/深度分析/META-research-20260901.md",
+      "title": "META-research-20260901",
+      "entity": "META",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 38293
     },
     {
       "id": "reports/MRVL/公眾號文章/01-開篇-定製晶片賽道的關鍵玩家.md",
@@ -1491,9 +2046,9 @@
       "bytes": 15956
     },
     {
-      "id": "reports/MRVL/深度分析/20260516-投研報告-MRVL-research.md",
-      "path": "reports/MRVL/深度分析/20260516-投研報告-MRVL-research.md",
-      "title": "20260516-投研報告-MRVL-research",
+      "id": "reports/MRVL/深度分析/MRVL-research-20260516.md",
+      "path": "reports/MRVL/深度分析/MRVL-research-20260516.md",
+      "title": "MRVL-research-20260516",
       "entity": "MRVL",
       "type": "research",
       "skill": null,
@@ -1509,12 +2064,12 @@
       "bytes": 22945
     },
     {
-      "id": "reports/MRVL/深度分析/20260624-投研報告-MRVL-investment-research.md",
-      "path": "reports/MRVL/深度分析/20260624-投研報告-MRVL-investment-research.md",
-      "title": "20260624-投研報告-MRVL-investment-research",
+      "id": "reports/MRVL/深度分析/MRVL-research-20260624.md",
+      "path": "reports/MRVL/深度分析/MRVL-research-20260624.md",
+      "title": "MRVL-research-20260624",
       "entity": "MRVL",
       "type": "research",
-      "skill": "investment-research",
+      "skill": null,
       "date": "2026-06-24",
       "quarter": null,
       "ticker": null,
@@ -1527,9 +2082,9 @@
       "bytes": 26679
     },
     {
-      "id": "reports/MSFT/深度分析/20260623-投研報告-MSFT-research.md",
-      "path": "reports/MSFT/深度分析/20260623-投研報告-MSFT-research.md",
-      "title": "20260623-投研報告-MSFT-research",
+      "id": "reports/MSFT/深度分析/MSFT-research-20260623.md",
+      "path": "reports/MSFT/深度分析/MSFT-research-20260623.md",
+      "title": "MSFT-research-20260623",
       "entity": "MSFT",
       "type": "research",
       "skill": null,
@@ -1545,11 +2100,54 @@
       "bytes": 37537
     },
     {
-      "id": "reports/MU/買前確認/20260825-MU-購買前確認.md",
-      "path": "reports/MU/買前確認/20260825-MU-購買前確認.md",
-      "title": "20260825-MU-購買前確認",
+      "id": "reports/MU/投資論點/MU-thesis.md",
+      "path": "reports/MU/投資論點/MU-thesis.md",
+      "title": "MU-thesis",
       "entity": "MU",
-      "type": "other",
+      "type": "thesis",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 20191
+    },
+    {
+      "id": "reports/MU/深度分析/MU-research-20260831.md",
+      "path": "reports/MU/深度分析/MU-research-20260831.md",
+      "title": "MU-research-20260831",
+      "entity": "MU",
+      "type": "research",
+      "skill": null,
+      "date": "2026-08-31",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 46887
+    },
+    {
+      "id": "reports/MU/財報分析/MU-earnings-FY2026Q3.md",
+      "path": "reports/MU/財報分析/MU-earnings-FY2026Q3.md",
+      "title": "MU-earnings-FY2026Q3",
+      "entity": "MU",
+      "type": "earnings",
+      "skill": null,
+      "date": null,
+      "quarter": "2026Q3",
+      "ticker": "MU",
+      "masters": [],
+      "bytes": 72416
+    },
+    {
+      "id": "reports/MU/買前確認/MU-checklist-20260825.md",
+      "path": "reports/MU/買前確認/MU-checklist-20260825.md",
+      "title": "MU-checklist-20260825",
+      "entity": "MU",
+      "type": "checklist",
       "skill": null,
       "date": "2026-08-25",
       "quarter": null,
@@ -1562,9 +2160,22 @@
       "bytes": 36520
     },
     {
-      "id": "reports/NOW/深度分析/20260721-投研報告-NOW-research.md",
-      "path": "reports/NOW/深度分析/20260721-投研報告-NOW-research.md",
-      "title": "20260721-投研報告-NOW-research",
+      "id": "reports/MU/買前確認/MU-checklist-20260926.md",
+      "path": "reports/MU/買前確認/MU-checklist-20260926.md",
+      "title": "MU-checklist-20260926",
+      "entity": "MU",
+      "type": "checklist",
+      "skill": null,
+      "date": "2026-09-26",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 34945
+    },
+    {
+      "id": "reports/NOW/深度分析/NOW-research-20260721.md",
+      "path": "reports/NOW/深度分析/NOW-research-20260721.md",
+      "title": "NOW-research-20260721",
       "entity": "NOW",
       "type": "research",
       "skill": null,
@@ -1577,25 +2188,25 @@
         "段永平",
         "李錄"
       ],
-      "bytes": 24743
+      "bytes": 24703
     },
     {
-      "id": "reports/NOW/財報分析/20260724-財報精讀-NOW-2026Q2.md",
-      "path": "reports/NOW/財報分析/20260724-財報精讀-NOW-2026Q2.md",
-      "title": "20260724-財報精讀-NOW-2026Q2",
+      "id": "reports/NOW/財報分析/NOW-earnings-2026Q2.md",
+      "path": "reports/NOW/財報分析/NOW-earnings-2026Q2.md",
+      "title": "NOW-earnings-2026Q2",
       "entity": "NOW",
       "type": "earnings",
       "skill": null,
-      "date": "2026-07-24",
+      "date": null,
       "quarter": "2026Q2",
       "ticker": "NOW.US",
       "masters": [],
       "bytes": 16854
     },
     {
-      "id": "reports/NVDA/估值分析/20260413-估值-NVDA-valuation.md",
-      "path": "reports/NVDA/估值分析/20260413-估值-NVDA-valuation.md",
-      "title": "20260413-估值-NVDA-valuation",
+      "id": "reports/NVDA/估值分析/NVDA-valuation-20260413.md",
+      "path": "reports/NVDA/估值分析/NVDA-valuation-20260413.md",
+      "title": "NVDA-valuation-20260413",
       "entity": "NVDA",
       "type": "valuation",
       "skill": null,
@@ -1603,12 +2214,12 @@
       "quarter": null,
       "ticker": "NVDA",
       "masters": [],
-      "bytes": 6908
+      "bytes": 7396
     },
     {
-      "id": "reports/NVDA/估值分析/20260420-估值-NVDA-財務估值分析.md",
-      "path": "reports/NVDA/估值分析/20260420-估值-NVDA-財務估值分析.md",
-      "title": "20260420-估值-NVDA-財務估值分析",
+      "id": "reports/NVDA/估值分析/NVDA-valuation-20260420.md",
+      "path": "reports/NVDA/估值分析/NVDA-valuation-20260420.md",
+      "title": "NVDA-valuation-20260420",
       "entity": "NVDA",
       "type": "valuation",
       "skill": null,
@@ -1618,7 +2229,7 @@
       "masters": [
         "巴菲特"
       ],
-      "bytes": 14865
+      "bytes": 15353
     },
     {
       "id": "reports/NVDA/公眾號文章/00-系列說明.md",
@@ -1631,7 +2242,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 3129
+      "bytes": 3617
     },
     {
       "id": "reports/NVDA/公眾號文章/01-開篇-AI時代的賣鏟人.md",
@@ -1644,7 +2255,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 7976
+      "bytes": 8464
     },
     {
       "id": "reports/NVDA/公眾號文章/02-商業本質-一座19年建成的軟體城堡.md",
@@ -1657,7 +2268,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 11176
+      "bytes": 11664
     },
     {
       "id": "reports/NVDA/公眾號文章/03-訓練與推理-兩個不同的戰場.md",
@@ -1670,7 +2281,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 11149
+      "bytes": 11637
     },
     {
       "id": "reports/NVDA/公眾號文章/04-競爭與威脅-四面楚歌.md",
@@ -1683,7 +2294,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 11701
+      "bytes": 12189
     },
     {
       "id": "reports/NVDA/公眾號文章/05-風險估值與決策-終章.md",
@@ -1696,12 +2307,12 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 14250
+      "bytes": 14738
     },
     {
-      "id": "reports/NVDA/參考資料/資料-NVDA-段永平雪球發言-NVDA相關.md",
-      "path": "reports/NVDA/參考資料/資料-NVDA-段永平雪球發言-NVDA相關.md",
-      "title": "資料-NVDA-段永平雪球發言-NVDA相關",
+      "id": "reports/NVDA/參考資料/NVDA-reference-段永平雪球發言.md",
+      "path": "reports/NVDA/參考資料/NVDA-reference-段永平雪球發言.md",
+      "title": "NVDA-reference-段永平雪球發言",
       "entity": "NVDA",
       "type": "other",
       "skill": null,
@@ -1714,13 +2325,13 @@
       "bytes": 62203
     },
     {
-      "id": "reports/NVDA/團隊分析/最終報告-安全邊際-20260420.md",
-      "path": "reports/NVDA/團隊分析/最終報告-安全邊際-20260420.md",
-      "title": "最終報告-安全邊際-20260420",
+      "id": "reports/NVDA/團隊分析/最終報告.md",
+      "path": "reports/NVDA/團隊分析/最終報告.md",
+      "title": "最終報告",
       "entity": "NVDA",
       "type": "team",
       "skill": null,
-      "date": "2026-04-20",
+      "date": null,
       "quarter": null,
       "ticker": "NVDA",
       "masters": [
@@ -1729,12 +2340,12 @@
         "段永平",
         "李錄"
       ],
-      "bytes": 11885
+      "bytes": 12409
     },
     {
-      "id": "reports/NVDA/專題研究/20260413-專題-NVDA-反面證據.md",
-      "path": "reports/NVDA/專題研究/20260413-專題-NVDA-反面證據.md",
-      "title": "20260413-專題-NVDA-反面證據",
+      "id": "reports/NVDA/專題研究/NVDA-topic-20260413-反面證據.md",
+      "path": "reports/NVDA/專題研究/NVDA-topic-20260413-反面證據.md",
+      "title": "NVDA-topic-20260413-反面證據",
       "entity": "NVDA",
       "type": "other",
       "skill": null,
@@ -1742,12 +2353,12 @@
       "quarter": null,
       "ticker": "NVDA",
       "masters": [],
-      "bytes": 25177
+      "bytes": 25665
     },
     {
-      "id": "reports/NVDA/專題研究/20260419-專題-NVDA-自研晶片威脅.md",
-      "path": "reports/NVDA/專題研究/20260419-專題-NVDA-自研晶片威脅.md",
-      "title": "20260419-專題-NVDA-自研晶片威脅",
+      "id": "reports/NVDA/專題研究/NVDA-topic-20260419-自研晶片威脅.md",
+      "path": "reports/NVDA/專題研究/NVDA-topic-20260419-自研晶片威脅.md",
+      "title": "NVDA-topic-20260419-自研晶片威脅",
       "entity": "NVDA",
       "type": "other",
       "skill": null,
@@ -1755,12 +2366,12 @@
       "quarter": null,
       "ticker": "NVDA",
       "masters": [],
-      "bytes": 31965
+      "bytes": 32461
     },
     {
-      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-CUDA護城河三問精簡版.md",
-      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-CUDA護城河三問精簡版.md",
-      "title": "20260424-專題-NVDA-CUDA護城河三問精簡版",
+      "id": "reports/NVDA/專題研究/NVDA-topic-20260424-CUDA護城河三問精簡版.md",
+      "path": "reports/NVDA/專題研究/NVDA-topic-20260424-CUDA護城河三問精簡版.md",
+      "title": "NVDA-topic-20260424-CUDA護城河三問精簡版",
       "entity": "NVDA",
       "type": "other",
       "skill": null,
@@ -1768,12 +2379,12 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 5107
+      "bytes": 5595
     },
     {
-      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告1-訓練vs推理市場分化.md",
-      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告1-訓練vs推理市場分化.md",
-      "title": "20260424-專題-NVDA-子報告1-訓練vs推理市場分化",
+      "id": "reports/NVDA/專題研究/NVDA-topic-20260424-子報告1-訓練vs推理市場分化.md",
+      "path": "reports/NVDA/專題研究/NVDA-topic-20260424-子報告1-訓練vs推理市場分化.md",
+      "title": "NVDA-topic-20260424-子報告1-訓練vs推理市場分化",
       "entity": "NVDA",
       "type": "comparison",
       "skill": null,
@@ -1781,12 +2392,12 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 9808
+      "bytes": 10296
     },
     {
-      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告2-NVDA推理護城河.md",
-      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告2-NVDA推理護城河.md",
-      "title": "20260424-專題-NVDA-子報告2-NVDA推理護城河",
+      "id": "reports/NVDA/專題研究/NVDA-topic-20260424-子報告2-推理護城河.md",
+      "path": "reports/NVDA/專題研究/NVDA-topic-20260424-子報告2-推理護城河.md",
+      "title": "NVDA-topic-20260424-子報告2-推理護城河",
       "entity": "NVDA",
       "type": "other",
       "skill": null,
@@ -1794,12 +2405,12 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 9449
+      "bytes": 9937
     },
     {
-      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告3-CUDA護城河本質.md",
-      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告3-CUDA護城河本質.md",
-      "title": "20260424-專題-NVDA-子報告3-CUDA護城河本質",
+      "id": "reports/NVDA/專題研究/NVDA-topic-20260424-子報告3-CUDA護城河本質.md",
+      "path": "reports/NVDA/專題研究/NVDA-topic-20260424-子報告3-CUDA護城河本質.md",
+      "title": "NVDA-topic-20260424-子報告3-CUDA護城河本質",
       "entity": "NVDA",
       "type": "other",
       "skill": null,
@@ -1807,12 +2418,12 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 8853
+      "bytes": 9341
     },
     {
-      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告4-AI程式設計對CUDA顛覆.md",
-      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-子報告4-AI程式設計對CUDA顛覆.md",
-      "title": "20260424-專題-NVDA-子報告4-AI程式設計對CUDA顛覆",
+      "id": "reports/NVDA/專題研究/NVDA-topic-20260424-子報告4-AI程式設計對CUDA顛覆.md",
+      "path": "reports/NVDA/專題研究/NVDA-topic-20260424-子報告4-AI程式設計對CUDA顛覆.md",
+      "title": "NVDA-topic-20260424-子報告4-AI程式設計對CUDA顛覆",
       "entity": "NVDA",
       "type": "other",
       "skill": null,
@@ -1820,12 +2431,12 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 9493
+      "bytes": 9981
     },
     {
-      "id": "reports/NVDA/專題研究/20260424-專題-NVDA-推理護城河與CUDA護城河.md",
-      "path": "reports/NVDA/專題研究/20260424-專題-NVDA-推理護城河與CUDA護城河.md",
-      "title": "20260424-專題-NVDA-推理護城河與CUDA護城河",
+      "id": "reports/NVDA/專題研究/NVDA-topic-20260424-推理護城河與CUDA護城河.md",
+      "path": "reports/NVDA/專題研究/NVDA-topic-20260424-推理護城河與CUDA護城河.md",
+      "title": "NVDA-topic-20260424-推理護城河與CUDA護城河",
       "entity": "NVDA",
       "type": "other",
       "skill": null,
@@ -1833,12 +2444,12 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 14723
+      "bytes": 15211
     },
     {
-      "id": "reports/NVDA/專題研究/20260426-專題-NVDA-安全墊分析.md",
-      "path": "reports/NVDA/專題研究/20260426-專題-NVDA-安全墊分析.md",
-      "title": "20260426-專題-NVDA-安全墊分析",
+      "id": "reports/NVDA/專題研究/NVDA-topic-20260426-安全墊分析.md",
+      "path": "reports/NVDA/專題研究/NVDA-topic-20260426-安全墊分析.md",
+      "title": "NVDA-topic-20260426-安全墊分析",
       "entity": "NVDA",
       "type": "other",
       "skill": null,
@@ -1849,12 +2460,27 @@
         "巴菲特",
         "段永平"
       ],
-      "bytes": 20518
+      "bytes": 20942
     },
     {
-      "id": "reports/NVDA/深度分析/20260408-投研報告-NVDA-research.md",
-      "path": "reports/NVDA/深度分析/20260408-投研報告-NVDA-research.md",
-      "title": "20260408-投研報告-NVDA-research",
+      "id": "reports/NVDA/投資論點/NVDA-thesis.md",
+      "path": "reports/NVDA/投資論點/NVDA-thesis.md",
+      "title": "NVDA-thesis",
+      "entity": "NVDA",
+      "type": "thesis",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "李錄"
+      ],
+      "bytes": 19841
+    },
+    {
+      "id": "reports/NVDA/深度分析/NVDA-research-20260408.md",
+      "path": "reports/NVDA/深度分析/NVDA-research-20260408.md",
+      "title": "NVDA-research-20260408",
       "entity": "NVDA",
       "type": "research",
       "skill": null,
@@ -1867,12 +2493,12 @@
         "段永平",
         "李錄"
       ],
-      "bytes": 10973
+      "bytes": 11461
     },
     {
-      "id": "reports/NVDA/深度分析/20260413-投研報告-NVDA-research.md",
-      "path": "reports/NVDA/深度分析/20260413-投研報告-NVDA-research.md",
-      "title": "20260413-投研報告-NVDA-research",
+      "id": "reports/NVDA/深度分析/NVDA-research-20260413.md",
+      "path": "reports/NVDA/深度分析/NVDA-research-20260413.md",
+      "title": "NVDA-research-20260413",
       "entity": "NVDA",
       "type": "research",
       "skill": null,
@@ -1885,12 +2511,12 @@
         "段永平",
         "李錄"
       ],
-      "bytes": 20201
+      "bytes": 20689
     },
     {
-      "id": "reports/NVDA/深度分析/20260830-投研報告-NVDA-research.md",
-      "path": "reports/NVDA/深度分析/20260830-投研報告-NVDA-research.md",
-      "title": "20260830-投研報告-NVDA-research",
+      "id": "reports/NVDA/深度分析/NVDA-research-20260830.md",
+      "path": "reports/NVDA/深度分析/NVDA-research-20260830.md",
+      "title": "NVDA-research-20260830",
       "entity": "NVDA",
       "type": "research",
       "skill": null,
@@ -1905,19 +2531,30 @@
       "bytes": 52192
     },
     {
-      "id": "reports/NVDA/財報分析/20260830-財報精讀-NVDA-FY2027Q2.md",
-      "path": "reports/NVDA/財報分析/20260830-財報精讀-NVDA-FY2027Q2.md",
-      "title": "20260830-財報精讀-NVDA-FY2027Q2",
+      "id": "reports/NVDA/財報分析/NVDA-earnings-FY2027Q2.md",
+      "path": "reports/NVDA/財報分析/NVDA-earnings-FY2027Q2.md",
+      "title": "NVDA-earnings-FY2027Q2",
       "entity": "NVDA",
       "type": "earnings",
       "skill": null,
-      "date": "2026-08-30",
+      "date": null,
       "quarter": "2027Q2",
       "ticker": "NVDA",
-      "masters": [
-        "李錄"
-      ],
-      "bytes": 37322
+      "masters": [],
+      "bytes": 112742
+    },
+    {
+      "id": "reports/OKLO/深度分析/OKLO-research-20260907.md",
+      "path": "reports/OKLO/深度分析/OKLO-research-20260907.md",
+      "title": "OKLO-research-20260907",
+      "entity": "OKLO",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 17998
     },
     {
       "id": "reports/PGR/公眾號文章/01-開篇-美國車險之王的誕生.md",
@@ -2002,18 +2639,16 @@
       "bytes": 5665
     },
     {
-      "id": "reports/PGR/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/PGR/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/PGR/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/PGR/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "PGR",
       "type": "other",
       "skill": null,
       "date": null,
       "quarter": null,
       "ticker": "PGR",
-      "masters": [
-        "芒格"
-      ],
+      "masters": [],
       "bytes": 6277
     },
     {
@@ -2045,9 +2680,35 @@
       "bytes": 6666
     },
     {
-      "id": "reports/PYPL/公眾號文章/01-PYPL-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
-      "path": "reports/PYPL/公眾號文章/01-PYPL-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
-      "title": "01-PYPL-8倍PE的支付巨頭是撿便宜還是接飛刀",
+      "id": "reports/PGR/深度分析/PGR-research-20260901.md",
+      "path": "reports/PGR/深度分析/PGR-research-20260901.md",
+      "title": "PGR-research-20260901",
+      "entity": "PGR",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 32496
+    },
+    {
+      "id": "reports/PRQR/深度分析/PRQR-research-20260907.md",
+      "path": "reports/PRQR/深度分析/PRQR-research-20260907.md",
+      "title": "PRQR-research-20260907",
+      "entity": "PRQR",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 22085
+    },
+    {
+      "id": "reports/PYPL/公眾號文章/01-開篇-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
+      "path": "reports/PYPL/公眾號文章/01-開篇-8倍PE的支付巨頭是撿便宜還是接飛刀.md",
+      "title": "01-開篇-8倍PE的支付巨頭是撿便宜還是接飛刀",
       "entity": "PYPL",
       "type": "other",
       "skill": null,
@@ -2058,9 +2719,9 @@
       "bytes": 7590
     },
     {
-      "id": "reports/PYPL/專題研究/20260608-專題-PYPL-vs-螞蟻集團-對比分析.md",
-      "path": "reports/PYPL/專題研究/20260608-專題-PYPL-vs-螞蟻集團-對比分析.md",
-      "title": "20260608-專題-PYPL-vs-螞蟻集團-對比分析",
+      "id": "reports/PYPL/專題研究/PYPL-topic-20260608-vs螞蟻集團對比分析.md",
+      "path": "reports/PYPL/專題研究/PYPL-topic-20260608-vs螞蟻集團對比分析.md",
+      "title": "PYPL-topic-20260608-vs螞蟻集團對比分析",
       "entity": "PYPL",
       "type": "comparison",
       "skill": null,
@@ -2071,9 +2732,9 @@
       "bytes": 4642
     },
     {
-      "id": "reports/PYPL/深度分析/20260607-投研報告-PYPL-深度研究報告.md",
-      "path": "reports/PYPL/深度分析/20260607-投研報告-PYPL-深度研究報告.md",
-      "title": "20260607-投研報告-PYPL-深度研究報告",
+      "id": "reports/PYPL/深度分析/PYPL-research-20260607.md",
+      "path": "reports/PYPL/深度分析/PYPL-research-20260607.md",
+      "title": "PYPL-research-20260607",
       "entity": "PYPL",
       "type": "research",
       "skill": null,
@@ -2082,6 +2743,19 @@
       "ticker": "PYPL",
       "masters": [],
       "bytes": 15819
+    },
+    {
+      "id": "reports/QBTS/深度分析/QBTS-research-20260907.md",
+      "path": "reports/QBTS/深度分析/QBTS-research-20260907.md",
+      "title": "QBTS-research-20260907",
+      "entity": "QBTS",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 18553
     },
     {
       "id": "reports/QCOM/公眾號文章/01-開篇-移動晶片之王的真面目.md",
@@ -2166,18 +2840,16 @@
       "bytes": 5331
     },
     {
-      "id": "reports/QCOM/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/QCOM/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/QCOM/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/QCOM/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "QCOM",
       "type": "other",
       "skill": null,
       "date": null,
       "quarter": null,
       "ticker": "QCOM",
-      "masters": [
-        "芒格"
-      ],
+      "masters": [],
       "bytes": 6618
     },
     {
@@ -2209,6 +2881,45 @@
       "bytes": 7098
     },
     {
+      "id": "reports/QCOM/深度分析/QCOM-research-20260901.md",
+      "path": "reports/QCOM/深度分析/QCOM-research-20260901.md",
+      "title": "QCOM-research-20260901",
+      "entity": "QCOM",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 37459
+    },
+    {
+      "id": "reports/RANI/深度分析/RANI-research-20260907.md",
+      "path": "reports/RANI/深度分析/RANI-research-20260907.md",
+      "title": "RANI-research-20260907",
+      "entity": "RANI",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 21114
+    },
+    {
+      "id": "reports/RDDT/投資論點/RDDT-thesis.md",
+      "path": "reports/RDDT/投資論點/RDDT-thesis.md",
+      "title": "RDDT-thesis",
+      "entity": "RDDT",
+      "type": "thesis",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "RDDT",
+      "masters": [],
+      "bytes": 5089
+    },
+    {
       "id": "reports/RDDT/深度分析/RDDT-research-20260830.md",
       "path": "reports/RDDT/深度分析/RDDT-research-20260830.md",
       "title": "RDDT-research-20260830",
@@ -2223,7 +2934,7 @@
         "段永平",
         "李錄"
       ],
-      "bytes": 54645
+      "bytes": 55669
     },
     {
       "id": "reports/RDDT/財報分析/RDDT-earnings-2026Q2.md",
@@ -2240,16 +2951,44 @@
         "段永平",
         "李錄"
       ],
-      "bytes": 32561
+      "bytes": 32867
     },
     {
-      "id": "reports/RKLB/深度分析/投研報告-RKLB-investment-research.md",
-      "path": "reports/RKLB/深度分析/投研報告-RKLB-investment-research.md",
-      "title": "投研報告-RKLB-investment-research",
+      "id": "reports/RDDT/買前確認/RDDT-checklist-20260831.md",
+      "path": "reports/RDDT/買前確認/RDDT-checklist-20260831.md",
+      "title": "RDDT-checklist-20260831",
+      "entity": "RDDT",
+      "type": "checklist",
+      "skill": null,
+      "date": "2026-08-31",
+      "quarter": null,
+      "ticker": "RDDT",
+      "masters": [
+        "巴菲特"
+      ],
+      "bytes": 27015
+    },
+    {
+      "id": "reports/RGTI/深度分析/RGTI-research-20260907.md",
+      "path": "reports/RGTI/深度分析/RGTI-research-20260907.md",
+      "title": "RGTI-research-20260907",
+      "entity": "RGTI",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 17684
+    },
+    {
+      "id": "reports/RKLB/深度分析/RKLB-research-20260624.md",
+      "path": "reports/RKLB/深度分析/RKLB-research-20260624.md",
+      "title": "RKLB-research-20260624",
       "entity": "RKLB",
       "type": "research",
-      "skill": "investment-research",
-      "date": null,
+      "skill": null,
+      "date": "2026-06-24",
       "quarter": null,
       "ticker": "RKLB",
       "masters": [
@@ -2261,9 +3000,48 @@
       "bytes": 28408
     },
     {
-      "id": "reports/TSLA/深度分析/20260624-投研報告-TSLA-research.md",
-      "path": "reports/TSLA/深度分析/20260624-投研報告-TSLA-research.md",
-      "title": "20260624-投研報告-TSLA-research",
+      "id": "reports/SILC/深度分析/SILC-research-20260907.md",
+      "path": "reports/SILC/深度分析/SILC-research-20260907.md",
+      "title": "SILC-research-20260907",
+      "entity": "SILC",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 19602
+    },
+    {
+      "id": "reports/SLS/深度分析/SLS-research-20260907.md",
+      "path": "reports/SLS/深度分析/SLS-research-20260907.md",
+      "title": "SLS-research-20260907",
+      "entity": "SLS",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 14698
+    },
+    {
+      "id": "reports/SMR/深度分析/SMR-research-20260907.md",
+      "path": "reports/SMR/深度分析/SMR-research-20260907.md",
+      "title": "SMR-research-20260907",
+      "entity": "SMR",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 18323
+    },
+    {
+      "id": "reports/TSLA/深度分析/TSLA-research-20260624.md",
+      "path": "reports/TSLA/深度分析/TSLA-research-20260624.md",
+      "title": "TSLA-research-20260624",
       "entity": "TSLA",
       "type": "research",
       "skill": null,
@@ -2274,9 +3052,9 @@
       "bytes": 27294
     },
     {
-      "id": "reports/TSLA/深度分析/20260702-投研報告-TSLA-特斯拉投資研究報告.md",
-      "path": "reports/TSLA/深度分析/20260702-投研報告-TSLA-特斯拉投資研究報告.md",
-      "title": "20260702-投研報告-TSLA-特斯拉投資研究報告",
+      "id": "reports/TSLA/深度分析/TSLA-research-20260702.md",
+      "path": "reports/TSLA/深度分析/TSLA-research-20260702.md",
+      "title": "TSLA-research-20260702",
       "entity": "TSLA",
       "type": "research",
       "skill": null,
@@ -2290,6 +3068,21 @@
         "李錄"
       ],
       "bytes": 22233
+    },
+    {
+      "id": "reports/TTWO/投資論點/TTWO-thesis.md",
+      "path": "reports/TTWO/投資論點/TTWO-thesis.md",
+      "title": "TTWO-thesis",
+      "entity": "TTWO",
+      "type": "thesis",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "李錄"
+      ],
+      "bytes": 19062
     },
     {
       "id": "reports/TTWO/深度分析/TTWO-research-20260827.md",
@@ -2309,6 +3102,19 @@
       "bytes": 48571
     },
     {
+      "id": "reports/TTWO/財報分析/TTWO-earnings-FY2027Q1.md",
+      "path": "reports/TTWO/財報分析/TTWO-earnings-FY2027Q1.md",
+      "title": "TTWO-earnings-FY2027Q1",
+      "entity": "TTWO",
+      "type": "earnings",
+      "skill": null,
+      "date": null,
+      "quarter": "2027Q1",
+      "ticker": "TTWO",
+      "masters": [],
+      "bytes": 25411
+    },
+    {
       "id": "reports/UBER/公眾號文章/00-系列說明.md",
       "path": "reports/UBER/公眾號文章/00-系列說明.md",
       "title": "00-系列說明",
@@ -2319,7 +3125,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 2134
+      "bytes": 2673
     },
     {
       "id": "reports/UBER/公眾號文章/01-開篇-從虧損之王到盈利機器.md",
@@ -2332,7 +3138,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 8931
+      "bytes": 9470
     },
     {
       "id": "reports/UBER/公眾號文章/02-商業模式-出行加外賣的雙飛輪.md",
@@ -2345,7 +3151,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 10308
+      "bytes": 10847
     },
     {
       "id": "reports/UBER/公眾號文章/03-自動駕駛-機遇還是威脅.md",
@@ -2358,7 +3164,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 10819
+      "bytes": 11358
     },
     {
       "id": "reports/UBER/公眾號文章/04-風險與估值-終章.md",
@@ -2371,7 +3177,7 @@
       "quarter": null,
       "ticker": null,
       "masters": [],
-      "bytes": 10936
+      "bytes": 11475
     },
     {
       "id": "reports/UBER/團隊分析/01-商業模式分析-段永平視角.md",
@@ -2386,7 +3192,7 @@
       "masters": [
         "段永平"
       ],
-      "bytes": 4587
+      "bytes": 5126
     },
     {
       "id": "reports/UBER/團隊分析/02-財務估值分析-巴菲特視角.md",
@@ -2401,22 +3207,20 @@
       "masters": [
         "巴菲特"
       ],
-      "bytes": 5174
+      "bytes": 5713
     },
     {
-      "id": "reports/UBER/團隊分析/03-行業競爭分析-芒格視角.md",
-      "path": "reports/UBER/團隊分析/03-行業競爭分析-芒格視角.md",
-      "title": "03-行業競爭分析-芒格視角",
+      "id": "reports/UBER/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "path": "reports/UBER/團隊分析/03-產業競爭分析-蒙格視角.md",
+      "title": "03-產業競爭分析-蒙格視角",
       "entity": "UBER",
       "type": "other",
       "skill": null,
       "date": null,
       "quarter": null,
       "ticker": null,
-      "masters": [
-        "芒格"
-      ],
-      "bytes": 6273
+      "masters": [],
+      "bytes": 6812
     },
     {
       "id": "reports/UBER/團隊分析/04-風險管理層評估-李錄視角.md",
@@ -2431,7 +3235,7 @@
       "masters": [
         "李錄"
       ],
-      "bytes": 6676
+      "bytes": 7215
     },
     {
       "id": "reports/UBER/團隊分析/最終報告.md",
@@ -2444,7 +3248,76 @@
       "quarter": null,
       "ticker": "UBER",
       "masters": [],
-      "bytes": 6800
+      "bytes": 7339
+    },
+    {
+      "id": "reports/UBER/投資論點/UBER-thesis.md",
+      "path": "reports/UBER/投資論點/UBER-thesis.md",
+      "title": "UBER-thesis",
+      "entity": "UBER",
+      "type": "thesis",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "UBER",
+      "masters": [],
+      "bytes": 4561
+    },
+    {
+      "id": "reports/UBER/深度分析/UBER-research-20260901.md",
+      "path": "reports/UBER/深度分析/UBER-research-20260901.md",
+      "title": "UBER-research-20260901",
+      "entity": "UBER",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 32685
+    },
+    {
+      "id": "reports/UBER/財報分析/UBER-earnings-2026Q2.md",
+      "path": "reports/UBER/財報分析/UBER-earnings-2026Q2.md",
+      "title": "UBER-earnings-2026Q2",
+      "entity": "UBER",
+      "type": "earnings",
+      "skill": null,
+      "date": null,
+      "quarter": "2026Q2",
+      "ticker": "UBER",
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 11101
+    },
+    {
+      "id": "reports/UBER/買前確認/UBER-checklist-20260901.md",
+      "path": "reports/UBER/買前確認/UBER-checklist-20260901.md",
+      "title": "UBER-checklist-20260901",
+      "entity": "UBER",
+      "type": "checklist",
+      "skill": null,
+      "date": "2026-09-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 23149
+    },
+    {
+      "id": "reports/VSTM/深度分析/VSTM-research-20260907.md",
+      "path": "reports/VSTM/深度分析/VSTM-research-20260907.md",
+      "title": "VSTM-research-20260907",
+      "entity": "VSTM",
+      "type": "comparison",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 21533
     },
     {
       "id": "reports/VSXY/深度分析/VSXY-research-20260826.md",
@@ -2464,9 +3337,50 @@
       "bytes": 53839
     },
     {
-      "id": "reports/京元電子/深度分析/20260719-投研報告-京元電子-research.md",
-      "path": "reports/京元電子/深度分析/20260719-投研報告-京元電子-research.md",
-      "title": "20260719-投研報告-京元電子-research",
+      "id": "reports/WULF/深度分析/WULF-research-20260907.md",
+      "path": "reports/WULF/深度分析/WULF-research-20260907.md",
+      "title": "WULF-research-20260907",
+      "entity": "WULF",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 16204
+    },
+    {
+      "id": "reports/ZVRA/深度分析/ZVRA-research-20260907.md",
+      "path": "reports/ZVRA/深度分析/ZVRA-research-20260907.md",
+      "title": "ZVRA-research-20260907",
+      "entity": "ZVRA",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-07",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 21026
+    },
+    {
+      "id": "reports/京元電子/投資論點/京元電子-thesis.md",
+      "path": "reports/京元電子/投資論點/京元電子-thesis.md",
+      "title": "京元電子-thesis",
+      "entity": "京元電子",
+      "type": "thesis",
+      "skill": null,
+      "date": null,
+      "quarter": null,
+      "ticker": "2449.TW",
+      "masters": [
+        "李錄"
+      ],
+      "bytes": 13900
+    },
+    {
+      "id": "reports/京元電子/深度分析/京元電子-research-20260719.md",
+      "path": "reports/京元電子/深度分析/京元電子-research-20260719.md",
+      "title": "京元電子-research-20260719",
       "entity": "京元電子",
       "type": "research",
       "skill": null,
@@ -2480,6 +3394,53 @@
         "李錄"
       ],
       "bytes": 17747
+    },
+    {
+      "id": "reports/京元電子/深度分析/京元電子-research-20260926.md",
+      "path": "reports/京元電子/深度分析/京元電子-research-20260926.md",
+      "title": "京元電子-research-20260926",
+      "entity": "京元電子",
+      "type": "research",
+      "skill": null,
+      "date": "2026-09-26",
+      "quarter": null,
+      "ticker": "2449.TW",
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 66456
+    },
+    {
+      "id": "reports/京元電子/財報分析/京元電子-earnings-2026Q2.md",
+      "path": "reports/京元電子/財報分析/京元電子-earnings-2026Q2.md",
+      "title": "京元電子-earnings-2026Q2",
+      "entity": "京元電子",
+      "type": "earnings",
+      "skill": null,
+      "date": null,
+      "quarter": "2026Q2",
+      "ticker": "2449",
+      "masters": [],
+      "bytes": 53110
+    },
+    {
+      "id": "reports/訊芯-KY/深度分析/訊芯-KY-research-20260831.md",
+      "path": "reports/訊芯-KY/深度分析/訊芯-KY-research-20260831.md",
+      "title": "訊芯-KY-research-20260831",
+      "entity": "訊芯-KY",
+      "type": "research",
+      "skill": null,
+      "date": "2026-08-31",
+      "quarter": null,
+      "ticker": "6451.TW",
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 47121
     }
   ],
   "skills": [
@@ -2517,7 +3478,7 @@
       "id": "skill:financial-data",
       "name": "financial-data",
       "path": "skills/financial-data.md",
-      "desc": "財務資料獲取與交叉驗證規範 — 本規範適用於所有涉及企業財務資料的研究。**每個關鍵資料必須來自兩個獨立來源，誤差>1%須標記。**"
+      "desc": "財務資料獲取與交叉驗證規範 — 本規範適用於所有涉及企業財務資料的研究（深度分析、財報分析、團隊分析、買前確認、投資論點）。"
     },
     {
       "id": "skill:industry-funnel",
@@ -2636,6 +3597,12 @@
       "desc": "从 Morningstar 筛选器 API 抓取所有有公允价值估计的股票，"
     },
     {
+      "id": "tool:official_data.py",
+      "name": "official_data.py",
+      "path": "tools/official_data.py",
+      "desc": "官方来源取数工具：直接从权威来源产生「資料帳本」列，减少手抄与转述误差。"
+    },
+    {
       "id": "tool:report_audit.py",
       "name": "report_audit.py",
       "path": "tools/report_audit.py",
@@ -2646,6 +3613,12 @@
       "name": "stock_screener.py",
       "path": "tools/stock_screener.py",
       "desc": "stock_screener.py — 动量发现 + 价值验证 选股筛"
+    },
+    {
+      "id": "tool:sync_skills.sh",
+      "name": "sync_skills.sh",
+      "path": "tools/sync_skills.sh",
+      "desc": ""
     },
     {
       "id": "tool:twstock_data.py",
