@@ -73,6 +73,35 @@ PGR PYPL QCOM RDDT RKLB TSLA TTWO UBER VSXY 京元電子
 | /news-pulse | `reports/{公司名}/新聞追蹤/{公司名}-news-{YYYYMMDD}.md` | `reports/台積電/新聞追蹤/台積電-news-20260409.md` |
 | /bottleneck-hunter | `reports/訊號掃描/bottleneck-map/`（跨標的訊號日誌，非單一個股） | `reports/訊號掃描/bottleneck-map/master-map.md` |
 
+### 通用命名原則（未列於上表的類別、或任何 skill 之外手動產出的報告都適用）
+
+單一公司的報告檔名一律是 **`{公司名}-{英文類別}-{日期或期間}[-描述].md`**，代號／公司名放最前面，
+不要放在中間或結尾，也不要在描述文字裡再重複一次代號。**範例（TTWO）**：
+
+```
+reports/TTWO/投資論點/TTWO-thesis.md
+reports/TTWO/深度分析/TTWO-research-20260827.md
+reports/TTWO/財報分析/TTWO-earnings-FY2027Q1.md
+```
+
+上表已定義的類別用表中指定的英文類別詞（research／earnings／checklist／thesis／management／news／
+industry／funnel／private）。遇到表中沒有的類別，依此原則自訂英文類別詞並保持全倉庫一致，已知的
+有：
+
+| 類別 | 英文類別詞 | 範例 |
+|------|-----------|------|
+| 估值分析 | valuation | `reports/NVDA/估值分析/NVDA-valuation-20260413.md` |
+| 專題研究 | topic | `reports/NVDA/專題研究/NVDA-topic-20260424-CUDA護城河三問精簡版.md` |
+| 參考資料 | reference | `reports/NVDA/參考資料/NVDA-reference-段永平雪球發言.md` |
+
+`公眾號文章` 目錄內的多篇系列文章，檔名是 `{序號}-{標題}.md`（如 `01-開篇-....md`、`02-商業模式-....md`），
+**不含公司代號**（代號已由資料夾與公司名稱表達，重複會造成格式分裂）；`團隊分析` 目錄的最終報告固定命名
+`最終報告.md`，不加日期或副標。
+
+新增或重新命名報告前，先看同類別現有檔案是否已有慣例，優先比照；命名完成後可執行
+`python3 scripts/build_graph.py --check` 確認型別分類與統計沒有異常（例如新檔名意外落入 `other`
+或撞到既有型別關鍵字），跑無誤再正式寫入 `python3 scripts/build_graph.py`。
+
 ## /investment-team 檔案結構
 
 ```
