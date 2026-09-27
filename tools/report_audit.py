@@ -148,6 +148,22 @@ def _is_noise_number(text: str, start: int, end: int, unit: str) -> bool:
     return False
 
 
+def _all_data_numbers(text: str) -> list:
+    """返回储存格中全部「数据型」数字 [(value, unit, raw)]，跳过年份／季度／月份等噪声。"""
+    out = []
+    for m in _CELL_NUM_RE.finditer(text):
+        raw = m.group(1).strip('.，,')
+        if not raw or not re.search(r'\d', raw):
+            continue
+        unit = (m.group(2) or '').strip()
+        if _is_noise_number(text, m.start(1), m.start(1) + len(m.group(1).rstrip('.，,')), unit):
+            continue
+        val = _clean_num(raw)
+        if val is not None:
+            out.append((val, unit, raw))
+    return out
+
+
 def _first_data_number(text: str):
     """返回单元格中第一个「数据型」数字 (value, unit, raw)，跳过年份／季度／月份等噪声。"""
     for m in _CELL_NUM_RE.finditer(text):
@@ -190,9 +206,11 @@ def _parse_md_tables(lines: list) -> list:
                     for col_idx, cell in enumerate(cells[1:], start=1):
                         col_header = headers_raw[col_idx] if col_idx < len(headers_raw) else f'列{col_idx}'
                         # 提取 cell 中的数字+单位
-                        val, unit, raw_num = _first_data_number(cell)
-                        if val and val != 0 and val < 1e15:
-                            results.append((row_label, col_header, val, unit, i + 1, dline, raw_num, cell))
+                        # 储存格内每个数字都列入（第 2 个起标签加 #n）
+                        for k, (val, unit, raw_num) in enumerate(_all_data_numbers(cell)):
+                            if val and val != 0 and val < 1e15:
+                                hdr = col_header if k == 0 else f'{col_header}#{k + 1}'
+                                results.append((row_label, hdr, val, unit, i + 1, dline, raw_num, cell))
                     i += 1
                 continue
         i += 1
@@ -791,7 +809,9 @@ def evaluate_ledger(rows: list, require_official: bool = False) -> dict:
 
 
 def _tokens(text: str) -> set:
-    return {t for t in re.split(r'[／/、,，;；\s（）()]+', text or '') if len(t) >= 2}
+    # 口径字词：2～8 字、不含数字（排除「允差 2.5 天」这类说明片段）
+    return {t for t in re.split(r'[／/、,，;；:：\s（）()＝=÷×]+', text or '')
+            if 2 <= len(t) <= 8 and not re.search(r'\d', t)}
 
 
 def _candidates(rows: list, env: dict) -> list:
