@@ -413,6 +413,9 @@ def classify_source(src: str) -> str:
         return 'circular'
     if any(k in low for k in _COMPUTED_KEYS):
         return 'computed'
+    # 「未經官方核實」「非官方」是否定语，不能因含「官方」二字判为权威
+    if re.search(r'未(經|经)?官方|非官方', src):
+        return 'third_party'
     if any(k in low for k in _OFFICIAL_KEYS):
         return 'official'
     return 'third_party'
@@ -1113,7 +1116,11 @@ def main():
 
     elif args.command == 'verdict':
         try:
-            results = json.loads(args.results)
+            raw = args.results
+            if os.path.isfile(raw):  # 也接受 JSON 档案路径
+                with open(raw, encoding='utf-8') as f:
+                    raw = f.read()
+            results = json.loads(raw)
         except json.JSONDecodeError as e:
             print(f'❌ JSON 解析失败: {e}', file=sys.stderr)
             sys.exit(1)

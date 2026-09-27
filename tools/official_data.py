@@ -31,7 +31,7 @@ import re
 import sys
 import unicodedata
 import urllib.request
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 _UA = os.environ.get('SEC_USER_AGENT', 'ai-berkshire-research-tool')
 _TIMEOUT = 30
@@ -85,6 +85,7 @@ def cmd_sec(a):
     data = json.loads(_get(f'https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json'))
     pmap = dict(x.split('=', 1) for x in (a.period_map or '').split(',') if '=' in x)
     wanted = [c.strip() for c in (a.concepts or '').split(',') if c.strip()]
+    names = dict(x.split('=', 1) for x in (a.names or '').split(',') if '=' in x)
     rows = []
     for ns in ('us-gaap', 'dei', 'ifrs-full'):
         for concept, body in data.get('facts', {}).get(ns, {}).items():
@@ -96,11 +97,13 @@ def cmd_sec(a):
                         continue
                     if not a.accn and a.form and f.get('form') != a.form:
                         continue
+                    if a.ends and f['end'] not in a.ends.split(','):
+                        continue
                     tag = _duration_tag(f.get('start'), f['end'])
                     period = pmap.get(f['end'], f['end'])
                     src = f"SEC XBRL {f.get('form')} {f.get('accn')} {ns}:{concept}（{f.get('start') or ''}～{f['end']}）"
                     rows.append((concept, f['end'], tag,
-                                 (body.get('label') or concept, f'GAAP {tag}', period, f['val'],
+                                 (names.get(concept) or body.get('label') or concept, f'GAAP {tag}', period, f['val'],
                                   _SEC_UNITS.get(unit, unit), src)))
     if not rows:
         print('找不到符合条件的 XBRL 数据（确认 CIK、accn、概念名称）', file=sys.stderr)
@@ -202,7 +205,8 @@ def cmd_twse_price(a):
 
 
 def cmd_nasdaq_price(a):
-    start = a.start or a.date
+    # Nasdaq API 起迄同日会回空，未给区间时往前多取 7 天再挑当日
+    start = a.start or (datetime.strptime(a.date, '%Y-%m-%d').date() - timedelta(days=7)).isoformat()
     url = (f'https://api.nasdaq.com/api/quote/{a.symbol}/historical?assetclass=stocks'
            f'&fromdate={start}&todate={a.date}&limit=400')
     d = json.loads(_get(url, 'Mozilla/5.0'))
@@ -217,16 +221,20 @@ def cmd_nasdaq_price(a):
              'high': num(r['high']), 'low': num(r['low'])} for r in rows]
     d2 = datetime.strptime(a.date, '%Y-%m-%d').date()
     last = [r for r in recs if r['date'] == d2]
+    if not last:
+        print(f'{a.date} 非交易日或查无资料', file=sys.stderr)
+        return 1
     if last:
         print(_row(f'{a.prefix}1', '收盤價', '', a.date, f"{last[0]['close']:.2f}", '美元',
-                   f'Nasdaq historical {a.symbol} {a.date} Close'))
+                   f'Nasdaq historical (api.nasdaq.com) {a.symbol} {a.date} Close'))
     if a.start:
+        recs = [r for r in recs if r['date'] <= d2]
         hi = max(recs, key=lambda r: r['high'])
         lo = min(recs, key=lambda r: r['low'])
         print(_row(f'{a.prefix}2', '區間最高價', f'{a.start}～{a.date}', a.date, f"{hi['high']:.2f}", '美元',
-                   f"Nasdaq historical {a.symbol} {hi['date']} High"))
+                   f"Nasdaq historical (api.nasdaq.com) {a.symbol} {hi['date']} High"))
         print(_row(f'{a.prefix}3', '區間最低價', f'{a.start}～{a.date}', a.date, f"{lo['low']:.2f}", '美元',
-                   f"Nasdaq historical {a.symbol} {lo['date']} Low"))
+                   f"Nasdaq historical (api.nasdaq.com) {a.symbol} {lo['date']} Low"))
     return 0
 
 
@@ -241,6 +249,8 @@ def main():
     s.add_argument('--form', help='未指定 accn 时依表单过滤（10-Q／10-K）')
     s.add_argument('--concepts', help='XBRL 概念，逗号分隔；省略则输出该申报全部概念')
     s.add_argument('--period-map', help='期末日→期间标签，如 2026-05-28=FY2026Q3,2025-05-29=FY2025Q3')
+    s.add_argument('--ends', help='只取这些期末日（逗号分隔），避免带出不需要的比较期')
+    s.add_argument('--names', help='概念→帐本项目名，如 GrossProfit=毛利,NetIncomeLoss=淨利；同一项目名跨期一致才能自动推导变化率')
     s.add_argument('--prefix', default='S')
 
     t = sub.add_parser('tw-pdf', help='台股 MOPS 格式财报 PDF')
