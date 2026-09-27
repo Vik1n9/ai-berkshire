@@ -162,6 +162,9 @@ reports/{公司名}/團隊分析/
 ## 常用命令
 
 ```bash
+# 把倉庫的 skills 同步到 ~/.claude/commands/（技能有更新時執行）
+bash tools/sync_skills.sh
+
 # 更新本倉庫（skills / tools 等程式碼變更）
 cd ~/Workspace/ai-berkshire
 git add skills/xxx.md
@@ -175,7 +178,7 @@ git push origin main
 - 市值必須手算校驗：股價 × 總股本，與報告市值對比
 - 貨幣單位要明確（港幣／人民幣／美元），防止混淆
 - PE/ROE 等指標用 tools/financial_rigor.py 精確計算
-- 深度分析、財報分析須附資料帳本，並通過 `tools/report_audit.py ledger`（帳本驗算）與 `verdict --require-official`（來源重取）；流程與「數字可信度通則」見 `skills/financial-data.md`。新錯誤先對照通則、補強驗算機制，不為單一案例新增特例規則
+- 深度分析、財報分析須附資料帳本（原始值優先用 `tools/official_data.py` 從官方來源產生），並通過 `tools/report_audit.py ledger --all-tables`（帳本驗算）與 `verdict --require-official`（來源重取）；流程與「數字可信度通則」見 `skills/financial-data.md`。新錯誤先對照通則、補強驗算機制，不為單一案例新增特例規則
 - 報告寫在本倉庫 `reports/` 內，且僅限美股與台股公開發行公司；是否推送到 GitHub 由使用者指示，**不主動**推送
 
 <!-- rtk-instructions v2 -->

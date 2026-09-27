@@ -202,9 +202,10 @@ python3 tools/financial_rigor.py verify-valuation \
 報告附錄必須有 `## 附錄：資料帳本`（格式見 `skills/financial-data.md`「資料帳本與驗算流程」），驗算全部通過方可釋出：
 
 ```bash
-# 1. 帳本驗算：公式重算、勾稽、來源檢查、核心章節每個數字回對帳本（口徑、期間一致）
+# 0. 取數：原始值優先用 tools/official_data.py 從 SEC／MOPS PDF／證交所／Nasdaq 產生帳本列
+# 1. 帳本驗算：公式重算、勾稽、來源檢查、全部表格數字回對帳本（口徑、期間一致）
 python3 tools/report_audit.py ledger --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md \
-  --must-section 速覽 --require-official
+  --must-section 速覽 --all-tables --require-official
 
 # 2. 來源重取：抽樣帳本原始值，回到權威來源重新取數後判決
 python3 tools/report_audit.py ledger --report reports/{公司名}/財報分析/{公司名}-earnings-{期間}.md --sample 0.2 --seed <當天日期>

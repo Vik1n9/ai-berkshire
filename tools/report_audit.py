@@ -139,13 +139,32 @@ def _is_noise_number(text: str, start: int, end: int, unit: str) -> bool:
     # 年份：无单位的 19xx／20xx 且后面不接数字、小数点、千分位（2026-07、2027上半年、2027H2）
     if re.fullmatch(r'(19|20)\d{2}', num) and not re.match(r'[\d\.,，]', after or ' '):
         return True
-    # 月份、日期、区间：10-11月、7/28、9月
-    if after in ('月', '日', '/', '-', '年') or re.match(r'[\-–]\d+月', text[end:end + 4]):
+    # 月份、日期：10-11月、7/28、9月（数值区间如 150-160億 不算）
+    if after in ('月', '日', '/', '年') or re.match(r'[\-–]\d+[月日]', text[end:end + 4]):
         return True
     # 章节编号：§9.3、见 9.3
     if re.search(r'(§|見|见)\s?$', before):
         return True
     return False
+
+
+def _all_data_numbers(text: str) -> list:
+    """返回储存格中全部「数据型」数字 [(value, unit, raw)]，跳过年份／季度／月份等噪声。"""
+    out = []
+    # 连结网址与行内程式码里的数字（申报编号、档名日期）不是数据
+    text = re.sub(r'\]\([^)]*\)', ']', text)
+    text = re.sub(r'https?://\S+|`[^`]*`', ' ', text)
+    for m in _CELL_NUM_RE.finditer(text):
+        raw = m.group(1).strip('.，,')
+        if not raw or not re.search(r'\d', raw):
+            continue
+        unit = (m.group(2) or '').strip()
+        if _is_noise_number(text, m.start(1), m.start(1) + len(m.group(1).rstrip('.，,')), unit):
+            continue
+        val = _clean_num(raw)
+        if val is not None:
+            out.append((val, unit, raw))
+    return out
 
 
 def _first_data_number(text: str):
@@ -190,9 +209,11 @@ def _parse_md_tables(lines: list) -> list:
                     for col_idx, cell in enumerate(cells[1:], start=1):
                         col_header = headers_raw[col_idx] if col_idx < len(headers_raw) else f'列{col_idx}'
                         # 提取 cell 中的数字+单位
-                        val, unit, raw_num = _first_data_number(cell)
-                        if val and val != 0 and val < 1e15:
-                            results.append((row_label, col_header, val, unit, i + 1, dline, raw_num))
+                        # 储存格内每个数字都列入（第 2 个起标签加 #n）
+                        for k, (val, unit, raw_num) in enumerate(_all_data_numbers(cell)):
+                            if val and val != 0 and val < 1e15:
+                                hdr = col_header if k == 0 else f'{col_header}#{k + 1}'
+                                results.append((row_label, hdr, val, unit, i + 1, dline, raw_num, cell))
                     i += 1
                 continue
         i += 1
@@ -222,7 +243,7 @@ def extract_data_points(md_text: str) -> list:
     points = []
     seen = set()
 
-    def _add(label, val, unit, lineno, raw, raw_num=''):
+    def _add(label, val, unit, lineno, raw, raw_num='', kind='text', cell=''):
         label = re.sub(r'[\*_`]+', '', label).strip()
         if not _is_valid_label(label):
             return
@@ -244,6 +265,8 @@ def extract_data_points(md_text: str) -> list:
             'line_number': lineno,
             'section': section_of[lineno - 1] if 0 < lineno <= len(section_of) else '',
             'decimals': _raw_decimals(raw_num) if raw_num else _decimals(val),
+            'kind': kind,
+            'cell': cell,
         })
 
     lines = md_text.split('\n')
@@ -261,7 +284,7 @@ def extract_data_points(md_text: str) -> list:
         section_of.append(' > '.join(h[1] for h in stack))
 
     # --- 1. 多列表格 ---
-    for row_label, col_header, val, unit, lineno, raw, raw_num in _parse_md_tables(lines):
+    for row_label, col_header, val, unit, lineno, raw, raw_num, cell in _parse_md_tables(lines):
         if _LEDGER_HEAD in section_of[lineno - 1]:
             continue  # 资料帐本本身不列入报告数字
         # 跳过无意义行标签
@@ -271,14 +294,14 @@ def extract_data_points(md_text: str) -> list:
         if col_header.upper() in ('趋势', '趨勢', '说明', '說明', '备注', '備註'):
             continue
         # 评分／品质栏（1-5 分、★）不是财务数据
-        if re.search(r'評分|评分|質量|质量|分數|分数|1-5|★', col_header):
+        if re.search(r'評分|评分|質量|质量|品質|品质|分數|分数|1-5|★', col_header):
             continue
         # label = "行标签 · 列标题"（若列标题是行标签的补充）
         if col_header and col_header != row_label:
             label = f"{row_label} · {col_header}"
         else:
             label = row_label
-        _add(label, val, unit, lineno, raw, raw_num)
+        _add(label, val, unit, lineno, raw, raw_num, kind='table', cell=cell)
 
     # --- 2. KV 冒号行 ---
     for lineno, line in enumerate(lines, start=1):
@@ -393,6 +416,9 @@ def classify_source(src: str) -> str:
         return 'circular'
     if any(k in low for k in _COMPUTED_KEYS):
         return 'computed'
+    # 「未經官方核實」「非官方」是否定语，不能因含「官方」二字判为权威
+    if re.search(r'未(經|经)?官方|非官方', src):
+        return 'third_party'
     if any(k in low for k in _OFFICIAL_KEYS):
         return 'official'
     return 'third_party'
@@ -789,21 +815,42 @@ def evaluate_ledger(rows: list, require_official: bool = False) -> dict:
 
 
 def _tokens(text: str) -> set:
-    return {t for t in re.split(r'[／/、,，;；\s（）()]+', text or '') if len(t) >= 2}
+    # 口径字词：2～8 字、不含数字（排除「允差 2.5 天」这类说明片段）
+    return {t for t in re.split(r'[／/、,，;；:：\s（）()＝=÷×]+', text or '')
+            if 2 <= len(t) <= 8 and not re.search(r'\d', t)}
+
+
+def _row_periods(rows: list) -> dict:
+    """每一列的期间集合：本身期间，加上公式引用列的期间（如 TTM 本益比＝股价日期＋TTM）。"""
+    by_id = {r['id']: r for r in rows}
+    memo = {}
+
+    def walk(rid, seen):
+        if rid in memo:
+            return memo[rid]
+        r = by_id[rid]
+        ps = {r.get('period', '')} - {''}
+        for ref in re.findall(r'[A-Za-z_][A-Za-z_0-9]*', r.get('formula', '').lstrip('=')):
+            if ref in by_id and ref not in seen and ref != 'abs':
+                ps |= walk(ref, seen | {rid})
+        memo[rid] = ps
+        return ps
+    return {rid: walk(rid, {rid}) for rid in by_id}
 
 
 def _candidates(rows: list, env: dict) -> list:
     """可供报告回对的数值：帐本每一笔，加上同项目、同口径、同单位跨期间的变化率与差额。"""
     cands = []
+    rp = _row_periods(rows)
     for r in rows:
         v = env.get(r['id']) if r['value'] is None else r['value']
         if v is None:
             continue
         scale = _SCALE_UNITS.get(r.get('unit', '').strip())
-        cands.append({'v': v, 'scale': scale, 'periods': {r.get('period', '')}, 'row': r,
+        cands.append({'v': v, 'scale': scale, 'periods': rp.get(r['id']) or {r.get('period', '')}, 'row': r,
                       'text': f"{r.get('item','')} {r.get('basis','')}", 'desc': r['id']})
         if r['formula'] and r['value'] is not None:
-            cands.append({'v': r['computed'], 'scale': scale, 'periods': {r.get('period', '')}, 'row': r,
+            cands.append({'v': r['computed'], 'scale': scale, 'periods': rp.get(r['id']) or {r.get('period', '')}, 'row': r,
                           'text': f"{r.get('item','')} {r.get('basis','')}", 'desc': r['id'] + '(自算)'})
     groups = {}
     for r in rows:
@@ -834,10 +881,22 @@ def _display_match(cand_v: Decimal, scale, reported: float, decimals: int) -> bo
     return False
 
 
-def check_report_against_ledger(md_text: str, rows: list, env: dict, must_sections: list) -> dict:
+_EXEMPT_RE = re.compile(r'估計|估计|預估|预估|假設|假设|未(經|经)?(官方)?核[實实]|推測|推测')
+
+
+def _is_must(p: dict, must_sections: list, all_tables: bool) -> bool:
+    if in_sections(p, must_sections):
+        return True
+    # 豁免：储存格本身，或其列标签／栏标题（整列、整栏宣告为估计）含估计／未核实字样
+    marked = _EXEMPT_RE.search(p.get('cell') or p.get('raw_text', '')) or _EXEMPT_RE.search(p.get('label', ''))
+    return all_tables and p.get('kind') == 'table' and not marked
+
+
+def check_report_against_ledger(md_text: str, rows: list, env: dict, must_sections: list,
+                                all_tables: bool = False) -> dict:
     points = extract_data_points(md_text)
     cands = _candidates(rows, env)
-    periods_vocab = {r.get('period', '') for r in rows if r.get('period')}
+    periods_vocab = {r.get('period', '') for r in rows if r.get('period') and re.search(r'\w', r.get('period', ''))}
     basis_vocab = set()
     for r in rows:
         basis_vocab |= _tokens(r.get('basis', ''))
@@ -846,10 +905,15 @@ def check_report_against_ledger(md_text: str, rows: list, env: dict, must_sectio
         dec = p.get('decimals', _decimals(p['reported_value']))
         matches = [c for c in cands if _display_match(c['v'], c['scale'], p['reported_value'], dec)]
         label = p['label']
-        found = {x for x in periods_vocab if x and x in label}
-        # 只保留最长匹配（「2026Q2」出现时不另外要求「2026」）
-        lab_periods = {x for x in found if not any(x != y and x in y for y in found)}
-        lab_basis = {t for t in basis_vocab if t in label}
+        def _maximal(text):
+            found = {x for x in periods_vocab if x and x in text}
+            # 只保留最长匹配（「2026Q2」出现时不另外要求「2026」）
+            return {x for x in found if not any(x != y and x in y for y in found)}
+        # 储存格本身写明的期间优先于列标签／栏标题
+        lab_periods = _maximal(p.get('cell', '')) or _maximal(label)
+        # 口径只约束储存格的主数字；同格的附带算式数字（#2 起）与「计算／公式」栏只检查期间
+        explanatory = re.search(r'#\d+$', label) or re.search(r'· [^·]*(計算|计算|公式|算式)[^·]*$', label)
+        lab_basis = set() if explanatory else {t for t in basis_vocab if t in label}
         consistent = [c for c in matches
                       if lab_periods <= c['periods']
                       and all(t in c['text'] for t in lab_basis)]
@@ -859,13 +923,13 @@ def check_report_against_ledger(md_text: str, rows: list, env: dict, must_sectio
             status = 'conflict'
         else:
             status = 'unmatched'
-        results.append({'point': p, 'status': status, 'must': in_sections(p, must_sections),
+        results.append({'point': p, 'status': status, 'must': _is_must(p, must_sections, all_tables),
                         'match': (consistent or matches or [None])[0],
                         'lab_periods': lab_periods, 'lab_basis': lab_basis})
     return {'results': results}
 
 
-def run_ledger_check(md_text: str, must_sections: list, require_official: bool) -> int:
+def run_ledger_check(md_text: str, must_sections: list, require_official: bool, all_tables: bool = False) -> int:
     rows, perrs = parse_ledger(md_text)
     print('=' * 70)
     print('资料帐本验算')
@@ -888,14 +952,15 @@ def run_ledger_check(md_text: str, must_sections: list, require_official: bool) 
         print('\n  衍生值（工具计算，报告须引用此结果）：')
         for r in der:
             print(f'    {r["id"]:>5} {r.get("item","")[:18]:18s} {r.get("period",""):8s} = {r["computed"]:.6f} {r.get("unit","")}')
-    chk = check_report_against_ledger(md_text, rows, ev['env'], must_sections)
+    chk = check_report_against_ledger(md_text, rows, ev['env'], must_sections, all_tables)
     res = chk['results']
     must = [x for x in res if x['must']]
     bad_must = [x for x in must if x['status'] != 'ok']
     other_bad = [x for x in res if not x['must'] and x['status'] != 'ok']
     print()
-    if must_sections:
-        print(f'  必检章节（{"、".join(must_sections)}）：{len(must) - len(bad_must)}/{len(must)} 个数字可追溯到帐本')
+    if must_sections or all_tables:
+        scope = '、'.join(must_sections) + ('＋全部表格' if all_tables else '')
+        print(f'  必检范围（{scope}）：{len(must) - len(bad_must)}/{len(must)} 个数字可追溯到帐本')
     print(f'  全文：{sum(x["status"] == "ok" for x in res)}/{len(res)} 个数字可追溯到帐本')
     for x in bad_must:
         p = x['point']
@@ -906,7 +971,7 @@ def run_ledger_check(md_text: str, must_sections: list, require_official: bool) 
             extra = f'（值对到 {m["desc"]} {m["text"].strip()} {"/".join(sorted(m["periods"]))}；标签含 {sorted(x["lab_periods"] | x["lab_basis"])}）'
         print(f'  ❌ 第 {p["line_number"]} 行 {p["label"][:40]} = {p["reported_value"]}：{why}{extra}')
     if other_bad:
-        print(f'\n  必检章节以外有 {len(other_bad)} 个数字未能追溯（列出供复核，不计入打回）：')
+        print(f'\n  必检范围以外有 {len(other_bad)} 个数字未能追溯（列出供复核，不计入打回）：')
         for x in other_bad[:40]:
             p = x['point']
             print(f'     第 {p["line_number"]} 行 {p["label"][:40]} = {p["reported_value"]}（{"口径／期间冲突" if x["status"]=="conflict" else "未追溯"}）')
@@ -988,6 +1053,8 @@ def main():
     ldg.add_argument('--must-section', action='append', default=[],
                      help='该标题（子字串，含上层标题路径）下每个数字都必须追溯到帐本，可重复指定')
     ldg.add_argument('--require-official', action='store_true', help='原始值须为权威来源')
+    ldg.add_argument('--all-tables', action='store_true',
+                     help='全文所有表格的数字都须追溯到帐本（储存格或其列标签／栏标题含「估計／假設／未核實／推測」者除外）')
     ldg.add_argument('--sample', type=float, default=None,
                      help='改为输出帐本原始值抽样 JSON（比例，如 0.2），供回到来源独立重取后交给 verdict')
     ldg.add_argument('--seed', type=int, default=None)
@@ -1071,11 +1138,15 @@ def main():
         if args.sample is not None:
             print(json.dumps(ledger_sample(text, args.sample, args.seed), ensure_ascii=False, indent=2))
             sys.exit(0)
-        sys.exit(run_ledger_check(text, args.must_section, args.require_official))
+        sys.exit(run_ledger_check(text, args.must_section, args.require_official, args.all_tables))
 
     elif args.command == 'verdict':
         try:
-            results = json.loads(args.results)
+            raw = args.results
+            if os.path.isfile(raw):  # 也接受 JSON 档案路径
+                with open(raw, encoding='utf-8') as f:
+                    raw = f.read()
+            results = json.loads(raw)
         except json.JSONDecodeError as e:
             print(f'❌ JSON 解析失败: {e}', file=sys.stderr)
             sys.exit(1)
