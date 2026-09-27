@@ -162,7 +162,15 @@ def cmd_tw_pdf(a):
 def _twse_month(stock: str, yyyymm: str) -> list:
     url = (f'https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date={yyyymm}01'
            f'&stockNo={stock}&response=json')
-    d = json.loads(_get(url, 'Mozilla/5.0'))
+    import time
+    for attempt in range(5):  # 证交所限流时回 307／安全性页面，退避重试
+        try:
+            d = json.loads(_get(url, 'Mozilla/5.0'))
+            break
+        except Exception:
+            if attempt == 4:
+                raise
+            time.sleep(10 * 2 ** attempt)
     out = []
     for r in d.get('data', []):
         y, m, dd = r[0].split('/')
@@ -205,12 +213,27 @@ def cmd_twse_price(a):
 
 
 def cmd_nasdaq_price(a):
-    # Nasdaq API 起迄同日会回空，未给区间时往前多取 7 天再挑当日
-    start = a.start or (datetime.strptime(a.date, '%Y-%m-%d').date() - timedelta(days=7)).isoformat()
-    url = (f'https://api.nasdaq.com/api/quote/{a.symbol}/historical?assetclass=stocks'
-           f'&fromdate={start}&todate={a.date}&limit=400')
-    d = json.loads(_get(url, 'Mozilla/5.0'))
-    rows = ((d.get('data') or {}).get('tradesTable') or {}).get('rows') or []
+    d2 = datetime.strptime(a.date, '%Y-%m-%d').date()
+
+    def fetch(start, end):
+        url = (f'https://api.nasdaq.com/api/quote/{a.symbol}/historical?assetclass=stocks'
+               f'&fromdate={start}&todate={end}&limit=400')
+        d = json.loads(_get(url, 'Mozilla/5.0'))
+        return ((d.get('data') or {}).get('tradesTable') or {}).get('rows') or []
+    # Nasdaq API 对某些区间（起迄同日、部分短区间）会回空：依序换几个查询窗口，直到含目标日
+    if a.start:
+        windows = [(a.start, a.date)]
+    else:
+        windows = [((d2 - timedelta(days=n)).isoformat(), (d2 + timedelta(days=m)).isoformat())
+                   for n, m in ((30, 0), (10, 0))]
+        windows.append(((d2 - timedelta(days=10)).isoformat(), date.today().isoformat()))  # 较旧日期的短区间常回空
+    rows = []
+    for st, en in windows:
+        got = fetch(st, en)
+        if got:
+            rows = got
+        if any(r['date'] == d2.strftime('%m/%d/%Y') for r in got):
+            break
     if not rows:
         print('查无交易资料', file=sys.stderr)
         return 1
@@ -219,7 +242,6 @@ def cmd_nasdaq_price(a):
         return float(s.replace('$', '').replace(',', ''))
     recs = [{'date': datetime.strptime(r['date'], '%m/%d/%Y').date(), 'close': num(r['close']),
              'high': num(r['high']), 'low': num(r['low'])} for r in rows]
-    d2 = datetime.strptime(a.date, '%Y-%m-%d').date()
     last = [r for r in recs if r['date'] == d2]
     if not last:
         print(f'{a.date} 非交易日或查无资料', file=sys.stderr)
