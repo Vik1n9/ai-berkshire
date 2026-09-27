@@ -1,7 +1,15 @@
 # NVIDIA（NVDA）財報精讀 — FY2027 Q2（截至 2026/7/26）
 
+> **勘誤（2026-09-27 帳本驗算修訂）**：本版以 SEC XBRL（10-Q／10-K）、8-K 新聞稿（EX-99.1）與 CFO Commentary（EX-99.2）重建附錄資料帳本，全文表格數字逐格回對。修正與補充：
+> 1. 毛利率 Q/Q 原寫「+0.1pts」，依原始精度為 74.975% − 74.934% = **+0.04 個百分點**（原值是用四捨五入後的 75.0 − 74.9 相減）。
+> 2. 庫藏股剩餘授權原寫「990 億」，10-Q XBRL 為 **993 億**。
+> 3. 市值改用 10-Q 封面流通股數 241 億股（2026/8/21，XBRL 已四捨五入至億股）：$217.55 × 241 億 ≈ **5.24 兆**（原 5.25 兆以 241.5 億股計算，股數來源為第三方）；TTM P/FCF 由 41.4x 改為 **41.3x**。
+> 4. 應收帳款單季增加（現金流量表）以 XBRL 半年累計減第一季計算為 **223.47 億**（原 223.46 億）、去年同期 **56.76 億**（原 56.75 億）。
+> 5. 補上原空白欄位：Q1 FY27 稅前利益 69,903、Q4 FY26 應收帳款天數 51.4 天、Q3／Q4 FY26 存貨天數 118.8／114.3 天、Q4 FY26 營業費用 Y/Y +45%。
+> 6. 本次無法以官方原文重取核對的數字，一律標示「未經官方核實」：直接客戶營收集中度（23%／16%）、依客戶總部所在地的地區營收（本次重取 10-Q 讀到的地區表口徑與原文不一致，待以完整 10-Q 核對）、AI 雲額外承諾（360／200 億）、上市股權未實現損益、存貨提列 9.85 億（XBRL 存貨減損 InventoryWriteDown 本季為 7.84 億，口徑不同）、電話會口述數字（FY28 +70%、每 GW 營收等）與市場共識。
+
 > 報告日期：2026-08-30 ｜ 財報發布：2026-08-26（美東時間盤後）
-> 資料可得性評級：**A 級**（取得 SEC 原文 8-K 新聞稿、CFO Commentary、10-Q 全文，以及電話會議逐字紀錄）
+> 資料可得性評級：**A 級**（SEC 8-K 新聞稿、CFO Commentary、10-Q；電話會議內容來自第三方逐字稿，未經官方核實）
 
 > 「我從不看賣方研報，只讀原始財報。」——李錄
 
@@ -16,11 +24,11 @@
 | 指標 | Q2 FY27 | Q1 FY27 | Q2 FY26 | Q/Q | Y/Y | 管理層指引 | 是否達標 |
 |------|--------:|--------:|--------:|----:|----:|----------|:------:|
 | 營收 | 96,221 | 81,615 | 46,743 | +18% | +106% | 91,000 ±2% | ✅ 超標 +5.7% |
-| 毛利率 | 75.0% | 74.9% | 72.4% | +0.1pts | +2.6pts | 74.9% ±50bp | ✅ 達標 |
+| 毛利率 | 75.0% | 74.9% | 72.4% | +0.04pts | +2.6pts | 74.9% ±50bp | ✅ 達標 |
 | 營業費用 | 8,408 | 7,621 | 5,413 | +10% | +55% | ~8,500 | ✅ 低於指引 |
 | 營業利益 | 63,734 | 53,536 | 28,440 | +19% | +124% | — | — |
 | 營業利益率 | 66.2% | 65.6% | 60.8% | +0.6pts | +5.4pts | — | — |
-| 稅前利益 | 71,507 | — | 31,206 | — | +129% | — | — |
+| 稅前利益 | 71,507 | 69,903 | 31,206 | +2% | +129% | — | — |
 | 淨利 | 59,688 | 58,321 | 26,422 | +2% | +126% | — | — |
 | 稀釋 EPS | $2.46 | $2.39 | $1.08 | +3% | +128% | — | — |
 
@@ -59,7 +67,7 @@ TTM（Q3 FY26–Q2 FY27）合計：營收 302,969、GAAP 淨利 192,879、OCF 13
 
 ### 1.4 資產負債表健康度（美元百萬）
 
-| 專案 | 2026/7/26 | 2026/1/25 | 變化 |
+| 專案 | Q2 FY27 期末（2026/7/26） | Q4 FY26 期末（2026/1/25） | 變化 |
 |------|----------:|----------:|------|
 | 現金＋可交易債券 | 56,586 | 49,670 | +14% |
 | **可交易股權證券** | **42,783** | 12,886 | **+232%** |
@@ -71,19 +79,19 @@ TTM（Q3 FY26–Q2 FY27）合計：營收 302,969、GAAP 淨利 192,879、OCF 13
 | **長期負債** | **32,366** | 7,469 | **+333%** |
 | 股東權益 | 228,984 | 157,293 | +46% |
 
-商譽 211.25 億＋無形資產 29.98 億＝總資產的 7.5%，減損風險低。截至 7/26 在外流通的優先無擔保票據本金合計 **335 億美元**；另有 250 億美元商業本票額度（未動用）。
+商譽 211.25 億＋無形資產 29.98 億＝總資產的 7.5%，減損風險低。截至 7/26 在外流通的優先無擔保票據本金合計 **335 億美元**；另有 250 億美元商業本票額度（未動用，未經官方核實）。
 
 **淨現金部位**：現金及可交易債券 566 億 − 有息負債 335 億 ≈ **淨現金 231 億美元**（外加 428 億可交易股權＋512 億非可交易證券）。**NVIDIA 已從「無負債的印鈔機」變成「一家帶槓桿、且資產負債表上有近千億美元投資部位的公司」——這是本季最大的性質變化。**
 
 ### 1.5 估值（股價 2026/8/28 收盤 $217.55）
 
-市值驗算（`tools/financial_rigor.py`）：$217.55 × 241.5 億股 = **5.25 兆美元**，與 stockanalysis 報載市值偏差 0.07%，✅ 透過。
+市值：$217.55（Nasdaq 8/28 收盤）× 241 億股（10-Q 封面 2026/8/21 流通股數）≈ **5.24 兆美元**（股數已四捨五入至億股，市值誤差約 ±0.2%）。
 
 | 指標 | 數值 |
 |------|-----:|
 | TTM 本益比（GAAP，EPS $7.91） | 27.5x |
 | TTM 市銷率 | 17.3x |
-| TTM P/FCF | 41.4x |
+| TTM P/FCF | 41.3x |
 | FY2027E 本益比（non-GAAP EPS 約 $9.2，**估計**） | 約 23.7x |
 | FY2028E 本益比（non-GAAP EPS 約 $15.8，**估計**） | 約 13.8x |
 
@@ -95,12 +103,12 @@ TTM（Q3 FY26–Q2 FY27）合計：營收 302,969、GAAP 淨利 192,879、OCF 13
 
 ### 變化一：需求端從「單一實驗室驅動」擴散到「多引擎」——這是財報中最扎實的正面證據
 
-ACIE（AI Clouds、工業、企業、主權 AI）本季 403 億美元，**Y/Y +138%、Q/Q +25%，成長速度已超過 Hyperscale（+102%／+13%）**，佔 Data Center 營收的 45.3%。10-Q 的客戶集中度揭露提供了獨立的佐證：
+ACIE（AI Clouds、工業、企業、主權 AI）本季 403 億美元，**Y/Y +138%、Q/Q +25%，成長速度已超過 Hyperscale（+102%／+13%）**，佔 Data Center 營收的 45.3%。10-Q 的客戶集中度揭露提供了獨立的佐證（下表數字本次未能重取 10-Q 原文核對）：
 
 | 期間 | 直接客戶佔營收 ≥10% 者 | 合計 |
 |------|------|-----:|
-| Q2 FY26 | 23%、16% | 39% |
-| **Q2 FY27** | **僅一家 16%** | **16%** |
+| Q2 FY26 | 23%、16%（未經官方核實） | 39%（未經官方核實） |
+| **Q2 FY27** | **僅一家 16%**（未經官方核實） | **16%**（未經官方核實） |
 
 黃仁勳在電話會議的說法與此一致：「這時候去年，只有一個實驗室在驅動建設；今天我們有一個新 AI 實驗室與新創的黃金時代。」
 
@@ -127,13 +135,13 @@ CFO Colette Kress 罕見地給出了**三個季度以上的毛利率路徑**：
 | 指標 | Q2 FY26 | Q4 FY26 | Q1 FY27 | Q2 FY27 |
 |------|--------:|--------:|--------:|--------:|
 | 應收帳款（百萬） | 27,808 | 38,466 | 40,710 | **63,059** |
-| DSO（天，公司揭露／本報告計算） | 54.1* | — | **45** | **60** |
-| 存貨天數（本報告計算） | 105.6 | — | 114.7 | 119.3 |
+| DSO（天，公司揭露／本報告計算） | 54.1* | 51.4 | **45** | **60** |
+| 存貨天數（本報告計算） | 105.6 | 114.3 | 114.7 | 119.3 |
 
 \* 本報告依 27,808 ÷ 46,743 × 91 計算。
 
 - **應收帳款 Q/Q +54.9%，而營收 Q/Q 只有 +17.9%**——差距 37 個百分點。
-- 現金流量表上，應收帳款單季消耗現金 **223.46 億美元**（去年同期僅 56.75 億）。
+- 現金流量表上，應收帳款單季消耗現金 **223.47 億美元**（去年同期僅 56.76 億；XBRL 半年累計減第一季）。
 - 這直接把 OCF ÷ 淨利打到 **40%**、FCF 利潤率打到 **22.2%**，都是近五季最差。
 
 管理層的解釋（CFO 電話會議原文）：
@@ -167,22 +175,22 @@ CFO Colette Kress 罕見地給出了**三個季度以上的毛利率路徑**：
 | Q2 營收 910 億 ±2% | 962.21 億 | ✅ 超標 5.7% |
 | Q2 GAAP／non-GAAP 毛利率 74.9%／75.0% | 75.0%／75.0% | ✅ 達標 |
 | Q2 GAAP／non-GAAP 營業費用 ~85 億／~83 億 | 84.08 億／82.32 億 | ✅ 略低於指引 |
-| 不假設任何中國 Data Center 運算營收 | 中國 Hopper 出貨 <1% Data Center 營收 | ✅ 保守假設成立 |
+| 不假設任何中國 Data Center 運算營收 | 中國 Hopper 出貨 <1% Data Center 營收（未經官方核實） | ✅ 保守假設成立 |
 | 季度股利由 $0.01 提高至 $0.25 | 本季付出 60.47 億股利 | ✅ 兌現 |
-| 新增 800 億美元庫藏股授權 | 本季回購 197.32 億，餘額 990 億 | ✅ 兌現 |
+| 新增 800 億美元庫藏股授權 | 本季回購 197.32 億，餘額 993 億 | ✅ 兌現 |
 
 > 「看一個管理層靠不靠譜，最簡單的方法就是看他以前說的話做到了沒有。」——段永平
 
-**NVIDIA 管理層的指引兌現紀錄，過去八個季度沒有一次失手。這是一項應該計入估值的資產。** 兌現度評分：**★★★★★**
+**NVIDIA 管理層的指引兌現紀錄，過去八個季度沒有一次失手（本次未逐季核對）。這是一項應該計入估值的資產。** 兌現度評分：**★★★★★**
 
 ### 3.2 語氣分析
 
 | 訊號 | 證據 | 評價 |
 |------|------|:----:|
-| 🟢 **坦誠** | 主動、量化地揭露毛利率下滑路徑（Q3 74%／Q4 71–72%／FY28 72–73%），而且是在一份「三殺全勝」的財報裡主動說出壞訊息。多數管理層會選擇只給下一季 | ★★★★★ |
+| 🟢 **坦誠** | 主動、量化地揭露毛利率下滑路徑（Q3 74%；Q4 71–72%、FY28 72–73% 為電話會口述，未經官方核實），而且是在一份「三殺全勝」的財報裡主動說出壞訊息。多數管理層會選擇只給下一季 | ★★★★★ |
 | 🟢 **坦誠** | 主動指認「有些人會稱這叫迴圈融資（circular financing）」，而不是等分析師問 | ★★★★☆ |
-| 🟢 **清晰** | 給出 FY2028 全年約 +70% 的初步營收展望，且明說「這是一個**供給受限**的展望」，並量化無限制需求約為 +100% | ★★★★☆ |
-| 🟢 **清晰** | 每 GW 營收的量化程序：Hopper 180 億 → Grace Blackwell 250 億 → Vera Rubin **400 億** | ★★★★☆ |
+| 🟢 **清晰** | 給出 FY2028 全年約 +70% 的初步營收展望，且明說「這是一個**供給受限**的展望」，並量化無限制需求約為 +100%（未經官方核實） | ★★★★☆ |
+| 🟢 **清晰** | 每 GW 營收的量化程序：Hopper 180 億 → Grace Blackwell 250 億 → Vera Rubin **400 億**（未經官方核實） | ★★★★☆ |
 | 🟡 **需保留** | 「我們對迴圈融資的看法不同」之後的論證，主要訴諸**定性理由**（「一代人一次的機會」「技術領導地位獲得驗證」「NVIDIA 運算平台可替換、耐久、可再部署」），**未提供可驗證的量化門檻**——例如什麼情況下會停止投資、投資的內部報酬率門檻是多少 | ★★☆☆☆ |
 | 🟡 **需保留** | 「對許多工而言，我們可以說我們已經達成 AGI 了」——這類敘事性宣稱無法證偽，對投資判斷零資訊量 | ★★☆☆☆ |
 | 🟢 **未迴避** | 面對「OpenAI／Anthropic 自研晶片」的直球提問，正面回答而非轉移話題 | ★★★★☆ |
@@ -199,7 +207,7 @@ CFO Colette Kress 罕見地給出了**三個季度以上的毛利率路徑**：
 
 **（A）一般性未來承諾（單位：十億美元，截至 2026/7/26）**
 
-| 專案 | FY27 剩餘 | FY28 | FY29 | FY30 | FY31 | FY32+ | **合計** |
+| 專案 | FY27剩餘 | FY28 | FY29 | FY30 | FY31 | FY32+ | **合計** |
 |------|-----:|-----:|-----:|-----:|-----:|-----:|-----:|
 | 供應與產能 | 92 | 87 | 88 | 6 | 5 | 1 | **279** |
 | 雲端服務協議 | 3 | 8 | 7 | 6 | 4 | 1 | 29 |
@@ -214,9 +222,9 @@ CFO Colette Kress 罕見地給出了**三個季度以上的毛利率路徑**：
 
 | 專案 | 合計（十億美元） |
 |------|-----:|
-| AI 雲協議 | 36 |
-| 為第三方承租、尚未起租的資料中心租約 | 20 |
-| **合計** | **56** |
+| AI 雲協議 | 36（未經官方核實） |
+| 為第三方承租、尚未起租的資料中心租約 | 20（未經官方核實） |
+| **合計** | **56**（未經官方核實） |
 
 **（C）保證（Guarantees）**
 
@@ -254,8 +262,8 @@ CFO Colette Kress 罕見地給出了**三個季度以上的毛利率路徑**：
 | 專案 | 2026/7/26 | 2025/7/27 |
 |------|----------:|----------:|
 | 非可交易股權證券**累計毛未實現利得** | **91 億美元** | 6.61 億美元 |
-| 非可交易股權證券累計毛未實現損失及減損 | 2.50 億 | 0.93 億 |
-| 上市股權證券期末持有部位之淨未實現利得（本季／上半年） | 15 億／**125 億** | 19 億／17 億 |
+| 非可交易股權證券累計毛未實現損失及減損（未經官方核實） | 2.50 億 | 0.93 億 |
+| 上市股權證券期末持有部位之淨未實現利得（本季／上半年，未經官方核實） | 15 億／**125 億** | 19 億／17 億 |
 
 - 本季 GAAP 其他收益淨額 77.73 億美元，其中 **77.71 億是股權證券利得**（上半年 237.07 億）。
 - **本季 GAAP 稅前利益 715.07 億，其中 10.9% 來自股權投資評價**；上半年這個比例是 **16.8%**。
@@ -267,20 +275,20 @@ CFO Colette Kress 罕見地給出了**三個季度以上的毛利率路徑**：
 ### 4.4 存貨與呆滯
 
 - 存貨 315.75 億（Q/Q +22.4%），**管理層解釋為「為 Q3 匯入 Vera Rubin 做準備」**——存貨在新架構換代前一季增加，是合理的。
-- 本季存貨及超額採購義務提列 **9.85 億美元**，先前已提列存貨之銷售與義務結清釋回 1.77 億，**淨對毛利率造成 0.8 個百分點的不利影響**（上半年 1.0 個百分點）。
+- 本季存貨及超額採購義務提列 **9.85 億美元**，先前已提列存貨之銷售與義務結清釋回 1.77 億，**淨對毛利率造成 0.8 個百分點的不利影響**（上半年 1.0 個百分點）（CFO Commentary 口徑，未經官方核實；XBRL 存貨減損 InventoryWriteDown 本季為 7.84 億，口徑不同）。
 - 資產負債表外的超額存貨採購義務餘額 **21.38 億美元**。
-- 上半年因 **H200 中國需求萎縮**提列 4 億美元超額存貨與採購義務費用。
+- 上半年因 **H200 中國需求萎縮**提列 4 億美元超額存貨與採購義務費用（未經官方核實）。
 
 ### 4.5 中國：帳面 79 億，實質接近零
 
-| 依客戶總部所在地之營收（百萬） | Q2 FY27 | Q2 FY26 |
+| 依客戶總部所在地之營收（百萬） | Q2 FY27（未經官方核實） | Q2 FY26（未經官方核實） |
 |------|--------:|--------:|
 | 美國 | 60,074 | 32,897 |
 | 台灣 | 26,985 | 8,902 |
 | 中國（含香港） | **7,880** | 3,985 |
 | 其他 | 1,282 | 959 |
 
-**必須注意口徑陷阱**：地區營收是依**直接客戶總部所在地**認列，「終端客戶與出貨地點可能與直接客戶總部所在地不同」。台灣 270 億（佔 28%）是鴻海、廣達、緯創等 ODM，出貨遍及全球，**不代表台灣終端需求**；同理，中國的 79 億大部分並非中國 AI 運算需求。10-Q 明確揭露：**Data Center Hopper 產品對中國出貨低於 Data Center 營收的 1%**。
+**必須注意口徑陷阱**（本次重取 10-Q 讀到的地區營收表為另一口徑：美國 43,922、台灣 18,511、中國含香港 24,054、其他 9,734，未能確認是否為帳單地址口徑，上表待以完整 10-Q 核對）：地區營收是依**直接客戶總部所在地**認列，「終端客戶與出貨地點可能與直接客戶總部所在地不同」。台灣 270 億（佔 28%）是鴻海、廣達、緯創等 ODM，出貨遍及全球，**不代表台灣終端需求**；同理，中國的 79 億大部分並非中國 AI 運算需求。10-Q 明確揭露：**Data Center Hopper 產品對中國出貨低於 Data Center 營收的 1%**。
 
 H200 中國方案的實況（10-Q 原文）：美國政府核發了許可，但**中國政府限制了採購**，NVIDIA 無法賣完已獲許可的產品；H200 出貨前須在美國透過檢驗，因此**進口美國時要課 25% 關稅，而 NVIDIA 無法將關稅轉嫁給客戶，也不預期能夠轉嫁**。
 
@@ -299,14 +307,14 @@ H200 中國方案的實況（10-Q 原文）：美國政府核發了許可，但*
 
 | 分析師 | 問題 | 管理層回答摘要 | 回答品質 | 是否迴避 |
 |------|------|------|:----:|:----:|
-| Joseph Moore（摩根士丹利） | FY28 +70% 指引的信心從何而來？與 100% 的需求差距為何？ | 三個支柱：AI agent 的算力乘數（15–100 倍）、主權 AI／NeoCloud（佔一半業務、100% 成長）、客戶採購提前 2–3 年。「供給讓我們有信心交付 70%」 | 4/5 | 否 |
-| C.J. Muse（Cantor） | Agentic AI 時代的推論市佔；Groq 3 LPX 的定位 | NVLink 72 機櫃級架構讓訓練／後訓練／推論成為「一個可替換的系統」；Groq 專攻「超高互動性、超高速 token 生成」的高 ASP 服務，「絕大多數資料中心仍會是 Vera Rubin ＋ NVLink 72」 | 4/5 | 否 |
-| Stacy Rasgon（伯恩斯坦） | +70% 的組成與漲價貢獻？無限制成長會是多少？ | 一半來自 Hyperscale、一半來自 ACIE；每 GW 經濟效益提升（180 億→250 億→400 億）驅動客戶急迫感 | 3/5 | ⚠️ **未直接量化漲價對成長的貢獻** |
-| Vivek Arya（美銀） | 約 5,000 億美元的生態系投資總額？現金支付時點？在客戶自研晶片的同時如此投入是否合理？ | 稱前沿實驗室投資是「一代人一次的機會」；平台涵蓋完整 AI 生命週期，非單一推論晶片可比；「我很高興能當他們的朋友」。**Kress 補充：承諾集中在前三年，且對 Vera Rubin 的拉昇是必要的** | 3/5 | ⚠️ **未正面回答「現金支付時點」的具體金額分佈** |
-| Timothy Arcuri（UBS） | 開源模型市佔提升對前沿實驗室估值的意涵？ | 開源與閉源使用量都在飆升，兩者都需要；開源是幾乎每一家 AI 新創的基礎 | 2/5 | ⚠️ **實質上迴避了「前沿實驗室估值」這個問題——而 NVIDIA 正好在這些實驗室有近 500 億美元投資** |
-| Ben Reitzes（Melius） | 遞迴式自我改進與 AGI 對需求的影響 | 「大多數 AI 現在都是 agentic」；未來公司會有 40 萬、400 萬個 agent 持續執行；「對許多工而言，我們可以說我們已經達成 AGI 了」 | 2/5 | 否（但無可驗證資訊） |
-| Jim Schneider（高盛） | 供給瓶頸排序：電力、廠體、DRAM、晶圓代工？ | 「我們整條供應鏈都很吃緊……每個人都全速運轉」；良率改善中；未指認單一瓶頸；「我們有支撐 70% 的供給」 | 3/5 | ⚠️ **未排序，等於沒回答問題** |
-| Aaron Rakers（富國） | Vera Rubin 之後每 GW 營收的軌跡（400 億→600 億／800 億？） | 目標是最大化每 GW 的運算密度，「方向上」朝更高值移動；50 億美元資料中心的投資回收期「現在不到一年」 | 3/5 | ⚠️ **只給方向不給數字** |
+| Joseph Moore（摩根士丹利） | FY28 +70% 指引的信心從何而來？與 100% 的需求差距為何？（未經官方核實） | 三個支柱：AI agent 的算力乘數（15–100 倍）、主權 AI／NeoCloud（佔一半業務、100% 成長）、客戶採購提前 2–3 年。「供給讓我們有信心交付 70%」（未經官方核實） | 4/5 | 否 |
+| C.J. Muse（Cantor） | Agentic AI 時代的推論市佔；Groq 3 LPX 的定位（未經官方核實） | NVLink 72 機櫃級架構讓訓練／後訓練／推論成為「一個可替換的系統」；Groq 專攻「超高互動性、超高速 token 生成」的高 ASP 服務，「絕大多數資料中心仍會是 Vera Rubin ＋ NVLink 72」（未經官方核實） | 4/5 | 否 |
+| Stacy Rasgon（伯恩斯坦） | +70% 的組成與漲價貢獻？無限制成長會是多少？（未經官方核實） | 一半來自 Hyperscale、一半來自 ACIE；每 GW 經濟效益提升（180 億→250 億→400 億）驅動客戶急迫感（未經官方核實） | 3/5 | ⚠️ **未直接量化漲價對成長的貢獻** |
+| Vivek Arya（美銀） | 約 5,000 億美元的生態系投資總額？現金支付時點？在客戶自研晶片的同時如此投入是否合理？（未經官方核實） | 稱前沿實驗室投資是「一代人一次的機會」；平台涵蓋完整 AI 生命週期，非單一推論晶片可比；「我很高興能當他們的朋友」。**Kress 補充：承諾集中在前三年，且對 Vera Rubin 的拉昇是必要的**（未經官方核實） | 3/5 | ⚠️ **未正面回答「現金支付時點」的具體金額分佈** |
+| Timothy Arcuri（UBS） | 開源模型市佔提升對前沿實驗室估值的意涵？（未經官方核實） | 開源與閉源使用量都在飆升，兩者都需要；開源是幾乎每一家 AI 新創的基礎（未經官方核實） | 2/5 | ⚠️ **實質上迴避了「前沿實驗室估值」這個問題——而 NVIDIA 正好在這些實驗室有近 500 億美元投資** |
+| Ben Reitzes（Melius） | 遞迴式自我改進與 AGI 對需求的影響（未經官方核實） | 「大多數 AI 現在都是 agentic」；未來公司會有 40 萬、400 萬個 agent 持續執行；「對許多工而言，我們可以說我們已經達成 AGI 了」（未經官方核實） | 2/5 | 否（但無可驗證資訊） |
+| Jim Schneider（高盛） | 供給瓶頸排序：電力、廠體、DRAM、晶圓代工？（未經官方核實） | 「我們整條供應鏈都很吃緊……每個人都全速運轉」；良率改善中；未指認單一瓶頸；「我們有支撐 70% 的供給」（未經官方核實） | 3/5 | ⚠️ **未排序，等於沒回答問題** |
+| Aaron Rakers（富國） | Vera Rubin 之後每 GW 營收的軌跡（400 億→600 億／800 億？）（未經官方核實） | 目標是最大化每 GW 的運算密度，「方向上」朝更高值移動；50 億美元資料中心的投資回收期「現在不到一年」（未經官方核實） | 3/5 | ⚠️ **只給方向不給數字** |
 
 **觀察**：本季八個提問中，**沒有一位賣方分析師追問應收帳款暴增 223 億、DSO 從 45 天跳到 60 天，也沒有人追問 1,050 億美元的 SB Energy 保證條款**。這兩件事只出現在 CFO 的書面說明與 10-Q 附註裡。
 
@@ -324,13 +332,13 @@ H200 中國方案的實況（10-Q 原文）：美國政府核發了許可，但*
 | 營收 Y/Y | +56% | +62% | +73% | +85% | **+106%** | 🟢 **連四季加速** |
 | GAAP 毛利率 | 72.4% | 73.4% | 75.0% | 74.9% | 75.0% | 🟡 見頂（指引轉下） |
 | GAAP 營業利益率 | 60.8% | 63.2% | 65.0% | 65.6% | 66.2% | 🟢 持續改善 |
-| 營業費用 Y/Y | +38% | +36% | — | +52% | +55% | 🟡 加速但仍遠低於營收 |
+| 營業費用 Y/Y | +38% | +36% | +45% | +52% | +55% | 🟡 加速但仍遠低於營收 |
 | OCF ÷ 淨利 | 58% | 74% | 84% | 86% | **40%** | 🔴 **急遽惡化** |
 | FCF 利潤率 | 28.8% | 38.7% | 51.2% | 59.5% | **22.2%** | 🔴 **急遽惡化** |
-| DSO（天） | 54.1 | 53.3 | — | 45 | **60** | 🔴 惡化 |
-| 存貨天數 | 105.6 | — | — | 114.7 | 119.3 | 🟡 緩升 |
+| DSO（天） | 54.1 | 53.3 | 51.4 | 45 | **60** | 🔴 惡化 |
+| 存貨天數 | 105.6 | 118.8 | 114.3 | 114.7 | 119.3 | 🟡 緩升 |
 
-各季 Y/Y 數字均取自各期 8-K 新聞稿之公司揭露；DSO 與存貨天數為本報告依「期末餘額 ÷ 當季營收（或銷貨成本）× 91 天」計算。Q4 FY26 營收 681.27 億 vs Q4 FY25 393.31 億，Y/Y +73%（公司揭露）。
+各季 Y/Y 由附錄帳本以 XBRL 單季營收計算；OCF÷淨利與 FCF 利潤率以新聞稿 FCF 調節表的營業現金流與自由現金流計算；DSO 與存貨天數為本報告依「期末餘額 ÷ 當季營收（或銷貨成本）× 91 天」計算。Q4 FY26 營收 681.27 億 vs Q4 FY25 393.31 億，Y/Y +73%（公司揭露）。
 
 **趨勢的核心矛盾**：損益表（營收加速、營業利益率創高）與現金流量表（OCF/FCF 崩跌）**指向相反方向**。這種背離只有兩種可能：一是真的只是收款時點（管理層說法），二是成長品質開始注水。**目前證據偏向前者，但差距之大（40% vs 86%）不容許用一句「時點」帶過。**
 
@@ -340,7 +348,7 @@ H200 中國方案的實況（10-Q 原文）：美國政府核發了許可，但*
 
 ### 7.1 這份財報是超預期、符合預期、還是低於預期？
 
-**營收與獲利：明確超預期。展望：矛盾——營收超預期，毛利率低於預期。**
+**營收與獲利：明確超預期。展望：矛盾——營收超預期，毛利率低於預期。**（以下市場預期與共識為第三方數字，未經官方核實）
 
 - 營收 962.21 億 vs 市場預期約 921–922 億 → **超標約 4.4%**
 - non-GAAP EPS $2.22 vs 預期 $2.09–2.10 → **超標約 6%**
@@ -355,11 +363,11 @@ H200 中國方案的實況（10-Q 原文）：美國政府核發了許可，但*
 
 | 論文支柱 | 本季證據 | 判定 |
 |------|------|:----:|
-| **需求真實且在加速** | 營收 Y/Y 連四季加速至 +106%；ACIE +138%；FY28 供給受限下仍 +70% | **強化** ★★★★★ |
-| **需求正在擴散、去集中化** | ≥10% 直接客戶由兩家（39%）降至一家（16%）；ACIE 佔 DC 45% | **強化（但有保留）** ★★★★☆ |
-| **護城河（CUDA／NVLink 全端平台）** | Vera Rubin 已獲所有主要 hyperscaler、AI cloud、OEM 訂單；每 GW 營收 180→250→400 億 | **強化** ★★★★☆ |
+| **需求真實且在加速** | 營收 Y/Y 連四季加速至 +106%；ACIE +138%；FY28 供給受限下仍 +70%（FY28 展望為電話會口述，未經官方核實） | **強化** ★★★★★ |
+| **需求正在擴散、去集中化** | ≥10% 直接客戶由兩家（39%）降至一家（16%）（未經官方核實）；ACIE 佔 DC 45% | **強化（但有保留）** ★★★★☆ |
+| **護城河（CUDA／NVLink 全端平台）** | Vera Rubin 已獲所有主要 hyperscaler、AI cloud、OEM 訂單；每 GW 營收 180→250→400 億（未經官方核實） | **強化** ★★★★☆ |
 | **定價權與利潤率** | 毛利率確認見頂，記憶體成本轉嫁需等到 FY28 Q1 漲價生效 | **削弱** ★★☆☆☆ |
-| **現金流品質與輕資產** | OCF/淨利 40%；AR 七成集中於五家客戶；發債 250 億；表外承諾＋保證 5,305 億 | **明顯削弱** ★★☆☆☆ |
+| **現金流品質與輕資產** | OCF/淨利 40%；AR 七成集中於五家客戶；發債 250 億；表外承諾＋保證 5,305 億（含未經官方核實的 AI 雲額外承諾 560 億） | **明顯削弱** ★★☆☆☆ |
 | **中國選擇權** | 實質為零，且已從指引中完全剔除 | **無影響**（下檔已封） |
 
 **綜合判定：論文的「需求面」被強化到罕見的程度；論文的「財務品質面」被實質削弱。整體為「強化，但風險性質已改變」。**
@@ -388,10 +396,10 @@ H200 中國方案的實況（10-Q 原文）：美國政府核發了許可，但*
 
 | 情境 | 假設 | FY28 EPS（**估計**） | 合理本益比 | 隱含股價 | vs $217.55 |
 |------|------|-----:|-----:|-----:|-----:|
-| **樂觀** | FY28 +70% 達標、毛利率 73%、無信用事件 | $16.5 | 25x | $412 | +89% |
-| **基準** | FY28 +70% 達標、毛利率 72.5% | $15.8 | 20x | $316 | +45% |
-| **保守** | FY28 +45%（回到共識）、毛利率 71% | $10.9 | 18x | $196 | −10% |
-| **悲觀** | AI 資本支出週期見頂、FY28 +20%、毛利率 68%、應收帳款提列減損 | $6.5 | 15x | $98 | −55% |
+| **樂觀（估計）** | FY28 +70% 達標、毛利率 73%、無信用事件 | $16.5 | 25x | $412 | +89% |
+| **基準（估計）** | FY28 +70% 達標、毛利率 72.5% | $15.8 | 20x | $316 | +45% |
+| **保守（估計）** | FY28 +45%（回到共識）、毛利率 71% | $10.9 | 18x | $196 | −10% |
+| **悲觀（估計）** | AI 資本支出週期見頂、FY28 +20%、毛利率 68%、應收帳款提列減損 | $6.5 | 15x | $98 | −55% |
 
 > 上表為本報告依管理層指引與公開資訊之推算，**全部為估計值**，非公司指引，亦非目標價。假設股數約 238 億股。
 
@@ -425,42 +433,473 @@ H200 中國方案的實況（10-Q 原文）：美國政府核發了許可，但*
 | Q4 FY26 財報新聞稿 | [SEC EDGAR](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm) |
 | Q3 FY26 財報新聞稿 | [SEC EDGAR](https://www.sec.gov/Archives/edgar/data/1045810/000104581025000228/q3fy26pr.htm) |
 | Q2 FY26 財報新聞稿 | [SEC EDGAR](https://www.sec.gov/Archives/edgar/data/1045810/000104581025000207/q2fy26pr.htm) |
-| Q2 FY27 電話會議逐字紀錄 | [Singju Post](https://singjupost.com/transcript-nvidia-nvda-q2-fy27-earnings-conference-call/)、[Seeking Alpha](https://seekingalpha.com/article/4940563-nvidia-corporation-nvda-q2-2027-earnings-call-transcript) |
+| Q2 FY27 電話會議逐字紀錄（第三方，未經官方核實） | [Singju Post](https://singjupost.com/transcript-nvidia-nvda-q2-fy27-earnings-conference-call/)、[Seeking Alpha](https://seekingalpha.com/article/4940563-nvidia-corporation-nvda-q2-2027-earnings-call-transcript) |
 
-### 二手資料（僅用於市場預期與股價）
+### 二手資料（僅用於市場預期與股價，未經官方核實）
 
-| 用途 | 來源 |
-|------|------|
-| 市場預期（營收 921–922 億、EPS $2.09–2.10、DC 858 億、Q3 1,042 億） | [CNBC](https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html)、[Webull](https://www.webull.com/blog/304-Nvidia-Q2-FY2027-Earnings-Beats-Revenue-EPS-Estimates-Guides-Q3-to-108B)、[Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-tops-q2-estimates-183248574.html) |
-| LSEG FY28 共識（+44%／約 5,700 億） | [Lighthouse Canton](https://www.lighthouse-canton.com/insights/nvidia-q2-fy2027-earnings-recap) |
-| 股價、市值、本益比（2026/8/28 收盤 $217.55） | [stockanalysis.com](https://stockanalysis.com/stocks/nvda/) |
-| 股價反應（當日 −1.6%、盤後 −1.8%） | [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-tops-q2-estimates-183248574.html)、[Kiplinger](https://www.kiplinger.com/investing/live/nvidia-earnings-live-updates-and-commentary-august-2026) |
+- 市場預期（營收 921–922 億、EPS $2.09–2.10、DC 858 億、Q3 1,042 億）：[CNBC](https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html)、[Webull](https://www.webull.com/blog/304-Nvidia-Q2-FY2027-Earnings-Beats-Revenue-EPS-Estimates-Guides-Q3-to-108B)、[Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-tops-q2-estimates-183248574.html)
+- LSEG FY28 共識（+44%／約 5,700 億）：[Lighthouse Canton](https://www.lighthouse-canton.com/insights/nvidia-q2-fy2027-earnings-recap)
+- 股價反應（當日 −1.6%、盤後 −1.8%）：[Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-tops-q2-estimates-183248574.html)、[Kiplinger](https://www.kiplinger.com/investing/live/nvidia-earnings-live-updates-and-commentary-august-2026)
+- 收盤價 $217.55：Nasdaq historical（api.nasdaq.com）
 
-### 交叉驗證結果
+### 驗算方式（2026-09-27 修訂）
 
-| 專案 | 來源 A（SEC 原文） | 來源 B（第三方） | 偏差 | 判定 |
-|------|------|------|-----:|:----:|
-| Q2 營收 | $96,221M | $96.22B（多家媒體） | 0.00% | ✅ |
-| Q2 non-GAAP EPS | $2.22 | $2.22 | 0.00% | ✅ |
-| Data Center 營收 | $89,023M | $89B | 0.03% | ✅ |
-| Q3 營收指引 | $108.0B | $108B | 0.00% | ✅ |
-| 市值 | $217.55 × 241.5 億股 = $5.253T（自算） | $5.25T（stockanalysis） | 0.07% | ✅ |
+財務數字由 `tools/official_data.py sec` 自 SEC XBRL companyfacts 取原始值；新聞稿（Non-GAAP、FCF 調節表、指引）、CFO Commentary（市場平台營收、DSO、供應承諾）與 10-Q 附註（承諾表、保證、應收帳款集中度）逐筆標註出處；比率、成長率、TTM、營運天數、估值由帳本公式計算，全文表格數字以 `tools/report_audit.py ledger --all-tables --require-official` 逐格回對。
 
+勾稽：新聞稿單季營業現金流與 XBRL 累計數相減一致（容差 200 萬美元，跨申報檔四捨五入）；FCF＝營業現金流−購置 PP&E 及無形資產−本金支付；市場平台與分部營收加總等於總營收；承諾表各年度加總等於合計；保證 1,050＋35 億等於 XBRL 最大暴險 1,085 億；上半年買回庫藏股等於兩季新聞稿數字相加；CFO Commentary 揭露的 DSO 60／45 天與自算值一致。
 
-### 資料抽檢（準出流程）
-
-依 `tools/report_audit.py` 對本報告執行抽檢：自 293 個資料點中抽樣 30 項，其中 25 項為可核驗之財務資料點，逐項與 SEC 原始申報檔案（及部分第二來源）比對。
-
-| 結果 | 數量 |
-|------|-----:|
-| ✅ 透過 | 24 |
-| ⚠️ 警告（兩來源差異 >1%） | 1 |
-| ❌ 不透過 | 0 |
-
-唯一警告項為「Data Center Q/Q +18%」：公司揭露值 18%，本報告依 89,023 ÷ 75,246 − 1 計算為 18.3%，屬**公司四捨五入之口徑差異**，非資料錯誤。
-
-**判決：【準出】** — 全部抽檢資料透過，報告可發布。
+原版附錄的「交叉驗證結果」與「資料抽檢」段以第三方網站為第二來源，已由上述帳本驗算取代。
 
 ---
 
 **免責宣告**：本報告為投資研究紀錄，非投資建議。所有估計值均已標註，實際結果可能與估計有重大差異。
+
+---
+
+## 附錄：資料帳本
+
+> 原始值取自來源原始精度（美元）；衍生值由 `tools/report_audit.py ledger` 以公式計算；勾稽列（同時有值與公式）比對來源揭露值與自算值。XBRL 列由 `tools/official_data.py sec` 產生。
+
+| ID | 項目 | 口徑 | 期間 | 值 | 單位 | 來源 | 公式 | 容差 |
+|---|---|---|---|---|---|---|---|---|
+| A1 | 營收 | GAAP 半年累計 | Q2 FY26 | 90805000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:Revenues（2025-01-27～2025-07-27） |  |  |
+| A2 | 營收 | GAAP 半年累計 | Q2 FY27 | 177837000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:Revenues（2026-01-26～2026-07-26） |  |  |
+| A3 | 營收 | GAAP 單季 | Q2 FY26 | 46743000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:Revenues（2025-04-28～2025-07-27） |  |  |
+| A4 | 營收 | GAAP 單季 | Q2 FY27 | 96221000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:Revenues（2026-04-27～2026-07-26） |  |  |
+| A5 | 毛利 | GAAP 半年累計 | Q2 FY26 | 60521000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GrossProfit（2025-01-27～2025-07-27） |  |  |
+| A6 | 毛利 | GAAP 半年累計 | Q2 FY27 | 133299000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GrossProfit（2026-01-26～2026-07-26） |  |  |
+| A7 | 毛利 | GAAP 單季 | Q2 FY26 | 33853000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GrossProfit（2025-04-28～2025-07-27） |  |  |
+| A8 | 毛利 | GAAP 單季 | Q2 FY27 | 72142000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GrossProfit（2026-04-27～2026-07-26） |  |  |
+| A9 | 營業費用 | GAAP 半年累計 | Q2 FY26 | 10443000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:OperatingExpenses（2025-01-27～2025-07-27） |  |  |
+| A10 | 營業費用 | GAAP 半年累計 | Q2 FY27 | 16029000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:OperatingExpenses（2026-01-26～2026-07-26） |  |  |
+| A11 | 營業費用 | GAAP 單季 | Q2 FY26 | 5413000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:OperatingExpenses（2025-04-28～2025-07-27） |  |  |
+| A12 | 營業費用 | GAAP 單季 | Q2 FY27 | 8408000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:OperatingExpenses（2026-04-27～2026-07-26） |  |  |
+| A13 | 營業利益 | GAAP 半年累計 | Q2 FY26 | 50078000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:OperatingIncomeLoss（2025-01-27～2025-07-27） |  |  |
+| A14 | 營業利益 | GAAP 半年累計 | Q2 FY27 | 117270000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:OperatingIncomeLoss（2026-01-26～2026-07-26） |  |  |
+| A15 | 營業利益 | GAAP 單季 | Q2 FY26 | 28440000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:OperatingIncomeLoss（2025-04-28～2025-07-27） |  |  |
+| A16 | 營業利益 | GAAP 單季 | Q2 FY27 | 63734000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:OperatingIncomeLoss（2026-04-27～2026-07-26） |  |  |
+| A17 | 稅前利益 | GAAP 半年累計 | Q2 FY26 | 53117000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest（2025-01-27～2025-07-27） |  |  |
+| A18 | 稅前利益 | GAAP 半年累計 | Q2 FY27 | 141410000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest（2026-01-26～2026-07-26） |  |  |
+| A19 | 稅前利益 | GAAP 單季 | Q2 FY26 | 31206000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest（2025-04-28～2025-07-27） |  |  |
+| A20 | 稅前利益 | GAAP 單季 | Q2 FY27 | 71507000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest（2026-04-27～2026-07-26） |  |  |
+| A21 | 淨利 | GAAP 半年累計 | Q2 FY26 | 45197000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NetIncomeLoss（2025-01-27～2025-07-27） |  |  |
+| A22 | 淨利 | GAAP 半年累計 | Q2 FY27 | 118010000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NetIncomeLoss（2026-01-26～2026-07-26） |  |  |
+| A23 | 淨利 | GAAP 單季 | Q2 FY26 | 26422000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NetIncomeLoss（2025-04-28～2025-07-27） |  |  |
+| A24 | 淨利 | GAAP 單季 | Q2 FY27 | 59688000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NetIncomeLoss（2026-04-27～2026-07-26） |  |  |
+| A25 | 稀釋EPS | GAAP 半年累計 | Q2 FY26 | 1.84 | 美元/股 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EarningsPerShareDiluted（2025-01-27～2025-07-27） |  |  |
+| A26 | 稀釋EPS | GAAP 半年累計 | Q2 FY27 | 4.85 | 美元/股 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EarningsPerShareDiluted（2026-01-26～2026-07-26） |  |  |
+| A27 | 稀釋EPS | GAAP 單季 | Q2 FY26 | 1.08 | 美元/股 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EarningsPerShareDiluted（2025-04-28～2025-07-27） |  |  |
+| A28 | 稀釋EPS | GAAP 單季 | Q2 FY27 | 2.46 | 美元/股 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EarningsPerShareDiluted（2026-04-27～2026-07-26） |  |  |
+| A29 | 營業成本 | GAAP 半年累計 | Q2 FY26 | 30284000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:CostOfRevenue（2025-01-27～2025-07-27） |  |  |
+| A30 | 營業成本 | GAAP 半年累計 | Q2 FY27 | 44538000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:CostOfRevenue（2026-01-26～2026-07-26） |  |  |
+| A31 | 營業成本 | GAAP 單季 | Q2 FY26 | 12890000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:CostOfRevenue（2025-04-28～2025-07-27） |  |  |
+| A32 | 營業成本 | GAAP 單季 | Q2 FY27 | 24079000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:CostOfRevenue（2026-04-27～2026-07-26） |  |  |
+| A33 | 稀釋加權股數 | GAAP 半年累計 | Q2 FY26 | 24571000000 | 股 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding（2025-01-27～2025-07-27） |  |  |
+| A34 | 稀釋加權股數 | GAAP 半年累計 | Q2 FY27 | 24338000000 | 股 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding（2026-01-26～2026-07-26） |  |  |
+| A35 | 稀釋加權股數 | GAAP 單季 | Q2 FY26 | 24532000000 | 股 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding（2025-04-28～2025-07-27） |  |  |
+| A36 | 稀釋加權股數 | GAAP 單季 | Q2 FY27 | 24285000000 | 股 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding（2026-04-27～2026-07-26） |  |  |
+| A37 | 投資利得 | GAAP 半年累計 | Q2 FY26 | 2073000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GainLossOnInvestments（2025-01-27～2025-07-27） |  |  |
+| A38 | 投資利得 | GAAP 半年累計 | Q2 FY27 | 23707000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GainLossOnInvestments（2026-01-26～2026-07-26） |  |  |
+| A39 | 投資利得 | GAAP 單季 | Q2 FY26 | 2247000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GainLossOnInvestments（2025-04-28～2025-07-27） |  |  |
+| A40 | 投資利得 | GAAP 單季 | Q2 FY27 | 7771000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GainLossOnInvestments（2026-04-27～2026-07-26） |  |  |
+| A41 | 營業外收支 | GAAP 半年累計 | Q2 FY26 | 3039000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NonoperatingIncomeExpense（2025-01-27～2025-07-27） |  |  |
+| A42 | 營業外收支 | GAAP 半年累計 | Q2 FY27 | 24140000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NonoperatingIncomeExpense（2026-01-26～2026-07-26） |  |  |
+| A43 | 營業外收支 | GAAP 單季 | Q2 FY26 | 2766000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NonoperatingIncomeExpense（2025-04-28～2025-07-27） |  |  |
+| A44 | 營業外收支 | GAAP 單季 | Q2 FY27 | 7773000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NonoperatingIncomeExpense（2026-04-27～2026-07-26） |  |  |
+| A45 | 利息費用 | GAAP 半年累計 | Q2 FY26 | 124000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:InterestExpenseNonoperating（2025-01-27～2025-07-27） |  |  |
+| A46 | 利息費用 | GAAP 半年累計 | Q2 FY27 | 329000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:InterestExpenseNonoperating（2026-01-26～2026-07-26） |  |  |
+| A47 | 利息費用 | GAAP 單季 | Q2 FY26 | 62000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:InterestExpenseNonoperating（2025-04-28～2025-07-27） |  |  |
+| A48 | 利息費用 | GAAP 單季 | Q2 FY27 | 227000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:InterestExpenseNonoperating（2026-04-27～2026-07-26） |  |  |
+| A49 | 股權激勵費用 | GAAP 半年累計 | Q2 FY26 | 3099000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:AllocatedShareBasedCompensationExpense（2025-01-27～2025-07-27） |  |  |
+| A50 | 股權激勵費用 | GAAP 半年累計 | Q2 FY27 | 3954000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:AllocatedShareBasedCompensationExpense（2026-01-26～2026-07-26） |  |  |
+| A51 | 股權激勵費用 | GAAP 單季 | Q2 FY26 | 1624000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:AllocatedShareBasedCompensationExpense（2025-04-28～2025-07-27） |  |  |
+| A52 | 股權激勵費用 | GAAP 單季 | Q2 FY27 | 2027000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:AllocatedShareBasedCompensationExpense（2026-04-27～2026-07-26） |  |  |
+| A53 | 現金及約當現金 | GAAP 期末 | Q4 FY26 | 10605000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:CashAndCashEquivalentsAtCarryingValue（～2026-01-25） |  |  |
+| A54 | 現金及約當現金 | GAAP 期末 | Q2 FY27 | 22443000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:CashAndCashEquivalentsAtCarryingValue（～2026-07-26） |  |  |
+| A55 | 可交易債券 | GAAP 期末 | Q4 FY26 | 39065000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DebtSecuritiesCurrent（～2026-01-25） |  |  |
+| A56 | 可交易債券 | GAAP 期末 | Q2 FY27 | 34143000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DebtSecuritiesCurrent（～2026-07-26） |  |  |
+| A57 | 可交易股權證券 | GAAP 期末 | Q4 FY26 | 12886000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesFvNi（～2026-01-25） |  |  |
+| A58 | 可交易股權證券 | GAAP 期末 | Q2 FY27 | 42783000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesFvNi（～2026-07-26） |  |  |
+| A59 | 非可交易股權證券 | GAAP 期末 | Q4 FY25 | 3387000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueAmount（～2025-01-26） |  |  |
+| A60 | 非可交易股權證券 | GAAP 期末 | Q1 FY26 | 3240000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueAmount（～2025-04-27） |  |  |
+| A61 | 非可交易股權證券 | GAAP 期末 | Q2 FY26 | 3799000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueAmount（～2025-07-27） |  |  |
+| A62 | 非可交易股權證券 | GAAP 期末 | Q4 FY26 | 22251000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueAmount（～2026-01-25） |  |  |
+| A63 | 非可交易股權證券 | GAAP 期末 | Q1 FY27 | 42336000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueAmount（～2026-04-26） |  |  |
+| A64 | 非可交易股權證券 | GAAP 期末 | Q2 FY27 | 47898000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueAmount（～2026-07-26） |  |  |
+| A65 | 應收帳款 | GAAP 期末 | Q4 FY26 | 38466000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:AccountsReceivableNetCurrent（～2026-01-25） |  |  |
+| A66 | 應收帳款 | GAAP 期末 | Q2 FY27 | 63059000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:AccountsReceivableNetCurrent（～2026-07-26） |  |  |
+| A67 | 存貨 | GAAP 期末 | Q4 FY26 | 21403000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:InventoryNet（～2026-01-25） |  |  |
+| A68 | 存貨 | GAAP 期末 | Q2 FY27 | 31575000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:InventoryNet（～2026-07-26） |  |  |
+| A69 | 總資產 | GAAP 期末 | Q4 FY26 | 206803000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:Assets（～2026-01-25） |  |  |
+| A70 | 總資產 | GAAP 期末 | Q2 FY27 | 320272000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:Assets（～2026-07-26） |  |  |
+| A71 | 短期借款 | GAAP 期末 | Q4 FY26 | 999000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DebtCurrent（～2026-01-25） |  |  |
+| A72 | 短期借款 | GAAP 期末 | Q2 FY27 | 1000000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DebtCurrent（～2026-07-26） |  |  |
+| A73 | 長期負債 | GAAP 期末 | Q4 FY26 | 7469000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:LongTermDebtNoncurrent（～2026-01-25） |  |  |
+| A74 | 長期負債 | GAAP 期末 | Q2 FY27 | 32366000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:LongTermDebtNoncurrent（～2026-07-26） |  |  |
+| A75 | 長期債務帳面值 | GAAP 期末 | Q4 FY26 | 8468000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:LongTermDebt（～2026-01-25） |  |  |
+| A76 | 長期債務帳面值 | GAAP 期末 | Q2 FY27 | 33366000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:LongTermDebt（～2026-07-26） |  |  |
+| A77 | 債務未攤銷折價及發行成本 | GAAP 期末 | Q4 FY26 | 32000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DebtInstrumentUnamortizedDiscountPremiumAndDebtIssuanceCostsNet（～2026-01-25） |  |  |
+| A78 | 債務未攤銷折價及發行成本 | GAAP 期末 | Q2 FY27 | 134000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DebtInstrumentUnamortizedDiscountPremiumAndDebtIssuanceCostsNet（～2026-07-26） |  |  |
+| A79 | 股東權益 | GAAP 期末 | Q4 FY25 | 79327000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:StockholdersEquity（～2025-01-26） |  |  |
+| A80 | 股東權益 | GAAP 期末 | Q1 FY26 | 83843000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:StockholdersEquity（～2025-04-27） |  |  |
+| A81 | 股東權益 | GAAP 期末 | Q2 FY26 | 100131000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:StockholdersEquity（～2025-07-27） |  |  |
+| A82 | 股東權益 | GAAP 期末 | Q4 FY26 | 157293000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:StockholdersEquity（～2026-01-25） |  |  |
+| A83 | 股東權益 | GAAP 期末 | Q1 FY27 | 195474000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:StockholdersEquity（～2026-04-26） |  |  |
+| A84 | 股東權益 | GAAP 期末 | Q2 FY27 | 228984000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:StockholdersEquity（～2026-07-26） |  |  |
+| A85 | 商譽 | GAAP 期末 | Q4 FY26 | 20832000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:Goodwill（～2026-01-25） |  |  |
+| A86 | 商譽 | GAAP 期末 | Q2 FY27 | 21125000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:Goodwill（～2026-07-26） |  |  |
+| A87 | 無形資產 | GAAP 期末 | Q4 FY26 | 3306000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:IntangibleAssetsNetExcludingGoodwill（～2026-01-25） |  |  |
+| A88 | 無形資產 | GAAP 期末 | Q2 FY27 | 2998000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:IntangibleAssetsNetExcludingGoodwill（～2026-07-26） |  |  |
+| A89 | 保證最大暴險 | GAAP 期末 | Q2 FY27 | 108500000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GuaranteeObligationsMaximumExposure（～2026-07-26） |  |  |
+| A90 | 非可交易股權累計向上調整 | GAAP 期末 | Q2 FY26 | 661000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueUpwardPriceAdjustmentCumulativeAmount（～2025-07-27） |  |  |
+| A91 | 非可交易股權累計向上調整 | GAAP 期末 | Q2 FY27 | 9100000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueUpwardPriceAdjustmentCumulativeAmount（～2026-07-26） |  |  |
+| A92 | 庫藏股剩餘授權 | GAAP 期末 | Q2 FY27 | 99300000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount1（～2026-07-26） |  |  |
+| A93 | 營業現金流 | GAAP 半年累計 | Q2 FY26 | 42779000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NetCashProvidedByUsedInOperatingActivities（2025-01-27～2025-07-27） |  |  |
+| A94 | 營業現金流 | GAAP 半年累計 | Q2 FY27 | 74421000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:NetCashProvidedByUsedInOperatingActivities（2026-01-26～2026-07-26） |  |  |
+| A95 | 購置PP&E及無形資產 | GAAP 半年累計 | Q2 FY26 | 3122000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:PaymentsToAcquireProductiveAssets（2025-01-27～2025-07-27） |  |  |
+| A96 | 購置PP&E及無形資產 | GAAP 半年累計 | Q2 FY27 | 4434000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:PaymentsToAcquireProductiveAssets（2026-01-26～2026-07-26） |  |  |
+| A97 | 買回庫藏股 | GAAP 半年累計 | Q2 FY26 | 23815000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:PaymentsForRepurchaseOfCommonStock（2025-01-27～2025-07-27） |  |  |
+| A98 | 買回庫藏股 | GAAP 半年累計 | Q2 FY27 | 39044000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:PaymentsForRepurchaseOfCommonStock（2026-01-26～2026-07-26） |  |  |
+| A99 | 現金股利 | GAAP 半年累計 | Q2 FY26 | 488000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DividendsCommonStockCash（2025-01-27～2025-07-27） |  |  |
+| A100 | 現金股利 | GAAP 半年累計 | Q2 FY27 | 6290000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DividendsCommonStockCash（2026-01-26～2026-07-26） |  |  |
+| A101 | 現金股利 | GAAP 單季 | Q2 FY26 | 244000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DividendsCommonStockCash（2025-04-28～2025-07-27） |  |  |
+| A102 | 現金股利 | GAAP 單季 | Q2 FY27 | 6047000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:DividendsCommonStockCash（2026-04-27～2026-07-26） |  |  |
+| A103 | 應收帳款增加 | GAAP 半年累計 | Q2 FY26 | 4743000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:IncreaseDecreaseInAccountsReceivable（2025-01-27～2025-07-27） |  |  |
+| A104 | 應收帳款增加 | GAAP 半年累計 | Q2 FY27 | 24590000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:IncreaseDecreaseInAccountsReceivable（2026-01-26～2026-07-26） |  |  |
+| B1 | 營收 | GAAP 單季 | Q1 FY27 | 81615000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:Revenues（2026-01-26～2026-04-26） |  |  |
+| B2 | 毛利 | GAAP 單季 | Q1 FY27 | 61157000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:GrossProfit（2026-01-26～2026-04-26） |  |  |
+| B3 | 營業費用 | GAAP 單季 | Q1 FY27 | 7621000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:OperatingExpenses（2026-01-26～2026-04-26） |  |  |
+| B4 | 營業利益 | GAAP 單季 | Q1 FY27 | 53536000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:OperatingIncomeLoss（2026-01-26～2026-04-26） |  |  |
+| B5 | 稅前利益 | GAAP 單季 | Q1 FY27 | 69903000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest（2026-01-26～2026-04-26） |  |  |
+| B6 | 淨利 | GAAP 單季 | Q1 FY27 | 58321000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:NetIncomeLoss（2026-01-26～2026-04-26） |  |  |
+| B7 | 稀釋EPS | GAAP 單季 | Q1 FY27 | 2.39 | 美元/股 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:EarningsPerShareDiluted（2026-01-26～2026-04-26） |  |  |
+| B8 | 營業成本 | GAAP 單季 | Q1 FY27 | 20458000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:CostOfRevenue（2026-01-26～2026-04-26） |  |  |
+| B9 | 稀釋加權股數 | GAAP 單季 | Q1 FY27 | 24391000000 | 股 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding（2026-01-26～2026-04-26） |  |  |
+| B10 | 投資利得 | GAAP 單季 | Q1 FY27 | 15936000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:GainLossOnInvestments（2026-01-26～2026-04-26） |  |  |
+| B11 | 營業外收支 | GAAP 單季 | Q1 FY27 | 16367000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:NonoperatingIncomeExpense（2026-01-26～2026-04-26） |  |  |
+| B12 | 利息費用 | GAAP 單季 | Q1 FY27 | 102000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:InterestExpenseNonoperating（2026-01-26～2026-04-26） |  |  |
+| B13 | 股權激勵費用 | GAAP 單季 | Q1 FY27 | 1928000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:AllocatedShareBasedCompensationExpense（2026-01-26～2026-04-26） |  |  |
+| B14 | 現金及約當現金 | GAAP 期末 | Q1 FY27 | 13237000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:CashAndCashEquivalentsAtCarryingValue（～2026-04-26） |  |  |
+| B15 | 可交易債券 | GAAP 期末 | Q1 FY27 | 37098000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:DebtSecuritiesCurrent（～2026-04-26） |  |  |
+| B16 | 可交易股權證券 | GAAP 期末 | Q1 FY27 | 30237000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:EquitySecuritiesFvNi（～2026-04-26） |  |  |
+| B18 | 應收帳款 | GAAP 期末 | Q1 FY27 | 40710000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:AccountsReceivableNetCurrent（～2026-04-26） |  |  |
+| B19 | 存貨 | GAAP 期末 | Q1 FY27 | 25797000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:InventoryNet（～2026-04-26） |  |  |
+| B20 | 總資產 | GAAP 期末 | Q1 FY27 | 259474000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:Assets（～2026-04-26） |  |  |
+| B21 | 短期借款 | GAAP 期末 | Q1 FY27 | 1000000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:DebtCurrent（～2026-04-26） |  |  |
+| B22 | 長期負債 | GAAP 期末 | Q1 FY27 | 7470000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:LongTermDebtNoncurrent（～2026-04-26） |  |  |
+| B23 | 長期債務帳面值 | GAAP 期末 | Q1 FY27 | 8470000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:LongTermDebt（～2026-04-26） |  |  |
+| B24 | 債務未攤銷折價及發行成本 | GAAP 期末 | Q1 FY27 | 30000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:DebtInstrumentUnamortizedDiscountPremiumAndDebtIssuanceCostsNet（～2026-04-26） |  |  |
+| B26 | 商譽 | GAAP 期末 | Q1 FY27 | 20894000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:Goodwill（～2026-04-26） |  |  |
+| B27 | 無形資產 | GAAP 期末 | Q1 FY27 | 3120000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:IntangibleAssetsNetExcludingGoodwill（～2026-04-26） |  |  |
+| B28 | 非可交易股權累計向上調整 | GAAP 期末 | Q1 FY27 | 5300000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueUpwardPriceAdjustmentCumulativeAmount（～2026-04-26） |  |  |
+| B29 | 庫藏股剩餘授權 | GAAP 期末 | Q1 FY27 | 38500000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount1（～2026-04-26） |  |  |
+| B30 | 營業現金流 | GAAP 單季 | Q1 FY27 | 50344000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:NetCashProvidedByUsedInOperatingActivities（2026-01-26～2026-04-26） |  |  |
+| B31 | 購置PP&E及無形資產 | GAAP 單季 | Q1 FY27 | 1757000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:PaymentsToAcquireProductiveAssets（2026-01-26～2026-04-26） |  |  |
+| B32 | 買回庫藏股 | GAAP 單季 | Q1 FY27 | 19312000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:PaymentsForRepurchaseOfCommonStock（2026-01-26～2026-04-26） |  |  |
+| B33 | 現金股利 | GAAP 單季 | Q1 FY27 | 243000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:DividendsCommonStockCash（2026-01-26～2026-04-26） |  |  |
+| B34 | 應收帳款增加 | GAAP 單季 | Q1 FY27 | 2243000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:IncreaseDecreaseInAccountsReceivable（2026-01-26～2026-04-26） |  |  |
+| K1 | 營收 | GAAP 全年 | FY26 | 215938000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:Revenues（2025-01-27～2026-01-25） |  |  |
+| K2 | 毛利 | GAAP 全年 | FY26 | 153463000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:GrossProfit（2025-01-27～2026-01-25） |  |  |
+| K3 | 營業費用 | GAAP 全年 | FY26 | 23076000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:OperatingExpenses（2025-01-27～2026-01-25） |  |  |
+| K4 | 營業利益 | GAAP 全年 | FY26 | 130387000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:OperatingIncomeLoss（2025-01-27～2026-01-25） |  |  |
+| K5 | 稅前利益 | GAAP 全年 | FY26 | 141450000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest（2025-01-27～2026-01-25） |  |  |
+| K6 | 淨利 | GAAP 全年 | FY26 | 120067000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:NetIncomeLoss（2025-01-27～2026-01-25） |  |  |
+| K7 | 稀釋EPS | GAAP 全年 | FY26 | 4.9 | 美元/股 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:EarningsPerShareDiluted（2025-01-27～2026-01-25） |  |  |
+| K8 | 營業成本 | GAAP 全年 | FY26 | 62475000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:CostOfRevenue（2025-01-27～2026-01-25） |  |  |
+| K9 | 稀釋加權股數 | GAAP 全年 | FY26 | 24514000000 | 股 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding（2025-01-27～2026-01-25） |  |  |
+| K10 | 投資利得 | GAAP 全年 | FY26 | 8918000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:GainLossOnInvestments（2025-01-27～2026-01-25） |  |  |
+| K11 | 營業外收支 | GAAP 全年 | FY26 | 11063000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:NonoperatingIncomeExpense（2025-01-27～2026-01-25） |  |  |
+| K12 | 利息費用 | GAAP 全年 | FY26 | 259000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:InterestExpenseNonoperating（2025-01-27～2026-01-25） |  |  |
+| K13 | 股權激勵費用 | GAAP 全年 | FY26 | 6386000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:AllocatedShareBasedCompensationExpense（2025-01-27～2026-01-25） |  |  |
+| K26 | 非可交易股權累計向上調整 | GAAP 期末 | Q4 FY26 | 2700000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueUpwardPriceAdjustmentCumulativeAmount（～2026-01-25） |  |  |
+| K27 | 庫藏股剩餘授權 | GAAP 期末 | Q4 FY26 | 58500000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount1（～2026-01-25） |  |  |
+| K28 | 營業現金流 | GAAP 全年 | FY26 | 102718000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:NetCashProvidedByUsedInOperatingActivities（2025-01-27～2026-01-25） |  |  |
+| K29 | 購置PP&E及無形資產 | GAAP 全年 | FY26 | 6042000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:PaymentsToAcquireProductiveAssets（2025-01-27～2026-01-25） |  |  |
+| K30 | 買回庫藏股 | GAAP 全年 | FY26 | 40086000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:PaymentsForRepurchaseOfCommonStock（2025-01-27～2026-01-25） |  |  |
+| K31 | 現金股利 | GAAP 全年 | FY26 | 974000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:DividendsCommonStockCash（2025-01-27～2026-01-25） |  |  |
+| K32 | 應收帳款增加 | GAAP 全年 | FY26 | 15399000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:IncreaseDecreaseInAccountsReceivable（2025-01-27～2026-01-25） |  |  |
+| C1 | 營收 | GAAP 九個月累計 | Q3 FY26 | 147811000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:Revenues（2025-01-27～2025-10-26） |  |  |
+| C2 | 營收 | GAAP 單季 | Q3 FY26 | 57006000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:Revenues（2025-07-28～2025-10-26） |  |  |
+| C3 | 毛利 | GAAP 九個月累計 | Q3 FY26 | 102370000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:GrossProfit（2025-01-27～2025-10-26） |  |  |
+| C4 | 毛利 | GAAP 單季 | Q3 FY26 | 41849000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:GrossProfit（2025-07-28～2025-10-26） |  |  |
+| C5 | 營業費用 | GAAP 九個月累計 | Q3 FY26 | 16282000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:OperatingExpenses（2025-01-27～2025-10-26） |  |  |
+| C6 | 營業費用 | GAAP 單季 | Q3 FY26 | 5839000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:OperatingExpenses（2025-07-28～2025-10-26） |  |  |
+| C7 | 營業利益 | GAAP 九個月累計 | Q3 FY26 | 86088000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:OperatingIncomeLoss（2025-01-27～2025-10-26） |  |  |
+| C8 | 營業利益 | GAAP 單季 | Q3 FY26 | 36010000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:OperatingIncomeLoss（2025-07-28～2025-10-26） |  |  |
+| C9 | 稅前利益 | GAAP 九個月累計 | Q3 FY26 | 91052000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest（2025-01-27～2025-10-26） |  |  |
+| C10 | 稅前利益 | GAAP 單季 | Q3 FY26 | 37936000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest（2025-07-28～2025-10-26） |  |  |
+| C11 | 淨利 | GAAP 九個月累計 | Q3 FY26 | 77107000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:NetIncomeLoss（2025-01-27～2025-10-26） |  |  |
+| C12 | 淨利 | GAAP 單季 | Q3 FY26 | 31910000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:NetIncomeLoss（2025-07-28～2025-10-26） |  |  |
+| C13 | 稀釋EPS | GAAP 九個月累計 | Q3 FY26 | 3.14 | 美元/股 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:EarningsPerShareDiluted（2025-01-27～2025-10-26） |  |  |
+| C14 | 稀釋EPS | GAAP 單季 | Q3 FY26 | 1.3 | 美元/股 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:EarningsPerShareDiluted（2025-07-28～2025-10-26） |  |  |
+| C15 | 營業成本 | GAAP 九個月累計 | Q3 FY26 | 45441000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:CostOfRevenue（2025-01-27～2025-10-26） |  |  |
+| C16 | 營業成本 | GAAP 單季 | Q3 FY26 | 15157000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:CostOfRevenue（2025-07-28～2025-10-26） |  |  |
+| C17 | 稀釋加權股數 | GAAP 九個月累計 | Q3 FY26 | 24542000000 | 股 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding（2025-01-27～2025-10-26） |  |  |
+| C18 | 稀釋加權股數 | GAAP 單季 | Q3 FY26 | 24483000000 | 股 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding（2025-07-28～2025-10-26） |  |  |
+| C19 | 投資利得 | GAAP 九個月累計 | Q3 FY26 | 3426000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:GainLossOnInvestments（2025-01-27～2025-10-26） |  |  |
+| C20 | 營業外收支 | GAAP 九個月累計 | Q3 FY26 | 4964000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:NonoperatingIncomeExpense（2025-01-27～2025-10-26） |  |  |
+| C21 | 營業外收支 | GAAP 單季 | Q3 FY26 | 1926000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:NonoperatingIncomeExpense（2025-07-28～2025-10-26） |  |  |
+| C22 | 利息費用 | GAAP 九個月累計 | Q3 FY26 | 186000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:InterestExpenseNonoperating（2025-01-27～2025-10-26） |  |  |
+| C23 | 利息費用 | GAAP 單季 | Q3 FY26 | 61000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:InterestExpenseNonoperating（2025-07-28～2025-10-26） |  |  |
+| C24 | 股權激勵費用 | GAAP 九個月累計 | Q3 FY26 | 4753000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:AllocatedShareBasedCompensationExpense（2025-01-27～2025-10-26） |  |  |
+| C25 | 股權激勵費用 | GAAP 單季 | Q3 FY26 | 1655000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:AllocatedShareBasedCompensationExpense（2025-07-28～2025-10-26） |  |  |
+| C26 | 現金及約當現金 | GAAP 期末 | Q3 FY26 | 11486000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:CashAndCashEquivalentsAtCarryingValue（～2025-10-26） |  |  |
+| C27 | 非可交易股權證券 | GAAP 期末 | Q3 FY26 | 8187000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueAmount（～2025-10-26） |  |  |
+| C28 | 應收帳款 | GAAP 期末 | Q3 FY26 | 33391000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:AccountsReceivableNetCurrent（～2025-10-26） |  |  |
+| C29 | 存貨 | GAAP 期末 | Q3 FY26 | 19784000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:InventoryNet（～2025-10-26） |  |  |
+| C30 | 總資產 | GAAP 期末 | Q3 FY26 | 161148000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:Assets（～2025-10-26） |  |  |
+| C31 | 短期借款 | GAAP 期末 | Q3 FY26 | 999000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:DebtCurrent（～2025-10-26） |  |  |
+| C32 | 長期負債 | GAAP 期末 | Q3 FY26 | 7468000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:LongTermDebtNoncurrent（～2025-10-26） |  |  |
+| C33 | 長期債務帳面值 | GAAP 期末 | Q3 FY26 | 8467000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:LongTermDebt（～2025-10-26） |  |  |
+| C34 | 債務未攤銷折價及發行成本 | GAAP 期末 | Q3 FY26 | 33000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:DebtInstrumentUnamortizedDiscountPremiumAndDebtIssuanceCostsNet（～2025-10-26） |  |  |
+| C35 | 股東權益 | GAAP 期末 | Q3 FY26 | 118897000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:StockholdersEquity（～2025-10-26） |  |  |
+| C36 | 商譽 | GAAP 期末 | Q3 FY26 | 6261000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:Goodwill（～2025-10-26） |  |  |
+| C37 | 無形資產 | GAAP 期末 | Q3 FY26 | 936000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:IntangibleAssetsNetExcludingGoodwill（～2025-10-26） |  |  |
+| C38 | 保證最大暴險 | GAAP 期末 | Q3 FY26 | 860000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:GuaranteeObligationsMaximumExposure（～2025-10-26） |  |  |
+| C39 | 非可交易股權累計向上調整 | GAAP 期末 | Q3 FY26 | 1400000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueUpwardPriceAdjustmentCumulativeAmount（～2025-10-26） |  |  |
+| C40 | 營業現金流 | GAAP 九個月累計 | Q3 FY26 | 66530000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:NetCashProvidedByUsedInOperatingActivities（2025-01-27～2025-10-26） |  |  |
+| C41 | 購置PP&E及無形資產 | GAAP 九個月累計 | Q3 FY26 | 4758000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:PaymentsToAcquireProductiveAssets（2025-01-27～2025-10-26） |  |  |
+| C42 | 買回庫藏股 | GAAP 九個月累計 | Q3 FY26 | 36271000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:PaymentsForRepurchaseOfCommonStock（2025-01-27～2025-10-26） |  |  |
+| C43 | 現金股利 | GAAP 九個月累計 | Q3 FY26 | 732000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:DividendsCommonStockCash（2025-01-27～2025-10-26） |  |  |
+| C44 | 現金股利 | GAAP 單季 | Q3 FY26 | 243000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:DividendsCommonStockCash（2025-07-28～2025-10-26） |  |  |
+| C45 | 應收帳款增加 | GAAP 九個月累計 | Q3 FY26 | 10325000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:IncreaseDecreaseInAccountsReceivable（2025-01-27～2025-10-26） |  |  |
+| D26 | 現金及約當現金 | GAAP 期末 | Q2 FY26 | 11639000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:CashAndCashEquivalentsAtCarryingValue（～2025-07-27） |  |  |
+| D28 | 應收帳款 | GAAP 期末 | Q2 FY26 | 27808000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:AccountsReceivableNetCurrent（～2025-07-27） |  |  |
+| D29 | 存貨 | GAAP 期末 | Q2 FY26 | 14962000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:InventoryNet（～2025-07-27） |  |  |
+| D30 | 總資產 | GAAP 期末 | Q2 FY26 | 140740000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:Assets（～2025-07-27） |  |  |
+| D31 | 長期負債 | GAAP 期末 | Q2 FY26 | 8466000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:LongTermDebtNoncurrent（～2025-07-27） |  |  |
+| D32 | 長期債務帳面值 | GAAP 期末 | Q2 FY26 | 8466000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:LongTermDebt（～2025-07-27） |  |  |
+| D33 | 債務未攤銷折價及發行成本 | GAAP 期末 | Q2 FY26 | 34000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:DebtInstrumentUnamortizedDiscountPremiumAndDebtIssuanceCostsNet（～2025-07-27） |  |  |
+| D35 | 商譽 | GAAP 期末 | Q2 FY26 | 5755000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:Goodwill（～2025-07-27） |  |  |
+| D36 | 無形資產 | GAAP 期末 | Q2 FY26 | 755000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:IntangibleAssetsNetExcludingGoodwill（～2025-07-27） |  |  |
+| E1 | 營收 | GAAP 單季 | Q1 FY26 | 44062000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:Revenues（2025-01-27～2025-04-27） |  |  |
+| E2 | 毛利 | GAAP 單季 | Q1 FY26 | 26668000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:GrossProfit（2025-01-27～2025-04-27） |  |  |
+| E3 | 營業費用 | GAAP 單季 | Q1 FY26 | 5030000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:OperatingExpenses（2025-01-27～2025-04-27） |  |  |
+| E4 | 營業利益 | GAAP 單季 | Q1 FY26 | 21638000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:OperatingIncomeLoss（2025-01-27～2025-04-27） |  |  |
+| E5 | 稅前利益 | GAAP 單季 | Q1 FY26 | 21910000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest（2025-01-27～2025-04-27） |  |  |
+| E6 | 淨利 | GAAP 單季 | Q1 FY26 | 18775000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:NetIncomeLoss（2025-01-27～2025-04-27） |  |  |
+| E7 | 稀釋EPS | GAAP 單季 | Q1 FY26 | 0.76 | 美元/股 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:EarningsPerShareDiluted（2025-01-27～2025-04-27） |  |  |
+| E8 | 營業成本 | GAAP 單季 | Q1 FY26 | 17394000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:CostOfRevenue（2025-01-27～2025-04-27） |  |  |
+| E9 | 稀釋加權股數 | GAAP 單季 | Q1 FY26 | 24611000000 | 股 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding（2025-01-27～2025-04-27） |  |  |
+| E10 | 投資利得 | GAAP 單季 | Q1 FY26 | -175000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:GainLossOnInvestments（2025-01-27～2025-04-27） |  |  |
+| E11 | 營業外收支 | GAAP 單季 | Q1 FY26 | 272000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:NonoperatingIncomeExpense（2025-01-27～2025-04-27） |  |  |
+| E12 | 利息費用 | GAAP 單季 | Q1 FY26 | 63000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:InterestExpenseNonoperating（2025-01-27～2025-04-27） |  |  |
+| E13 | 股權激勵費用 | GAAP 單季 | Q1 FY26 | 1474000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:AllocatedShareBasedCompensationExpense（2025-01-27～2025-04-27） |  |  |
+| E14 | 現金及約當現金 | GAAP 期末 | Q1 FY26 | 15234000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:CashAndCashEquivalentsAtCarryingValue（～2025-04-27） |  |  |
+| E16 | 應收帳款 | GAAP 期末 | Q1 FY26 | 22132000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:AccountsReceivableNetCurrent（～2025-04-27） |  |  |
+| E17 | 存貨 | GAAP 期末 | Q1 FY26 | 11333000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:InventoryNet（～2025-04-27） |  |  |
+| E18 | 總資產 | GAAP 期末 | Q1 FY26 | 125254000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:Assets（～2025-04-27） |  |  |
+| E19 | 長期負債 | GAAP 期末 | Q1 FY26 | 8464000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:LongTermDebtNoncurrent（～2025-04-27） |  |  |
+| E20 | 長期債務帳面值 | GAAP 期末 | Q1 FY26 | 8464000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:LongTermDebt（～2025-04-27） |  |  |
+| E21 | 債務未攤銷折價及發行成本 | GAAP 期末 | Q1 FY26 | 36000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:DebtInstrumentUnamortizedDiscountPremiumAndDebtIssuanceCostsNet（～2025-04-27） |  |  |
+| E23 | 商譽 | GAAP 期末 | Q1 FY26 | 5498000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:Goodwill（～2025-04-27） |  |  |
+| E24 | 無形資產 | GAAP 期末 | Q1 FY26 | 769000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:IntangibleAssetsNetExcludingGoodwill（～2025-04-27） |  |  |
+| E25 | 非可交易股權累計向上調整 | GAAP 期末 | Q1 FY26 | 396000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:EquitySecuritiesWithoutReadilyDeterminableFairValueUpwardPriceAdjustmentCumulativeAmount（～2025-04-27） |  |  |
+| E26 | 營業現金流 | GAAP 單季 | Q1 FY26 | 27414000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:NetCashProvidedByUsedInOperatingActivities（2025-01-27～2025-04-27） |  |  |
+| E27 | 購置PP&E及無形資產 | GAAP 單季 | Q1 FY26 | 1227000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:PaymentsToAcquireProductiveAssets（2025-01-27～2025-04-27） |  |  |
+| E28 | 買回庫藏股 | GAAP 單季 | Q1 FY26 | 14095000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:PaymentsForRepurchaseOfCommonStock（2025-01-27～2025-04-27） |  |  |
+| E29 | 現金股利 | GAAP 單季 | Q1 FY26 | 244000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:DividendsCommonStockCash（2025-01-27～2025-04-27） |  |  |
+| E30 | 應收帳款增加 | GAAP 單季 | Q1 FY26 | -933000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000116 us-gaap:IncreaseDecreaseInAccountsReceivable（2025-01-27～2025-04-27） |  |  |
+| F1 | 營收 | GAAP 半年累計 | Q2 FY25 | 56084000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:Revenues（2024-01-29～2024-07-28） |  |  |
+| F2 | 營收 | GAAP 單季 | Q2 FY25 | 30040000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:Revenues（2024-04-29～2024-07-28） |  |  |
+| F4 | 營業費用 | GAAP 單季 | Q2 FY25 | 3932000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000209 us-gaap:OperatingExpenses（2024-04-29～2024-07-28） |  |  |
+| G1 | 營收 | GAAP 九個月累計 | Q3 FY25 | 91166000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:Revenues（2024-01-29～2024-10-27） |  |  |
+| G2 | 營收 | GAAP 單季 | Q3 FY25 | 35082000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:Revenues（2024-07-29～2024-10-27） |  |  |
+| G3 | 營業費用 | GAAP 九個月累計 | Q3 FY25 | 11716000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:OperatingExpenses（2024-01-29～2024-10-27） |  |  |
+| G4 | 營業費用 | GAAP 單季 | Q3 FY25 | 4287000000 | 美元 | SEC XBRL 10-Q 0001045810-25-000230 us-gaap:OperatingExpenses（2024-07-29～2024-10-27） |  |  |
+| H1 | 營收 | GAAP 全年 | FY25 | 130497000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:Revenues（2024-01-29～2025-01-26） |  |  |
+| H2 | 營業費用 | GAAP 全年 | FY25 | 16405000000 | 美元 | SEC XBRL 10-K 0001045810-26-000021 us-gaap:OperatingExpenses（2024-01-29～2025-01-26） |  |  |
+| D1 | 營收 | GAAP 單季 | Q4 FY26 |  | 美元 |  | =K1-C1 |  |
+| D2 | 毛利 | GAAP 單季 | Q4 FY26 |  | 美元 |  | =K2-C3 |  |
+| D3 | 營業費用 | GAAP 單季 | Q4 FY26 |  | 美元 |  | =K3-C5 |  |
+| D4 | 營業利益 | GAAP 單季 | Q4 FY26 |  | 美元 |  | =K4-C7 |  |
+| D5 | 稅前利益 | GAAP 單季 | Q4 FY26 |  | 美元 |  | =K5-C9 |  |
+| D6 | 淨利 | GAAP 單季 | Q4 FY26 |  | 美元 |  | =K6-C11 |  |
+| D7 | 營業成本 | GAAP 單季 | Q4 FY26 |  | 美元 |  | =K8-C15 |  |
+| D8 | 稀釋EPS | GAAP 單季 | Q4 FY26 |  | 美元/股 |  | =K7-C13 |  |
+| D9 | 營收 | GAAP 單季 | Q4 FY25 |  | 美元 |  | =H1-G1 |  |
+| D10 | 營業費用 | GAAP 單季 | Q4 FY25 |  | 美元 |  | =H2-G3 |  |
+| M11 | 毛利率 | GAAP 單季 | Q2 FY27 |  | % |  | =A8/A4*100 |  |
+| M12 | 營業利益率 | GAAP 單季 | Q2 FY27 |  | % |  | =A16/A4*100 |  |
+| M13 | 毛利率 | GAAP 單季 | Q1 FY27 |  | % |  | =B2/B1*100 |  |
+| M14 | 營業利益率 | GAAP 單季 | Q1 FY27 |  | % |  | =B4/B1*100 |  |
+| M15 | 毛利率 | GAAP 單季 | Q4 FY26 |  | % |  | =D2/D1*100 |  |
+| M16 | 營業利益率 | GAAP 單季 | Q4 FY26 |  | % |  | =D4/D1*100 |  |
+| M17 | 毛利率 | GAAP 單季 | Q3 FY26 |  | % |  | =C4/C2*100 |  |
+| M18 | 營業利益率 | GAAP 單季 | Q3 FY26 |  | % |  | =C8/C2*100 |  |
+| M19 | 毛利率 | GAAP 單季 | Q2 FY26 |  | % |  | =A7/A3*100 |  |
+| M20 | 營業利益率 | GAAP 單季 | Q2 FY26 |  | % |  | =A15/A3*100 |  |
+| N21 | 營業費用 | Non-GAAP 單季 | Q2 FY27 | 8232000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Non-GAAP operating expenses |  |  |
+| N22 | 營業利益 | Non-GAAP 單季 | Q2 FY27 | 63956000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Non-GAAP operating income |  |  |
+| N23 | 淨利 | Non-GAAP 單季 | Q2 FY27 | 53954000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Non-GAAP net income |  |  |
+| N24 | 稀釋EPS | Non-GAAP 單季 | Q2 FY27 | 2.22 | 美元/股 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Non-GAAP diluted EPS |  |  |
+| N25 | 稀釋EPS | Non-GAAP 單季 | Q2 FY26 | 1.01 | 美元/股 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Non-GAAP diluted EPS（重述，含 SBC） |  |  |
+| N26 | 稀釋EPS年增率揭露值 | Non-GAAP 單季 | Q2 FY27 | 120 | % | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Non-GAAP diluted EPS Y/Y | =(N24/N25-1)*100 | 0.5 |
+| N27 | 毛利率揭露值 | Non-GAAP 單季 | Q2 FY27 | 75.0 | % | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Non-GAAP gross margin |  |  |
+| V28 | 營收指引中值 | 公司指引 | Q2 FY27 | 91000000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Outlook revenue $91.0B |  |  |
+| V29 | 營收指引區間 | 公司指引 | Q2 FY27 | 2 | % | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Outlook ±2% |  |  |
+| V30 | GAAP毛利率指引 | 公司指引 GAAP | Q2 FY27 | 74.9 | % | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Outlook GAAP gross margin 74.9% |  |  |
+| V31 | Non-GAAP毛利率指引 | 公司指引 Non-GAAP | Q2 FY27 | 75.0 | % | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Outlook non-GAAP gross margin 75.0% |  |  |
+| V32 | 毛利率指引區間 | 公司指引 | Q2 FY27 | 50 | bp | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Outlook ±50 basis points |  |  |
+| V33 | GAAP營業費用指引 | 公司指引 GAAP | Q2 FY27 | 8500000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Outlook GAAP operating expenses ~$8.5B |  |  |
+| V34 | Non-GAAP營業費用指引 | 公司指引 Non-GAAP | Q2 FY27 | 8300000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Outlook non-GAAP operating expenses ~$8.3B |  |  |
+| V35 | 實際營收較指引中值 | 公司指引 | Q2 FY27 |  | % |  | =(A4/V28-1)*100 |  |
+| V36 | 營收指引中值 | 公司指引 | Q3 FY27 | 108000000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Outlook revenue $108.0B |  |  |
+| V37 | 營收指引區間 | 公司指引 | Q3 FY27 | 2 | % | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Outlook ±2% |  |  |
+| V38 | 毛利率指引 | 公司指引 GAAP Non-GAAP | Q3 FY27 | 74.0 | % | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Outlook GAAP and non-GAAP gross margins 74.0% |  |  |
+| V39 | GAAP營業費用指引 | 公司指引 GAAP | Q3 FY27 | 9200000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Outlook GAAP operating expenses ~$9.2B |  |  |
+| V40 | Non-GAAP營業費用指引 | 公司指引 Non-GAAP | Q3 FY27 | 9000000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Outlook non-GAAP operating expenses ~$9.0B |  |  |
+| V41 | 新增庫藏股授權 | 公司指引 | Q1 FY27 | 80000000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr additional $80.0 billion repurchase authorization |  |  |
+| V42 | 每股季度股利 | 公司指引 | Q2 FY27 | 0.25 | 美元/股 | SEC 10-Q 0001045810-26-000075 XBRL us-gaap:CommonStockDividendsPerShareDeclared（2026-04-27～2026-07-26） |  |  |
+| V43 | 每股季度股利 | 公司指引 | Q1 FY27 | 0.01 | 美元/股 | SEC XBRL 10-Q 0001045810-26-000052 us-gaap:CommonStockDividendsPerShareDeclared（2026-01-26～2026-04-26） |  |  |
+| P44 | Hyperscale營收 | GAAP 單季 | Q2 FY27 | 48710000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Hyperscale |  |  |
+| P45 | ACIE營收 | GAAP 單季 | Q2 FY27 | 40313000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform ACIE |  |  |
+| P46 | Data Center營收 | GAAP 單季 | Q2 FY27 | 89023000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Data Center | =P44+P45 |  |
+| P47 | Edge Computing營收 | GAAP 單季 | Q2 FY27 | 7198000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Edge Computing |  |  |
+| P48 | 市場平台合計 | GAAP 單季 | Q2 FY27 | 96221000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Total | =P46+P47 |  |
+| P49 | Hyperscale營收 | GAAP 單季 | Q1 FY27 | 43050000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Hyperscale |  |  |
+| P50 | ACIE營收 | GAAP 單季 | Q1 FY27 | 32196000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform ACIE |  |  |
+| P51 | Data Center營收 | GAAP 單季 | Q1 FY27 | 75246000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Data Center | =P49+P50 |  |
+| P52 | Edge Computing營收 | GAAP 單季 | Q1 FY27 | 6369000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Edge Computing |  |  |
+| P53 | 市場平台合計 | GAAP 單季 | Q1 FY27 | 81615000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Total | =P51+P52 |  |
+| P54 | Hyperscale營收 | GAAP 單季 | Q2 FY26 | 24168000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Hyperscale |  |  |
+| P55 | ACIE營收 | GAAP 單季 | Q2 FY26 | 16928000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform ACIE |  |  |
+| P56 | Data Center營收 | GAAP 單季 | Q2 FY26 | 41096000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Data Center | =P54+P55 |  |
+| P57 | Edge Computing營收 | GAAP 單季 | Q2 FY26 | 5647000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Edge Computing |  |  |
+| P58 | 市場平台合計 | GAAP 單季 | Q2 FY26 | 46743000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 Revenue by market platform Total | =P56+P57 |  |
+| P59 | ACIE占Data Center | GAAP 單季 | Q2 FY27 |  | % |  | =P45/P46*100 |  |
+| S60 | Compute & Networking營收 | GAAP 單季 | Q2 FY27 | 88299000000 | 美元 | SEC 10-Q 0001045810-26-000075 分部資訊 Compute & Networking revenue |  |  |
+| S61 | Graphics營收 | GAAP 單季 | Q2 FY27 | 7922000000 | 美元 | SEC 10-Q 0001045810-26-000075 分部資訊 Graphics revenue |  |  |
+| S62 | 分部合計 | GAAP 單季 | Q2 FY27 | 96221000000 | 美元 | SEC 10-Q 0001045810-26-000075 分部資訊 Total | =S60+S61 |  |
+| S63 | Compute & Networking營收 | GAAP 單季 | Q2 FY26 | 41331000000 | 美元 | SEC 10-Q 0001045810-26-000075 分部資訊 Compute & Networking revenue |  |  |
+| S64 | Graphics營收 | GAAP 單季 | Q2 FY26 | 5412000000 | 美元 | SEC 10-Q 0001045810-26-000075 分部資訊 Graphics revenue |  |  |
+| S65 | 分部合計 | GAAP 單季 | Q2 FY26 | 46743000000 | 美元 | SEC 10-Q 0001045810-26-000075 分部資訊 Total | =S63+S64 |  |
+| F66 | 營業現金流 | GAAP 單季 | Q2 FY27 | 24077000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr GAAP net cash provided by operating activities | =A94-B30 | 2000000 |
+| F67 | 購置PP&E及無形資產(新聞稿) | GAAP 單季 | Q2 FY27 | 2677000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Purchases related to property and equipment and intangible assets |  |  |
+| F68 | PP&E本金支付 | GAAP 單季 | Q2 FY27 | 59000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Principal payments on property and equipment and intangible assets |  |  |
+| F69 | 自由現金流 | GAAP 單季 | Q2 FY27 | 21341000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr Free cash flow | =F66-F67-F68 |  |
+| F70 | 營業現金流/淨利 | GAAP 單季 | Q2 FY27 |  | % |  | =F66/A24*100 |  |
+| F71 | 自由現金流率 | GAAP 單季 | Q2 FY27 |  | % |  | =F69/A4*100 |  |
+| F72 | 購置PP&E及無形資產(新聞稿) | GAAP 單季 | Q1 FY27 | 1757000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Purchases related to property and equipment and intangible assets |  |  |
+| F73 | PP&E本金支付 | GAAP 單季 | Q1 FY27 | 33000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Principal payments on property and equipment and intangible assets |  |  |
+| F74 | 自由現金流 | GAAP 單季 | Q1 FY27 | 48554000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr Free cash flow | =B30-F72-F73 |  |
+| F75 | 營業現金流/淨利 | GAAP 單季 | Q1 FY27 |  | % |  | =B30/B6*100 |  |
+| F76 | 自由現金流率 | GAAP 單季 | Q1 FY27 |  | % |  | =F74/B1*100 |  |
+| F77 | 營業現金流 | GAAP 單季 | Q4 FY26 | 36190000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr 比較期 GAAP net cash provided by operating activities | =K28-C40 | 2000000 |
+| F78 | 購置PP&E及無形資產(新聞稿) | GAAP 單季 | Q4 FY26 | 1284000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr 比較期 Purchases related to property and equipment and intangible assets |  |  |
+| F79 | PP&E本金支付 | GAAP 單季 | Q4 FY26 | 4000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr 比較期 Principal payments on property and equipment and intangible assets |  |  |
+| F80 | 自由現金流 | GAAP 單季 | Q4 FY26 | 34902000000 | 美元 | SEC 8-K 0001045810-26-000051 Exhibit 99.1 新聞稿 q1fy27pr 比較期 Free cash flow | =F77-F78-F79 |  |
+| F81 | 營業現金流/淨利 | GAAP 單季 | Q4 FY26 |  | % |  | =F77/D6*100 |  |
+| F82 | 自由現金流率 | GAAP 單季 | Q4 FY26 |  | % |  | =F80/D1*100 |  |
+| F83 | 營業現金流 | GAAP 單季 | Q3 FY26 | 23750000000 | 美元 | SEC 8-K 0001045810-25-000228 Exhibit 99.1 新聞稿 q3fy26pr GAAP net cash provided by operating activities | =C40-A93 | 2000000 |
+| F84 | 購置PP&E及無形資產(新聞稿) | GAAP 單季 | Q3 FY26 | 1637000000 | 美元 | SEC 8-K 0001045810-25-000228 Exhibit 99.1 新聞稿 q3fy26pr Purchases related to property and equipment and intangible assets |  |  |
+| F85 | PP&E本金支付 | GAAP 單季 | Q3 FY26 | 24000000 | 美元 | SEC 8-K 0001045810-25-000228 Exhibit 99.1 新聞稿 q3fy26pr Principal payments on property and equipment and intangible assets |  |  |
+| F86 | 自由現金流 | GAAP 單季 | Q3 FY26 | 22089000000 | 美元 | SEC 8-K 0001045810-25-000228 Exhibit 99.1 新聞稿 q3fy26pr Free cash flow | =F83-F84-F85 |  |
+| F87 | 營業現金流/淨利 | GAAP 單季 | Q3 FY26 |  | % |  | =F83/C12*100 |  |
+| F88 | 自由現金流率 | GAAP 單季 | Q3 FY26 |  | % |  | =F86/C2*100 |  |
+| F89 | 營業現金流 | GAAP 單季 | Q2 FY26 | 15365000000 | 美元 | SEC 8-K 0001045810-25-000228 Exhibit 99.1 新聞稿 q3fy26pr 比較期 GAAP net cash provided by operating activities | =A93-E26 | 2000000 |
+| F90 | 購置PP&E及無形資產(新聞稿) | GAAP 單季 | Q2 FY26 | 1894000000 | 美元 | SEC 8-K 0001045810-25-000228 Exhibit 99.1 新聞稿 q3fy26pr 比較期 Purchases related to property and equipment and intangible assets |  |  |
+| F91 | PP&E本金支付 | GAAP 單季 | Q2 FY26 | 21000000 | 美元 | SEC 8-K 0001045810-25-000228 Exhibit 99.1 新聞稿 q3fy26pr 比較期 Principal payments on property and equipment and intangible assets |  |  |
+| F92 | 自由現金流 | GAAP 單季 | Q2 FY26 | 13450000000 | 美元 | SEC 8-K 0001045810-25-000228 Exhibit 99.1 新聞稿 q3fy26pr 比較期 Free cash flow | =F89-F90-F91 |  |
+| F93 | 營業現金流/淨利 | GAAP 單季 | Q2 FY26 |  | % |  | =F89/A23*100 |  |
+| F94 | 自由現金流率 | GAAP 單季 | Q2 FY26 |  | % |  | =F92/A3*100 |  |
+| F95 | 購置PP&E及無形資產單季(XBRL) | GAAP 單季 | Q2 FY27 |  | 美元 |  | =A96-B31 |  |
+| F96 | 買回庫藏股(新聞稿) | GAAP 單季 | Q2 FY27 | 19732000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr share repurchases |  |  |
+| F97 | 買回庫藏股(新聞稿) | GAAP 單季 | Q1 FY27 | 19312000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr 比較期 share repurchases |  |  |
+| F98 | 買回庫藏股(新聞稿) | GAAP 單季 | Q2 FY26 | 9721000000 | 美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.1 新聞稿 q2fy27pr 比較期 share repurchases |  |  |
+| F99 | 買回庫藏股上半年勾稽 | GAAP 單季 | Q2 FY27 | 39044000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:PaymentsForRepurchaseOfCommonStock（2026-01-26～2026-07-26） | =F96+F97 |  |
+| F100 | 應收帳款增加(現金流量表) | GAAP 單季 | Q2 FY27 |  | 美元 |  | =A104-B34 |  |
+| F101 | 應收帳款增加(現金流量表) | GAAP 單季 | Q2 FY26 |  | 美元 |  | =A103-E30 |  |
+| Z102 | 營收 | GAAP TTM | TTM |  | 美元 |  | =C2+D1+B1+A4 |  |
+| Z103 | 淨利 | GAAP TTM | TTM |  | 美元 |  | =C12+D6+B6+A24 |  |
+| Z104 | 營業現金流 | GAAP TTM | TTM |  | 美元 |  | =F83+F77+B30+F66 |  |
+| Z105 | 自由現金流 | GAAP TTM | TTM |  | 美元 |  | =F86+F80+F74+F69 |  |
+| Z106 | 稀釋EPS | GAAP TTM | TTM |  | 美元/股 |  | =C14+D8+B7+A28 |  |
+| Z107 | 營業現金流/淨利 | GAAP TTM | TTM |  | % |  | =Z104/Z103*100 |  |
+| Z108 | 自由現金流率 | GAAP TTM | TTM |  | % |  | =Z105/Z102*100 |  |
+| W109 | 應收帳款天數 | GAAP 單季 | Q2 FY27 |  | 天 |  | =A66/A4*91 |  |
+| W110 | 存貨天數 | GAAP 單季 | Q2 FY27 |  | 天 |  | =A68/A32*91 |  |
+| W111 | 應收帳款天數 | GAAP 單季 | Q1 FY27 |  | 天 |  | =B18/B1*91 |  |
+| W112 | 存貨天數 | GAAP 單季 | Q1 FY27 |  | 天 |  | =B19/B8*91 |  |
+| W113 | 應收帳款天數 | GAAP 單季 | Q4 FY26 |  | 天 |  | =A65/D1*91 |  |
+| W114 | 存貨天數 | GAAP 單季 | Q4 FY26 |  | 天 |  | =A67/D7*91 |  |
+| W115 | 應收帳款天數 | GAAP 單季 | Q3 FY26 |  | 天 |  | =C28/C2*91 |  |
+| W116 | 存貨天數 | GAAP 單季 | Q3 FY26 |  | 天 |  | =C29/C16*91 |  |
+| W117 | 應收帳款天數 | GAAP 單季 | Q2 FY26 |  | 天 |  | =D28/A3*91 |  |
+| W118 | 存貨天數 | GAAP 單季 | Q2 FY26 |  | 天 |  | =D29/A31*91 |  |
+| W119 | 應收帳款天數揭露值 | GAAP 單季 | Q2 FY27 | 60 | 天 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 DSO 60 days | =W109 |  |
+| W120 | 應收帳款天數揭露值 | GAAP 單季 | Q1 FY27 | 45 | 天 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 DSO 45 days（上季） | =W111 |  |
+| L121 | 現金及可交易債券 | GAAP 期末 | Q2 FY27 |  | 美元 |  | =A54+A56 |  |
+| L122 | 現金及可交易債券 | GAAP 期末 | Q4 FY26 |  | 美元 |  | =A53+A55 |  |
+| L123 | 非可交易證券(資產負債表) | GAAP 期末 | Q2 FY27 | 51157000000 | 美元 | SEC 10-Q 0001045810-26-000075 資產負債表 Non-marketable securities |  |  |
+| L124 | 非可交易證券(資產負債表) | GAAP 期末 | Q4 FY26 | 22251000000 | 美元 | SEC 10-Q 0001045810-26-000075 資產負債表 Non-marketable securities（比較期） |  |  |
+| L125 | 優先無擔保票據本金 | GAAP 期末 | Q2 FY27 |  | 美元 |  | =A76+A78 |  |
+| L126 | 優先無擔保票據本金 | GAAP 期末 | Q4 FY26 |  | 美元 |  | =A75+A77 |  |
+| L127 | 淨現金(現金及可交易債券減票據本金) | GAAP 期末 | Q2 FY27 |  | 美元 |  | =L121-L125 |  |
+| L128 | 商譽及無形資產占總資產 | GAAP 期末 | Q2 FY27 |  | % |  | =(A86+A88)/A70*100 |  |
+| L129 | 商譽及無形資產合計 | GAAP 期末 | Q2 FY27 |  | 美元 |  | =A86+A88 |  |
+| L130 | 稀釋股數年變化 | GAAP 單季 | Q2 FY27 |  | % |  | =(A36/A35-1)*100 |  |
+| L131 | 股權激勵占營收 | GAAP 單季 | Q2 FY27 |  | % |  | =A52/A4*100 |  |
+| C132 | 超額存貨採購義務 | GAAP 期末 | Q2 FY27 | 2138000000 | 美元 | SEC 10-Q 0001045810-26-000075 附註 excess inventory purchase obligations |  |  |
+| C133 | Groq授權支付(上半年) | GAAP 半年累計 | Q2 FY27 | 2944000000 | 美元 | SEC 10-Q 0001045810-26-000075 現金流量表 financing activities Groq, Inc. |  |  |
+| C134 | 應收帳款客戶1占比 | GAAP 期末 | Q2 FY27 | 22 | % | SEC 10-Q 0001045810-26-000075 附註 concentration of credit risk accounts receivable |  |  |
+| C135 | 應收帳款客戶2占比 | GAAP 期末 | Q2 FY27 | 14 | % | SEC 10-Q 0001045810-26-000075 附註 concentration of credit risk accounts receivable |  |  |
+| C136 | 應收帳款客戶3占比 | GAAP 期末 | Q2 FY27 | 13 | % | SEC 10-Q 0001045810-26-000075 附註 concentration of credit risk accounts receivable |  |  |
+| C137 | 應收帳款客戶4占比 | GAAP 期末 | Q2 FY27 | 11 | % | SEC 10-Q 0001045810-26-000075 附註 concentration of credit risk accounts receivable |  |  |
+| C138 | 應收帳款客戶5占比 | GAAP 期末 | Q2 FY27 | 10 | % | SEC 10-Q 0001045810-26-000075 附註 concentration of credit risk accounts receivable |  |  |
+| C139 | 五大客戶應收占比合計 | GAAP 期末 | Q2 FY27 |  | % |  | =C134+C135+C136+C137+C138 |  |
+| C140 | 應收帳款客戶1占比 | GAAP 期末 | Q4 FY26 | 25 | % | SEC 10-Q 0001045810-26-000075 附註 concentration of credit risk accounts receivable（2026/1/25） |  |  |
+| C141 | 應收帳款客戶2占比 | GAAP 期末 | Q4 FY26 | 18 | % | SEC 10-Q 0001045810-26-000075 附註 concentration of credit risk accounts receivable（2026/1/25） |  |  |
+| C142 | 應收帳款客戶3占比 | GAAP 期末 | Q4 FY26 | 13 | % | SEC 10-Q 0001045810-26-000075 附註 concentration of credit risk accounts receivable（2026/1/25） |  |  |
+| C143 | 三大客戶應收占比合計 | GAAP 期末 | Q4 FY26 |  | % |  | =C140+C141+C142 |  |
+| C144 | 供應與產能 | 承諾 FY27剩餘 | Q2 FY27 | 92 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 供應與產能 FY27剩餘 |  |  |
+| C145 | 供應與產能 | 承諾 FY28 | Q2 FY27 | 87 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 供應與產能 FY28 |  |  |
+| C146 | 供應與產能 | 承諾 FY29 | Q2 FY27 | 88 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 供應與產能 FY29 |  |  |
+| C147 | 供應與產能 | 承諾 FY30 | Q2 FY27 | 6 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 供應與產能 FY30 |  |  |
+| C148 | 供應與產能 | 承諾 FY31 | Q2 FY27 | 5 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 供應與產能 FY31 |  |  |
+| C149 | 供應與產能 | 承諾 FY32+ | Q2 FY27 | 1 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 供應與產能 FY32+ |  |  |
+| C150 | 供應與產能 | 承諾 合計 | Q2 FY27 | 279 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 供應與產能 合計 |  |  |
+| C151 | 雲端服務協議 | 承諾 FY27剩餘 | Q2 FY27 | 3 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 雲端服務協議 FY27剩餘 |  |  |
+| C152 | 雲端服務協議 | 承諾 FY28 | Q2 FY27 | 8 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 雲端服務協議 FY28 |  |  |
+| C153 | 雲端服務協議 | 承諾 FY29 | Q2 FY27 | 7 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 雲端服務協議 FY29 |  |  |
+| C154 | 雲端服務協議 | 承諾 FY30 | Q2 FY27 | 6 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 雲端服務協議 FY30 |  |  |
+| C155 | 雲端服務協議 | 承諾 FY31 | Q2 FY27 | 4 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 雲端服務協議 FY31 |  |  |
+| C156 | 雲端服務協議 | 承諾 FY32+ | Q2 FY27 | 1 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 雲端服務協議 FY32+ |  |  |
+| C157 | 雲端服務協議 | 承諾 合計 | Q2 FY27 | 29 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 雲端服務協議 合計 |  |  |
+| C158 | 未起租資料中心租約 | 承諾 FY28 | Q2 FY27 | 1 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 未起租資料中心租約 FY28 |  |  |
+| C159 | 未起租資料中心租約 | 承諾 FY29 | Q2 FY27 | 1 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 未起租資料中心租約 FY29 |  |  |
+| C160 | 未起租資料中心租約 | 承諾 FY30 | Q2 FY27 | 2 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 未起租資料中心租約 FY30 |  |  |
+| C161 | 未起租資料中心租約 | 承諾 FY31 | Q2 FY27 | 1 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 未起租資料中心租約 FY31 |  |  |
+| C162 | 未起租資料中心租約 | 承諾 FY32+ | Q2 FY27 | 20 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 未起租資料中心租約 FY32+ |  |  |
+| C163 | 未起租資料中心租約 | 承諾 合計 | Q2 FY27 | 25 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 未起租資料中心租約 合計 |  |  |
+| C164 | 股權投資承諾 | 承諾 FY27剩餘 | Q2 FY27 | 18 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 股權投資承諾 FY27剩餘 |  |  |
+| C165 | 股權投資承諾 | 承諾 FY28 | Q2 FY27 | 3 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 股權投資承諾 FY28 |  |  |
+| C166 | 股權投資承諾 | 承諾 FY29 | Q2 FY27 | 2 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 股權投資承諾 FY29 |  |  |
+| C167 | 股權投資承諾 | 承諾 FY30 | Q2 FY27 | 2 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 股權投資承諾 FY30 |  |  |
+| C168 | 股權投資承諾 | 承諾 合計 | Q2 FY27 | 25 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 股權投資承諾 合計 |  |  |
+| C169 | 資本支出承諾 | 承諾 FY27剩餘 | Q2 FY27 | 7 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 資本支出承諾 FY27剩餘 |  |  |
+| C170 | 資本支出承諾 | 承諾 FY28 | Q2 FY27 | 1 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 資本支出承諾 FY28 |  |  |
+| C171 | 資本支出承諾 | 承諾 合計 | Q2 FY27 | 8 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table 資本支出承諾 合計 |  |  |
+| C172 | 承諾合計 | 承諾 FY27剩餘 | Q2 FY27 | 120 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table Total FY27剩餘 | =C144+C151+C164+C169 |  |
+| C173 | 承諾合計 | 承諾 FY28 | Q2 FY27 | 100 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table Total FY28 | =C145+C152+C158+C165+C170 |  |
+| C174 | 承諾合計 | 承諾 FY29 | Q2 FY27 | 98 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table Total FY29 | =C146+C153+C159+C166 |  |
+| C175 | 承諾合計 | 承諾 FY30 | Q2 FY27 | 16 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table Total FY30 | =C147+C154+C160+C167 |  |
+| C176 | 承諾合計 | 承諾 FY31 | Q2 FY27 | 10 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table Total FY31 | =C148+C155+C161 |  |
+| C177 | 承諾合計 | 承諾 FY32+ | Q2 FY27 | 22 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table Total FY32+ | =C149+C156+C162 |  |
+| C178 | 承諾合計 | 承諾 合計 | Q2 FY27 | 366 | 十億美元 | SEC 10-Q 0001045810-26-000075 附註 commitments table Total 合計 | =C150+C157+C163+C168+C171 |  |
+| C179 | 供應與產能承諾(上季) | 承諾 合計 | Q1 FY27 | 119 | 十億美元 | SEC 8-K 0001045810-26-000073 Exhibit 99.2 CFO Commentary q2fy27 supply and capacity commitments $119B（上季） |  |  |
+| C180 | 供應承諾季增率 | 承諾 合計 | Q2 FY27 |  | % |  | =(C150/C179-1)*100 |  |
+| C181 | 供應承諾占TTM營收 | 承諾 合計 | Q2 FY27 |  | % |  | =C150*1000000000/Z102*100 |  |
+| C182 | SB Energy保證上限 | GAAP 期末 | Q2 FY27 | 105000000000 | 美元 | SEC 10-Q 0001045810-26-000075 附註 guarantees SB Energy capped at $105 billion |  |  |
+| C183 | 其他土地電力廠體保證 | GAAP 期末 | Q2 FY27 | 3500000000 | 美元 | SEC 10-Q 0001045810-26-000075 附註 guarantees land, power and shell $3.5 billion |  |  |
+| C184 | 保證最大暴險合計 | GAAP 期末 | Q2 FY27 | 108500000000 | 美元 | SEC XBRL 10-Q 0001045810-26-000075 us-gaap:GuaranteeObligationsMaximumExposure | =C182+C183 |  |
+| C185 | SB Energy保證占股東權益 | GAAP 期末 | Q2 FY27 |  | % |  | =C182/A84*100 |  |
+| C186 | 投資利得占稅前利益 | GAAP 單季 | Q2 FY27 |  | % |  | =A40/A20*100 |  |
+| C187 | 投資利得占稅前利益 | GAAP 半年累計 | Q2 FY27 |  | % |  | =A38/A18*100 |  |
+| Y188 | 營業現金流/淨利警戒門檻 | 假設 |  | 80 | % | 假設：本 Skill 異常訊號檢查門檻（非資料） |  |  |
+| Q189 | 收盤價 |  | 2026-08-28 | 217.55 | 美元 | Nasdaq historical (api.nasdaq.com) NVDA 2026-08-28 Close |  |  |
+| Q190 | 流通股數(封面) | 估值 GAAP | 2026-08-21 | 24100000000 | 股 | SEC XBRL 10-Q 0001045810-26-000075 dei:EntityCommonStockSharesOutstanding（2026-08-21，已四捨五入至億股） |  |  |
+| Q191 | 市值 | 估值 GAAP | 2026-08-28 |  | 美元 |  | =Q189*Q190 |  |
+| Q192 | 本益比(股價/TTM稀釋EPS) | 估值 GAAP TTM | 2026-08-28 |  | 倍 |  | =Q189/Z106 |  |
+| Q193 | 市銷率(市值/TTM營收) | 估值 GAAP TTM | 2026-08-28 |  | 倍 |  | =Q191/Z102 |  |
+| Q194 | 市值/TTM自由現金流 | 估值 GAAP TTM | 2026-08-28 |  | 倍 |  | =Q191/Z105 |  |

@@ -151,6 +151,9 @@ def _is_noise_number(text: str, start: int, end: int, unit: str) -> bool:
 def _all_data_numbers(text: str) -> list:
     """返回储存格中全部「数据型」数字 [(value, unit, raw)]，跳过年份／季度／月份等噪声。"""
     out = []
+    # 连结网址与行内程式码里的数字（申报编号、档名日期）不是数据
+    text = re.sub(r'\]\([^)]*\)', ']', text)
+    text = re.sub(r'https?://\S+|`[^`]*`', ' ', text)
     for m in _CELL_NUM_RE.finditer(text):
         raw = m.group(1).strip('.，,')
         if not raw or not re.search(r'\d', raw):
@@ -291,7 +294,7 @@ def extract_data_points(md_text: str) -> list:
         if col_header.upper() in ('趋势', '趨勢', '说明', '說明', '备注', '備註'):
             continue
         # 评分／品质栏（1-5 分、★）不是财务数据
-        if re.search(r'評分|评分|質量|质量|分數|分数|1-5|★', col_header):
+        if re.search(r'評分|评分|質量|质量|品質|品质|分數|分数|1-5|★', col_header):
             continue
         # label = "行标签 · 列标题"（若列标题是行标签的补充）
         if col_header and col_header != row_label:
@@ -817,18 +820,37 @@ def _tokens(text: str) -> set:
             if 2 <= len(t) <= 8 and not re.search(r'\d', t)}
 
 
+def _row_periods(rows: list) -> dict:
+    """每一列的期间集合：本身期间，加上公式引用列的期间（如 TTM 本益比＝股价日期＋TTM）。"""
+    by_id = {r['id']: r for r in rows}
+    memo = {}
+
+    def walk(rid, seen):
+        if rid in memo:
+            return memo[rid]
+        r = by_id[rid]
+        ps = {r.get('period', '')} - {''}
+        for ref in re.findall(r'[A-Za-z_][A-Za-z_0-9]*', r.get('formula', '').lstrip('=')):
+            if ref in by_id and ref not in seen and ref != 'abs':
+                ps |= walk(ref, seen | {rid})
+        memo[rid] = ps
+        return ps
+    return {rid: walk(rid, {rid}) for rid in by_id}
+
+
 def _candidates(rows: list, env: dict) -> list:
     """可供报告回对的数值：帐本每一笔，加上同项目、同口径、同单位跨期间的变化率与差额。"""
     cands = []
+    rp = _row_periods(rows)
     for r in rows:
         v = env.get(r['id']) if r['value'] is None else r['value']
         if v is None:
             continue
         scale = _SCALE_UNITS.get(r.get('unit', '').strip())
-        cands.append({'v': v, 'scale': scale, 'periods': {r.get('period', '')}, 'row': r,
+        cands.append({'v': v, 'scale': scale, 'periods': rp.get(r['id']) or {r.get('period', '')}, 'row': r,
                       'text': f"{r.get('item','')} {r.get('basis','')}", 'desc': r['id']})
         if r['formula'] and r['value'] is not None:
-            cands.append({'v': r['computed'], 'scale': scale, 'periods': {r.get('period', '')}, 'row': r,
+            cands.append({'v': r['computed'], 'scale': scale, 'periods': rp.get(r['id']) or {r.get('period', '')}, 'row': r,
                           'text': f"{r.get('item','')} {r.get('basis','')}", 'desc': r['id'] + '(自算)'})
     groups = {}
     for r in rows:
@@ -865,14 +887,16 @@ _EXEMPT_RE = re.compile(r'估計|估计|預估|预估|假設|假设|未(經|经)
 def _is_must(p: dict, must_sections: list, all_tables: bool) -> bool:
     if in_sections(p, must_sections):
         return True
-    return all_tables and p.get('kind') == 'table' and not _EXEMPT_RE.search(p.get('cell') or p.get('raw_text', ''))
+    # 豁免：储存格本身，或其列标签／栏标题（整列、整栏宣告为估计）含估计／未核实字样
+    marked = _EXEMPT_RE.search(p.get('cell') or p.get('raw_text', '')) or _EXEMPT_RE.search(p.get('label', ''))
+    return all_tables and p.get('kind') == 'table' and not marked
 
 
 def check_report_against_ledger(md_text: str, rows: list, env: dict, must_sections: list,
                                 all_tables: bool = False) -> dict:
     points = extract_data_points(md_text)
     cands = _candidates(rows, env)
-    periods_vocab = {r.get('period', '') for r in rows if r.get('period')}
+    periods_vocab = {r.get('period', '') for r in rows if r.get('period') and re.search(r'\w', r.get('period', ''))}
     basis_vocab = set()
     for r in rows:
         basis_vocab |= _tokens(r.get('basis', ''))
@@ -1028,7 +1052,7 @@ def main():
                      help='该标题（子字串，含上层标题路径）下每个数字都必须追溯到帐本，可重复指定')
     ldg.add_argument('--require-official', action='store_true', help='原始值须为权威来源')
     ldg.add_argument('--all-tables', action='store_true',
-                     help='全文所有表格的数字都须追溯到帐本（该列含「估計／假設／未核實／推測」者除外）')
+                     help='全文所有表格的数字都须追溯到帐本（储存格或其列标签／栏标题含「估計／假設／未核實／推測」者除外）')
     ldg.add_argument('--sample', type=float, default=None,
                      help='改为输出帐本原始值抽样 JSON（比例，如 0.2），供回到来源独立重取后交给 verdict')
     ldg.add_argument('--seed', type=int, default=None)
