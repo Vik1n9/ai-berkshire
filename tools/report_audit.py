@@ -881,7 +881,7 @@ def _display_match(cand_v: Decimal, scale, reported: float, decimals: int) -> bo
     return False
 
 
-_EXEMPT_RE = re.compile(r'估計|估计|預估|预估|假設|假设|未(經|经)?(官方)?核[實实]|推測|推测')
+_EXEMPT_RE = re.compile(r'估計|估计|預估|预估|假設|假设|未(經|经)?(官方)?核[實实]|推測|推测|推算')
 
 
 def _is_must(p: dict, must_sections: list, all_tables: bool) -> bool:
