@@ -1,12 +1,12 @@
 {
   "meta": {
     "project": "AI Berkshire",
-    "generated_at": "2026-10-11T16:33:01Z",
+    "generated_at": "2026-10-11T17:15:03Z",
     "generator": "scripts/build_graph.py",
     "note": "價值投資研究知識圖譜：公司/主題實體 + 報告 + Skill + 工具。可用 scripts/query_graph.py 查詢。"
   },
   "stats": {
-    "reports": 202,
+    "reports": 203,
     "entities": 50,
     "skills": 19,
     "tools": 12,
@@ -20,7 +20,7 @@
       "checklist": 9,
       "thesis": 7,
       "comparison": 4,
-      "funnel": 1
+      "funnel": 2
     },
     "reports_by_skill": {},
     "reports_by_master": {
@@ -671,10 +671,11 @@
     {
       "id": "entity:產業研究",
       "name": "產業研究",
-      "report_count": 1,
+      "report_count": 2,
       "tickers": [],
       "reports": [
-        "reports/產業研究/美股能源-funnel-20261011.md"
+        "reports/產業研究/美股能源-funnel-20261011.md",
+        "reports/產業研究/美股電力-funnel-20261011.md"
       ]
     },
     {
@@ -3515,6 +3516,19 @@
       "ticker": null,
       "masters": [],
       "bytes": 65417
+    },
+    {
+      "id": "reports/產業研究/美股電力-funnel-20261011.md",
+      "path": "reports/產業研究/美股電力-funnel-20261011.md",
+      "title": "美股電力-funnel-20261011",
+      "entity": "產業研究",
+      "type": "funnel",
+      "skill": null,
+      "date": "2026-10-11",
+      "quarter": null,
+      "ticker": null,
+      "masters": [],
+      "bytes": 73792
     },
     {
       "id": "reports/訊芯-KY/深度分析/訊芯-KY-research-20260831.md",
