@@ -1,13 +1,13 @@
 {
   "meta": {
     "project": "AI Berkshire",
-    "generated_at": "2026-09-27T14:25:24Z",
+    "generated_at": "2026-10-11T15:11:13Z",
     "generator": "scripts/build_graph.py",
     "note": "價值投資研究知識圖譜：公司/主題實體 + 報告 + Skill + 工具。可用 scripts/query_graph.py 查詢。"
   },
   "stats": {
-    "reports": 197,
-    "entities": 49,
+    "reports": 200,
+    "entities": 50,
     "skills": 19,
     "tools": 12,
     "reports_by_type": {
@@ -16,21 +16,21 @@
       "valuation": 23,
       "management": 11,
       "team": 11,
-      "earnings": 10,
+      "earnings": 11,
+      "checklist": 8,
       "thesis": 7,
-      "checklist": 6,
       "comparison": 4
     },
     "reports_by_skill": {},
     "reports_by_master": {
-      "巴菲特": 42,
-      "李錄": 42,
-      "段永平": 41,
+      "巴菲特": 44,
+      "李錄": 44,
+      "段永平": 43,
       "芒格": 13
     },
     "date_range": [
       "2026-04-08",
-      "2026-09-26"
+      "2026-10-11"
     ]
   },
   "entities": [
@@ -355,7 +355,7 @@
     {
       "id": "entity:MU",
       "name": "MU",
-      "report_count": 5,
+      "report_count": 7,
       "tickers": [
         "MU"
       ],
@@ -363,8 +363,10 @@
         "reports/MU/投資論點/MU-thesis.md",
         "reports/MU/深度分析/MU-research-20260831.md",
         "reports/MU/財報分析/MU-earnings-FY2026Q3.md",
+        "reports/MU/財報分析/MU-earnings-FY2026Q4.md",
         "reports/MU/買前確認/MU-checklist-20260825.md",
-        "reports/MU/買前確認/MU-checklist-20260926.md"
+        "reports/MU/買前確認/MU-checklist-20260926.md",
+        "reports/MU/買前確認/MU-checklist-20261001.md"
       ]
     },
     {
@@ -672,6 +674,15 @@
       ],
       "reports": [
         "reports/訊芯-KY/深度分析/訊芯-KY-research-20260831.md"
+      ]
+    },
+    {
+      "id": "entity:跨公司比較",
+      "name": "跨公司比較",
+      "report_count": 1,
+      "tickers": [],
+      "reports": [
+        "reports/跨公司比較/巴菲特Checklist-多公司對比-20261011.md"
       ]
     }
   ],
@@ -2143,6 +2154,19 @@
       "bytes": 72416
     },
     {
+      "id": "reports/MU/財報分析/MU-earnings-FY2026Q4.md",
+      "path": "reports/MU/財報分析/MU-earnings-FY2026Q4.md",
+      "title": "MU-earnings-FY2026Q4",
+      "entity": "MU",
+      "type": "earnings",
+      "skill": null,
+      "date": null,
+      "quarter": "2026Q4",
+      "ticker": "MU",
+      "masters": [],
+      "bytes": 72034
+    },
+    {
       "id": "reports/MU/買前確認/MU-checklist-20260825.md",
       "path": "reports/MU/買前確認/MU-checklist-20260825.md",
       "title": "MU-checklist-20260825",
@@ -2171,6 +2195,23 @@
       "ticker": null,
       "masters": [],
       "bytes": 34945
+    },
+    {
+      "id": "reports/MU/買前確認/MU-checklist-20261001.md",
+      "path": "reports/MU/買前確認/MU-checklist-20261001.md",
+      "title": "MU-checklist-20261001",
+      "entity": "MU",
+      "type": "checklist",
+      "skill": null,
+      "date": "2026-10-01",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 43826
     },
     {
       "id": "reports/NOW/深度分析/NOW-research-20260721.md",
@@ -3441,6 +3482,23 @@
         "李錄"
       ],
       "bytes": 47121
+    },
+    {
+      "id": "reports/跨公司比較/巴菲特Checklist-多公司對比-20261011.md",
+      "path": "reports/跨公司比較/巴菲特Checklist-多公司對比-20261011.md",
+      "title": "巴菲特Checklist-多公司對比-20261011",
+      "entity": "跨公司比較",
+      "type": "checklist",
+      "skill": null,
+      "date": "2026-10-11",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 64702
     }
   ],
   "skills": [
