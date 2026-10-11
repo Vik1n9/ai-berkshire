@@ -1,7 +1,7 @@
 # AI Berkshire 專案圖譜（PROJECT GRAPH）
 
 > 自動生成，請勿手工編輯。執行 `python3 scripts/build_graph.py` 重新生成。
-> 生成時間：2026-09-27T14:25:24Z
+> 生成時間：2026-10-11T15:11:13Z
 
 本圖譜為專案的**查詢索引**：把散落在 `reports/`（僅限美股與台股公開發行公司）的報告，
 按「公司/主題實體 → 報告」組織，並附 Skill 與工具目錄，便於後續檢索。
@@ -11,10 +11,10 @@
 
 ## 總覽統計
 
-- 報告總數：**197**
-- 實體（公司/主題）數：**49**
+- 報告總數：**200**
+- 實體（公司/主題）數：**50**
 - Skill 數：**19**，工具數：**12**
-- 報告日期跨度：2026-04-08 ~ 2026-09-26
+- 報告日期跨度：2026-04-08 ~ 2026-10-11
 
 **按報告型別：**
 
@@ -25,12 +25,12 @@
 | 估值 (`valuation`) | 23 |
 | 管理層研究 (`management`) | 11 |
 | 團隊研究 (`team`) | 11 |
-| 財報精讀 (`earnings`) | 10 |
+| 財報精讀 (`earnings`) | 11 |
+| 檢查清單 (`checklist`) | 8 |
 | 投資論文 (`thesis`) | 7 |
-| 檢查清單 (`checklist`) | 6 |
 | 對比/輪動 (`comparison`) | 4 |
 
-**按大師視角（檔案命中）：** 巴菲特 42 ／ 李錄 42 ／ 段永平 41 ／ 芒格 13
+**按大師視角（檔案命中）：** 巴菲特 44 ／ 李錄 44 ／ 段永平 43 ／ 芒格 13
 
 ## Skill 目錄
 
@@ -242,6 +242,16 @@
 - [04-風險管理層評估-李錄視角](../reports/QCOM/團隊分析/04-風險管理層評估-李錄視角.md) — 管理層研究
 - [最終報告](../reports/QCOM/團隊分析/最終報告.md) — 團隊研究
 
+### MU `MU` — 7 份
+
+- [MU-checklist-20261001](../reports/MU/買前確認/MU-checklist-20261001.md) — 2026-10-01 · 檢查清單
+- [MU-checklist-20260926](../reports/MU/買前確認/MU-checklist-20260926.md) — 2026-09-26 · 檢查清單
+- [MU-research-20260831](../reports/MU/深度分析/MU-research-20260831.md) — 2026-08-31 · 投研報告
+- [MU-checklist-20260825](../reports/MU/買前確認/MU-checklist-20260825.md) — 2026-08-25 · 檢查清單
+- [MU-thesis](../reports/MU/投資論點/MU-thesis.md) — 投資論文
+- [MU-earnings-FY2026Q3](../reports/MU/財報分析/MU-earnings-FY2026Q3.md) — 財報精讀 · 2026Q3
+- [MU-earnings-FY2026Q4](../reports/MU/財報分析/MU-earnings-FY2026Q4.md) — 財報精讀 · 2026Q4
+
 ### MRVL `MRVL` — 6 份
 
 - [MRVL-research-20260624](../reports/MRVL/深度分析/MRVL-research-20260624.md) — 2026-06-24 · 投研報告
@@ -250,14 +260,6 @@
 - [02-商業模式-資料中心管道工的四塊業務](../reports/MRVL/公眾號文章/02-商業模式-資料中心管道工的四塊業務.md)
 - [03-AI機遇-定製晶片的黃金時代與博通之戰](../reports/MRVL/公眾號文章/03-AI機遇-定製晶片的黃金時代與博通之戰.md)
 - [04-風險與估值-58倍PE在賭什麼](../reports/MRVL/公眾號文章/04-風險與估值-58倍PE在賭什麼.md) — 估值
-
-### MU `MU` — 5 份
-
-- [MU-checklist-20260926](../reports/MU/買前確認/MU-checklist-20260926.md) — 2026-09-26 · 檢查清單
-- [MU-research-20260831](../reports/MU/深度分析/MU-research-20260831.md) — 2026-08-31 · 投研報告
-- [MU-checklist-20260825](../reports/MU/買前確認/MU-checklist-20260825.md) — 2026-08-25 · 檢查清單
-- [MU-thesis](../reports/MU/投資論點/MU-thesis.md) — 投資論文
-- [MU-earnings-FY2026Q3](../reports/MU/財報分析/MU-earnings-FY2026Q3.md) — 財報精讀 · 2026Q3
 
 ### RDDT `RDDT` — 4 份
 
@@ -420,3 +422,7 @@
 ### 訊芯-KY `6451.TW` — 1 份
 
 - [訊芯-KY-research-20260831](../reports/訊芯-KY/深度分析/訊芯-KY-research-20260831.md) — 2026-08-31 · 投研報告
+
+### 跨公司比較 — 1 份
+
+- [巴菲特Checklist-多公司對比-20261011](../reports/跨公司比較/巴菲特Checklist-多公司對比-20261011.md) — 2026-10-11 · 檢查清單
