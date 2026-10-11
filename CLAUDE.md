@@ -19,7 +19,7 @@ assets/          — 圖片等靜態資源
 
 ## 報告輸出目錄
 
-所有 Skill 的報告統一寫入本倉庫內的 `reports/`。**reports/ 只收錄美股與台股的公開發行公司報告**，其餘（非公開發行公司、產業/跨公司比較、方法論筆記、人物語錄等）不放在這裡（見下方「非個股內容」）。
+所有 Skill 的報告統一寫入本倉庫內的 `reports/`。**除非使用者明確下達跨公司對比，否則一次處理多家公司時一律每家公司分開放置在各自的資料夾**，不做多公司合併檔。**reports/ 只收錄美股與台股的公開發行公司報告**，其餘（非公開發行公司、產業/跨公司比較、方法論筆記、人物語錄等）不放在這裡（見下方「非個股內容」）。
 
 結構為 `reports/{股票名稱}/{報告類別}/{報告內容}`：
 
@@ -36,11 +36,12 @@ reports/
 ├── NVDA/
 │   └── ...（同上，類別依實際產出的報告種類建立）
 ├── 產業研究/           — 跨公司產業研究、篩選漏斗、產業主題公眾號（非單一個股）
+├── 跨公司比較/          — 僅在使用者明確要求跨公司對比時使用
 ├── 組合管理/portfolio-latest.md — 持倉組合報告（持續更新）
 └── 訊號掃描/bottleneck-map/    — 瓶頸訊號掃描日誌
 ```
 
-上面三個非個股目錄（產業研究、組合管理、訊號掃描）目前**都還沒有內容**，
+上面四個非個股目錄（產業研究、跨公司比較、組合管理、訊號掃描）目前**都還沒有內容**，
 是保留給對應 Skill 的輸出位置，第一次跑到時再建。個股資料夾目前只有下列這些：
 
 ```
@@ -62,7 +63,7 @@ PGR PYPL QCOM RDDT RKLB TSLA TTWO UBER VSXY 京元電子
 |------|---------|------|
 | /investment-team | `reports/{公司名}/團隊分析/` 目錄內含 4 個視角＋最終報告 | `reports/台積電/團隊分析/最終報告.md` |
 | /investment-research | `reports/{公司名}/深度分析/{公司名}-research-{YYYYMMDD}.md` | `reports/台積電/深度分析/台積電-research-20260408.md` |
-| /investment-checklist | `reports/{公司名}/買前確認/{公司名}-checklist-{YYYYMMDD}.md`；一次分析多家公司時**每家各寫一份**，不做多公司合併檔 | `reports/台積電/買前確認/台積電-checklist-20260825.md` |
+| /investment-checklist | `reports/{公司名}/買前確認/{公司名}-checklist-{YYYYMMDD}.md`；一次分析多家公司時**預設每家各寫一份**；僅明確要求跨公司對比時寫入 `reports/跨公司比較/巴菲特Checklist-多公司對比-{YYYYMMDD}.md` | `reports/台積電/買前確認/台積電-checklist-20260825.md` |
 | /industry-research | `reports/產業研究/{行業名}-industry-{YYYYMMDD}.md` | `reports/產業研究/核電-industry-20260409.md` |
 | /industry-funnel | `reports/產業研究/{行業名}-funnel-{YYYYMMDD}.md` | `reports/產業研究/AI算力-funnel-20260509.md` |
 | /private-company-research | `PRIVATE/{公司名}/{公司名}-private-{YYYYMMDD}.md`（非公開發行，不進 reports/） | `PRIVATE/位元組跳動/位元組跳動-private-20260408.md` |
@@ -112,12 +113,13 @@ industry／funnel／private）。遇到表中沒有的類別，依此原則自�
 上述資料夾與檔名規則由 `scripts/check_report_placement.py` 機械檢查，不靠記憶：
 
 - 檔名 `{公司}-{英文類別詞}-...` 必須位於 `reports/{公司}/{對應中文類別}/`；類別資料夾內也只能放該公司、該類別的檔案
-- 買前確認一律一家公司一份，沒有多公司合併檔；`reports/跨公司比較/` 已停用
-- `reports/` 頂層只放公司資料夾與保留的非個股資料夾（產業研究、組合管理、訊號掃描）
+- 買前確認預設一家公司一份；不符合上述檔名的買前確認類檔案只允許出現在 `reports/跨公司比較/`（明確要求的跨公司對比）
+- `reports/` 頂層不得直接放檔案
 
 觸發點有三個：`build_graph.py`（含 `--check`）遇到違規會 exit 1 且不寫圖譜；專案 `.claude/settings.json`
-的 PreToolUse hook 會在 Write／Edit 寫入違規路徑前擋下；Stop hook 會在結束前掃描整個 `reports/`
-（涵蓋用 Bash 腳本產生的檔案）。新增類別時，同步更新該腳本的 `CATEGORY_DIRS` 與本檔的類別表。
+的 PreToolUse hook 會在 Write／Edit 寫入違規路徑前擋下，新建 `reports/跨公司比較/` 檔案時改為請使用者確認；
+Stop hook 會在結束前掃描整個 `reports/`（涵蓋用 Bash 腳本產生的檔案），並提示該資料夾內未提交的新檔案。
+腳本無法判斷使用者是否「明確要求」，這一點由確認提示交給使用者決定。新增類別時，同步更新該腳本的 `CATEGORY_DIRS` 與本檔的類別表。
 
 ## /investment-team 檔案結構
 
