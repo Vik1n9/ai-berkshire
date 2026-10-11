@@ -1,7 +1,7 @@
 # AI Berkshire 專案圖譜（PROJECT GRAPH）
 
 > 自動生成，請勿手工編輯。執行 `python3 scripts/build_graph.py` 重新生成。
-> 生成時間：2026-10-11T15:11:13Z
+> 生成時間：2026-10-11T15:38:12Z
 
 本圖譜為專案的**查詢索引**：把散落在 `reports/`（僅限美股與台股公開發行公司）的報告，
 按「公司/主題實體 → 報告」組織，並附 Skill 與工具目錄，便於後續檢索。
@@ -11,8 +11,8 @@
 
 ## 總覽統計
 
-- 報告總數：**200**
-- 實體（公司/主題）數：**50**
+- 報告總數：**201**
+- 實體（公司/主題）數：**49**
 - Skill 數：**19**，工具數：**12**
 - 報告日期跨度：2026-04-08 ~ 2026-10-11
 
@@ -26,11 +26,11 @@
 | 管理層研究 (`management`) | 11 |
 | 團隊研究 (`team`) | 11 |
 | 財報精讀 (`earnings`) | 11 |
-| 檢查清單 (`checklist`) | 8 |
+| 檢查清單 (`checklist`) | 9 |
 | 投資論文 (`thesis`) | 7 |
 | 對比/輪動 (`comparison`) | 4 |
 
-**按大師視角（檔案命中）：** 巴菲特 44 ／ 李錄 44 ／ 段永平 43 ／ 芒格 13
+**按大師視角（檔案命中）：** 巴菲特 45 ／ 李錄 45 ／ 段永平 44 ／ 芒格 13
 
 ## Skill 目錄
 
@@ -104,8 +104,9 @@
 - [NVDA-thesis](../reports/NVDA/投資論點/NVDA-thesis.md) — 投資論文
 - [NVDA-earnings-FY2027Q2](../reports/NVDA/財報分析/NVDA-earnings-FY2027Q2.md) — 財報精讀 · 2027Q2
 
-### UBER `UBER` — 14 份
+### UBER `UBER` — 15 份
 
+- [UBER-checklist-20261011](../reports/UBER/買前確認/UBER-checklist-20261011.md) — 2026-10-11 · 檢查清單
 - [UBER-research-20260901](../reports/UBER/深度分析/UBER-research-20260901.md) — 2026-09-01 · 投研報告
 - [UBER-checklist-20260901](../reports/UBER/買前確認/UBER-checklist-20260901.md) — 2026-09-01 · 檢查清單
 - [00-系列說明](../reports/UBER/公眾號文章/00-系列說明.md)
@@ -268,6 +269,13 @@
 - [RDDT-thesis](../reports/RDDT/投資論點/RDDT-thesis.md) — 投資論文
 - [RDDT-earnings-2026Q2](../reports/RDDT/財報分析/RDDT-earnings-2026Q2.md) — 財報精讀 · 2026Q2
 
+### TTWO `TTWO` — 4 份
+
+- [TTWO-checklist-20261011](../reports/TTWO/買前確認/TTWO-checklist-20261011.md) — 2026-10-11 · 檢查清單
+- [TTWO-research-20260827](../reports/TTWO/深度分析/TTWO-research-20260827.md) — 2026-08-27 · 投研報告
+- [TTWO-thesis](../reports/TTWO/投資論點/TTWO-thesis.md) — 投資論文
+- [TTWO-earnings-FY2027Q1](../reports/TTWO/財報分析/TTWO-earnings-FY2027Q1.md) — 財報精讀 · 2027Q1
+
 ### 京元電子 `2449/2449.TW` — 4 份
 
 - [京元電子-research-20260926](../reports/京元電子/深度分析/京元電子-research-20260926.md) — 2026-09-26 · 投研報告
@@ -292,12 +300,6 @@
 - [PYPL-topic-20260608-vs螞蟻集團對比分析](../reports/PYPL/專題研究/PYPL-topic-20260608-vs螞蟻集團對比分析.md) — 2026-06-08 · 對比/輪動
 - [PYPL-research-20260607](../reports/PYPL/深度分析/PYPL-research-20260607.md) — 2026-06-07 · 投研報告
 - [01-開篇-8倍PE的支付巨頭是撿便宜還是接飛刀](../reports/PYPL/公眾號文章/01-開篇-8倍PE的支付巨頭是撿便宜還是接飛刀.md)
-
-### TTWO `TTWO` — 3 份
-
-- [TTWO-research-20260827](../reports/TTWO/深度分析/TTWO-research-20260827.md) — 2026-08-27 · 投研報告
-- [TTWO-thesis](../reports/TTWO/投資論點/TTWO-thesis.md) — 投資論文
-- [TTWO-earnings-FY2027Q1](../reports/TTWO/財報分析/TTWO-earnings-FY2027Q1.md) — 財報精讀 · 2027Q1
 
 ### GFS `GFS` — 2 份
 
@@ -422,7 +424,3 @@
 ### 訊芯-KY `6451.TW` — 1 份
 
 - [訊芯-KY-research-20260831](../reports/訊芯-KY/深度分析/訊芯-KY-research-20260831.md) — 2026-08-31 · 投研報告
-
-### 跨公司比較 — 1 份
-
-- [巴菲特Checklist-多公司對比-20261011](../reports/跨公司比較/巴菲特Checklist-多公司對比-20261011.md) — 2026-10-11 · 檢查清單

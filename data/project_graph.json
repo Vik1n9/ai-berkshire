@@ -1,13 +1,13 @@
 {
   "meta": {
     "project": "AI Berkshire",
-    "generated_at": "2026-10-11T15:11:13Z",
+    "generated_at": "2026-10-11T15:38:12Z",
     "generator": "scripts/build_graph.py",
     "note": "價值投資研究知識圖譜：公司/主題實體 + 報告 + Skill + 工具。可用 scripts/query_graph.py 查詢。"
   },
   "stats": {
-    "reports": 200,
-    "entities": 50,
+    "reports": 201,
+    "entities": 49,
     "skills": 19,
     "tools": 12,
     "reports_by_type": {
@@ -17,15 +17,15 @@
       "management": 11,
       "team": 11,
       "earnings": 11,
-      "checklist": 8,
+      "checklist": 9,
       "thesis": 7,
       "comparison": 4
     },
     "reports_by_skill": {},
     "reports_by_master": {
-      "巴菲特": 44,
-      "李錄": 44,
-      "段永平": 43,
+      "巴菲特": 45,
+      "李錄": 45,
+      "段永平": 44,
       "芒格": 13
     },
     "date_range": [
@@ -580,20 +580,21 @@
     {
       "id": "entity:TTWO",
       "name": "TTWO",
-      "report_count": 3,
+      "report_count": 4,
       "tickers": [
         "TTWO"
       ],
       "reports": [
         "reports/TTWO/投資論點/TTWO-thesis.md",
         "reports/TTWO/深度分析/TTWO-research-20260827.md",
-        "reports/TTWO/財報分析/TTWO-earnings-FY2027Q1.md"
+        "reports/TTWO/財報分析/TTWO-earnings-FY2027Q1.md",
+        "reports/TTWO/買前確認/TTWO-checklist-20261011.md"
       ]
     },
     {
       "id": "entity:UBER",
       "name": "UBER",
-      "report_count": 14,
+      "report_count": 15,
       "tickers": [
         "UBER"
       ],
@@ -611,7 +612,8 @@
         "reports/UBER/投資論點/UBER-thesis.md",
         "reports/UBER/深度分析/UBER-research-20260901.md",
         "reports/UBER/財報分析/UBER-earnings-2026Q2.md",
-        "reports/UBER/買前確認/UBER-checklist-20260901.md"
+        "reports/UBER/買前確認/UBER-checklist-20260901.md",
+        "reports/UBER/買前確認/UBER-checklist-20261011.md"
       ]
     },
     {
@@ -674,15 +676,6 @@
       ],
       "reports": [
         "reports/訊芯-KY/深度分析/訊芯-KY-research-20260831.md"
-      ]
-    },
-    {
-      "id": "entity:跨公司比較",
-      "name": "跨公司比較",
-      "report_count": 1,
-      "tickers": [],
-      "reports": [
-        "reports/跨公司比較/巴菲特Checklist-多公司對比-20261011.md"
       ]
     }
   ],
@@ -3156,6 +3149,23 @@
       "bytes": 25411
     },
     {
+      "id": "reports/TTWO/買前確認/TTWO-checklist-20261011.md",
+      "path": "reports/TTWO/買前確認/TTWO-checklist-20261011.md",
+      "title": "TTWO-checklist-20261011",
+      "entity": "TTWO",
+      "type": "checklist",
+      "skill": null,
+      "date": "2026-10-11",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 30623
+    },
+    {
       "id": "reports/UBER/公眾號文章/00-系列說明.md",
       "path": "reports/UBER/公眾號文章/00-系列說明.md",
       "title": "00-系列說明",
@@ -3348,6 +3358,23 @@
       "bytes": 23149
     },
     {
+      "id": "reports/UBER/買前確認/UBER-checklist-20261011.md",
+      "path": "reports/UBER/買前確認/UBER-checklist-20261011.md",
+      "title": "UBER-checklist-20261011",
+      "entity": "UBER",
+      "type": "checklist",
+      "skill": null,
+      "date": "2026-10-11",
+      "quarter": null,
+      "ticker": null,
+      "masters": [
+        "巴菲特",
+        "段永平",
+        "李錄"
+      ],
+      "bytes": 38193
+    },
+    {
       "id": "reports/VSTM/深度分析/VSTM-research-20260907.md",
       "path": "reports/VSTM/深度分析/VSTM-research-20260907.md",
       "title": "VSTM-research-20260907",
@@ -3482,23 +3509,6 @@
         "李錄"
       ],
       "bytes": 47121
-    },
-    {
-      "id": "reports/跨公司比較/巴菲特Checklist-多公司對比-20261011.md",
-      "path": "reports/跨公司比較/巴菲特Checklist-多公司對比-20261011.md",
-      "title": "巴菲特Checklist-多公司對比-20261011",
-      "entity": "跨公司比較",
-      "type": "checklist",
-      "skill": null,
-      "date": "2026-10-11",
-      "quarter": null,
-      "ticker": null,
-      "masters": [
-        "巴菲特",
-        "段永平",
-        "李錄"
-      ],
-      "bytes": 64702
     }
   ],
   "skills": [
