@@ -17,6 +17,8 @@ Skill、工具，構建節點+邊的圖譜，輸出：
 用法：
     python3 scripts/build_graph.py            # 生成圖譜
     python3 scripts/build_graph.py --check    # 只校驗、列印統計，不寫檔案
+
+兩種模式都會先執行 scripts/check_report_placement.py 的位置檢查，有違規即 exit 1、不寫檔案。
 """
 from __future__ import annotations
 
@@ -27,6 +29,9 @@ import re
 import sys
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from check_report_placement import scan_all as check_report_placement  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPORTS_DIR = os.path.join(ROOT, "reports")
@@ -435,6 +440,13 @@ def main():
     print("按型別:", st["reports_by_type"])
     if st["date_range"][0]:
         print("日期跨度:", st["date_range"])
+
+    placement_errors = check_report_placement()
+    if placement_errors:
+        print("報告位置不符規範（scripts/check_report_placement.py），未寫入圖譜：")
+        for e in placement_errors:
+            print(f"  ❌ {e}")
+        sys.exit(1)
 
     if args.check:
         print("(--check：未寫檔案)")

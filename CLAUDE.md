@@ -36,12 +36,11 @@ reports/
 ├── NVDA/
 │   └── ...（同上，類別依實際產出的報告種類建立）
 ├── 產業研究/           — 跨公司產業研究、篩選漏斗、產業主題公眾號（非單一個股）
-├── 跨公司比較/          — 多公司買前確認對比
 ├── 組合管理/portfolio-latest.md — 持倉組合報告（持續更新）
 └── 訊號掃描/bottleneck-map/    — 瓶頸訊號掃描日誌
 ```
 
-上面四個非個股目錄（產業研究、跨公司比較、組合管理、訊號掃描）目前**都還沒有內容**，
+上面三個非個股目錄（產業研究、組合管理、訊號掃描）目前**都還沒有內容**，
 是保留給對應 Skill 的輸出位置，第一次跑到時再建。個股資料夾目前只有下列這些：
 
 ```
@@ -63,7 +62,7 @@ PGR PYPL QCOM RDDT RKLB TSLA TTWO UBER VSXY 京元電子
 |------|---------|------|
 | /investment-team | `reports/{公司名}/團隊分析/` 目錄內含 4 個視角＋最終報告 | `reports/台積電/團隊分析/最終報告.md` |
 | /investment-research | `reports/{公司名}/深度分析/{公司名}-research-{YYYYMMDD}.md` | `reports/台積電/深度分析/台積電-research-20260408.md` |
-| /investment-checklist | 單一公司：`reports/{公司名}/買前確認/{公司名}-checklist-{YYYYMMDD}.md`；多公司：`reports/跨公司比較/` | `reports/台積電/買前確認/台積電-checklist-20260825.md` |
+| /investment-checklist | `reports/{公司名}/買前確認/{公司名}-checklist-{YYYYMMDD}.md`；一次分析多家公司時**每家各寫一份**，不做多公司合併檔 | `reports/台積電/買前確認/台積電-checklist-20260825.md` |
 | /industry-research | `reports/產業研究/{行業名}-industry-{YYYYMMDD}.md` | `reports/產業研究/核電-industry-20260409.md` |
 | /industry-funnel | `reports/產業研究/{行業名}-funnel-{YYYYMMDD}.md` | `reports/產業研究/AI算力-funnel-20260509.md` |
 | /private-company-research | `PRIVATE/{公司名}/{公司名}-private-{YYYYMMDD}.md`（非公開發行，不進 reports/） | `PRIVATE/位元組跳動/位元組跳動-private-20260408.md` |
@@ -107,6 +106,18 @@ industry／funnel／private）。遇到表中沒有的類別，依此原則自�
 新增或重新命名報告前，先看同類別現有檔案是否已有慣例，優先比照；命名完成後可執行
 `python3 scripts/build_graph.py --check` 確認型別分類與統計沒有異常（例如新檔名意外落入 `other`
 或撞到既有型別關鍵字），跑無誤再正式寫入 `python3 scripts/build_graph.py`。
+
+### 位置強制檢查（`scripts/check_report_placement.py`）
+
+上述資料夾與檔名規則由 `scripts/check_report_placement.py` 機械檢查，不靠記憶：
+
+- 檔名 `{公司}-{英文類別詞}-...` 必須位於 `reports/{公司}/{對應中文類別}/`；類別資料夾內也只能放該公司、該類別的檔案
+- 買前確認一律一家公司一份，沒有多公司合併檔；`reports/跨公司比較/` 已停用
+- `reports/` 頂層只放公司資料夾與保留的非個股資料夾（產業研究、組合管理、訊號掃描）
+
+觸發點有三個：`build_graph.py`（含 `--check`）遇到違規會 exit 1 且不寫圖譜；專案 `.claude/settings.json`
+的 PreToolUse hook 會在 Write／Edit 寫入違規路徑前擋下；Stop hook 會在結束前掃描整個 `reports/`
+（涵蓋用 Bash 腳本產生的檔案）。新增類別時，同步更新該腳本的 `CATEGORY_DIRS` 與本檔的類別表。
 
 ## /investment-team 檔案結構
 
